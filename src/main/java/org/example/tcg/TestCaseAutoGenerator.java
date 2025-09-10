@@ -18,10 +18,10 @@ import static org.zed.trans.ExecutionPathPrinter.addPrintStmt;
 public class TestCaseAutoGenerator {
     private static final int MAX_INT_VALUE = Short.MAX_VALUE;
     private static final int MIN_INT_VALUE = Short.MIN_VALUE;
-    private static final int LEGAL_CHAR_MIN = 32; // 可显示字符的最小值
-    private static final int LEGAL_CHAR_MAX = 126; // 可显示字符的最大值
+    private static final int LEGAL_CHAR_MIN = 32; // 
+    private static final int LEGAL_CHAR_MAX = 126; // 
 
-    //为函数生成符合 T 要求的参数赋值，Map<key,value>，key为参数名，value就是具体赋值
+    // T ，Map<key,value>，key，value
     public static HashMap<String,String> generateTestCaseRandomlyUnderExpr(String expr, MethodDeclaration md){
         HashMap<String,String> testCase = new HashMap<>();
         Object[] values;
@@ -32,10 +32,10 @@ public class TestCaseAutoGenerator {
         try{
             values = generateAcceptableValue(expr, params);
             if (values == null || values.length == 0) {
-                throw new Exception("generateAcceptableValue 没有正确为参数赋值");
+                throw new Exception("generateAcceptableValue ");
             }
         } catch (Exception e) {
-            System.out.println("生成参数赋值时异常！");
+            System.out.println("！");
             return null;
         }
         for(int i = 0 ; i < values.length ; i++){
@@ -47,7 +47,7 @@ public class TestCaseAutoGenerator {
     public static HashMap<String,String> analyzeModelFromZ3Solver(String model, HashMap<String,String> paramTypeMap){
         HashMap<String,String> modelInfoMap = new HashMap<>();
         if(model == null || model.isEmpty()){
-            System.out.println("model值为空");
+            System.out.println("model");
             return modelInfoMap;
         }
         String varValues = model.substring(model.indexOf("[")+1,model.lastIndexOf("]"));
@@ -70,15 +70,15 @@ public class TestCaseAutoGenerator {
 //                    varValue = String.valueOf((char) Integer.parseInt(varValue));
 //                }
 //                if(paramTypeMap.containsKey(varName) && paramTypeMap.get(varName).equals("int")){
-//                    // 1. 解析为无符号 BigInteger
+//                    // 1.  BigInteger
 //                    BigInteger unsignedValue = new BigInteger(varValue);
 //
-//                    // 2. 转换为有符号 int（模拟 32 位截断）
+//                    // 2.  int（ 32 ）
 //                    int signedValue = unsignedValue.intValue();
 //
-//                    // 3. 转为有符号字符串
+//                    // 3. 
 //                    varValue = Integer.toString(signedValue);
-////                    System.out.println("varValue 有符号值为：" + varValue);
+////                    System.out.println("varValue ：" + varValue);
 //                }
                 System.out.println("varName:" + varName + "\t"+ "varValue:" + varValue);
                 modelInfoMap.put(varName,varValue);
@@ -122,7 +122,7 @@ public class TestCaseAutoGenerator {
         }
         return;
     }
-    //通过调用z3求解器来直接生成可用的输入
+    //z3
     public static HashMap<String,String> generateTestCaseByZ3(String constrainExpr, String ssmp){
         HashMap<String, String> map = new HashMap<>();
         HashMap<String, String> paramTypeMap = new HashMap<>();
@@ -130,13 +130,13 @@ public class TestCaseAutoGenerator {
         MethodDeclaration md = ExecutionEnabler.getFirstStaticMethod(ssmp);
         List<Parameter> parameters = md.getParameters();
 
-        //增加整体约束，对各类型范围进行限制，避免生成错误的测试用例
+        //，，
         for (Parameter p : parameters) {
             if(p.getType().toString().equals("int")){
                 constrainExpr = constrainExpr + " && " + "( " +p.getName() + " <= " + MAX_INT_VALUE + " )" +
                         " && " + "( " +p.getName() + " >= " + MIN_INT_VALUE + " )";
             }
-            //可显示字符的范围
+            //
             if(p.getType().toString().equals("char")){
                 constrainExpr = constrainExpr + " && " + "( " +p.getName() + " <= " + LEGAL_CHAR_MAX + " )" +
                         " && " + "( " +p.getName() + " >= " + LEGAL_CHAR_MIN + " )";
@@ -147,13 +147,13 @@ public class TestCaseAutoGenerator {
             SpecUnit gu = new SpecUnit(ssmp,constrainExpr,"true",new ArrayList<>());
             r = callZ3Solver2GenerateTestcase(gu);
         } catch (IOException e) {
-            System.err.println("生成测试用例时出现未知异常");
+            System.err.println("");
             map.put("ERROR","UNKNOWN ERROR");
             return map;
         }
         if(r.getStatus() == 1){
-            System.err.println(constrainExpr + "约束条件下没有可行的测试用例!");
-            map.put("ERROR",constrainExpr + "约束条件下没有可行的测试用例!");
+            System.err.println(constrainExpr + "!");
+            map.put("ERROR",constrainExpr + "!");
         }
         else if(r.getStatus() == 0){
             map = analyzeModelFromZ3Solver(r.getCounterExample(),paramTypeMap);
@@ -161,7 +161,7 @@ public class TestCaseAutoGenerator {
         for(Parameter p : md.getParameters()) {
             String paramName = p.getNameAsString();
             if(!map.containsKey(paramName)){
-                //如果没有生成对应的值，则使用默认值
+                //，
                 String defaultValue = getDefaultValueOfType(p.getTypeAsString());
                 map.put(paramName,defaultValue);
             }
@@ -178,20 +178,20 @@ public class TestCaseAutoGenerator {
         }else if(type.equals("float") || type.equals("double")){
             return "1.0";
         }else{
-            System.err.println("未知类型" + type + ", 无法设置默认值");
+            System.err.println("" + type + ", ");
             return "null";
         }
     }
     public static Object[] generateAcceptableValue(String T,
                                                    List<Parameter> parameters) {
-        // 生成可接受的case
+        // case
         List<Object> values = new ArrayList<>();
         List<String> variableNames = new ArrayList<>();
         for (Parameter p : parameters) {
             String paramName = p.getName().toString();
             variableNames.add(paramName);
         }
-        //暴力生成测试用例
+        //
         int maxCount = 100000;
         boolean isOK = false;
         while(--maxCount >= 0) {
@@ -209,7 +209,7 @@ public class TestCaseAutoGenerator {
             }
         }
         if(isOK == false){
-            System.out.println("生成随机值失败!");
+            System.out.println("!");
             return null;
         }
         return values.toArray(new Object[0]);
@@ -254,40 +254,40 @@ public class TestCaseAutoGenerator {
         }
     }
     /**
-     * 求解逻辑表达式
-     * @param expression 逻辑表达式（如 "x > 0 && y < 0"）
-     * @param variableNames 变量名数组（如 ["x", "y"]）
-     * @param variableValues 变量值数组（如 [5, -2]）
-     * @return 表达式计算结果（true/false）
-     * @throws IllegalArgumentException 如果变量名和值数量不匹配，或表达式非法
+     * 
+     * @param expression （ "x > 0 && y < 0"）
+     * @param variableNames （ ["x", "y"]）
+     * @param variableValues （ [5, -2]）
+     * @return （true/false）
+     * @throws IllegalArgumentException ，
      */
     public static boolean evaluateLogicExpression(
             String expression,
             String[] variableNames,
             Object[] variableValues) {
 
-        // 校验参数
+        // 
         if (variableNames == null || variableValues == null || variableNames.length != variableValues.length) {
-            throw new IllegalArgumentException("变量名和变量值数量不匹配");
+            throw new IllegalArgumentException("");
         }
 
-        // 构造变量上下文
+        // 
         Map<String, Object> context = new HashMap<>();
         for (int i = 0; i < variableNames.length; i++) {
             context.put(variableNames[i], variableValues[i]);
         }
 
-        // 执行表达式
+        // 
         try {
             System.out.println("MVEL expression: " + expression);
             Object result = MVEL.eval(expression, context);
             if (result instanceof Boolean) {
                 return (boolean) result;
             } else {
-                throw new IllegalArgumentException("MVEL.eval 返回值异常");
+                throw new IllegalArgumentException("MVEL.eval ");
             }
         } catch (Exception e) {
-            throw new IllegalArgumentException("表达式解析失败: " + e.getMessage(), e);
+            throw new IllegalArgumentException(": " + e.getMessage(), e);
         }
     }
 
@@ -295,7 +295,7 @@ public class TestCaseAutoGenerator {
                                             List<String> variableNames,
                                             List<Object> variableValues) {
 
-        return evaluateLogicExpression(T,variableNames.toArray(new String[0]),variableValues.toArray(new Object[0])); // 默认接受所有表达式
+        return evaluateLogicExpression(T,variableNames.toArray(new String[0]),variableValues.toArray(new Object[0])); // 
     }
 
     public static String generateRandomValue(Type type) {

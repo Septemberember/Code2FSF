@@ -46,29 +46,29 @@ public class TransFileOperator {
             String program = file2String(file.getAbsolutePath());
             String targetPath;
 
-            //有main方法的程序直接放入GENERATED_MAIN_METHOD_DIR，等待进一步格式化
+            //mainGENERATED_MAIN_METHOD_DIR，
             if(hasMainMdProgram(program)) {
                 targetPath = GENERATED_MAIN_METHOD_DIR + "/" + file.getName();
                 numHasMain++;
             }
-            //没有main方法，但是含有一个静态方法的程序移动到 ONE_STATIC_MD_CODES_DIR，需要进行main方法生成
+            //main， ONE_STATIC_MD_CODES_DIR，main
             else if(countStaticMethodProgram(program) == 1 && countNormalMethodProgram(program) == 0){
-                //将当前file复制到oneStaticMdCodes目录下
+                //fileoneStaticMdCodes
                 targetPath = ONE_STATIC_MD_CODES_DIR + "/" + file.getName();
                 num1Static++;
             }
-            //没有main方法，且有多个静态方法的程序移动到multiStaticMdCodes目录下
+            //main，multiStaticMdCodes
             else if(countStaticMethodProgram(program) > 1 && countNormalMethodProgram(program) == 0){
                 targetPath = MULTI_STATIC_MD_CODES_DIR + "/" + file.getName();
                 numMulStatic++;
             }
-            //没有main方法，没有静态方法，且有一个非静态方法的程序移动到oneNormalMdCodes目录下
+            //main，，oneNormalMdCodes
             else if(countNormalMethodProgram(program) == 1 && countStaticMethodProgram(program) == 0){
-                //将当前file复制到oneNormalMdCodes目录下
+                //fileoneNormalMdCodes
                 targetPath = ONE_NORMAL_MD_CODES_DIR + "/" + file.getName();
                 num1Normal++;
             }
-            //没有main方法，没有静态方法, 且有多个非静态方法的程序移动到multiNormalMdCodes目录下
+            //main，, multiNormalMdCodes
             else if(countNormalMethodProgram(program) > 1 && countStaticMethodProgram(program) == 0){
                 targetPath = MULTI_NORMAL_MD_CODES_DIR + "/" + file.getName();
                 numMulNormal++;
@@ -82,16 +82,16 @@ public class TransFileOperator {
             }
             Files.copy(Paths.get(file.getAbsolutePath()), Paths.get(targetPath));
         }
-//        System.out.println("一共处理了" + count + "个程序");
-//        System.out.println("自带main方法的程序有" + numHasMain + "个");
-//        System.out.println("只有一个static方法的程序有" + num1Static + "个");
-//        System.out.println("有多个static方法的程序有" + numMulStatic + "个");
-//        System.out.println("只有一个非静态方法的程序有" + num1Normal + "个");
-//        System.out.println("有多个非静态方法的程序有" + numMulNormal + "个");
-//        System.out.println("其它未分类程序有" + numOther + "个");
+//        System.out.println("" + count + "");
+//        System.out.println("main" + numHasMain + "");
+//        System.out.println("static" + num1Static + "");
+//        System.out.println("static" + numMulStatic + "");
+//        System.out.println("" + num1Normal + "");
+//        System.out.println("" + numMulNormal + "");
+//        System.out.println("" + numOther + "");
     }
     /*
-     * @description 把非static方法，加上 static 修饰符，并转移到 ONE_STATIC_MD_CODES_DIR 目录
+     * @description static， static ， ONE_STATIC_MD_CODES_DIR 
      */
     public static void addStaticFlag4OneNormalMdInDefaultDir() throws IOException {
         int count = 0;
@@ -105,7 +105,7 @@ public class TransFileOperator {
         for (File file : files) {
             JavaParser parser = new JavaParser();
             CompilationUnit cu = parser.parse(file).getResult().get();
-            //给所有非静态方法添加static标志
+            //static
             cu.findAll(com.github.javaparser.ast.body.MethodDeclaration.class).stream()
                     .filter(md -> !md.isStatic())
                     .forEach(m -> {
@@ -113,18 +113,18 @@ public class TransFileOperator {
                         modifiers.add(Modifier.staticModifier());
                         m.setModifiers(modifiers);
                     });
-            // 构建输出路径
+            // 
             Path outputPath = Paths.get(addedStaticFlagDir, file.getName());
             if(Files.exists(outputPath)){
                 Files.delete(outputPath);
             }
-            // 写入修改后的文件
+            // 
             try (FileWriter writer = new FileWriter(outputPath.toFile())) {
                 writer.write(cu.toString());
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            //复制一份到ONE_STATIC_MD_CODES_DIR目录下
+            //ONE_STATIC_MD_CODES_DIR
             Path oneStaticPath = Paths.get(ONE_STATIC_MD_CODES_DIR, file.getName());
             if(Files.exists(oneStaticPath)){
                 Files.delete(oneStaticPath);
@@ -132,12 +132,12 @@ public class TransFileOperator {
             Files.copy(outputPath, oneStaticPath);
             count++;
         }
-        System.out.println( "为"+ count + "个文件的非静态方法添加了static标志，处理完成！" );
+        System.out.println( ""+ count + "static，！" );
     }
     public static String addStaticFlag2SNMP(String snmp){
         JavaParser parser = new JavaParser();
         CompilationUnit cu = parser.parse(snmp).getResult().get();
-        //给所有非静态方法添加static标志
+        //static
         cu.findAll(com.github.javaparser.ast.body.MethodDeclaration.class).stream()
                 .filter(md -> !md.isStatic())
                 .forEach(m -> {
@@ -171,7 +171,7 @@ public class TransFileOperator {
         return mdCount;
     }
     public static void initTransWorkDir() throws IOException {
-        // 创建工作目录
+        // 
         Files.createDirectories(Path.of(TRANS_WORK_DIR));
         Files.createDirectories(Path.of(SOURCE_CODES_DIR));
         Files.createDirectories(Path.of(ONE_STATIC_MD_CODES_DIR));
@@ -201,7 +201,7 @@ public class TransFileOperator {
         return sb.toString();
     }
     /*
-         从目录树中找出所有.java文件
+         .java
      */
     public static File[] fetchAllJavaFilesInDir(String dir) throws IOException {
         Path path = Paths.get(dir);
@@ -217,7 +217,7 @@ public class TransFileOperator {
     }
 
     /*
-     从目录树中找出所有.java文件并删除
+     .java
     */
     public static void deleteAllJavaFilesInDir(String dir) throws IOException {
         Path path = Paths.get(dir);
@@ -255,18 +255,18 @@ public class TransFileOperator {
     }
 
     public static void deleteDirectoryRecursively(Path dir) throws IOException {
-        // 确保目录存在
+        // 
         if (!Files.exists(dir)) {
             return;
         }
-        // 递归删除目录及内容（反向排序：先删文件再删目录）
+        // （：）
         Files.walk(dir)
                 .sorted(Comparator.reverseOrder())
                 .forEach(path -> {
                     try {
                         Files.delete(path);
                     } catch (IOException e) {
-                        System.err.println("删除失败: " + path + " - " + e.getMessage());
+                        System.err.println(": " + path + " - " + e.getMessage());
                     }
                 });
     }
@@ -326,14 +326,14 @@ public class TransFileOperator {
         int hasNoArrayCount = 0;
         for (File file : files) {
             count++;
-            System.out.println("[筛查不带数组程序]正在检查第"+ count +"个文件："+file.getName());
+            System.out.println("[]"+ count +"："+file.getName());
             if(!paramsContainsArrayType(file.getAbsolutePath())){
                 Files.copy(file.toPath(), Paths.get(HAS_NO_ARRAY_CODES_DIR, file.getName()));
                 hasNoArrayCount++;
             }
         }
-        System.out.println("[筛查不带数组程序]共分析了"+ count +"个程序");
-        System.out.println("[筛查不带数组程序]不含有数组的程序有"+ hasNoArrayCount + "个");
+        System.out.println("[]"+ count +"");
+        System.out.println("[]"+ hasNoArrayCount + "");
     }
     public static void saveAddedPrintCodes(String code, String path) throws IOException {
         File file = new File(path);
@@ -343,7 +343,7 @@ public class TransFileOperator {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
             writer.write(code);
         } catch (IOException e) {
-            System.out.println("写入文件时发生错误: " + e.getMessage());
+            System.out.println(": " + e.getMessage());
         }
     }
 
@@ -353,7 +353,7 @@ public class TransFileOperator {
         }
         return false;
     }
-    //只含有一个普通方法的程序
+    //
     public static boolean isSNMP(String program){
         if(countNormalMethodProgram(program) == 1){
             return true;
@@ -371,7 +371,7 @@ public class TransFileOperator {
                 return transProgram;
             }
         }
-        System.out.println("转换为SSMP失败!");
+        System.out.println("SSMP!");
         return null;
     }
 

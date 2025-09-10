@@ -56,11 +56,11 @@ public class LogManager {
             if(new File(dir).exists()){
                 continue;
             }
-            //创建该目录
+            //
             try {
                 Files.createDirectories(Path.of(dir));
             } catch (IOException e) {
-                System.out.println("创建工作目录 " + dir + " 时出现异常");
+                System.out.println(" " + dir + " ");
                 return false;
             }
         }
@@ -85,7 +85,7 @@ public class LogManager {
             e.printStackTrace();
         }
     }
-    //自由指定log目录位置
+    //log
     public static void appendMessageInDiyDir(String codePath, ModelMessage msg, String model,String diy) throws IOException {
         String logFilePath = codePath2DiyLogPath(codePath,model,diy);
         Path outputPath = Paths.get(logFilePath);
@@ -159,33 +159,33 @@ public class LogManager {
     }
 
     public static String codePath2LogPath(String codePath,String model){
-        //从文件路径中提取文件名（在Java程序中，即类名）
+        //（Java，）
         String logTitle = codePath.substring(codePath.lastIndexOf("/") + 1, codePath.lastIndexOf("."));
         logTitle = "log" + "-" + logTitle;
         return LOG_DIR  + "/" +model + "/" + logTitle + LOG_FILE_SUFFIX;
     }
     public static String codePath2DiyLogPath(String codePath,String model,String diy){
-        //从文件路径中提取文件名（在Java程序中，即类名）
+        //（Java，）
         String logTitle = codePath.substring(codePath.lastIndexOf("/") + 1, codePath.lastIndexOf("."));
         logTitle = "log" + "-" + logTitle;
         return diy  + "/" +model + "/" + logTitle + LOG_FILE_SUFFIX;
     }
 
     public static String filePath2FailedPath(String path){
-        //从文件路径中提取文件名（在Java程序中，即类名）
+        //（Java，）
         String title = path.substring(path.lastIndexOf("/") + 1);
         return FAILED_DATASET_DIR  + "/" + title;
     }
     public static String codePath2AddedPrintPath(String codePath){
-        //从文件路径中提取文件名（在Java程序中，即类名）
+        //（Java，）
         String fileName = codePath.substring(codePath.lastIndexOf("/") + 1);
         return ADDED_PRINT_CODES_DIR  + "/" + fileName;
     }
 
-    //仅删除单个模型产生的日志文件
+    //
     public static void cleanLogOfModel(String model){
         String[] logFiles = fetchSuffixFilePathInDir(LOG_DIR + model + "/", LOG_FILE_SUFFIX);
-        //将logFiles对应的文件删除
+        //logFiles
         if(logFiles != null){
             for (String logFile : logFiles) {
                 File file = new File(logFile);
@@ -197,7 +197,7 @@ public class LogManager {
     }
 
     /*
-     从目录树中找出所有.java文件
+     .java
  */
     public static void deleteAllJavaFilesInDir(String dir) throws IOException {
         Path path = Paths.get(dir);
@@ -206,7 +206,7 @@ public class LogManager {
                 .forEach(p -> p.toFile().delete());
     }
 
-    //删除Log目录下所有模型的日志文件
+    //Log
     public static void cleanLogOfModel(){
         String[] logFiles = fetchSuffixFilePathInDir(LOG_DIR, LOG_FILE_SUFFIX);
         if(logFiles != null){
@@ -232,15 +232,15 @@ public class LogManager {
 
     public static void copy2TransSourceDir(String codePath) throws IOException {
         Path p = new File(codePath).toPath();
-        // 添加对输入路径的检查
+        // 
         if (!Files.exists(p)) {
-            throw new IOException("源文件不存在: " + codePath);
+            throw new IOException(": " + codePath);
         }
         if (Files.isDirectory(p)) {
-            throw new IOException("输入路径是目录而非文件: " + codePath);
+            throw new IOException(": " + codePath);
         }
         Path dir = Paths.get(TRANS_SOURCE_CODES_DIR);
-        Files.createDirectories(dir);  // 确保目录存在
+        Files.createDirectories(dir);  // 
         Files.copy(p, dir.resolve(p.getFileName()), REPLACE_EXISTING);
     }
 
@@ -258,12 +258,12 @@ public class LogManager {
     public static List<String[]> parseTDFromMsg(String msgContent) {
         List<String[]> TDs = new ArrayList<>();
         /*
-            由于LLM生成的结果格式为
+            LLM
             T1:
             D1:
             T2:
             D2:
-            这里先将其按行分割，再逐行记录到TD中，再加入到TDs中
+            ，TD，TDs
          */
         msgContent = msgContent.substring(msgContent.indexOf("```") + 3, msgContent.lastIndexOf("```")).trim();
         String[] specs = msgContent.split("\n");
@@ -369,7 +369,7 @@ public class LogManager {
     }
 
     public static String filePath2SuccPath(String path) {
-        //从文件路径中提取文件名（在Java程序中，即类名）
+        //（Java，）
         String title = path.substring(path.lastIndexOf("/") + 1);
         return SUCC_DATASET_DIR  + "/" + title;
     }
@@ -378,7 +378,7 @@ public class LogManager {
         if(testCases == null || testCases.isEmpty()) return;
         int totalNum = testCases.size();
         int count = 0;
-        appendCode2FSFRemark(logFilePath ,"的测试用例历史记录如下，共[" + totalNum + "]个");
+        appendCode2FSFRemark(logFilePath ,"，[" + totalNum + "]");
 //        for (String testcase : testCases) {
 //            appendCode2FSFRemark(logFilePath,"------------------["+(++count) +"/"+totalNum+"]------------------");
 ////            System.out.println(testcase);
@@ -395,7 +395,7 @@ public class LogManager {
         try {
             Files.createDirectories(outputPath.getParent());
         } catch (IOException e) {
-            System.out.println("记录CodeGenLog时失败");
+            System.out.println("CodeGenLog");
             return false;
         }
         try (BufferedWriter writer = Files.newBufferedWriter(
@@ -429,7 +429,7 @@ public class LogManager {
                     content.indexOf("{")).trim();
         }
         if(className.isEmpty()){
-            System.err.println("生成的代码中没有类名, 记录日志失败！");
+            System.err.println(", ！");
             return className;
         }
         return className;
@@ -452,7 +452,7 @@ public class LogManager {
         Set<String> calssNames = new HashSet<>();
         File dir = new File(anyCategoryDir);
         if (!dir.exists() || !dir.isDirectory()) {
-            System.err.println("目录不存在或不是一个目录: " + anyCategoryDir);
+            System.err.println(": " + anyCategoryDir);
             return calssNames;
         }
         File[] files = dir.listFiles((d, name) -> name.endsWith(".java"));
@@ -463,14 +463,14 @@ public class LogManager {
                 calssNames.add(className);
             }
         } else {
-            System.err.println("目录中没有找到任何.java文件: " + anyCategoryDir);
+            System.err.println(".java: " + anyCategoryDir);
         }
 
         return calssNames;
     }
 
     public static void classifyHandledCodeFiles(String targetDir){
-        String classifiedDir = "resources/dataset/程序归类_0722";
+        String classifiedDir = "resources/dataset/_0722";
         String branchDir = classifiedDir + "/Branched";
         String singlePathLoopDir = classifiedDir + "/Single-path-Loop";
         String multiPathLoopDir = classifiedDir + "/Multi-path-Loop";
@@ -489,7 +489,7 @@ public class LogManager {
         String newNestedLoopDir = targetDir + "/Nested-Loop";
         String newSequentialDir = targetDir + "/Sequential";
 
-        //创建新的分类目录
+        //
         try {
             Files.createDirectories(Path.of(newBranchedDir));
             Files.createDirectories(Path.of(newSinglePathLoopDir));
@@ -610,7 +610,7 @@ public class LogManager {
         Set<String> categories = new HashSet<>();
         File dir = new File(datasetDir);
         if (!dir.exists() || !dir.isDirectory()) {
-            System.err.println("目录不存在或不是一个目录: " + datasetDir);
+            System.err.println(": " + datasetDir);
             return categories;
         }
         File[] files = dir.listFiles();
@@ -651,15 +651,15 @@ public class LogManager {
     }
 
     public static void collectExperimentRecords(String category,String experimentName,String modelName){
-        //创建实验记录目录
+        //
         String experimentDir = getExperimentLogPath(experimentName,category);
         try {
             Files.createDirectories(Path.of(experimentDir));
         } catch (IOException e) {
-            System.out.println("创建实验记录目录失败: " + experimentDir);
+            System.out.println(": " + experimentDir);
             return;
         }
-        //将failedDataset、succDataset、exceptionDataset复制过来
+        //failedDataset、succDataset、exceptionDataset
         String experimentSuccDatasetDir = experimentDir + "/succDataset";
         String experimentFailedDatasetDir = experimentDir + "/failedDataset";
         String experimentExceptionDatasetDir = experimentDir + "/exceptionDataset";
@@ -668,7 +668,7 @@ public class LogManager {
             Files.createDirectories(Path.of(experimentFailedDatasetDir));
             Files.createDirectories(Path.of(experimentExceptionDatasetDir));
         } catch (IOException e) {
-            System.out.println("创建实验记录数据集目录失败");
+            System.out.println("");
             e.printStackTrace();
             return;
         }
@@ -686,16 +686,16 @@ public class LogManager {
                 Files.copy(file.toPath(), Path.of(experimentExceptionDatasetDir + "/" + file.getName()), REPLACE_EXISTING);
             }
         } catch (IOException e) {
-            System.out.println("复制实验记录失败");
+            System.out.println("");
             e.printStackTrace();
         }
-        //把log文件复制过来
+        //log
         String logDir = LOG_DIR + "/" + modelName;
         String experimentLogDir = experimentDir + "/" + modelName;
         try {
             Files.createDirectories(Path.of(experimentLogDir));
         } catch (IOException e) {
-            System.out.println("创建实验记录日志目录失败: " + experimentLogDir);
+            System.out.println(": " + experimentLogDir);
             return;
         }
         try {
@@ -706,19 +706,19 @@ public class LogManager {
                 }
             }
         } catch (IOException e) {
-            System.out.println("复制实验记录失败");
+            System.out.println("");
             e.printStackTrace();
         }
-        //创建summary.txt文件
+        //summary.txt
         String summaryFilePath = experimentDir + "/summary.txt";
         Path summaryPath = Path.of(summaryFilePath);
         try {
             if(Files.exists(summaryPath)) {
-                Files.delete(summaryPath); //如果存在则删除
+                Files.delete(summaryPath); //
             }
             Files.createFile(summaryPath);
         } catch (IOException e) {
-            System.out.println("创建实验记录summary.txt失败");
+            System.out.println("summary.txt");
             e.printStackTrace();
         }
         int succNum = 0, failedNum = 0, exceptionNum = 0, totalNum = 0;
@@ -728,7 +728,7 @@ public class LogManager {
         exceptionNum = fetchAllFilesInDir(experimentExceptionDatasetDir).length;
         totalNum = succNum + failedNum + exceptionNum;
         succRate =  (int)((float)succNum / (float)totalNum * 10000);
-        //向summary.txt中写入信息
+        //summary.txt
         try (BufferedWriter writer = Files.newBufferedWriter(
                 summaryPath,
                 StandardCharsets.UTF_8,
@@ -751,7 +751,7 @@ public class LogManager {
             writer.write("exception number: " + exceptionNum);
             writer.newLine();
         } catch (IOException e) {
-            System.out.println("写入实验记录summary.txt失败");
+            System.out.println("summary.txt");
             e.printStackTrace();
         }
 
@@ -828,7 +828,7 @@ public class LogManager {
     }
 
     public static String evolutionTaskPath2LogPath(String taskFilePath,String model) {
-        //从文件路径中提取文件名（在Java程序中，即类名）
+        //（Java，）
         String logTitle = taskFilePath.substring(taskFilePath.lastIndexOf("/") + 1, taskFilePath.lastIndexOf("."));
         String logPath = LOG_DIR + "/" + model + "/" + "log-" + logTitle + LOG_FILE_SUFFIX;
         return logPath;
@@ -846,17 +846,17 @@ public class LogManager {
     public static void collectOriginalCodeAndFSF(String filePath){
         String originalCode = getProgramFromLog(filePath).trim();
         List<String[]> originalFSF = getLastestFSFFromLog(filePath);
-        //写成 evolutionTask
+        // evolutionTask
         String className = filePath.substring(filePath.indexOf("-") + 1, filePath.indexOf(".txt"));
         String taskFilePath = "resources/dataset/originalCodeFSF/" + className + ".txt";
-        //创建taskFilePath文件
+        //taskFilePath
         try {
             Files.createDirectories(Path.of("resources/dataset/originalCodeFSF"));
             Files.createFile(Path.of(taskFilePath));
         } catch (IOException e) {
-            System.out.println("创建evolutionTask文件失败: " + taskFilePath);
+            System.out.println("evolutionTask: " + taskFilePath);
         }
-        //写入内容
+        //
         try (BufferedWriter writer = Files.newBufferedWriter(
                 Path.of(taskFilePath),
                 StandardCharsets.UTF_8,
@@ -881,7 +881,7 @@ public class LogManager {
             writer.write(END_ORIGINAL_FSF);
             writer.newLine();
         } catch (IOException e) {
-            System.out.println("写入evolutionTask文件失败: " + taskFilePath);
+            System.out.println("evolutionTask: " + taskFilePath);
         }
     }
 
@@ -922,7 +922,7 @@ public class LogManager {
             writer.write(END_MODIFIED_FSF);
             writer.newLine();
         } catch (IOException e) {
-            System.out.println("写入evolutionTask文件失败: " + taskPath);
+            System.out.println("evolutionTask: " + taskPath);
         }
     }
 
@@ -954,11 +954,11 @@ public class LogManager {
         for(String category : categoriesInDatasetDir) {
             categoryCounts.put(category, new Integer[]{0, 0, 0});
         }
-        //读取CSV文件
+        //CSV
         List<String> lines = Files.readAllLines(Path.of(csvFilePath));
         for (String line : lines) {
             String[] parts = line.split(",");
-            if (parts.length < 2) continue; // 确保有足够的列
+            if (parts.length < 2) continue; // 
             String className = parts[0].substring(parts[0].indexOf("-") + 1, parts[0].lastIndexOf("-"));
             String category = "";
             for (String cat : classifiedProgramsNames.keySet()) {
@@ -974,7 +974,7 @@ public class LogManager {
                 categoryCounts.get(category)[2]++;
             }
         }
-        //输出统计结果
+        //
         System.out.println("Category,Total,Success,Failed,successProb");
         for (String category : categoriesInDatasetDir) {
             Integer[] counts = categoryCounts.get(category);

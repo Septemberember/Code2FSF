@@ -46,7 +46,7 @@ public class ExecutionPathPrinter {
         cu.accept(new ModifierVisitor<Void>() {
             @Override
             public IfStmt visit(IfStmt ifStmt, Void arg) {
-                // 1. 首先处理嵌套的if语句（递归处理then和else部分）
+                // 1. if（thenelse）
                 if (ifStmt.getThenStmt() instanceof IfStmt) {
                     ifStmt.setThenStmt(visit(ifStmt.getThenStmt().asIfStmt(), arg));
                 }
@@ -62,7 +62,7 @@ public class ExecutionPathPrinter {
                     }
                     thenBlock.setStatements(newStatements);
                 }
-                // 2. 然后处理当前if语句的插桩（只处理最外层的if-elseif-else链）
+                // 2. if（if-elseif-else）
                 return handleIfElseChain(ifStmt);
             }
         }, null);
@@ -75,14 +75,14 @@ public class ExecutionPathPrinter {
         cu.accept(new ModifierVisitor<Void>() {
             @Override
             public Visitable visit(ForStmt forStmt, Void arg) {
-                // 确保 for 的 body 被 {} 包围
+                //  for  body  {} 
                 if (!forStmt.getBody().isBlockStmt()) {
                     Statement body = forStmt.getBody();
                     BlockStmt blockStmt = new BlockStmt();
                     blockStmt.addStatement(body);
                     forStmt.setBody(blockStmt);
                 }
-                // 在for循环上方打印初始化语句
+                // for
                 List<Statement> initialStmts = generateInitialStmtsOfForLoop(forStmt);
                 if(!initialStmts.isEmpty()) {
                     Optional<Node> parentNode = forStmt.getParentNode();
@@ -97,7 +97,7 @@ public class ExecutionPathPrinter {
                     }
                 }
 
-                //在循环体内打印 update 语句，这样可以获取到赋值
+                // update ，
                 List<Statement> updateStmts = generateUpdateStmtOfForLoop(forStmt);
                 if(!updateStmts.isEmpty()) {
                     for(Statement s : updateStmts){
@@ -110,9 +110,9 @@ public class ExecutionPathPrinter {
                     return super.visit(forStmt, arg);
                 }
                 Statement enterLoopStmt = generateEnteringLoopPrintStmt(forStmt);
-                //在循环体内打印Entering loop condition
+                //Entering loop condition
                 forStmt.getBody().asBlockStmt().addStatement(0,enterLoopStmt);
-                //打印退出循环的语句 Exiting loop condition
+                // Exiting loop condition
                 Statement exitLoopStmt = generateExitingLoopPrintStmt(forStmt);
                 if(parentNode.get() instanceof BlockStmt) {
                     int index = ((BlockStmt) parentNode.get()).asBlockStmt().getStatements().indexOf(forStmt);
@@ -127,18 +127,18 @@ public class ExecutionPathPrinter {
 
     public static String addPrintForWhileLoopStmt(String code) {
         CompilationUnit cu = new JavaParser().parse(code).getResult().get();
-        // 使用 ModifierVisitor 遍历并修改 AST
+        //  ModifierVisitor  AST
         cu.accept(new ModifierVisitor<Void>() {
             @Override
             public Visitable visit(WhileStmt whileStmt, Void arg) {
-                // 确保 while 的 body 被 {} 包围
+                //  while  body  {} 
                 if (!whileStmt.getBody().isBlockStmt()) {
                     Statement body = whileStmt.getBody();
                     BlockStmt blockStmt = new BlockStmt();
                     blockStmt.addStatement(body);
                     whileStmt.setBody(blockStmt);
                 }
-                // 获取 condition，构造 print statement
+                //  condition， print statement
                 Statement enterLoopStmt = generateEnteringLoopPrintStmt(whileStmt);
                 whileStmt.getBody().asBlockStmt().addStatement(0,enterLoopStmt);
                 Statement exitLoopStmt = generateExitingLoopPrintStmt(whileStmt);
@@ -157,29 +157,29 @@ public class ExecutionPathPrinter {
 
     public static String addPrintStmtForAssignStmt(String code){
         CompilationUnit cu = new JavaParser().parse(code).getResult().get();
-        // 使用 ModifierVisitor 遍历并修改 AST
+        //  ModifierVisitor  AST
         cu.accept(new ModifierVisitor<Void>() {
             @Override
             public Visitable visit(ExpressionStmt stmt, Void arg) {
                 Expression expr = stmt.getExpression();
-                // 处理赋值语句（如 x = 5;）
+                // （ x = 5;）
                 if (expr.isAssignExpr()) {
                     AssignExpr assignExpr = expr.asAssignExpr();
                     String op = assignExpr.getOperator().asString();
                     String varName = assignExpr.getTarget().toString();
                     Expression value = assignExpr.getValue();
                     Expression innerValue = value;
-                    //去掉括号包装
+                    //
                     while(innerValue.isEnclosedExpr()){
                         innerValue = innerValue.asEnclosedExpr().getInner();
                     }
-                    //处理三目运算符
+                    //
                     if(innerValue.isConditionalExpr()){
                         Statement[] conditionPrintStmts = generateConditionExprPrintStmt(varName,innerValue.asConditionalExpr());
                         Statement printStmtTrue = conditionPrintStmts[0];
                         Statement printStmtFalse = conditionPrintStmts[1];
 
-                        //找到父blockStatement
+                        //blockStatement
                         Optional<Node> parentNode = stmt.getParentNode();
                         if(parentNode.isEmpty()){
                             return super.visit(stmt, arg);
@@ -202,7 +202,7 @@ public class ExecutionPathPrinter {
                             case "*=" -> new BinaryExpr(new NameExpr(varName), value, BinaryExpr.Operator.MULTIPLY);
                             default -> value;
                         };
-                        //要把强制类型转换去掉,避免在validation环节将类型转换误认为一个变量
+                        //,validation
                         String valueStr = value.toString().replace("(char)","").replace("(long)","")
                                 .replace("(int)","").replace("(double)","").replace("(float)","");
                         if(valueStr.startsWith("-")){
@@ -211,8 +211,8 @@ public class ExecutionPathPrinter {
                         }else{
                             valueStr = "(" + valueStr + ")";
                         }
-                        EnclosedExpr enclosedExpr = new EnclosedExpr(new NameExpr(varName)); //避免 varName含有&&、||、%等操作符，导致拼接字符串时报错
-                        // 生成打印语句（格式：System.out.println("变量名: " + 变量名 + ", 当前值: " + 值);）
+                        EnclosedExpr enclosedExpr = new EnclosedExpr(new NameExpr(varName)); // varName&&、||、%，
+                        // （：System.out.println(": " +  + ", : " + );）
                         Statement printStmt = new ExpressionStmt(new MethodCallExpr(
                                 new NameExpr("System.out"),
                                 "println",
@@ -222,7 +222,7 @@ public class ExecutionPathPrinter {
                                         BinaryExpr.Operator.PLUS
                                 ))
                         ));
-                        //找到父blockStatement
+                        //blockStatement
                         Optional<Node> parentNode = stmt.getParentNode();
                         if(parentNode.isEmpty()){
                             return super.visit(stmt, arg);
@@ -240,24 +240,24 @@ public class ExecutionPathPrinter {
             }
         }, null);
 
-        // 返回插桩后的代码
+        // 
         return cu.toString();
     }
 
     public static String addPrintStmtForVariableDeclarationExpr(String code){
         CompilationUnit cu = new JavaParser().parse(code).getResult().get();
-        // 使用 ModifierVisitor 遍历并修改 AST
+        //  ModifierVisitor  AST
         cu.accept(new ModifierVisitor<Void>() {
             @Override
             public Visitable visit(ExpressionStmt stmt, Void arg) {
                 Expression expr = stmt.getExpression();
-                // 处理变量声明并初始化（如 int x = 5;）
+                // （ int x = 5;）
                 if (expr.isVariableDeclarationExpr()) {
                     VariableDeclarationExpr varDecl = expr.asVariableDeclarationExpr();
                     // BlockStmt block = new BlockStmt();
                     // block.addStatement(stmt);
 
-                    // 为每个变量生成打印语句
+                    // 
                     varDecl.getVariables().forEach(var -> {
                         if (var.getInitializer().isPresent()) {
                             String varName = var.getNameAsString();
@@ -294,7 +294,7 @@ public class ExecutionPathPrinter {
 
     public static String addPrintStmtAtMethodBegin(String code){
         CompilationUnit cu = new JavaParser().parse(code).getResult().get();
-        // 使用 ModifierVisitor 遍历并修改 AST
+        //  ModifierVisitor  AST
         cu.accept(new ModifierVisitor<Void>() {
             @Override
             public Visitable visit(MethodDeclaration md, Void arg) {
@@ -310,7 +310,7 @@ public class ExecutionPathPrinter {
                                         BinaryExpr.Operator.PLUS
                                 ))
                         ));
-                        // 将打印语句插入到方法体的开头
+                        // 
                         if (md.getBody().isPresent()) {
                             BlockStmt body = md.getBody().get();
                             body.addStatement(0, printStmt);
@@ -333,14 +333,14 @@ public class ExecutionPathPrinter {
                 if(parentNode.isEmpty()){
                     return super.visit(stmt, arg);
                 }
-                // 获取 return 的表达式（如果有）
+                //  return （）
                 Optional<Expression> returnExpr = stmt.getExpression();
                 System.out.println(returnExpr.get());
                 Expression innerValue = returnExpr.get();
                 while(innerValue.isEnclosedExpr()){
                     innerValue = innerValue.asEnclosedExpr().getInner();
                 }
-                //三目运算符的处理
+                //
                 if(innerValue.isConditionalExpr()){
                     Statement[] conditionPrintStmts = generateConditionExprPrintStmt("return_value",innerValue.asConditionalExpr());
                     Statement printStmtTrue = conditionPrintStmts[0];
@@ -360,12 +360,12 @@ public class ExecutionPathPrinter {
                     Statement printStmt = generateReturnValuePrintStmt(stmt);
                     if(parentNode.get() instanceof BlockStmt){
                         //return expr;
-                        //这里插桩的是 return_value = expr, current value of return_value: expr
+                        // return_value = expr, current value of return_value: expr
                         int index = ((BlockStmt) parentNode.get()).asBlockStmt().getStatements().indexOf(stmt);
                         ((BlockStmt) parentNode.get()).addStatement(index,printStmt);
                     }else if(parentNode.get() instanceof SwitchEntry){
                         //return expr;
-                        //这里插桩的是 return_value = expr, current value of return_value: expr
+                        // return_value = expr, current value of return_value: expr
                         int index = ((SwitchEntry) parentNode.get()).getStatements().indexOf(stmt);
                         ((SwitchEntry) parentNode.get()).addStatement(index,printStmt);
                     }
@@ -377,17 +377,17 @@ public class ExecutionPathPrinter {
     }
 
     public static BlockStmt generatePathPrintBlock(IfStmt ifStmt){
-        //0. 没有用{}的先加{}
+        //0. {}{}
         Statement thenStmt = ifStmt.getThenStmt();
         if (!thenStmt.isBlockStmt()) {
             BlockStmt newBlock = new BlockStmt();
             newBlock.addStatement(thenStmt);
             ifStmt.setThenStmt(newBlock);
         }
-        //1. 获取 condition
+        //1.  condition
         Expression condition = ifStmt.getCondition();
         condition = new EnclosedExpr(condition);
-        //2. 创建插桩语句
+        //2. 
         Statement printStmt = new ExpressionStmt(new MethodCallExpr(
                 new NameExpr("System.out"),
                 "println",
@@ -397,7 +397,7 @@ public class ExecutionPathPrinter {
                         BinaryExpr.Operator.PLUS
                 ))
         ));
-        //3. 插入到ifStmt对应的thenStmt中
+        //3. ifStmtthenStmt
         thenStmt = ifStmt.getThenStmt();
         BlockStmt newBlock = thenStmt.asBlockStmt();
         newBlock.addStatement(0,printStmt);
@@ -405,7 +405,7 @@ public class ExecutionPathPrinter {
     }
 
     public static Statement generateEnteringLoopPrintStmt(WhileStmt whileStmt){
-        //获取condition，构造print statement
+        //condition，print statement
         Expression condition = whileStmt.getCondition();
         condition = new EnclosedExpr(condition);
         Statement printStmt = new ExpressionStmt(new MethodCallExpr(
@@ -421,7 +421,7 @@ public class ExecutionPathPrinter {
     }
 
     public static Statement generateEnteringLoopPrintStmt(ForStmt forStmt){
-        //获取condition，构造print statement
+        //condition，print statement
         Expression condition = forStmt.getCompare().get();
         condition = new EnclosedExpr(condition);
         Statement printStmt = new ExpressionStmt(new MethodCallExpr(
@@ -438,7 +438,7 @@ public class ExecutionPathPrinter {
     }
 
     public static List<Statement> generateInitialStmtsOfForLoop(ForStmt forStmt){
-        //获取condition，构造print statement
+        //condition，print statement
         List<Statement> pstmts = new ArrayList<>();
         Statement printStmt = null;
         List<Expression> initializations = forStmt.getInitialization();
@@ -482,7 +482,7 @@ public class ExecutionPathPrinter {
     }
 
     public static Statement generateExitingLoopPrintStmt(WhileStmt whileStmt){
-        //获取condition，构造print statement
+        //condition，print statement
         Expression condition = whileStmt.getCondition();
         condition = new EnclosedExpr(condition);
         Statement printStmt = new ExpressionStmt(new MethodCallExpr(
@@ -544,7 +544,7 @@ public class ExecutionPathPrinter {
     }
 
     public static Statement generateExitingLoopPrintStmt(ForStmt forStmt){
-        //获取condition，构造print statement
+        //condition，print statement
         Expression condition = forStmt.getCompare().get();
         condition = new EnclosedExpr(condition);
         Statement printStmt = new ExpressionStmt(new MethodCallExpr(
@@ -559,7 +559,7 @@ public class ExecutionPathPrinter {
         return printStmt;
     }
 
-    //三目运算符的printStmt生成
+    //printStmt
     public static Statement[] generateConditionExprPrintStmt(String varName, ConditionalExpr expr){
         Expression condition = expr.getCondition();
         condition = new EnclosedExpr(condition);
@@ -590,10 +590,10 @@ public class ExecutionPathPrinter {
     }
 
     public static Statement generateReturnValuePrintStmt(ReturnStmt returnStmt){
-        // 获取 return 的表达式（如果有）
+        //  return （）
         Optional<Expression> returnExpr = returnStmt.getExpression();
         String returnValueName = returnExpr.get().toString();
-        // 2. 生成打印语句
+        // 2. 
         EnclosedExpr enclosedExpr = new EnclosedExpr(new NameExpr(returnValueName));
         Statement printStmt = new ExpressionStmt(new MethodCallExpr(
                 new NameExpr("System.out"),
@@ -604,43 +604,43 @@ public class ExecutionPathPrinter {
                         BinaryExpr.Operator.PLUS
                 ))
         ));
-        // 3. 将打印语句和原 return 语句包装成 BlockStmt
+        // 3.  return  BlockStmt
         return printStmt;
     }
 
     private static IfStmt handleIfElseChain(IfStmt ifStmt) {
         List<Expression> preIfConditions = new ArrayList<>();
-        //1. 对第一个IfStmt生成print block
+        //1. IfStmtprint block
         BlockStmt pb = generatePathPrintBlock(ifStmt);
         ifStmt.setThenStmt(pb);
 
-        //2. 把当前condition记录一下
+        //2. condition
         Expression condition = ifStmt.getCondition();
-        condition = new EnclosedExpr(condition);  //condition 都用 括号 包起来
+        condition = new EnclosedExpr(condition);  //condition   
         preIfConditions.add(condition);
 
-        //3. 如果有 else if，迭代处理 else if, 并记录历史 condition
-        //迭代的过程可以看作是一个链表的双指针遍历
+        //3.  else if， else if,  condition
+        //
         Optional<Statement> childElseStmt = ifStmt.getElseStmt();
         IfStmt parentIfStmt = ifStmt;
         while (childElseStmt.isPresent() && childElseStmt.get().isIfStmt()) {
-            //记录当前 condition
+            // condition
             Expression c = childElseStmt.get().asIfStmt().getCondition();
             c = new EnclosedExpr(c);
             preIfConditions.add(c);
-            //生成 pathPrintBlock
+            // pathPrintBlock
             BlockStmt pathPrintBlock = generatePathPrintBlock(childElseStmt.get().asIfStmt());
-            //替换掉childElseStmt的thenStmt
+            //childElseStmtthenStmt
             IfStmt elseIfStmt = childElseStmt.get().asIfStmt();
             elseIfStmt.setThenStmt(pathPrintBlock);
-            //父 IfStmt 更新子 ElseStmt 引用
+            // IfStmt  ElseStmt 
             parentIfStmt.setElseStmt(elseIfStmt);
-            //调整父子指针，以便进行循环
+            //，
             parentIfStmt = parentIfStmt.getElseStmt().get().asIfStmt();
             childElseStmt = parentIfStmt.getElseStmt();
         }
-        //4. 处理最后的 else 语句
-        //4.1 没有elseStmt时，初始化一个，不是Block，改造成Block
+        //4.  else 
+        //4.1 elseStmt，，Block，Block
         if(childElseStmt.isEmpty()) {
             BlockStmt b = new BlockStmt();
             childElseStmt = Optional.of(b);
@@ -651,13 +651,13 @@ public class ExecutionPathPrinter {
             childElseStmt = Optional.of(b);
         }
         BlockStmt elseBlock = childElseStmt.orElseThrow().asBlockStmt();
-        //5.2 用 || 连接 所有 ifConditions并取反 作为else 的Condition
-        // 5.2.1 合并条件： (cond1) || (cond2) || ...
+        //5.2  ||   ifConditions else Condition
+        // 5.2.1 ： (cond1) || (cond2) || ...
         Expression combined = preIfConditions.get(0);
         for (int i = 1; i < preIfConditions.size(); i++) {
             combined = new BinaryExpr(combined, preIfConditions.get(i), BinaryExpr.Operator.OR);
         }
-        //5.2.2 取反，UnaryExpr 是一元表达式，LOGICAL_COMPLEMENT是操作符 （ ! ）
+        //5.2.2 ，UnaryExpr ，LOGICAL_COMPLEMENT （ ! ）
         if(preIfConditions.size()>1){
             combined = new EnclosedExpr(combined);
         }
@@ -671,9 +671,9 @@ public class ExecutionPathPrinter {
                         BinaryExpr.Operator.PLUS
                 ))
         ));
-        //5.3 将打印语句插入到else里
+        //5.3 else
         elseBlock.addStatement(0,printElseStmt);
-        //5.4 插入更新好的 else 语句块到 上一个 IfStmt中
+        //5.4  else   IfStmt
         parentIfStmt.setElseStmt(elseBlock);
 
         return ifStmt;
@@ -687,17 +687,17 @@ public class ExecutionPathPrinter {
         cu.accept(new VoidVisitorAdapter<Void>() {
             @Override
             public void visit(NameExpr n, Void arg) {
-                variables.add(n.getNameAsString());  // 直接变量名（如 a, b）
+                variables.add(n.getNameAsString());  // （ a, b）
                 super.visit(n, arg);
             }
 
             @Override
             public void visit(BinaryExpr n, Void arg) {
-                // 处理比较运算符（>、<、&&、|| 等）
+                // （>、<、&&、|| ）
                 Expression left = n.getLeft();
                 Expression right = n.getRight();
 
-                // 递归检查左右子表达式
+                // 
                 left.accept(this, arg);
                 right.accept(this, arg);
                 super.visit(n, arg);
@@ -709,16 +709,16 @@ public class ExecutionPathPrinter {
     }
 
     /**
-     * 检查代码中所有方法是否包含循环，返回方法名与结果的映射。
+     * ，。
      *
-     * @param ssmp Java 代码字符串
-     * @return Map<方法名, 是否包含循环>
+     * @param ssmp Java 
+     * @return Map<, >
      */
     public static boolean ssmpHasLoopStmt(String ssmp) {
         Map<String, Boolean> result = new HashMap<>();
         try {
             CompilationUnit cu = new JavaParser().parse(ssmp).getResult().get();
-            // 遍历所有方法
+            // 
             MethodDeclaration md = cu.findFirst(MethodDeclaration.class).get();
             return containsLoop(md);
         } catch (Exception e) {

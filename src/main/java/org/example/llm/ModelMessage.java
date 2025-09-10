@@ -12,7 +12,7 @@ public class ModelMessage {
 //    @JsonProperty("reasoning_content")
 //    private String reasoningContent;
 
-    // 无参构造方法，供 Jackson 反序列化使用
+    // ， Jackson 
     public ModelMessage() {
     }
 

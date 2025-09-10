@@ -22,7 +22,7 @@ public class ModelPrompt {
 
     @Getter
     @JsonIgnore
-    //一次连续的对话请求，始终对应同一个测试程序，记录此程序的位置信息。
+    //，，。
     private String codePath = "";
     @JsonIgnore
 //    private static final String CODE2FSF_FEW_SHOT_PATH = "resources/fewShot/prompt.txt";
@@ -37,11 +37,11 @@ public class ModelPrompt {
         ModelPrompt mp = new ModelPrompt();
         mp.model = model;
 
-        // 读取 codeFilePath 指定的文件内容到 programCode
+        //  codeFilePath  programCode
         String programCode = LogManager.file2String(codeFilePath);
 
         if(programCode.isEmpty()) {
-            throw new IOException("程序代码为空或未找到文件: " + codeFilePath);
+            throw new IOException(": " + codeFilePath);
         }
 
         List<ModelMessage> preMessages = mp.assembleMessages(CODE2FSF_FEW_SHOT_PATH);
@@ -52,7 +52,7 @@ public class ModelPrompt {
 
         mp.addMessage(message);
 
-        //记录日志
+        //
         mp.codePath = codeFilePath;
         if(Files.exists(Path.of(LogManager.codePath2LogPath(codeFilePath,model)))) {
             Files.delete(Path.of(LogManager.codePath2LogPath(codeFilePath,model)));
@@ -67,33 +67,33 @@ public class ModelPrompt {
         return mp;
     }
 
-    //通过model和filepath构造DeepSeekRequest
+    //modelfilepathDeepSeekRequest
     public ModelPrompt(String model, String codeFilePath) throws IOException {
         this.model = model;
 
-        // 读取 codeFilePath 指定的文件内容到 programCode
+        //  codeFilePath  programCode
         String programCode = LogManager.file2String(codeFilePath);
 
         if(programCode.isEmpty()) {
-            throw new IOException("程序代码为空或未找到文件: " + codeFilePath);
+            throw new IOException(": " + codeFilePath);
         }
 
         List<ModelMessage> preMessages = assembleMessages(CODE2FSF_FEW_SHOT_PATH);
         this.messages.addAll(preMessages);
 
-        String userContent = "为下面的代码生成FSF:\n" + "```" + "\n" + programCode + "\n" + "```";
+        String userContent = "FSF:\n" + "```" + "\n" + programCode + "\n" + "```";
         ModelMessage message = new ModelMessage("user", userContent);
 
         this.addMessage(message);
 
-        //记录日志
+        //
         this.codePath = codeFilePath;
         String logPath = LogManager.codePath2LogPath(codeFilePath, model);
         LogManager.appendMessage(logPath,message);
 
     }
 
-    //测试用构造函数
+    //
     public ModelPrompt(String model, ModelMessage message) {
         this.model = model;
         this.messages.add(message);
@@ -104,7 +104,7 @@ public class ModelPrompt {
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = br.readLine()) != null) {
-                //读取system部分内容，封装成一个DeepSeekRequestMessage
+                //system，DeepSeekRequestMessage
                 if(line.contains("start role system")) {
                     StringBuilder sb = new StringBuilder();
                     line = br.readLine();
@@ -115,7 +115,7 @@ public class ModelPrompt {
                     ModelMessage systemRoleMessage = new ModelMessage("system",sb.toString());
                     preMessages.add(systemRoleMessage);
                 }
-                //读取user部分内容，封装成一个DeepSeekRequestMessage
+                //user，DeepSeekRequestMessage
                 else if(line.contains("start role assistant")) {
                     StringBuilder sb = new StringBuilder();
                     line = br.readLine();

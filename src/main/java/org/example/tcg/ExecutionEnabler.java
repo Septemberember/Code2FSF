@@ -54,7 +54,7 @@ public class ExecutionEnabler {
 
     public static String generateMainMdUnderExpr(String T, List<String> preconditions, String ssmp) {
         String conExpr = constructConstrain(T, preconditions);
-        System.out.println("本次生成测试用例的约束条件为：" + conExpr);
+        System.out.println("：" + conExpr);
         if(ExecutionPathPrinter.ssmpHasLoopStmt(ssmp)){
             System.out.println("Testcase generating randomly!");
             return generateMainMdRandomly(conExpr, ssmp);
@@ -65,28 +65,28 @@ public class ExecutionEnabler {
     }
 
     public static String buildMainString(String ssmp,HashMap<String,String> testCaseMap){
-        //1. 解析program
+        //1. program
         JavaParser parser = new JavaParser();
         CompilationUnit cu = parser.parse(ssmp).getResult().get();
         String className = cu.getTypes().get(0).getNameAsString();
         MethodDeclaration md = getFirstStaticMethod(ssmp);
 
         List<Parameter> parameters = md.getParameters();
-        //2. 组装main函数定义的开头
+        //2. main
         StringBuilder builder = new StringBuilder();
         builder.append("public static void main(String[] args) {\n");
         if(testCaseMap == null){
-            System.out.println("生成main函数失败,因为没有生成正确的testCaseMap");
+            System.out.println("main,testCaseMap");
             return null;
         }
 
-        //4. 根据 testCase来组装main函数中的调用 static 方法前的参数定义
+        //4.  testCasemain static 
         if (parameters != null) {
             for (Parameter parameter : parameters) {
                 System.out.println(parameter.getName().toString());
                 String value = testCaseMap.get(parameter.getName().asString());
 
-                //可能是因为表达式与某个变量无关导致未赋值
+                //
                 if(value == null){
                     value = getDefaultValueOfType(parameter.getTypeAsString());
                 }
@@ -101,14 +101,14 @@ public class ExecutionEnabler {
                         .append(";\n");
             }
         }
-        //5.组装函数调用语句
+        //5.
         if (!md.getType().isVoidType()) {
             builder.append("    ").append(md.getType()).append(" result = ");
         }
 
         builder.append(className).append(".").append(md.getNameAsString()).append("(");
         for (int i = 0; i < parameters.size(); i++) {
-            if (i > 0) builder.append(", ");//第一个参数后加,
+            if (i > 0) builder.append(", ");//,
             builder.append(parameters.get(i).getNameAsString());
         }
         builder.append(");\n");
@@ -122,17 +122,17 @@ public class ExecutionEnabler {
         MethodDeclaration md = getFirstStaticMethod(ssmp);
         HashMap<String, String> testCaseMap = generateTestCaseRandomlyUnderExpr(expr, md);
         if(testCaseMap == null){
-            System.out.println("生成main函数失败,因为没有生成正确的testCaseMap");
+            System.out.println("main,testCaseMap");
             return null;
         }
         return buildMainString(ssmp,testCaseMap);
     }
 
     public static String generateMainMdByZ3(String expr,String ssmp){
-        //1. 解析program
+        //1. program
         HashMap<String, String> testCaseMap = TestCaseAutoGenerator.generateTestCaseByZ3(expr,ssmp);
         if(testCaseMap.get("ERROR") != null){
-            System.out.println(testCaseMap.get("ERROR") + "生成main函数失败,因为没有生成正确的testCaseMap");
+            System.out.println(testCaseMap.get("ERROR") + "main,testCaseMap");
             return "ERROR:" + testCaseMap.get("ERROR");
         }
         return buildMainString(ssmp,testCaseMap);
@@ -140,17 +140,17 @@ public class ExecutionEnabler {
 
     public static MethodDeclaration getFirstStaticMethod(String program){
         JavaParser parser = new JavaParser();
-        // 解析Java文件
+        // Java
         CompilationUnit cu = parser.parse(program).getResult().get();
 
-        // 获取类名
+        // 
         String className = cu.getTypes().get(0).getNameAsString();
         Optional<ClassOrInterfaceDeclaration> classOpt = cu.getClassByName(className);
         if (classOpt.isEmpty()) {
             return null;
         }
 
-        // 查找第一个静态方法（非main方法）
+        // （main）
         Optional<MethodDeclaration> staticMethodOpt = cu.findAll(MethodDeclaration.class).stream()
                 .filter(m -> m.isStatic() && !m.getNameAsString().equals("main"))
                 .findFirst();
@@ -164,7 +164,7 @@ public class ExecutionEnabler {
                 .filter(m -> m.isStatic() && !m.getNameAsString().equals("main"))
                 .findFirst();
         if (staticMethodOpt.isEmpty()) {
-            System.out.println("未找到静态方法，跳过: " + className);
+            System.out.println("，: " + className);
             return null;
         }
         MethodDeclaration staticMethod = staticMethodOpt.get();

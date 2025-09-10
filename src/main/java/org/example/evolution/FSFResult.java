@@ -2,7 +2,7 @@ package org.zed.evolution;
 
 import lombok.Data;
 
-//定一个枚举类型内部类
+//
 enum FSFValidationStatus {
     SUCCESS,
     UNEXPECTED_ERROR,

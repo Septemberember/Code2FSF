@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.List;
 
-//采用 model: "deepseek-chat" 的方式得到的json回复对应的对象
+// model: "deepseek-chat" json
 public class ModelResponse {
     private String id;
     private String object;
@@ -25,7 +25,7 @@ public class ModelResponse {
     public ModelResponse() {
 
     }
-    //通过json直接构造对象
+    //json
     public static ModelResponse fromJson(String json) {
         try {
             return objectMapper.readValue(json, ModelResponse.class);

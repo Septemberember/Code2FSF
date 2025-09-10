@@ -45,11 +45,11 @@ public class CodeGenerator {
         prompt.setModel(model);
         StringBuilder sb = new StringBuilder();
         sb.append("Please modify the following code according to the modified FSF:\n");
-        //原代码插入
+        //
         sb.append("```Code\n");
         sb.append(originalCode);
         sb.append("```\n");
-        //原FSF插入
+        //FSF
         sb.append("```Original FSF\n");
         for (int i = 0; i < originalFSF.size(); i++) {
             sb.append("T").append(i).append(": ").append(originalFSF.get(i)[0]);
@@ -57,7 +57,7 @@ public class CodeGenerator {
             sb.append("D").append(i).append(": ").append(originalFSF.get(i)[1]);
             sb.append("\n\n");
         }
-        //modified FSF插入
+        //modified FSF
         sb.append("```Modified FSF\n");
         for (int i = 0; i < modifiedFSF.size(); i++) {
             sb.append("T").append(i).append(": ").append(modifiedFSF.get(i)[0]);
@@ -85,7 +85,7 @@ public class CodeGenerator {
         if(total < 2){
             return null;
         }
-        //生成两个0-total-1的随机数
+        //0-total-1
         int randomIndex1 = (int) (Math.random() * total);
         int randomIndex2 = (int) (Math.random() * total);
         while(randomIndex1 == randomIndex2){
@@ -98,7 +98,7 @@ public class CodeGenerator {
         return modifiedFSF;
     }
 
-    //将两个随机的TD合并成一个新的TD，T 用 || 连接，公用其中一个D
+    //TDTD，T  || ，D
     private List<String[]> merge2TD(List<String[]> originalFSF){
         List<String[]> modifiedFSF = new ArrayList<>(originalFSF);
         int total = originalFSF.size();
@@ -118,7 +118,7 @@ public class CodeGenerator {
         return modifiedFSF;
     }
 
-    //随机将一个分支替换为抛出异常
+    //
     private List<String[]> setRandomDAsException(List<String[]> originalFSF){
         List<String[]> modifiedFSF = new ArrayList<>(originalFSF);
         int total = originalFSF.size();
@@ -185,12 +185,12 @@ public class CodeGenerator {
     }
 
     private TBFVResult validate1Path(String ssmp, String mainMd, List<String> prePathConstrains, String T, String D) throws Exception {
-        //给测试函数插桩
+        //
         String addedPrintProgram = addPrintStmt(ssmp);
-        //组装可执行程序
+        //
         String runnableProgram = insertMainMdInSSMP(addedPrintProgram, mainMd);
         System.out.println("runnableProgram: " + runnableProgram);
-        //拿到SpecUnit
+        //SpecUnit
         SpecUnit su = new SpecUnit(runnableProgram,T,D,prePathConstrains);
         TBFVResult r = Z3Solver.callZ3Solver(su);
         System.out.println("verification result: " + r);
@@ -200,7 +200,7 @@ public class CodeGenerator {
     private TDResult validateExceptionPath(String ssmp, String t) {
         String mainMd = generateMainMdUnderExpr(t,null,ssmp);
         if(mainMd == null || mainMd.isEmpty() || mainMd.startsWith("ERROR")){
-            System.out.println("输入约束条件[" + t + "]下生成测试用例失败, 默认为异常路径");
+            System.out.println("[" + t + "], ");
             return TDResult.createSuccessResult();
         }
         try {
@@ -231,8 +231,8 @@ public class CodeGenerator {
             return validateExceptionPath(ssmp, T);
         }
         while(countOfPathValidated < maxRoundsOf1CoupleOfTD){
-            //对一个TD下所有路径验证
-            //生成main方法，即测试用例
+            //TD
+            //main，
 
             String testCase = generateMainMdUnderExpr(T,prePathConstrains,ssmp);
             historyTestcases.add(testCase);
@@ -450,7 +450,7 @@ public class CodeGenerator {
     public static void runConversationForDataset(int maxRounds,ModelConfig mc, String datasetDir,String experimentName) throws Exception {
         CodeGenerator gt = new CodeGenerator();
         Set<String> categories = LogManager.getCategoriesInDatasetDir(datasetDir);
-        //如果没有categories,那当前目录名作为一个类别,处理单独一个类别实验时起作用
+        //categories,,
         if(categories.isEmpty()){
             categories.add(datasetDir.substring(datasetDir.lastIndexOf("/") + 1));
             datasetDir = datasetDir.substring(0, datasetDir.lastIndexOf("/"));
@@ -468,10 +468,10 @@ public class CodeGenerator {
         }
     }
     public void runEvolutionTask(String targetFile, ModelConfig mc, int maxRounds) throws IOException {
-        //检查targetFile是文件还是目录
+        //targetFile
         boolean isDirectory = Files.isDirectory(Path.of(targetFile));
         if(isDirectory){
-            //如果是目录，则遍历目录下所有的txt文件
+            //，txt
             Files.list(Path.of(targetFile)).forEach(path -> {
                 String logPath = LogManager.evolutionTaskPath2LogPath(path.toString(), mc.getModelName());
                 String failedPath = LogManager.filePath2SuccPath(path.toString());
@@ -513,7 +513,7 @@ public class CodeGenerator {
         }
     }
 
-    // 调用 google-java-format.jar 格式化代码
+    //  google-java-format.jar 
     private static String runFormatter(String code) throws IOException, InterruptedException {
         ProcessBuilder pb = new ProcessBuilder("java", "-jar", "resources/google-java-format.jar", "-");
         Process proc = pb.start();
@@ -534,12 +534,12 @@ public class CodeGenerator {
 
         int exitCode = proc.waitFor();
         if (exitCode != 0) {
-            throw new RuntimeException("google-java-format 执行失败");
+            throw new RuntimeException("google-java-format ");
         }
         return formatted;
     }
 
-    // 从文本中提取 Original Code 和 Modified Code
+    //  Original Code  Modified Code
     private static String[] extractCode(String experimentDir,String className,String modelName) {
         String taskFilePath = experimentDir + "/succDataset/" + className + ".txt";
         String originalCode = LogManager.getOriginalCodeFromEvoTaskFile(taskFilePath);
@@ -547,7 +547,7 @@ public class CodeGenerator {
         return new String[]{originalCode, modifiedCode};
     }
 
-    // 计算基于行的 FDR
+    //  FDR
     private static double calcDiffRateLines(String codeBefore, String codeAfter)
             throws IOException, InterruptedException {
         String formattedBefore = runFormatter(codeBefore);
@@ -556,7 +556,7 @@ public class CodeGenerator {
         List<String> beforeLines = Arrays.asList(formattedBefore.split("\\R"));
         List<String> afterLines = Arrays.asList(formattedAfter.split("\\R"));
 
-        // 生成 diff
+        //  diff
         List<String> diff = unifiedDiff(beforeLines, afterLines);
 
         long changedLines = diff.stream()
@@ -568,13 +568,13 @@ public class CodeGenerator {
         return totalLines > 0 ? (double) changedLines / totalLines : 0.0;
     }
 
-    // 简单实现 unified diff（基于 java-diff-utils 思路）
+    //  unified diff（ java-diff-utils ）
     private static List<String> unifiedDiff(List<String> before, List<String> after) {
         List<String> diff = new ArrayList<>();
         int m = before.size(), n = after.size();
         int[][] dp = new int[m + 1][n + 1];
 
-        // LCS 动态规划
+        // LCS 
         for (int i = m - 1; i >= 0; i--) {
             for (int j = n - 1; j >= 0; j--) {
                 if (before.get(i).equals(after.get(j))) {
@@ -585,7 +585,7 @@ public class CodeGenerator {
             }
         }
 
-        // 回溯输出 diff
+        //  diff
         int i = 0, j = 0;
         while (i < m && j < n) {
             if (before.get(i).equals(after.get(j))) {
@@ -610,13 +610,13 @@ public class CodeGenerator {
         return diff;
     }
 
-    // 简单的 Java Tokenizer（不完全，但能覆盖常见情况）
+    //  Java Tokenizer（，）
     private static List<String> tokenizeJava(String code) {
         Pattern pattern = Pattern.compile(
-                "[A-Za-z_][A-Za-z0-9_]*"   // 标识符 / 关键字
-                        + "|\\d+"                 // 数字
-                        + "|==|!=|<=|>=|&&|\\|\\|" // 复合运算符
-                        + "|[{}();.,+\\-*/<>=%]"   // 单字符运算符/符号
+                "[A-Za-z_][A-Za-z0-9_]*"   //  / 
+                        + "|\\d+"                 // 
+                        + "|==|!=|<=|>=|&&|\\|\\|" // 
+                        + "|[{}();.,+\\-*/<>=%]"   // /
         );
         Matcher matcher = pattern.matcher(code);
         List<String> tokens = new ArrayList<>();
@@ -626,7 +626,7 @@ public class CodeGenerator {
         return tokens;
     }
 
-    // Levenshtein 编辑距离
+    // Levenshtein 
     private static int levenshtein(List<String> a, List<String> b) {
         int m = a.size(), n = b.size();
         int[][] dp = new int[m + 1][n + 1];
@@ -663,7 +663,7 @@ public class CodeGenerator {
         return dp[m][n];
     }
 
-    // 计算 Token 级差异率
+    //  Token 
     public static double calcTokenDiffRate(String codeBefore, String codeAfter) {
         List<String> tokensBefore = tokenizeJava(codeBefore);
         List<String> tokensAfter = tokenizeJava(codeAfter);
@@ -686,7 +686,7 @@ public class CodeGenerator {
         System.out.printf("Class: %s, FDR (Lines): %.2f%%, FDR (Tokens): %.2f%%\n",
                 className, fdrLines * 100, fdrTokens * 100);
 
-        //创建一个结果文件.txt,存放结果
+        //.txt,
         String resultFilePath = experimentDir + "/fdr_results.txt";
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(resultFilePath, true))) {
             writer.write(String.format("Class: %s, linesBefore: %d, FDR (Lines): %.2f%%, FDR (Tokens): %.2f%%\n",
@@ -709,7 +709,7 @@ public class CodeGenerator {
             return;
         }
         String resultFilePath = experimentDir + modelName + ".txt";
-        //如果结果文件已存在，删除它
+        //，
         if(Files.exists(Path.of(resultFilePath))){
             Files.delete(Path.of(resultFilePath));
         }
@@ -724,7 +724,7 @@ public class CodeGenerator {
             String experimentName = "resources/experiment/08110" + i + "-evolution";
 
             for (String category : categories) {
-                System.out.println("正在处理实验 --" + experimentName + " -- " + category);
+                System.out.println(" --" + experimentName + " -- " + category);
                 String experimentDir = experimentName + "/" + category;
                 try {
 //                    fdrTaskForDir(experimentDir,"deepseek-chat");
@@ -738,7 +738,7 @@ public class CodeGenerator {
         }
     }
 
-    // 计算一行是否“取自”原代码
+    // “”
     private static boolean isDerived(String line, List<String> beforeLines, double threshold) {
         for (String before : beforeLines) {
             int dist = levenshtein(line, before);
@@ -768,7 +768,7 @@ public class CodeGenerator {
         System.out.printf("Class: %s, Derived Lines: %d out of %d (%.2f%%)\n",
                 className, derivedCount, afterLines.size(), (double) derivedCount / afterLines.size() * 100);
 
-        //创建一个结果文件.txt,存放结果
+        //.txt,
         String resultFilePath = experimentDir + "/derived_lines_results.txt";
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(resultFilePath, true))) {
             writer.write(String.format("Class: %s, Derived Lines: %d out of %d (%.2f%%)\n",
@@ -791,7 +791,7 @@ public class CodeGenerator {
             return;
         }
         String resultFilePath = experimentDir + modelName + "_derived_lines.txt";
-        //如果结果文件已存在，删除它
+        //，
         if(Files.exists(Path.of(resultFilePath))){
             Files.delete(Path.of(resultFilePath));
         }
@@ -828,7 +828,7 @@ public class CodeGenerator {
                 }
             }
         }
-        //创建一个结果文件.txt,存放结果
+        //.txt,
         String resultFilePath = datasetDir + "/summary.csv";
 
         statisticMap.forEach((k,v)->{

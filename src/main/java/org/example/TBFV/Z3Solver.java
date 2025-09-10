@@ -25,14 +25,14 @@ public class Z3Solver {
             System.out.println(line);
         }
 
-        // 读取错误信息
+        // 
         BufferedReader errReader = new BufferedReader(new InputStreamReader(process.getErrorStream()));
         while((line = errReader.readLine()) != null){
             System.err.println("Error: " + line);
             errorInfo.append(line).append("\n");
         }
 
-        // 等待进程结束
+        // 
         try {
             process.waitFor();
         } catch (InterruptedException e) {
@@ -40,8 +40,8 @@ public class Z3Solver {
         }
 
         if(res == null && !errorInfo.toString().isEmpty()){
-            System.out.println("没有收到TBFV给出的 result");
-            res = new TBFVResult(-1,"z3验证器验证过程中报错：\n" + errorInfo, "");
+            System.out.println("TBFV result");
+            res = new TBFVResult(-1,"z3：\n" + errorInfo, "");
         }
         return res;
     }
@@ -75,7 +75,7 @@ public class Z3Solver {
             errorInfo.append(line).append("\n");
         }
 
-        // 等待进程结束
+        // 
         try {
             process.waitFor();
         } catch (InterruptedException e) {
@@ -83,8 +83,8 @@ public class Z3Solver {
         }
 
         if(res == null && !errorInfo.toString().isEmpty()){
-            System.out.println("没有收到TBFV给出的 result");
-            res = new TBFVResult(-1,"z3验证器验证过程中报错：\n" + errorInfo, "");
+            System.out.println("TBFV result");
+            res = new TBFVResult(-1,"z3：\n" + errorInfo, "");
         }
         return res;
     }
@@ -106,22 +106,22 @@ public class Z3Solver {
             System.out.println(line);
         }
 
-        // 读取错误信息
+        // 
         BufferedReader errReader = new BufferedReader(new InputStreamReader(process.getErrorStream()));
         while((line = errReader.readLine()) != null){
             System.err.println("Error: " + line);
             errorInfo.append(line).append("\n");
         }
 
-        // 等待进程结束
+        // 
         try {
             process.waitFor();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
         if(res == null){
-            System.out.println("没有收到TBFV给出的 result");
-            res = new TBFVResult(-1,"z3验证器验证过程中报错：\n" + errorInfo, "");
+            System.out.println("TBFV result");
+            res = new TBFVResult(-1,"z3：\n" + errorInfo, "");
         }
         return res;
     }

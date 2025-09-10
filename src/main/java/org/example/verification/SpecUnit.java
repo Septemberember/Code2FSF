@@ -11,7 +11,7 @@ import java.util.List;
 @Data
 public class SpecUnit {
     private String program = "";
-    // TDs存储 T&D组
+    // TDs T&D
     @JsonProperty("T")
     private String T;
     @JsonProperty("D")

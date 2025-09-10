@@ -16,12 +16,12 @@ public class TransWorker {
     }
 
     public static String pickSSMPCodes(String sourceCodesPath) throws Exception {
-        //0. 准备工作目录和源代码
+        //0. 
         initTransWork(sourceCodesPath);
-        //1. 给程序分类
+        //1. 
         TransFileOperator.classifySourceCodes();
         TransFileOperator.addStaticFlag4OneNormalMdInDefaultDir();
-        // 清理中间文件
+        // 
         TransFileOperator.cleanUnusableFilesInTrans();
         return ONE_STATIC_MD_CODES_DIR;
     }

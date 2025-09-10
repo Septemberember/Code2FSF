@@ -15,7 +15,7 @@ public class TBFVResult {
     private String pathConstrain;
 
     public TBFVResult(String json) {
-        //将json转化为SpecUnit对象
+        //jsonSpecUnit
         ObjectMapper mapper = new ObjectMapper();
         try {
             TBFVResult res = mapper.readValue(json, TBFVResult.class);
@@ -23,7 +23,7 @@ public class TBFVResult {
             this.counterExample = res.getCounterExample();
             this.pathConstrain = res.getPathConstrain();
         } catch (Exception e) {
-            throw new RuntimeException("JSON解析失败: " + e.getMessage(), e);
+            throw new RuntimeException("JSON: " + e.getMessage(), e);
         }
     }
     public TBFVResult(int status, String counterExample, String pathConstrain) {

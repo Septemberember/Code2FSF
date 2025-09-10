@@ -29,7 +29,7 @@ public class FSFGenerator {
     static final String RESET = "\u001B[0m";
     private static final String LLMS_CONFIG_DIR = "resources/config";
 
-    //定一个枚举类型内部类
+    //
     public enum TBFVValidationResultType {
         SUCCESS,
         REGENERATE,
@@ -58,7 +58,7 @@ public class FSFGenerator {
         }
     }
 
-    //处理输入参数，写入HashMap方便读取
+    //，HashMap
     public static HashMap<String,String> handleArgs(String[] args){
         HashMap<String,String> argsMap = new HashMap<>();
         for (int i = 0; i < args.length - 1; i++) {
@@ -77,18 +77,18 @@ public class FSFGenerator {
                 argsMap.put("experimentName", args[i + 1]);
             }
         }
-        //检查输入参数，设置默认值
+        //，
         checkArgsAndSetDefault(argsMap);
         return argsMap;
     }
 
     public static TBFVResult validate1Path(String ssmp, String mainMd, List<String> prePathConstrains, String T, String D) throws Exception {
-        //给测试函数插桩
+        //
         String addedPrintProgram = addPrintStmt(ssmp);
-        //组装可执行程序
+        //
         String runnableProgram = insertMainMdInSSMP(addedPrintProgram, mainMd);
         System.out.println("runnableProgram: " + runnableProgram);
-        //拿到SpecUnit
+        //SpecUnit
         SpecUnit su = new SpecUnit(runnableProgram,T,D,prePathConstrains);
         TBFVResult r = Z3Solver.callZ3Solver(su);
         System.out.println("verification result: " + r);
@@ -96,9 +96,9 @@ public class FSFGenerator {
     }
 
     public static String FSFValidationTask(String ssmp,List<String[]> FSF){
-        //对FSF中T的互斥性进行验证
+        //FSFT
         FSFValidationUnit fsfValidationUnit = new FSFValidationUnit(ssmp, FSF);
-        //互斥性以及完备性
+        //
         TBFVResult exclusivityAndCompltenessTBFVResult = null;
         try {
             exclusivityAndCompltenessTBFVResult = callZ3Solver(fsfValidationUnit);
@@ -106,11 +106,11 @@ public class FSFGenerator {
             throw new RuntimeException(e);
         }
         if(exclusivityAndCompltenessTBFVResult == null || exclusivityAndCompltenessTBFVResult.getStatus() == -1){
-            //FSF解析失败，都没到验证完备性和互斥性那一步
+            //FSF，
             return "It was found that T in the FSF does not meet the requirements and causes a parsing failure. Please carefully review my original instructions and regenerate the FSF accordingly.";
         }
         if(exclusivityAndCompltenessTBFVResult.getStatus() == -2){
-            //FSF解析失败，都没到验证完备性和互斥性那一步
+            //FSF，
             return "There exists " + exclusivityAndCompltenessTBFVResult.getCounterExample() + " in the FSF, and it is a unsatisfiable，please regenerate the FSF，avoiding contains this kind of unsatisfiable T!";
         }
         if(exclusivityAndCompltenessTBFVResult.getStatus() == 2){
@@ -147,19 +147,19 @@ public class FSFGenerator {
         List<String> prePathConstrains = new ArrayList<>();
 
         if(D.contains("Exception")){
-            System.out.println("D 为 Exception");
+            System.out.println("D  Exception");
             String vepr = validateExceptionPath(ssmp, T);
             if(vepr.contains("SUCCESS")){
-                finalResultsOfTDS.add(new TBFVResult(3,"Exception路径符合预期",""));
+                finalResultsOfTDS.add(new TBFVResult(3,"Exception",""));
                 return "SUCCESS";
             }
-            //需要提示LLM，重新生成该TD组
+            //LLM，TD
             return "Under T :" + T + "，" + "specifically when the variables are assigned like the main method showing: " + vepr + "No exception was thrown by the program. Think again and regenerate";
         }
 
         while(countOfPathValidated < maxRoundsOf1CoupleOfTD){
-            //对一个TD下所有路径验证
-            //生成main方法，即测试用例
+            //TD
+            //main，
 
             String mainMd = generateMainMdUnderExpr(T,prePathConstrains,ssmp);
             historyTestcases.add(mainMd);
@@ -259,8 +259,8 @@ public class FSFGenerator {
     }
 
     public static boolean isTotallyVerified(List<TBFVResult> finalResultsOfEveryCoupleOfTD){
-        //对整个验证任务的评价，不应该局限在最后一个验证任务结果上
-        //正确的方法是，要记录所有TD组验证的结果,逐个遍历
+        //，
+        //，TD,
         boolean totallyVerified = true;
         for(TBFVResult res : finalResultsOfEveryCoupleOfTD){
             if(res.getStatus() == 1){
@@ -280,7 +280,7 @@ public class FSFGenerator {
         String logPath = LogManager.codePath2LogPath(inputFilePath, modelName);
         LogManager.appendMessage(logPath,fsfPrompt.getMessages().get(fsfPrompt.getMessages().size() - 1));
         String pureProgram = LogManager.file2String(inputFilePath);
-        //确保是ssmp
+        //ssmp
         String ssmp = TransWorker.trans2SSMP(pureProgram);
         if(ssmp == null || ssmp.isEmpty()){
             System.err.println("Change the program to ssmp failed!");
@@ -300,9 +300,9 @@ public class FSFGenerator {
                 LogManager.appendMessage(logPath,retryMsg);
                 continue;
             }
-            //将回复msg写入deepseekRequest
+            //msgdeepseekRequest
             fsfPrompt.getMessages().add(respMsg);
-            //将回复写入日志
+            //
             LogManager.appendMessage(logPath,respMsg);
             System.out.println("conversation round " + count + " is over!\n");
             try{
@@ -319,9 +319,9 @@ public class FSFGenerator {
                 return false;
             }
 
-            //对FSF中常量如 Integer.MAX_VALUE 等进行替换
+            //FSF Integer.MAX_VALUE 
             TestCaseAutoGenerator.substituteConstantValueInFSF(FSF);
-            //对FSF的形式进行检查
+            //FSF
             TBFVResult formTBFVResult = checkBadFormFSF(FSF,ssmp);
             if(formTBFVResult.getStatus() == 1){
                 String msgContent = "There exist variables which do not belong to input params of the program:" + formTBFVResult.getCounterExample() + " please regenerate the FSF, avoiding these variables!";
@@ -332,7 +332,7 @@ public class FSFGenerator {
                 continue;
             }
 
-            //对FSF中T的互斥性进行验证
+            //FSFT
             String FSFValidationResult = FSFValidationTask(ssmp,FSF);
             if(!FSFValidationResult.equals("SUCCESS")){
                 ModelMessage msg = new ModelMessage("user", FSFValidationResult);
@@ -342,9 +342,9 @@ public class FSFGenerator {
             }
             String T = "";
             String D = "";
-            List<TBFVResult> finalResultsOfEveryCoupleOfTD = new ArrayList<>();//记录每个TD对的验证结果
-//            boolean regenerateFlag = false; //标记是否需要重新生成FSF
-//            //对每一个TD进行验证
+            List<TBFVResult> finalResultsOfEveryCoupleOfTD = new ArrayList<>();//TD
+//            boolean regenerateFlag = false; //FSF
+//            //TD
 //            for(String[] td : FSF) {
 //                T = td[0];
 //                D = td[1];
@@ -375,7 +375,7 @@ public class FSFGenerator {
 //                break;
 //            }
 //            if(regenerateFlag){
-//                //因为某些原因，需要重新进行一轮对话生成FSF
+//                //，FSF
 //                continue;
 //            }
 //            String verifyType = isTotallyVerified(finalResultsOfEveryCoupleOfTD) ? "totally verified!" : "Iteration_N verified!";
@@ -385,7 +385,7 @@ public class FSFGenerator {
 //            return true;
             TBFVValidationResultType tbfvValidationResultType = validateFSF(FSF, ssmp, fsfPrompt, logPath, maxRoundsOf1CoupleOfTD, historyTestcases, finalResultsOfEveryCoupleOfTD);
             if(tbfvValidationResultType == TBFVValidationResultType.REGENERATE){
-                //需要重新生成FSF
+                //FSF
                 continue;
             }
             if(tbfvValidationResultType == TBFVValidationResultType.OVERTIME_ERROR){
@@ -408,13 +408,13 @@ public class FSFGenerator {
     private static String validateExceptionPath(String ssmp, String t) {
         String mainMd = generateMainMdUnderExpr(t,null,ssmp);
         if(mainMd == null || mainMd.isEmpty() || mainMd.startsWith("ERROR")){
-            System.out.println("输入约束条件[" + t + "]下生成测试用例失败, 默认为异常路径");
+            System.out.println("[" + t + "], ");
             return "SUCCESS";
         }
         try {
             TBFVResult TBFVResult = validate1Path(ssmp, mainMd, null, t, "Exception");
             if(TBFVResult == null){
-                System.out.println("验证过程发生错误，没有返回result");
+                System.out.println("，result");
                 return "ERROR: No result returned during validation!";
             }
             if(TBFVResult.getStatus() == 0){
@@ -430,7 +430,7 @@ public class FSFGenerator {
     }
 
     public static void runConversationForDir(int maxRounds, ModelConfig mc, String inputDir) throws Exception {
-        // 遍历输入目录下的所有文件
+        // 
         int taskCount = 0;
         String[] filePaths = LogManager.fetchSuffixFilePathInDir(inputDir,".java");
         int totalTaskNum = filePaths.length;
@@ -441,7 +441,7 @@ public class FSFGenerator {
             String handledFilePath = LogManager.filePath2SuccPath(filePath);
             countTotal++;
             if(Files.exists(Path.of(canNotHandleFilePath))){
-                System.out.println("文件已存在于failedDataset目录中，跳过");
+                System.out.println("failedDataset，");
                 countFail++;
                 continue;
             }
@@ -474,7 +474,7 @@ public class FSFGenerator {
 
     public static void runConversationForDataset(int maxRounds,ModelConfig mc, String datasetDir,String experimentName) throws Exception {
         Set<String> categories = LogManager.getCategoriesInDatasetDir(datasetDir);
-        //如果没有categories,那当前目录名作为一个类别,处理单独一个类别实验时起作用
+        //categories,,
         if(categories.isEmpty()){
             categories.add(datasetDir.substring(datasetDir.lastIndexOf("/") + 1));
             datasetDir = datasetDir.substring(0, datasetDir.lastIndexOf("/"));
@@ -496,7 +496,7 @@ public class FSFGenerator {
     public static void makeSureModelIsAvailable(String model) {
         if(!modelConfigs.containsKey(model)){
             System.out.println("Model " + model + " is not available. Please check your model configuration.");
-            System.out.println("\u001B[33m**当前支持的模型有:\u001B[0m");
+            System.out.println("\u001B[33m**:\u001B[0m");
             for(String m : modelConfigs.keySet()){
                 System.out.println("\u001B[33m**\t" + m + "\u001B[0m" );
             }
@@ -504,10 +504,10 @@ public class FSFGenerator {
         }
     }
 
-    //获取到 FSF 的 所有 T 中的未知变量（即，非入参变量）
+    // FSF   T （，）
     public static List<String> fetchUnknownVarInFSF(List<String[]> FSF, String ssmp){
         List<String> unKnownVars = new ArrayList<>();
-        //拿到params
+        //params
         List<Parameter> paramList = ExecutionEnabler.getParamsOfOneStaticMethod(ssmp);
         if(paramList == null || paramList.isEmpty()){
             return unKnownVars;
@@ -518,7 +518,7 @@ public class FSFGenerator {
         }
 //        params.add("return_value");
 //        params.add("Exception");
-        //遍历FSF中的变量
+        //FSF
         Set<String> varsInFSF = new HashSet<>();
         for(String[] td : FSF){
             String T = td[0];
@@ -558,7 +558,7 @@ public class FSFGenerator {
         if(!initLogSucc) return;
 
         ModelConfig mc = initModel(model);
-        //先清理一下旧日志
+        //
         LogManager.cleanLogOfModel(model);
 
         if(inputDir == null || inputDir.isEmpty()){

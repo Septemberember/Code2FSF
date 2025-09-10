@@ -27,7 +27,7 @@ public class ModelClient {
     }
 
     public ModelResponse call(ModelPrompt prompt) throws IOException {
-        // 转换为JSON
+        // JSON
         ObjectMapper objectMapper = new ObjectMapper();
         String requestBody = objectMapper.writeValueAsString(prompt);
 //        System.out.println("requestBody = " +requestBody);
