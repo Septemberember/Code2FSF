@@ -1,0 +1,470 @@
+public class GyroHealthCheck_Mutant3 {
+    /*@ spec_public*/ public static int gyroHealthCheck(int x, int y, int z) {
+        int diffXY = x - y;
+        if (diffXY < 0) diffXY = -diffXY;
+        int diffYZ = y - z;
+        if (diffYZ < 0) diffYZ = -diffYZ;
+        int diffXZ = x - z;
+        if (diffXZ < 0) diffXZ = -diffXZ;
+        int alarm = 0;
+        //@ ensures \result == 1 <==> diffXY > 10 && diffYZ > 10 && diffXZ > 10;
+        //@ ensures \result == 0 <==> !(diffXY > 10 && diffYZ > 10 && diffXZ > 10);
+        if (diffXY > 10 && diffYZ > 10 && diffXZ > 10) {
+            alarm = 1;
+        }
+        return alarm;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GyroHealthCheck_Mutant3.java:10: verify: The prover cannot establish an assertion (Postcondition) in method gyroHealthCheck
+        //@ ensures \result == 1 <==> diffXY > 10 && diffYZ > 10 && diffXZ > 10;
+            ^
+1 verification failure
+
+==============================
+public class GyroHealthCheck_Mutant3 {
+    /*@ spec_public*/ public static int gyroHealthCheck(int x, int y, int z) {
+        int diffXY = x - y;
+        if (diffXY < 0) diffXY = -diffXY;
+        int diffYZ = y - z;
+        if (diffYZ < 0) diffYZ = -diffYZ;
+        int diffXZ = x - z;
+        if (diffXZ < 0) diffXZ = -diffXZ;
+        int alarm = 0;
+        //@ ensures \result == 1 <==> diffXY > 10 && diffYZ > 10 && diffXZ > 10;  
+        //@ ensures \result == 0 <==> !(diffXY > 10 && diffYZ > 10 && diffXZ > 10);
+        if (diffXY > 10 && diffYZ > 10 && diffXZ > 10) {
+            alarm = 1;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GyroHealthCheck_Mutant3.java:10: verify: The prover cannot establish an assertion (Postcondition) in method gyroHealthCheck
+        //@ ensures \result == 1 <==> diffXY > 10 && diffYZ > 10 && diffXZ > 10;  
+            ^
+1 verification failure
+
+==============================
+public class GyroHealthCheck_Mutant3 {
+    /*@ spec_public*/ public static int gyroHealthCheck(int x, int y, int z) {
+        int diffXY = x - y;
+        if (diffXY < 0) diffXY = -diffXY;
+        int diffYZ = y - z;
+        if (diffYZ < 0) diffYZ = -diffYZ;
+        int diffXZ = x - z;
+        if (diffXZ < 0) diffXZ = -diffXZ;
+        int alarm = 0;
+        //@ ensures \result == 1 <==> diffXY > 10 && diffYZ > 10 && diffXZ >= 10;  
+        //@ ensures \result == 0 <==> !(diffXY > 10 && diffYZ > 10 && diffXZ > 10);
+        if (diffXY > 10 && diffYZ > 10 && diffXZ > 10) {
+            alarm = 1;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GyroHealthCheck_Mutant3.java:10: verify: The prover cannot establish an assertion (Postcondition) in method gyroHealthCheck
+        //@ ensures \result == 1 <==> diffXY > 10 && diffYZ > 10 && diffXZ >= 10;  
+            ^
+1 verification failure
+
+==============================
+public class GyroHealthCheck_Mutant3 {
+    /*@ spec_public*/ public static int gyroHealthCheck(int x, int y, int z) {
+        int diffXY = x - y;
+        if (diffXY < 0) diffXY = -diffXY;
+        int diffYZ = y - z;
+        if (diffYZ < 0) diffYZ = -diffYZ;
+        int diffXZ = x - z;
+        if (diffXZ < 0) diffXZ = -diffXZ;
+        int alarm = 0;
+        //@ ensures \result == 1 <==> diffXY > 10 && diffYZ >= 10 && diffXZ > 10;  
+        //@ ensures \result == 0 <==> !(diffXY > 10 && diffYZ > 10 && diffXZ > 10);
+        if (diffXY > 10 && diffYZ > 10 && diffXZ > 10) {
+            alarm = 1;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GyroHealthCheck_Mutant3.java:10: verify: The prover cannot establish an assertion (Postcondition) in method gyroHealthCheck
+        //@ ensures \result == 1 <==> diffXY > 10 && diffYZ >= 10 && diffXZ > 10;  
+            ^
+1 verification failure
+
+==============================
+public class GyroHealthCheck_Mutant3 {
+    /*@ spec_public*/ public static int gyroHealthCheck(int x, int y, int z) {
+        int diffXY = x - y;
+        if (diffXY < 0) diffXY = -diffXY;
+        int diffYZ = y - z;
+        if (diffYZ < 0) diffYZ = -diffYZ;
+        int diffXZ = x - z;
+        if (diffXZ < 0) diffXZ = -diffXZ;
+        int alarm = 0;
+        //@ ensures \result == 1 <==> diffXY > 10 && diffYZ >= 10 && diffXZ >= 10;  
+        //@ ensures \result == 0 <==> !(diffXY > 10 && diffYZ > 10 && diffXZ > 10);
+        if (diffXY > 10 && diffYZ > 10 && diffXZ > 10) {
+            alarm = 1;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GyroHealthCheck_Mutant3.java:10: verify: The prover cannot establish an assertion (Postcondition) in method gyroHealthCheck
+        //@ ensures \result == 1 <==> diffXY > 10 && diffYZ >= 10 && diffXZ >= 10;  
+            ^
+1 verification failure
+
+==============================
+public class GyroHealthCheck_Mutant3 {
+    /*@ spec_public*/ public static int gyroHealthCheck(int x, int y, int z) {
+        int diffXY = x - y;
+        if (diffXY < 0) diffXY = -diffXY;
+        int diffYZ = y - z;
+        if (diffYZ < 0) diffYZ = -diffYZ;
+        int diffXZ = x - z;
+        if (diffXZ < 0) diffXZ = -diffXZ;
+        int alarm = 0;
+        //@ ensures \result == 1 <==> diffXY >= 10 && diffYZ > 10 && diffXZ > 10;  
+        //@ ensures \result == 0 <==> !(diffXY > 10 && diffYZ > 10 && diffXZ > 10);
+        if (diffXY > 10 && diffYZ > 10 && diffXZ > 10) {
+            alarm = 1;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GyroHealthCheck_Mutant3.java:10: verify: The prover cannot establish an assertion (Postcondition) in method gyroHealthCheck
+        //@ ensures \result == 1 <==> diffXY >= 10 && diffYZ > 10 && diffXZ > 10;  
+            ^
+1 verification failure
+
+==============================
+public class GyroHealthCheck_Mutant3 {
+    /*@ spec_public*/ public static int gyroHealthCheck(int x, int y, int z) {
+        int diffXY = x - y;
+        if (diffXY < 0) diffXY = -diffXY;
+        int diffYZ = y - z;
+        if (diffYZ < 0) diffYZ = -diffYZ;
+        int diffXZ = x - z;
+        if (diffXZ < 0) diffXZ = -diffXZ;
+        int alarm = 0;
+        //@ ensures \result == 1 <==> diffXY >= 10 && diffYZ > 10 && diffXZ >= 10;  
+        //@ ensures \result == 0 <==> !(diffXY > 10 && diffYZ > 10 && diffXZ > 10);
+        if (diffXY > 10 && diffYZ > 10 && diffXZ > 10) {
+            alarm = 1;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GyroHealthCheck_Mutant3.java:10: verify: The prover cannot establish an assertion (Postcondition) in method gyroHealthCheck
+        //@ ensures \result == 1 <==> diffXY >= 10 && diffYZ > 10 && diffXZ >= 10;  
+            ^
+1 verification failure
+
+==============================
+public class GyroHealthCheck_Mutant3 {
+    /*@ spec_public*/ public static int gyroHealthCheck(int x, int y, int z) {
+        int diffXY = x - y;
+        if (diffXY < 0) diffXY = -diffXY;
+        int diffYZ = y - z;
+        if (diffYZ < 0) diffYZ = -diffYZ;
+        int diffXZ = x - z;
+        if (diffXZ < 0) diffXZ = -diffXZ;
+        int alarm = 0;
+        //@ ensures \result == 1 <==> diffXY >= 10 && diffYZ >= 10 && diffXZ > 10;  
+        //@ ensures \result == 0 <==> !(diffXY > 10 && diffYZ > 10 && diffXZ > 10);
+        if (diffXY > 10 && diffYZ > 10 && diffXZ > 10) {
+            alarm = 1;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GyroHealthCheck_Mutant3.java:10: verify: The prover cannot establish an assertion (Postcondition) in method gyroHealthCheck
+        //@ ensures \result == 1 <==> diffXY >= 10 && diffYZ >= 10 && diffXZ > 10;  
+            ^
+1 verification failure
+
+==============================
+public class GyroHealthCheck_Mutant3 {
+    /*@ spec_public*/ public static int gyroHealthCheck(int x, int y, int z) {
+        int diffXY = x - y;
+        if (diffXY < 0) diffXY = -diffXY;
+        int diffYZ = y - z;
+        if (diffYZ < 0) diffYZ = -diffYZ;
+        int diffXZ = x - z;
+        if (diffXZ < 0) diffXZ = -diffXZ;
+        int alarm = 0;
+        //@ ensures \result == 1 <==> diffXY >= 10 && diffYZ >= 10 && diffXZ >= 10;  
+        //@ ensures \result == 0 <==> !(diffXY > 10 && diffYZ > 10 && diffXZ > 10);
+        if (diffXY > 10 && diffYZ > 10 && diffXZ > 10) {
+            alarm = 1;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GyroHealthCheck_Mutant3.java:10: verify: The prover cannot establish an assertion (Postcondition) in method gyroHealthCheck
+        //@ ensures \result == 1 <==> diffXY >= 10 && diffYZ >= 10 && diffXZ >= 10;  
+            ^
+1 verification failure
+
+==============================
+public class GyroHealthCheck_Mutant3 {
+    /*@ spec_public*/ public static int gyroHealthCheck(int x, int y, int z) {
+        int diffXY = x - y;
+        if (diffXY < 0) diffXY = -diffXY;
+        int diffYZ = y - z;
+        if (diffYZ < 0) diffYZ = -diffYZ;
+        int diffXZ = x - z;
+        if (diffXZ < 0) diffXZ = -diffXZ;
+        int alarm = 0;
+ 
+        //@ ensures \result == 0 <==> !(diffXY > 10 && diffYZ > 10 && diffXZ > 10);
+        if (diffXY > 10 && diffYZ > 10 && diffXZ > 10) {
+            alarm = 1;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GyroHealthCheck_Mutant3.java:11: verify: The prover cannot establish an assertion (Postcondition) in method gyroHealthCheck
+        //@ ensures \result == 0 <==> !(diffXY > 10 && diffYZ > 10 && diffXZ > 10);
+            ^
+1 verification failure
+
+==============================
+public class GyroHealthCheck_Mutant3 {
+    /*@ spec_public*/ public static int gyroHealthCheck(int x, int y, int z) {
+        int diffXY = x - y;
+        if (diffXY < 0) diffXY = -diffXY;
+        int diffYZ = y - z;
+        if (diffYZ < 0) diffYZ = -diffYZ;
+        int diffXZ = x - z;
+        if (diffXZ < 0) diffXZ = -diffXZ;
+        int alarm = 0;
+ 
+        //@ ensures \result == 0 <==> !(diffXY > 10 && diffYZ > 10 && diffXZ > 10);  
+        if (diffXY > 10 && diffYZ > 10 && diffXZ > 10) {
+            alarm = 1;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GyroHealthCheck_Mutant3.java:11: verify: The prover cannot establish an assertion (Postcondition) in method gyroHealthCheck
+        //@ ensures \result == 0 <==> !(diffXY > 10 && diffYZ > 10 && diffXZ > 10);  
+            ^
+1 verification failure
+
+==============================
+public class GyroHealthCheck_Mutant3 {
+    /*@ spec_public*/ public static int gyroHealthCheck(int x, int y, int z) {
+        int diffXY = x - y;
+        if (diffXY < 0) diffXY = -diffXY;
+        int diffYZ = y - z;
+        if (diffYZ < 0) diffYZ = -diffYZ;
+        int diffXZ = x - z;
+        if (diffXZ < 0) diffXZ = -diffXZ;
+        int alarm = 0;
+ 
+        //@ ensures \result == 0 <==> !(diffXY > 10 && diffYZ > 10 && diffXZ >= 10);  
+        if (diffXY > 10 && diffYZ > 10 && diffXZ > 10) {
+            alarm = 1;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GyroHealthCheck_Mutant3.java:11: verify: The prover cannot establish an assertion (Postcondition) in method gyroHealthCheck
+        //@ ensures \result == 0 <==> !(diffXY > 10 && diffYZ > 10 && diffXZ >= 10);  
+            ^
+1 verification failure
+
+==============================
+public class GyroHealthCheck_Mutant3 {
+    /*@ spec_public*/ public static int gyroHealthCheck(int x, int y, int z) {
+        int diffXY = x - y;
+        if (diffXY < 0) diffXY = -diffXY;
+        int diffYZ = y - z;
+        if (diffYZ < 0) diffYZ = -diffYZ;
+        int diffXZ = x - z;
+        if (diffXZ < 0) diffXZ = -diffXZ;
+        int alarm = 0;
+ 
+        //@ ensures \result == 0 <==> !(diffXY > 10 && diffYZ >= 10 && diffXZ > 10);  
+        if (diffXY > 10 && diffYZ > 10 && diffXZ > 10) {
+            alarm = 1;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GyroHealthCheck_Mutant3.java:11: verify: The prover cannot establish an assertion (Postcondition) in method gyroHealthCheck
+        //@ ensures \result == 0 <==> !(diffXY > 10 && diffYZ >= 10 && diffXZ > 10);  
+            ^
+1 verification failure
+
+==============================
+public class GyroHealthCheck_Mutant3 {
+    /*@ spec_public*/ public static int gyroHealthCheck(int x, int y, int z) {
+        int diffXY = x - y;
+        if (diffXY < 0) diffXY = -diffXY;
+        int diffYZ = y - z;
+        if (diffYZ < 0) diffYZ = -diffYZ;
+        int diffXZ = x - z;
+        if (diffXZ < 0) diffXZ = -diffXZ;
+        int alarm = 0;
+ 
+        //@ ensures \result == 0 <==> !(diffXY > 10 && diffYZ >= 10 && diffXZ >= 10);  
+        if (diffXY > 10 && diffYZ > 10 && diffXZ > 10) {
+            alarm = 1;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GyroHealthCheck_Mutant3.java:11: verify: The prover cannot establish an assertion (Postcondition) in method gyroHealthCheck
+        //@ ensures \result == 0 <==> !(diffXY > 10 && diffYZ >= 10 && diffXZ >= 10);  
+            ^
+1 verification failure
+
+==============================
+public class GyroHealthCheck_Mutant3 {
+    /*@ spec_public*/ public static int gyroHealthCheck(int x, int y, int z) {
+        int diffXY = x - y;
+        if (diffXY < 0) diffXY = -diffXY;
+        int diffYZ = y - z;
+        if (diffYZ < 0) diffYZ = -diffYZ;
+        int diffXZ = x - z;
+        if (diffXZ < 0) diffXZ = -diffXZ;
+        int alarm = 0;
+ 
+        //@ ensures \result == 0 <==> !(diffXY >= 10 && diffYZ > 10 && diffXZ > 10);  
+        if (diffXY > 10 && diffYZ > 10 && diffXZ > 10) {
+            alarm = 1;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GyroHealthCheck_Mutant3.java:11: verify: The prover cannot establish an assertion (Postcondition) in method gyroHealthCheck
+        //@ ensures \result == 0 <==> !(diffXY >= 10 && diffYZ > 10 && diffXZ > 10);  
+            ^
+1 verification failure
+
+==============================
+public class GyroHealthCheck_Mutant3 {
+    /*@ spec_public*/ public static int gyroHealthCheck(int x, int y, int z) {
+        int diffXY = x - y;
+        if (diffXY < 0) diffXY = -diffXY;
+        int diffYZ = y - z;
+        if (diffYZ < 0) diffYZ = -diffYZ;
+        int diffXZ = x - z;
+        if (diffXZ < 0) diffXZ = -diffXZ;
+        int alarm = 0;
+ 
+        //@ ensures \result == 0 <==> !(diffXY >= 10 && diffYZ > 10 && diffXZ >= 10);  
+        if (diffXY > 10 && diffYZ > 10 && diffXZ > 10) {
+            alarm = 1;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GyroHealthCheck_Mutant3.java:11: verify: The prover cannot establish an assertion (Postcondition) in method gyroHealthCheck
+        //@ ensures \result == 0 <==> !(diffXY >= 10 && diffYZ > 10 && diffXZ >= 10);  
+            ^
+1 verification failure
+
+==============================
+public class GyroHealthCheck_Mutant3 {
+    /*@ spec_public*/ public static int gyroHealthCheck(int x, int y, int z) {
+        int diffXY = x - y;
+        if (diffXY < 0) diffXY = -diffXY;
+        int diffYZ = y - z;
+        if (diffYZ < 0) diffYZ = -diffYZ;
+        int diffXZ = x - z;
+        if (diffXZ < 0) diffXZ = -diffXZ;
+        int alarm = 0;
+ 
+        //@ ensures \result == 0 <==> !(diffXY >= 10 && diffYZ >= 10 && diffXZ > 10);  
+        if (diffXY > 10 && diffYZ > 10 && diffXZ > 10) {
+            alarm = 1;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GyroHealthCheck_Mutant3.java:11: verify: The prover cannot establish an assertion (Postcondition) in method gyroHealthCheck
+        //@ ensures \result == 0 <==> !(diffXY >= 10 && diffYZ >= 10 && diffXZ > 10);  
+            ^
+1 verification failure
+
+==============================
+public class GyroHealthCheck_Mutant3 {
+    /*@ spec_public*/ public static int gyroHealthCheck(int x, int y, int z) {
+        int diffXY = x - y;
+        if (diffXY < 0) diffXY = -diffXY;
+        int diffYZ = y - z;
+        if (diffYZ < 0) diffYZ = -diffYZ;
+        int diffXZ = x - z;
+        if (diffXZ < 0) diffXZ = -diffXZ;
+        int alarm = 0;
+ 
+        //@ ensures \result == 0 <==> !(diffXY >= 10 && diffYZ >= 10 && diffXZ >= 10);  
+        if (diffXY > 10 && diffYZ > 10 && diffXZ > 10) {
+            alarm = 1;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GyroHealthCheck_Mutant3.java:11: verify: The prover cannot establish an assertion (Postcondition) in method gyroHealthCheck
+        //@ ensures \result == 0 <==> !(diffXY >= 10 && diffYZ >= 10 && diffXZ >= 10);  
+            ^
+1 verification failure
+
+==============================
+public class GyroHealthCheck_Mutant3 {
+    /*@ spec_public*/ public static int gyroHealthCheck(int x, int y, int z) {
+        int diffXY = x - y;
+        if (diffXY < 0) diffXY = -diffXY;
+        int diffYZ = y - z;
+        if (diffYZ < 0) diffYZ = -diffYZ;
+        int diffXZ = x - z;
+        if (diffXZ < 0) diffXZ = -diffXZ;
+        int alarm = 0;
+ 
+ 
+        if (diffXY > 10 && diffYZ > 10 && diffXZ > 10) {
+            alarm = 1;
+        }
+        return alarm;
+    }
+}
+
+==============================
+
+==============================

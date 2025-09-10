@@ -1,0 +1,9 @@
+public class DivisorGame_Original {
+    //@ ensures \result <==> n % 2 == 0;
+    public static boolean divisorGame(int n) {
+        return n % 2 == 0;
+    }
+}
+==============================
+
+==============================

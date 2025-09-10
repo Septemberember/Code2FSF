@@ -1,0 +1,67 @@
+public class NumberOfCuts_Mutant1 {
+    
+    //@ requires n != Integer.MIN_VALUE;
+    //@ ensures \result == 1;
+    public static int numberOfCuts(int n) {
+        if (n == 1) {
+            return 1; // mutated line
+        }
+        if (n % 2 == 0) {
+            return n / 2;
+        }
+        return n;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NumberOfCuts_Mutant1.java:10: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NumberOfCuts_Mutant1.java:4:) in method numberOfCuts
+            return n / 2;
+            ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NumberOfCuts_Mutant1.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NumberOfCuts_Mutant1.java:10:
+    //@ ensures \result == 1;
+        ^
+2 verification failures
+
+==============================
+public class NumberOfCuts_Mutant1 {
+    
+    //@ requires n != Integer.MIN_VALUE;
+    //@ ensures \result == 1;  
+    public static int numberOfCuts(int n) {
+        if (n == 1) {
+            return 1; // mutated line
+        }
+        if (n % 2 == 0) {
+            return n / 2;
+        }
+        return n;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NumberOfCuts_Mutant1.java:10: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NumberOfCuts_Mutant1.java:4:) in method numberOfCuts
+            return n / 2;
+            ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NumberOfCuts_Mutant1.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NumberOfCuts_Mutant1.java:10:
+    //@ ensures \result == 1;  
+        ^
+2 verification failures
+
+==============================
+public class NumberOfCuts_Mutant1 {
+    
+    //@ requires n != Integer.MIN_VALUE;
+ 
+    public static int numberOfCuts(int n) {
+        if (n == 1) {
+            return 1; // mutated line
+        }
+        if (n % 2 == 0) {
+            return n / 2;
+        }
+        return n;
+    }
+}
+
+==============================
+
+==============================

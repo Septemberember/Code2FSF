@@ -1,0 +1,95 @@
+public class IsCommonFactor_Mutant5 {
+
+    //@ ensures \result <==> (a % factor == 0 && b / factor == 0); // changed '%' to '/' at b % factor
+    public static boolean isCommonFactor(int a, int b, int factor) {
+        return a % factor == 0 && b / factor == 0; // changed '%' to '/' at b % factor
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonFactor_Mutant5.java:5: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method isCommonFactor
+        return a % factor == 0 && b / factor == 0; // changed '%' to '/' at b % factor
+                 ^
+1 verification failure
+
+==============================
+public class IsCommonFactor_Mutant5 {
+
+    //@ ensures \result <==> (a % factor == 0 && factor != 0 && b / factor == 0); // added 'factor != 0' condition
+    public static boolean isCommonFactor(int a, int b, int factor) {
+        return a % factor == 0 && factor != 0 && b / factor == 0; // changed '%' to '/' at b % factor
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonFactor_Mutant5.java:5: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method isCommonFactor
+        return a % factor == 0 && factor != 0 && b / factor == 0; // changed '%' to '/' at b % factor
+                 ^
+1 verification failure
+
+==============================
+public class IsCommonFactor_Mutant5 {
+
+    //@ ensures \result <==> (a % factor == 0 && factor != 0 && b % factor == 0); // changed '/' back to '%'
+    public static boolean isCommonFactor(int a, int b, int factor) {
+        return a % factor == 0 && factor != 0 && b % factor == 0; // changed '/' back to '%'
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonFactor_Mutant5.java:5: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method isCommonFactor
+        return a % factor == 0 && factor != 0 && b % factor == 0; // changed '/' back to '%'
+                 ^
+1 verification failure
+
+==============================
+public class IsCommonFactor_Mutant5 {
+
+    //@ ensures \result <==> (a % factor == 0 && factor != 0 && b % factor == 0 && factor > 0);
+    public static boolean isCommonFactor(int a, int b, int factor) {
+        return a % factor == 0 && factor != 0 && b % factor == 0 && factor > 0;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonFactor_Mutant5.java:5: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method isCommonFactor
+        return a % factor == 0 && factor != 0 && b % factor == 0 && factor > 0;
+                 ^
+1 verification failure
+
+==============================
+public class IsCommonFactor_Mutant5 {
+
+    //@ ensures \result <==> (a % factor == 0 && factor != 0 && b % factor == 0 && factor > 0 && a != 0 && b != 0);
+    public static boolean isCommonFactor(int a, int b, int factor) {
+        return a % factor == 0 && factor != 0 && b % factor == 0 && factor > 0;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonFactor_Mutant5.java:5: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method isCommonFactor
+        return a % factor == 0 && factor != 0 && b % factor == 0 && factor > 0;
+                 ^
+1 verification failure
+
+==============================
+public class IsCommonFactor_Mutant5 {
+
+    //@ ensures \result <==> (a % factor == 0 && factor != 0 && b % factor == 0 && factor > 0 && a != 0 && b != 0 && factor != 0);
+    public static boolean isCommonFactor(int a, int b, int factor) {
+        return a % factor == 0 && factor != 0 && b % factor == 0 && factor > 0;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonFactor_Mutant5.java:5: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method isCommonFactor
+        return a % factor == 0 && factor != 0 && b % factor == 0 && factor > 0;
+                 ^
+1 verification failure
+
+==============================
+public class IsCommonFactor_Mutant5 {
+
+    //@ ensures \result <==> (a % factor == 0 && factor != 0 && b % factor == 0 && factor > 0 && a != 0 && b != 0 && factor != 0);
+    public static boolean isCommonFactor(int a, int b, int factor) {
+        //@ assume factor != 0 && a != 0 && b != 0;
+        return a % factor == 0 && factor != 0 && b % factor == 0 && factor > 0;
+    }
+}
+==============================
+
+==============================

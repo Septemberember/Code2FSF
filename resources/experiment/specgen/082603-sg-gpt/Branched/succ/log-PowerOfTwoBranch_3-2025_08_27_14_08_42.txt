@@ -1,0 +1,136 @@
+public class PowerOfTwoBranch_Mutant3 {
+    //@ requires true;
+    //@ ensures \result <==> (n > 0 && (n & (n - 1)) == 0);
+    public static boolean isPowerOfTwo(int n) {
+        if (n <= 0) {
+            return true;
+        }
+        if ((n & (n - 1)) != 0) {
+            return false;
+        }
+        return true;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/PowerOfTwoBranch_Mutant3.java:6: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/PowerOfTwoBranch_Mutant3.java:3:) in method isPowerOfTwo
+            return true;
+            ^
+/root/082602-gpt-specgen/tmp/PowerOfTwoBranch_Mutant3.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/PowerOfTwoBranch_Mutant3.java:6:
+    //@ ensures \result <==> (n > 0 && (n & (n - 1)) == 0);
+        ^
+2 verification failures
+
+==============================
+public class PowerOfTwoBranch_Mutant3 {
+    //@ requires true;
+    //@ ensures \result <==> (n > 0 && (n & (n - 1)) == 0);  
+    public static boolean isPowerOfTwo(int n) {
+        if (n <= 0) {
+            return true;
+        }
+        if ((n & (n - 1)) != 0) {
+            return false;
+        }
+        return true;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/PowerOfTwoBranch_Mutant3.java:6: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/PowerOfTwoBranch_Mutant3.java:3:) in method isPowerOfTwo
+            return true;
+            ^
+/root/082602-gpt-specgen/tmp/PowerOfTwoBranch_Mutant3.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/PowerOfTwoBranch_Mutant3.java:6:
+    //@ ensures \result <==> (n > 0 && (n & (n - 1)) == 0);  
+        ^
+2 verification failures
+
+==============================
+public class PowerOfTwoBranch_Mutant3 {
+    //@ requires true;
+    //@ ensures \result <==> (n >= 0 && (n & (n - 1)) == 0);  
+    public static boolean isPowerOfTwo(int n) {
+        if (n <= 0) {
+            return true;
+        }
+        if ((n & (n - 1)) != 0) {
+            return false;
+        }
+        return true;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/PowerOfTwoBranch_Mutant3.java:6: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/PowerOfTwoBranch_Mutant3.java:3:) in method isPowerOfTwo
+            return true;
+            ^
+/root/082602-gpt-specgen/tmp/PowerOfTwoBranch_Mutant3.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/PowerOfTwoBranch_Mutant3.java:6:
+    //@ ensures \result <==> (n >= 0 && (n & (n - 1)) == 0);  
+        ^
+2 verification failures
+
+==============================
+public class PowerOfTwoBranch_Mutant3 {
+    //@ requires true;
+    //@ ensures \result <==> (n > 0 && (n & (n + 1)) == 0);  
+    public static boolean isPowerOfTwo(int n) {
+        if (n <= 0) {
+            return true;
+        }
+        if ((n & (n - 1)) != 0) {
+            return false;
+        }
+        return true;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/PowerOfTwoBranch_Mutant3.java:6: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/PowerOfTwoBranch_Mutant3.java:3:) in method isPowerOfTwo
+            return true;
+            ^
+/root/082602-gpt-specgen/tmp/PowerOfTwoBranch_Mutant3.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/PowerOfTwoBranch_Mutant3.java:6:
+    //@ ensures \result <==> (n > 0 && (n & (n + 1)) == 0);  
+        ^
+2 verification failures
+
+==============================
+public class PowerOfTwoBranch_Mutant3 {
+    //@ requires true;
+    //@ ensures \result <==> (n >= 0 && (n & (n + 1)) == 0);  
+    public static boolean isPowerOfTwo(int n) {
+        if (n <= 0) {
+            return true;
+        }
+        if ((n & (n - 1)) != 0) {
+            return false;
+        }
+        return true;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/PowerOfTwoBranch_Mutant3.java:6: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/PowerOfTwoBranch_Mutant3.java:3:) in method isPowerOfTwo
+            return true;
+            ^
+/root/082602-gpt-specgen/tmp/PowerOfTwoBranch_Mutant3.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/PowerOfTwoBranch_Mutant3.java:6:
+    //@ ensures \result <==> (n >= 0 && (n & (n + 1)) == 0);  
+        ^
+2 verification failures
+
+==============================
+public class PowerOfTwoBranch_Mutant3 {
+    //@ requires true;
+ 
+    public static boolean isPowerOfTwo(int n) {
+        if (n <= 0) {
+            return true;
+        }
+        if ((n & (n - 1)) != 0) {
+            return false;
+        }
+        return true;
+    }
+}
+
+==============================
+
+==============================

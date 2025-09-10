@@ -1,0 +1,23 @@
+public class NotCommonFactor_Mutant4 {
+
+    //@ ensures \result <==> (a % factor != 0 || b % factor != 1);
+    public static boolean notCommonFactor(int a, int b, int factor) {
+        return a % factor != 0 || b % factor != 1; // Changed 0 to 1 in second condition
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/NotCommonFactor_Mutant4.java:5: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method notCommonFactor
+        return a % factor != 0 || b % factor != 1; // Changed 0 to 1 in second condition
+                 ^
+1 verification failure
+
+==============================
+public class NotCommonFactor_Mutant4 {
+
+    //@ ensures \result <==> (a % factor != 0 || b % factor != 0);
+    public static boolean notCommonFactor(int a, int b, int factor) {
+        //@ assume factor != 0;
+        return a % factor != 0 || b % factor != 0;
+    }
+}
+==============================

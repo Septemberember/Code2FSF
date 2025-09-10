@@ -1,0 +1,229 @@
+public class GetUpCaseLoop {
+    //@ ensures \result >= 'A' && \result <= 'F' && (\result == 0 ==> c < 'a' || c > 'f');
+    public static char getUpCase(char c) {
+        if(c < 'a' || c > 'f') {
+            return 0;
+        }
+        char t = 'F';
+        //@ maintaining t >= 'A' && t <= 'F';
+        //@ maintaining t == 'F' || (\forall char i; 'A' <= i && i < t; i != c - 'a' + 'A');
+        while(t >= 'A' && t != c - 'a' + 'A') {
+            t--;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetUpCaseLoop_Original.java:1: error: class GetUpCaseLoop is public, should be declared in a file named GetUpCaseLoop.java
+public class GetUpCaseLoop {
+       ^
+1 error
+
+==============================
+// File name: GetUpCaseLoop.java
+public class GetUpCaseLoop {
+    //@ ensures \result >= 'A' && \result <= 'F' && (\result == 0 ==> c < 'a' || c > 'f');
+    public static char getUpCase(char c) {
+        if(c < 'a' || c > 'f') {
+            return 0;
+        }
+        char t = 'F';
+        //@ maintaining t >= 'A' && t <= 'F';
+        //@ maintaining t == 'F' || (\forall char i; 'A' <= i && i < t; i != c - 'a' + 'A');
+        while(t >= 'A' && t != c - 'a' + 'A') {
+            t--;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetUpCaseLoop_Original.java:2: error: class GetUpCaseLoop is public, should be declared in a file named GetUpCaseLoop.java
+public class GetUpCaseLoop {
+       ^
+1 error
+
+==============================
+// File name: GetUpCaseLoop.java
+public class GetUpCaseLoop {
+    //@ ensures \result >= 'A' && \result <= 'F' && (\result == 0 ==> c < 'a' || c > 'f');
+    public static char getUpCase(char c) {
+        if(c < 'a' || c > 'f') {
+            return 0;
+        }
+        char t = 'F';
+        //@ maintaining t >= 'A' && t <= 'F';
+        //@ maintaining t == 'F' || (\forall char i; 'A' <= i && i < t; i != c - 'a' + 'A');
+        while(t >= 'A' && t != c - 'a' + 'A') {
+            t--;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetUpCaseLoop_Original.java:2: error: class GetUpCaseLoop is public, should be declared in a file named GetUpCaseLoop.java
+public class GetUpCaseLoop {
+       ^
+1 error
+
+==============================
+// File name: GetUpCaseLoop.java
+public class GetUpCaseLoop {
+    //@ ensures \result >= 'A' && \result <= 'F' && (\result == 0 ==> c < 'a' || c > 'f');
+    public static char getUpCase(char c) {
+        if(c < 'a' || c > 'f') {
+            return 0;
+        }
+        char t = 'F';
+        //@ maintaining t >= 'A' && t <= 'F';
+        //@ maintaining t == 'F' || (\forall char i; 'A' <= i && i < t; i != c - 'a' + 'A');
+        while(t >= 'A' && t != c - 'a' + 'A') {
+            t--;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetUpCaseLoop_Original.java:2: error: class GetUpCaseLoop is public, should be declared in a file named GetUpCaseLoop.java
+public class GetUpCaseLoop {
+       ^
+1 error
+
+==============================
+// File name: GetUpCaseLoop.java
+public class GetUpCaseLoop {
+    //@ ensures \result >= 'A' && \result <= 'F' && (\result == 0 ==> c < 'a' || c > 'f');
+    public static char getUpCase(char c) {
+        if(c < 'a' || c > 'f') {
+            return 0;
+        }
+        char t = 'F';
+        //@ maintaining t >= 'A' && t <= 'F';
+        //@ maintaining t == 'F' || (\forall char i; 'A' <= i && i < t; i != c - 'a' + 'A');
+        while(t >= 'A' && t != c - 'a' + 'A') {
+            t--;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetUpCaseLoop_Original.java:2: error: class GetUpCaseLoop is public, should be declared in a file named GetUpCaseLoop.java
+public class GetUpCaseLoop {
+       ^
+1 error
+
+==============================
+// File name: GetUpCaseLoop.java
+public class GetUpCaseLoop {
+    //@ ensures \result >= 'A' && \result <= 'F' && (\result == 0 ==> c < 'a' || c > 'f');
+    public static char getUpCase(char c) {
+        if(c < 'a' || c > 'f') {
+            return 0;
+        }
+        char t = 'F';
+        //@ maintaining t >= 'A' && t <= 'F';
+        //@ maintaining t == 'F' || (\forall char i; 'A' <= i && i < t; i != c - 'a' + 'A');
+        while(t >= 'A' && t != c - 'a' + 'A') {
+            t--;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetUpCaseLoop_Original.java:2: error: class GetUpCaseLoop is public, should be declared in a file named GetUpCaseLoop.java
+public class GetUpCaseLoop {
+       ^
+1 error
+
+==============================
+// File name: GetUpCaseLoop.java
+public class GetUpCaseLoop {
+    //@ ensures \result >= 'A' && \result <= 'F' && (\result == 0 ==> c < 'a' || c > 'f');
+    public static char getUpCase(char c) {
+        if(c < 'a' || c > 'f') {
+            return 0;
+        }
+        char t = 'F';
+        //@ maintaining t >= 'A' && t <= 'F';
+        //@ maintaining t == 'F' || (\forall char i; 'A' <= i && i < t; i != c - 'a' + 'A');
+        while(t >= 'A' && t != c - 'a' + 'A') {
+            t--;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetUpCaseLoop_Original.java:2: error: class GetUpCaseLoop is public, should be declared in a file named GetUpCaseLoop.java
+public class GetUpCaseLoop {
+       ^
+1 error
+
+==============================
+// File name: GetUpCaseLoop.java
+public class GetUpCaseLoop {
+    //@ ensures \result >= 'A' && \result <= 'F' && (\result == 0 ==> c < 'a' || c > 'f');
+    public static char getUpCase(char c) {
+        if(c < 'a' || c > 'f') {
+            return 0;
+        }
+        char t = 'F';
+        //@ maintaining t >= 'A' && t <= 'F';
+        //@ maintaining t == 'F' || (\forall char i; 'A' <= i && i < t; i != c - 'a' + 'A');
+        while(t >= 'A' && t != c - 'a' + 'A') {
+            t--;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetUpCaseLoop_Original.java:2: error: class GetUpCaseLoop is public, should be declared in a file named GetUpCaseLoop.java
+public class GetUpCaseLoop {
+       ^
+1 error
+
+==============================
+// File name: GetUpCaseLoop.java
+public class GetUpCaseLoop {
+    //@ ensures \result >= 'A' && \result <= 'F' && (\result == 0 ==> c < 'a' || c > 'f');
+    public static char getUpCase(char c) {
+        if(c < 'a' || c > 'f') {
+            return 0;
+        }
+        char t = 'F';
+        //@ maintaining t >= 'A' && t <= 'F';
+        //@ maintaining t == 'F' || (\forall char i; 'A' <= i && i < t; i != c - 'a' + 'A');
+        while(t >= 'A' && t != c - 'a' + 'A') {
+            t--;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetUpCaseLoop_Original.java:2: error: class GetUpCaseLoop is public, should be declared in a file named GetUpCaseLoop.java
+public class GetUpCaseLoop {
+       ^
+1 error
+
+==============================
+// File name: GetUpCaseLoop.java
+public class GetUpCaseLoop {
+    //@ ensures \result >= 'A' && \result <= 'F' && (\result == 0 ==> c < 'a' || c > 'f');
+    public static char getUpCase(char c) {
+        if(c < 'a' || c > 'f') {
+            return 0;
+        }
+        char t = 'F';
+        //@ maintaining t >= 'A' && t <= 'F';
+        //@ maintaining t == 'F' || (\forall char i; 'A' <= i && i < t; i != c - 'a' + 'A');
+        while(t >= 'A' && t != c - 'a' + 'A') {
+            t--;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetUpCaseLoop_Original.java:2: error: class GetUpCaseLoop is public, should be declared in a file named GetUpCaseLoop.java
+public class GetUpCaseLoop {
+       ^
+1 error
+
+==============================

@@ -1,0 +1,234 @@
+public class Abs_Mutant4 {
+    //@ ensures \result >= 0;
+    //@ ensures (\result == num ==> \result >= 0);
+    //@ ensures (\result == -num ==> \result < 0);
+    public static int Abs(int num) {
+        if (num >= 0)
+            return -num;
+        else
+            return num;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:2:) in method Abs
+            return -num;
+            ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:7:
+    //@ ensures \result >= 0;
+        ^
+2 verification failures
+
+==============================
+public class Abs_Mutant4 {
+    //@ ensures \result > 0;  
+    //@ ensures (\result == num ==> \result >= 0);
+    //@ ensures (\result == -num ==> \result < 0);
+    public static int Abs(int num) {
+        if (num >= 0)
+            return -num;
+        else
+            return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:2:) in method Abs
+            return -num;
+            ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:7:
+    //@ ensures \result > 0;  
+        ^
+2 verification failures
+
+==============================
+public class Abs_Mutant4 {
+    //@ ensures \result >= 0;  
+    //@ ensures (\result == num ==> \result >= 0);
+    //@ ensures (\result == -num ==> \result < 0);
+    public static int Abs(int num) {
+        if (num >= 0)
+            return -num;
+        else
+            return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:2:) in method Abs
+            return -num;
+            ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:7:
+    //@ ensures \result >= 0;  
+        ^
+2 verification failures
+
+==============================
+public class Abs_Mutant4 {
+    //@ ensures \result + 1 >= 0;  
+    //@ ensures (\result == num ==> \result >= 0);
+    //@ ensures (\result == -num ==> \result < 0);
+    public static int Abs(int num) {
+        if (num >= 0)
+            return -num;
+        else
+            return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:2:) in method Abs
+            return -num;
+            ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:7:
+    //@ ensures \result + 1 >= 0;  
+        ^
+2 verification failures
+
+==============================
+public class Abs_Mutant4 {
+ 
+    //@ ensures (\result == num ==> \result >= 0);
+    //@ ensures (\result == -num ==> \result < 0);
+    public static int Abs(int num) {
+        if (num >= 0)
+            return -num;
+        else
+            return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:4:) in method Abs
+            return -num;
+            ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:7:
+    //@ ensures (\result == -num ==> \result < 0);
+        ^
+2 verification failures
+
+==============================
+public class Abs_Mutant4 {
+ 
+    //@ ensures (\result == num ==> \result >= 0);
+    //@ ensures (\result == -num ==> \result < 0);  
+    public static int Abs(int num) {
+        if (num >= 0)
+            return -num;
+        else
+            return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:4:) in method Abs
+            return -num;
+            ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:7:
+    //@ ensures (\result == -num ==> \result < 0);  
+        ^
+2 verification failures
+
+==============================
+public class Abs_Mutant4 {
+ 
+    //@ ensures (\result == num ==> \result >= 0);
+    //@ ensures (\result == -num ==> \result <= 0);  
+    public static int Abs(int num) {
+        if (num >= 0)
+            return -num;
+        else
+            return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:9: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:3:) in method Abs
+            return num;
+            ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:9:
+    //@ ensures (\result == num ==> \result >= 0);
+        ^
+2 verification failures
+
+==============================
+public class Abs_Mutant4 {
+ 
+    //@ ensures (\result == num ==> \result > 0);  
+    //@ ensures (\result == -num ==> \result <= 0);  
+    public static int Abs(int num) {
+        if (num >= 0)
+            return -num;
+        else
+            return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:3:) in method Abs
+            return -num;
+            ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:7:
+    //@ ensures (\result == num ==> \result > 0);  
+        ^
+2 verification failures
+
+==============================
+public class Abs_Mutant4 {
+ 
+    //@ ensures (\result == num ==> \result >= 0);  
+    //@ ensures (\result == -num ==> \result <= 0);  
+    public static int Abs(int num) {
+        if (num >= 0)
+            return -num;
+        else
+            return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:9: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:3:) in method Abs
+            return num;
+            ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:9:
+    //@ ensures (\result == num ==> \result >= 0);  
+        ^
+2 verification failures
+
+==============================
+public class Abs_Mutant4 {
+ 
+    //@ ensures (\result == num ==> \result + 1 >= 0);  
+    //@ ensures (\result == -num ==> \result <= 0);  
+    public static int Abs(int num) {
+        if (num >= 0)
+            return -num;
+        else
+            return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:9: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:3:) in method Abs
+            return num;
+            ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Abs_Mutant4.java:9:
+    //@ ensures (\result == num ==> \result + 1 >= 0);  
+        ^
+2 verification failures
+
+==============================
+public class Abs_Mutant4 {
+ 
+ 
+    //@ ensures (\result == -num ==> \result <= 0);  
+    public static int Abs(int num) {
+        if (num >= 0)
+            return -num;
+        else
+            return num;
+    }
+}
+
+==============================
+
+==============================

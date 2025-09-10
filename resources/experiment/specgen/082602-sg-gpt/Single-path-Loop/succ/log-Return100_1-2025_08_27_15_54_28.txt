@@ -1,0 +1,64 @@
+public class Return100_Mutant1 {
+    //@ ensures \result == 100;
+    public static int return100 () {
+        int res = 0;
+        int i = 0;
+        //@ maintaining 0 <= i && i <= 100;
+        //@ decreases 100 - i;
+        for(i = 0; i < 100; i++) {
+            res = res + 2; // CHANGED: incremented by 2 instead of 1
+        }
+        return res;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100_Mutant1.java:11: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100_Mutant1.java:2:) in method return100
+        return res;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100_Mutant1.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100_Mutant1.java:11:
+    //@ ensures \result == 100;
+        ^
+2 verification failures
+
+==============================
+public class Return100_Mutant1 {
+    //@ ensures \result == 100;  
+    public static int return100 () {
+        int res = 0;
+        int i = 0;
+        //@ maintaining 0 <= i && i <= 100;
+        //@ decreases 100 - i;
+        for(i = 0; i < 100; i++) {
+            res = res + 2; // CHANGED: incremented by 2 instead of 1
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100_Mutant1.java:11: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100_Mutant1.java:2:) in method return100
+        return res;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100_Mutant1.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100_Mutant1.java:11:
+    //@ ensures \result == 100;  
+        ^
+2 verification failures
+
+==============================
+public class Return100_Mutant1 {
+ 
+    public static int return100 () {
+        int res = 0;
+        int i = 0;
+        //@ maintaining 0 <= i && i <= 100;
+        //@ decreases 100 - i;
+        for(i = 0; i < 100; i++) {
+            res = res + 2; // CHANGED: incremented by 2 instead of 1
+        }
+        return res;
+    }
+}
+
+==============================
+
+==============================

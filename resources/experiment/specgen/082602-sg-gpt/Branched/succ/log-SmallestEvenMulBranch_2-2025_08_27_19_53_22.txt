@@ -1,0 +1,55 @@
+public class SmallestEvenMulBranch_Mutant2 {
+    //@ ensures \result % 2 == 0;
+    //@ ensures (\old(n) % 2 == 0 && \result == \old(n) + 1) || (\old(n) % 2 != 0 && \result == 2 * \old(n));
+    public static int smallestEvenMultiple(int n) {
+        if (n % 2 == 0) {
+            return n + 1;
+        }
+        return 2 * n;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant2.java:6: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant2.java:2:) in method smallestEvenMultiple
+            return n + 1;
+            ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant2.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant2.java:6:
+    //@ ensures \result % 2 == 0;
+        ^
+2 verification failures
+
+==============================
+public class SmallestEvenMulBranch_Mutant2 {
+    //@ ensures \result % 2 == 0;  
+    //@ ensures (\old(n) % 2 == 0 && \result == \old(n) + 1) || (\old(n) % 2 != 0 && \result == 2 * \old(n));
+    public static int smallestEvenMultiple(int n) {
+        if (n % 2 == 0) {
+            return n + 1;
+        }
+        return 2 * n;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant2.java:6: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant2.java:2:) in method smallestEvenMultiple
+            return n + 1;
+            ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant2.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant2.java:6:
+    //@ ensures \result % 2 == 0;  
+        ^
+2 verification failures
+
+==============================
+public class SmallestEvenMulBranch_Mutant2 {
+ 
+    //@ ensures (\old(n) % 2 == 0 && \result == \old(n) + 1) || (\old(n) % 2 != 0 && \result == 2 * \old(n));
+    public static int smallestEvenMultiple(int n) {
+        if (n % 2 == 0) {
+            return n + 1;
+        }
+        return 2 * n;
+    }
+}
+
+==============================
+
+==============================

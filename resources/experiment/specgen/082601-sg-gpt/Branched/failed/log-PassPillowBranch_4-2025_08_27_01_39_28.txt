@@ -1,0 +1,386 @@
+public class PassPillowBranch_Mutant4 {
+    /*@ spec_public @*/ 
+    public static int passPillow(int n, int time) {
+        time = time % ((n - 1) * 3); // changed multiplier 2 to 3
+        //@ ensures time >= 0 && time < n ==> \result == time + 1;
+        //@ ensures time >= n ==> \result == n * 2 - time - 1;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PassPillowBranch_Mutant4.java:4: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method passPillow
+        time = time % ((n - 1) * 3); // changed multiplier 2 to 3
+                    ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PassPillowBranch_Mutant4.java:4: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method passPillow
+        time = time % ((n - 1) * 3); // changed multiplier 2 to 3
+                    ^
+2 verification failures
+
+==============================
+public class PassPillowBranch_Mutant4 {
+    /*@ spec_public @*/ 
+    public static int passPillow(int n, int time) {
+        //@ assume n != 0;
+        time = time % ((n - 1) * 3); // changed multiplier 2 to 3
+        //@ ensures time >= 0 && time < n ==> \result == time + 1;
+        //@ ensures time >= n ==> \result == n * 2 - time - 1;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PassPillowBranch_Mutant4.java:5: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method passPillow
+        time = time % ((n - 1) * 3); // changed multiplier 2 to 3
+                    ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PassPillowBranch_Mutant4.java:5: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method passPillow
+        time = time % ((n - 1) * 3); // changed multiplier 2 to 3
+                    ^
+2 verification failures
+
+==============================
+public class PassPillowBranch_Mutant4 {
+    /*@ spec_public @*/ 
+    public static int passPillow(int n, int time) {
+        //@ assume n != 0;
+        //@ assume n > 0;
+        time = time % ((n - 1) * 3); // changed multiplier 2 to 3
+        //@ ensures time >= 0 && time < n ==> \result == time + 1;
+        //@ ensures time >= n ==> \result == n * 2 - time - 1;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PassPillowBranch_Mutant4.java:6: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method passPillow
+        time = time % ((n - 1) * 3); // changed multiplier 2 to 3
+                    ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PassPillowBranch_Mutant4.java:6: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method passPillow
+        time = time % ((n - 1) * 3); // changed multiplier 2 to 3
+                    ^
+2 verification failures
+
+==============================
+public class PassPillowBranch_Mutant4 {
+    /*@ spec_public @*/ 
+    public static int passPillow(int n, int time) {
+        //@ assume n != 0;
+        //@ assume n > 0;
+        //@ assume (n - 1) * 3 != 0;
+        time = time % ((n - 1) * 3); // changed multiplier 2 to 3
+        //@ ensures time >= 0 && time < n ==> \result == time + 1;
+        //@ ensures time >= n ==> \result == n * 2 - time - 1;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PassPillowBranch_Mutant4.java:9: verify: The prover cannot establish an assertion (Postcondition) in method passPillow
+        //@ ensures time >= n ==> \result == n * 2 - time - 1;
+            ^
+1 verification failure
+
+==============================
+public class PassPillowBranch_Mutant4 {
+    /*@ spec_public @*/ 
+    public static int passPillow(int n, int time) {
+        //@ assume n != 0;
+        //@ assume n > 0;
+        //@ assume (n - 1) * 3 != 0;
+        time = time % ((n - 1) * 3); // changed multiplier 2 to 3
+        //@ ensures time >= 0 && time < n ==> \result == time + 1;
+        //@ ensures time > n ==> \result == n * 2 - time - 1;  
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PassPillowBranch_Mutant4.java:9: verify: The prover cannot establish an assertion (Postcondition) in method passPillow
+        //@ ensures time > n ==> \result == n * 2 - time - 1;  
+            ^
+1 verification failure
+
+==============================
+public class PassPillowBranch_Mutant4 {
+    /*@ spec_public @*/ 
+    public static int passPillow(int n, int time) {
+        //@ assume n != 0;
+        //@ assume n > 0;
+        //@ assume (n - 1) * 3 != 0;
+        time = time % ((n - 1) * 3); // changed multiplier 2 to 3
+        //@ ensures time >= 0 && time < n ==> \result == time + 1;
+        //@ ensures time >= n ==> \result == n * 2 - time - 1;  
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PassPillowBranch_Mutant4.java:9: verify: The prover cannot establish an assertion (Postcondition) in method passPillow
+        //@ ensures time >= n ==> \result == n * 2 - time - 1;  
+            ^
+1 verification failure
+
+==============================
+public class PassPillowBranch_Mutant4 {
+    /*@ spec_public @*/ 
+    public static int passPillow(int n, int time) {
+        //@ assume n != 0;
+        //@ assume n > 0;
+        //@ assume (n - 1) * 3 != 0;
+        time = time % ((n - 1) * 3); // changed multiplier 2 to 3
+        //@ ensures time >= 0 && time < n ==> \result == time + 1;
+        //@ ensures time + 1 >= n ==> \result == n * 2 - time - 1;  
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PassPillowBranch_Mutant4.java:9: verify: The prover cannot establish an assertion (Postcondition) in method passPillow
+        //@ ensures time + 1 >= n ==> \result == n * 2 - time - 1;  
+            ^
+1 verification failure
+
+==============================
+public class PassPillowBranch_Mutant4 {
+    /*@ spec_public @*/ 
+    public static int passPillow(int n, int time) {
+        //@ assume n != 0;
+        //@ assume n > 0;
+        //@ assume (n - 1) * 3 != 0;
+        time = time % ((n - 1) * 3); // changed multiplier 2 to 3
+        //@ ensures time >= 0 && time < n ==> \result == time + 1;
+        //@ ensures time > n ==> \result == n * 2 + time + 1;  
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PassPillowBranch_Mutant4.java:9: verify: The prover cannot establish an assertion (Postcondition) in method passPillow
+        //@ ensures time > n ==> \result == n * 2 + time + 1;  
+            ^
+1 verification failure
+
+==============================
+public class PassPillowBranch_Mutant4 {
+    /*@ spec_public @*/ 
+    public static int passPillow(int n, int time) {
+        //@ assume n != 0;
+        //@ assume n > 0;
+        //@ assume (n - 1) * 3 != 0;
+        time = time % ((n - 1) * 3); // changed multiplier 2 to 3
+        //@ ensures time >= 0 && time < n ==> \result == time + 1;
+        //@ ensures time > n ==> \result == n * 2 + time - 1;  
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PassPillowBranch_Mutant4.java:9: verify: The prover cannot establish an assertion (Postcondition) in method passPillow
+        //@ ensures time > n ==> \result == n * 2 + time - 1;  
+            ^
+1 verification failure
+
+==============================
+public class PassPillowBranch_Mutant4 {
+    /*@ spec_public @*/ 
+    public static int passPillow(int n, int time) {
+        //@ assume n != 0;
+        //@ assume n > 0;
+        //@ assume (n - 1) * 3 != 0;
+        time = time % ((n - 1) * 3); // changed multiplier 2 to 3
+        //@ ensures time >= 0 && time < n ==> \result == time + 1;
+        //@ ensures time > n ==> \result == n * 2 - time + 1;  
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PassPillowBranch_Mutant4.java:9: verify: The prover cannot establish an assertion (Postcondition) in method passPillow
+        //@ ensures time > n ==> \result == n * 2 - time + 1;  
+            ^
+1 verification failure
+
+==============================
+public class PassPillowBranch_Mutant4 {
+    /*@ spec_public @*/ 
+    public static int passPillow(int n, int time) {
+        //@ assume n != 0;
+        //@ assume n > 0;
+        //@ assume (n - 1) * 3 != 0;
+        time = time % ((n - 1) * 3); // changed multiplier 2 to 3
+        //@ ensures time >= 0 && time < n ==> \result == time + 1;
+        //@ ensures time >= n ==> \result == n * 2 + time + 1;  
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PassPillowBranch_Mutant4.java:9: verify: The prover cannot establish an assertion (Postcondition) in method passPillow
+        //@ ensures time >= n ==> \result == n * 2 + time + 1;  
+            ^
+1 verification failure
+
+==============================
+public class PassPillowBranch_Mutant4 {
+    /*@ spec_public @*/ 
+    public static int passPillow(int n, int time) {
+        //@ assume n != 0;
+        //@ assume n > 0;
+        //@ assume (n - 1) * 3 != 0;
+        time = time % ((n - 1) * 3); // changed multiplier 2 to 3
+        //@ ensures time >= 0 && time < n ==> \result == time + 1;
+        //@ ensures time >= n ==> \result == n * 2 + time - 1;  
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PassPillowBranch_Mutant4.java:9: verify: The prover cannot establish an assertion (Postcondition) in method passPillow
+        //@ ensures time >= n ==> \result == n * 2 + time - 1;  
+            ^
+1 verification failure
+
+==============================
+public class PassPillowBranch_Mutant4 {
+    /*@ spec_public @*/ 
+    public static int passPillow(int n, int time) {
+        //@ assume n != 0;
+        //@ assume n > 0;
+        //@ assume (n - 1) * 3 != 0;
+        time = time % ((n - 1) * 3); // changed multiplier 2 to 3
+        //@ ensures time >= 0 && time < n ==> \result == time + 1;
+        //@ ensures time >= n ==> \result == n * 2 - time + 1;  
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PassPillowBranch_Mutant4.java:9: verify: The prover cannot establish an assertion (Postcondition) in method passPillow
+        //@ ensures time >= n ==> \result == n * 2 - time + 1;  
+            ^
+1 verification failure
+
+==============================
+public class PassPillowBranch_Mutant4 {
+    /*@ spec_public @*/ 
+    public static int passPillow(int n, int time) {
+        //@ assume n != 0;
+        //@ assume n > 0;
+        //@ assume (n - 1) * 3 != 0;
+        time = time % ((n - 1) * 3); // changed multiplier 2 to 3
+        //@ ensures time >= 0 && time < n ==> \result == time + 1;
+        //@ ensures time + 1 >= n ==> \result == n * 2 + time + 1;  
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PassPillowBranch_Mutant4.java:9: verify: The prover cannot establish an assertion (Postcondition) in method passPillow
+        //@ ensures time + 1 >= n ==> \result == n * 2 + time + 1;  
+            ^
+1 verification failure
+
+==============================
+public class PassPillowBranch_Mutant4 {
+    /*@ spec_public @*/ 
+    public static int passPillow(int n, int time) {
+        //@ assume n != 0;
+        //@ assume n > 0;
+        //@ assume (n - 1) * 3 != 0;
+        time = time % ((n - 1) * 3); // changed multiplier 2 to 3
+        //@ ensures time >= 0 && time < n ==> \result == time + 1;
+        //@ ensures time + 1 >= n ==> \result == n * 2 + time - 1;  
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PassPillowBranch_Mutant4.java:9: verify: The prover cannot establish an assertion (Postcondition) in method passPillow
+        //@ ensures time + 1 >= n ==> \result == n * 2 + time - 1;  
+            ^
+1 verification failure
+
+==============================
+public class PassPillowBranch_Mutant4 {
+    /*@ spec_public @*/ 
+    public static int passPillow(int n, int time) {
+        //@ assume n != 0;
+        //@ assume n > 0;
+        //@ assume (n - 1) * 3 != 0;
+        time = time % ((n - 1) * 3); // changed multiplier 2 to 3
+        //@ ensures time >= 0 && time < n ==> \result == time + 1;
+        //@ ensures time + 1 >= n ==> \result == n * 2 - time + 1;  
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PassPillowBranch_Mutant4.java:9: verify: The prover cannot establish an assertion (Postcondition) in method passPillow
+        //@ ensures time + 1 >= n ==> \result == n * 2 - time + 1;  
+            ^
+1 verification failure
+
+==============================
+public class PassPillowBranch_Mutant4 {
+    /*@ spec_public @*/ 
+    public static int passPillow(int n, int time) {
+        //@ assume n != 0;
+        //@ assume n > 0;
+        //@ assume (n - 1) * 3 != 0;
+        time = time % ((n - 1) * 3); // changed multiplier 2 to 3
+        //@ ensures time >= 0 && time < n ==> \result == time + 1;
+ 
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+
+==============================
+
+==============================

@@ -1,0 +1,82 @@
+public class AltitudeController_Mutant1 {
+    //@ ensures \result == 5 || \result == -5 || \result == 3 || \result == -3 || \result == 2 || \result == -2 || \result == 0;
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight + currentHeight; //Changed subtraction to addition
+        int absError = 0;
+        absError = error < 0 ? -error : error;
+        int controlSignal = 0;
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        return controlSignal;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AltitudeController_Mutant1.java:17: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AltitudeController_Mutant1.java:2:) in method altitudeController
+        return controlSignal;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AltitudeController_Mutant1.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AltitudeController_Mutant1.java:17:
+    //@ ensures \result == 5 || \result == -5 || \result == 3 || \result == -3 || \result == 2 || \result == -2 || \result == 0;
+        ^
+2 verification failures
+
+==============================
+public class AltitudeController_Mutant1 {
+    //@ ensures \result == 5 || \result == -5 || \result == 3 || \result == -3 || \result == 2 || \result == -2 || \result == 0;  
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight + currentHeight; //Changed subtraction to addition
+        int absError = 0;
+        absError = error < 0 ? -error : error;
+        int controlSignal = 0;
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        return controlSignal;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AltitudeController_Mutant1.java:17: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AltitudeController_Mutant1.java:2:) in method altitudeController
+        return controlSignal;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AltitudeController_Mutant1.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AltitudeController_Mutant1.java:17:
+    //@ ensures \result == 5 || \result == -5 || \result == 3 || \result == -3 || \result == 2 || \result == -2 || \result == 0;  
+        ^
+2 verification failures
+
+==============================
+public class AltitudeController_Mutant1 {
+ 
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight + currentHeight; //Changed subtraction to addition
+        int absError = 0;
+        absError = error < 0 ? -error : error;
+        int controlSignal = 0;
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        return controlSignal;
+    }
+}
+
+==============================
+
+==============================

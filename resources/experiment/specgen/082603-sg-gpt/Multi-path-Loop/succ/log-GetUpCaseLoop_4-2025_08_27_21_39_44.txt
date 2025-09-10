@@ -1,0 +1,727 @@
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+    //@ ensures \result >= 'A' && \result <= 'Z';
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t >= 'A' && t <= 'Z';
+        //@ maintaining (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> t != ch - 'a' + 'A');
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getUpCase
+        //@ maintaining (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> t != ch - 'a' + 'A');
+            ^
+1 verification failure
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+    //@ ensures \result >= 'A' && \result <= 'Z';
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t >= 'A' && t <= 'Z';
+        //@ maintaining (\forall char ch; ch > 'a' && ch < 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:3:) in method getUpCase
+            return 0;
+            ^
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:7:
+    //@ ensures \result >= 'A' && \result <= 'Z';
+        ^
+2 verification failures
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+    //@ ensures \result > 'A' && \result < 'Z';  
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t >= 'A' && t <= 'Z';
+        //@ maintaining (\forall char ch; ch > 'a' && ch < 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:3:) in method getUpCase
+            return 0;
+            ^
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:7:
+    //@ ensures \result > 'A' && \result < 'Z';  
+        ^
+2 verification failures
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+    //@ ensures \result > 'A' && \result <= 'Z';  
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t >= 'A' && t <= 'Z';
+        //@ maintaining (\forall char ch; ch > 'a' && ch < 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:3:) in method getUpCase
+            return 0;
+            ^
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:7:
+    //@ ensures \result > 'A' && \result <= 'Z';  
+        ^
+2 verification failures
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+    //@ ensures \result > 'A' && \result - 1 <= 'Z';  
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t >= 'A' && t <= 'Z';
+        //@ maintaining (\forall char ch; ch > 'a' && ch < 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:3:) in method getUpCase
+            return 0;
+            ^
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:7:
+    //@ ensures \result > 'A' && \result - 1 <= 'Z';  
+        ^
+2 verification failures
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+    //@ ensures \result >= 'A' && \result < 'Z';  
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t >= 'A' && t <= 'Z';
+        //@ maintaining (\forall char ch; ch > 'a' && ch < 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:3:) in method getUpCase
+            return 0;
+            ^
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:7:
+    //@ ensures \result >= 'A' && \result < 'Z';  
+        ^
+2 verification failures
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+    //@ ensures \result >= 'A' && \result <= 'Z';  
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t >= 'A' && t <= 'Z';
+        //@ maintaining (\forall char ch; ch > 'a' && ch < 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:3:) in method getUpCase
+            return 0;
+            ^
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:7:
+    //@ ensures \result >= 'A' && \result <= 'Z';  
+        ^
+2 verification failures
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+    //@ ensures \result >= 'A' && \result - 1 <= 'Z';  
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t >= 'A' && t <= 'Z';
+        //@ maintaining (\forall char ch; ch > 'a' && ch < 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:3:) in method getUpCase
+            return 0;
+            ^
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:7:
+    //@ ensures \result >= 'A' && \result - 1 <= 'Z';  
+        ^
+2 verification failures
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+    //@ ensures \result + 1 >= 'A' && \result < 'Z';  
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t >= 'A' && t <= 'Z';
+        //@ maintaining (\forall char ch; ch > 'a' && ch < 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:3:) in method getUpCase
+            return 0;
+            ^
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:7:
+    //@ ensures \result + 1 >= 'A' && \result < 'Z';  
+        ^
+2 verification failures
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+    //@ ensures \result + 1 >= 'A' && \result <= 'Z';  
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t >= 'A' && t <= 'Z';
+        //@ maintaining (\forall char ch; ch > 'a' && ch < 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:3:) in method getUpCase
+            return 0;
+            ^
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:7:
+    //@ ensures \result + 1 >= 'A' && \result <= 'Z';  
+        ^
+2 verification failures
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+    //@ ensures \result + 1 >= 'A' && \result - 1 <= 'Z';  
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t >= 'A' && t <= 'Z';
+        //@ maintaining (\forall char ch; ch > 'a' && ch < 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:3:) in method getUpCase
+            return 0;
+            ^
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:7:
+    //@ ensures \result + 1 >= 'A' && \result - 1 <= 'Z';  
+        ^
+2 verification failures
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+ 
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t >= 'A' && t <= 'Z';
+        //@ maintaining (\forall char ch; ch > 'a' && ch < 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:11: verify: The prover cannot establish an assertion (LoopInvariant) in method getUpCase
+        //@ maintaining (\forall char ch; ch > 'a' && ch < 'z'; ch != c ==> t != ch - 'a' + 'A');  
+            ^
+1 verification failure
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+ 
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t >= 'A' && t <= 'Z';
+        //@ maintaining (\forall char ch; ch > 'a' && ch <= 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:11: verify: The prover cannot establish an assertion (LoopInvariant) in method getUpCase
+        //@ maintaining (\forall char ch; ch > 'a' && ch <= 'z'; ch != c ==> t != ch - 'a' + 'A');  
+            ^
+1 verification failure
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+ 
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t >= 'A' && t <= 'Z';
+        //@ maintaining (\forall char ch; ch > 'a' && ch - 1 <= 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:11: verify: The prover cannot establish an assertion (LoopInvariant) in method getUpCase
+        //@ maintaining (\forall char ch; ch > 'a' && ch - 1 <= 'z'; ch != c ==> t != ch - 'a' + 'A');  
+            ^
+1 verification failure
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+ 
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t >= 'A' && t <= 'Z';
+        //@ maintaining (\forall char ch; ch >= 'a' && ch < 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getUpCase
+        //@ maintaining (\forall char ch; ch >= 'a' && ch < 'z'; ch != c ==> t != ch - 'a' + 'A');  
+            ^
+1 verification failure
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+ 
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t >= 'A' && t <= 'Z';
+        //@ maintaining (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getUpCase
+        //@ maintaining (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> t != ch - 'a' + 'A');  
+            ^
+1 verification failure
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+ 
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t >= 'A' && t <= 'Z';
+        //@ maintaining (\forall char ch; ch >= 'a' && ch - 1 <= 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getUpCase
+        //@ maintaining (\forall char ch; ch >= 'a' && ch - 1 <= 'z'; ch != c ==> t != ch - 'a' + 'A');  
+            ^
+1 verification failure
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+ 
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t >= 'A' && t <= 'Z';
+        //@ maintaining (\forall char ch; ch + 1 >= 'a' && ch < 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getUpCase
+        //@ maintaining (\forall char ch; ch + 1 >= 'a' && ch < 'z'; ch != c ==> t != ch - 'a' + 'A');  
+            ^
+1 verification failure
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+ 
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t >= 'A' && t <= 'Z';
+        //@ maintaining (\forall char ch; ch + 1 >= 'a' && ch <= 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getUpCase
+        //@ maintaining (\forall char ch; ch + 1 >= 'a' && ch <= 'z'; ch != c ==> t != ch - 'a' + 'A');  
+            ^
+1 verification failure
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+ 
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t >= 'A' && t <= 'Z';
+        //@ maintaining (\forall char ch; ch + 1 >= 'a' && ch - 1 <= 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getUpCase
+        //@ maintaining (\forall char ch; ch + 1 >= 'a' && ch - 1 <= 'z'; ch != c ==> t != ch - 'a' + 'A');  
+            ^
+1 verification failure
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+ 
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t >= 'A' && t <= 'Z';
+        //@ maintaining (\exists char ch; ch > 'a' && ch < 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:10: verify: The prover cannot establish an assertion (LoopInvariant) in method getUpCase
+        //@ maintaining t >= 'A' && t <= 'Z';
+            ^
+1 verification failure
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+ 
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t > 'A' && t < 'Z';  
+        //@ maintaining (\exists char ch; ch > 'a' && ch < 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getUpCase
+        //@ maintaining t > 'A' && t < 'Z';  
+            ^
+1 verification failure
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+ 
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t > 'A' && t <= 'Z';  
+        //@ maintaining (\exists char ch; ch > 'a' && ch < 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getUpCase
+        //@ maintaining t > 'A' && t <= 'Z';  
+            ^
+1 verification failure
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+ 
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t > 'A' && t - 1 <= 'Z';  
+        //@ maintaining (\exists char ch; ch > 'a' && ch < 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getUpCase
+        //@ maintaining t > 'A' && t - 1 <= 'Z';  
+            ^
+1 verification failure
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+ 
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t >= 'A' && t < 'Z';  
+        //@ maintaining (\exists char ch; ch > 'a' && ch < 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:10: verify: The prover cannot establish an assertion (LoopInvariant) in method getUpCase
+        //@ maintaining t >= 'A' && t < 'Z';  
+            ^
+1 verification failure
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+ 
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t >= 'A' && t <= 'Z';  
+        //@ maintaining (\exists char ch; ch > 'a' && ch < 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GetUpCaseLoop_Mutant4.java:10: verify: The prover cannot establish an assertion (LoopInvariant) in method getUpCase
+        //@ maintaining t >= 'A' && t <= 'Z';  
+            ^
+1 verification failure
+
+==============================
+public class GetUpCaseLoop_Mutant4 {
+    //@ requires c >= 0 && c <= 255;
+ 
+    //@ ensures (\forall char ch; ch >= 'a' && ch <= 'z'; ch != c ==> \result != ch - 'a' + 'A');
+    public /*@ pure @*/ char getUpCase(char c) {
+        if(c < 'a' || c > 'z') {
+            return 0;
+        }
+        char t = 'A';
+        //@ maintaining t >= 'A' && t - 1 <= 'Z';  
+        //@ maintaining (\exists char ch; ch > 'a' && ch < 'z'; ch != c ==> t != ch - 'a' + 'A');  
+        //@ decreases 'Z' - t;
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+
+==============================

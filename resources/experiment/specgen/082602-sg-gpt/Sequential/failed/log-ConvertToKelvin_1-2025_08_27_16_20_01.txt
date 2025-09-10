@@ -1,0 +1,9 @@
+public class ConvertToKelvin_Mutant1 {
+    /*@ spec_public @*/ public static double convertTemperature(double celsius) {
+        //@ ensures \result == celsius + 273.00;
+        return celsius + 273.00; // Modified constant
+    }
+}
+==============================
+
+==============================

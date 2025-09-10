@@ -1,0 +1,261 @@
+start role system
+As a program behavior analyst，you are required to modify a given java program so that it conforms to the given modified FSF(functional scenario form) expression.
+1. The definition of FSF(functional scenario form) is:
+    a. The FSF expression should be in the form of Ti & Di (for i = 1..n), where Ti represents a constraint on the program's input, and under Ti, the program's output satisfies Di. All Ti & Di pairs together describe the overall semantics of the program.
+    b. The Ti constraints must be mutually exclusive, i.e., Ti & Tj is unsatisfiable for any i ≠ j.
+    c. The FSF must be complete, i.e., !(T1 || T2 || ... || Tn) is unsatisfiable.
+2. There would be three inputs for you:
+    a.Original code
+    b.Original FSF
+    c.Modified FSF
+3. The relationship of the three inputs is:
+    a. The original FSF expression describes the overall semantics of original code.
+    b. The modified FSF expression is based on the original FSF expression, which undergoes some modifications to express a different semantics.
+4. Your task is to modify the original code so that it conforms to the modified FSF expression.
+5. Your output must strictly follow the format below：
+
+```
+public class className_Modified {
+    public static int funcName(type v1,...){
+        ...(function body)
+    }
+}
+```
+6. Here are some laws to follow when generating the modified code:
+    a. The function name and class name should be the same as the original code, but with "_Modified" appended to the class name.
+    b. The function signature should remain the same as the original code.
+    c. The function body should be modified according to the modified FSF expression.
+    d. Do the least modification to the original code
+    e. Do not presumptuously simplify the code, such as using library functions to replace a few lines of code or using ternary operators instead of if-structure code.
+
+
+*end* role system
+
+start role user
+Please modify the following code according to the modified FSF:
+
+```Original code
+public class Abs_Original {
+    public static int Abs(int num) {
+        if (num < 0)
+            return -num;
+        else
+            return num;
+    }
+}
+```
+```Original FSF
+T1: num < 0
+D1: return_value == -num
+
+T2: num >= 0
+D2: return_value == num
+```
+```Modified FSF
+T1: num < 0
+D1: return_value == num
+
+T2: num >= 0
+D2: return_value == -num
+```
+*end* role user
+
+start role assistant
+```
+public class Abs_Modified {
+    public static int Abs(int num) {
+        if (num < 0)
+            return num;
+        else
+            return -num;
+    }
+}
+```
+*end* role assistant
+
+start role user
+Please modify the following code according to the modified FSF:
+
+``Original Code
+public class CanWinNim_Original {
+
+    public static boolean canWinNim(int n) {
+        return n % 4 != 0;
+    }
+}
+```
+```Original FSF
+T1: n % 4 != 0
+D1: return_value == true
+
+T2: n % 4 == 0
+D2: return_value == false
+```
+
+```Modified FSF
+T1: n % 4 == 0
+D1: return_value == true
+
+T2: n % 4 != 0
+D2: return_value == false
+```
+*end* role user
+start role assistant
+```
+public class CanWinNim_Modified {
+    public static boolean canWinNim(int n) {
+        return n % 4 == 0;
+    }
+}
+```
+*end* role assistant
+
+start role user
+Please modify the following code according to the modified FSF:
+
+``Original Code
+public class ChangeCase_Original {
+
+    public static char changeCase(char c) {
+        char TBFVResult = ' ';
+        if (c > 'z') {
+            TBFVResult = c;
+        } else if (c >= 'a') {
+            TBFVResult = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            TBFVResult = c;
+        } else if (c >= 'A') {
+            TBFVResult = (char) (c - 'A' + 'a');
+        } else {
+            TBFVResult = c;
+        }
+        return TBFVResult;
+    }
+}
+```
+```Original FSF
+T1: c > 'z'
+D1: return_value == c
+
+T2: c >= 'a' && c <= 'z'
+D2: return_value == (char)(c - 'a' + 'A')
+
+T3: c > 'Z' && c < 'a'
+D3: return_value == c
+
+T4: c >= 'A' && c <= 'Z'
+D4: return_value == (char)(c - 'A' + 'a')
+
+T5: c < 'A'
+D5: return_value == c
+```
+
+```Modified FSF
+T1: c > 'z'
+D1: return_value == c
+
+T2: c >= 'a' && c <= 'z'
+D2: return_value == (char) ('a' - 'A' + c)
+
+T3: c > 'Z' && c < 'a'
+D3: return_value == c
+
+T4: c >= 'A' && c <= 'Z'
+D4: return_value == (char) (c - 'A' + 'a')
+
+T5: c < 'A'
+D5: return_value == c
+```
+*end* role user
+start role assistant
+```
+public class ChangeCase_Modified {
+
+    public static char changeCase(char c) {
+        char TBFVResult = ' ';
+        if (c > 'z') {
+            TBFVResult = c;
+        } else if (c >= 'a') {
+            TBFVResult = (char) ('a' - 'A' + c);
+        } else if (c > 'Z') {
+            TBFVResult = c;
+        } else if (c >= 'A') {
+            TBFVResult = (char) (c - 'A' + 'a');
+        } else {
+            TBFVResult = c;
+        }
+        return TBFVResult;
+    }
+}
+```
+*end* role assistant
+
+start role user
+Please modify the following code according to the modified FSF:
+
+``Original Code
+public class AddLoop_Original {
+    public static int AddLoop(int x, int y) {
+        int sum = x;
+        if (y > 0) {
+            int n = y;
+            while (n > 0) {
+                sum = sum + 1;
+                n = n - 1;
+            }
+        } else {
+            int n = -y;
+            while (n > 0) {
+                sum = sum - 1;
+                n = n - 1;
+            }
+        }
+        return sum;
+    }
+}
+```
+```Original FSF
+T1: x > 0
+D1: return_value == y + x
+
+T2: x < 0
+D2: return_value == y + x
+
+T3: x == 0
+D3: return_value == y
+```
+
+```Modified FSF
+T1: x > 0
+D1: return_value == y + 2 * x
+
+T2: x < 0
+D2: return_value == y - 2 * (-x)
+
+T3: x == 0
+D3: return_value == y
+```
+*end* role user
+start role assistant
+```
+public class AddLoopFor_Modified {
+    public static int addLoop(int x, int y) {
+        int sum = y;
+        if (x > 0) {
+            int n = 0;
+            for(n = x; n > 0; ) {
+                sum = sum + 2;
+                n = n - 1;
+            }
+        } else {
+            int n = 0;
+            for(n = -x; n > 0; ) {
+                sum = sum - 2;
+                n = n - 1;
+            }
+        }
+        return sum;
+    }
+}
+```
+*end* role assistant

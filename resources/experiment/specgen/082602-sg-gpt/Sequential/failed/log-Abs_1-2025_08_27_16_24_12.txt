@@ -1,0 +1,12 @@
+public class Abs_Mutant1 {
+
+    /*@ spec_public @*/ 
+    public static int Abs(int num) {
+        //@ ensures \result >= 0 ==> \result == num;
+        //@ ensures \result < 0 ==> \result == -num;
+        return num;
+    }
+}
+==============================
+
+==============================

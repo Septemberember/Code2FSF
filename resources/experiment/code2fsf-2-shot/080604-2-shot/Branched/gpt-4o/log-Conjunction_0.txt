@@ -1,0 +1,22 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class Conjunction_Original {
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return false;
+        if(b2 == false)
+            return false;
+        return true;
+    }
+}
+
+```
+*end* role user
+start role user
+There is no FSF in history conversation, retry the conversation, please regenerate the FSF for given program.
+*end* role user
+start role remark
+Validation FAIL--Conversation rounds number is over the maxRounds
+Current conversation round is: [1]
+*end* role remark

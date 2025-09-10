@@ -1,0 +1,89 @@
+public class FizzBuzz_Mutant5 {
+    //@ requires n != Integer.MIN_VALUE;
+    //@ ensures \result == (n % 3 == 0) ? 3 : ((n % 5 == 0) ? 5 : 0);
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        if (n % 3 == 0) {
+            res += 3;
+        }
+        else if (n % 5 == 0) { // changed from second if to else if
+            res += 5;
+        }
+        return res;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/FizzBuzz_Mutant5.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == (n % 3 == 0) ? 3 : ((n % 5 == 0) ? 5 : 0);
+                        ^
+/root/082602-gpt-specgen/tmp/FizzBuzz_Mutant5.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == (n % 3 == 0) ? 3 : ((n % 5 == 0) ? 5 : 0);
+                                        ^
+2 errors
+
+==============================
+public class FizzBuzz_Mutant5 {
+    //@ requires n != Integer.MIN_VALUE;
+    //@ ensures \result == (n % 3 == 0) ? 3 : ((n % 5 == 0) ? 5 : 0);
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        if (n % 3 == 0) {
+            res += 3;
+        }
+        else if (n % 5 == 0) { // changed from second if to else if
+            res += 5;
+        }
+        return res;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/FizzBuzz_Mutant5.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == (n % 3 == 0) ? 3 : ((n % 5 == 0) ? 5 : 0);
+                        ^
+/root/082602-gpt-specgen/tmp/FizzBuzz_Mutant5.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == (n % 3 == 0) ? 3 : ((n % 5 == 0) ? 5 : 0);
+                                        ^
+2 errors
+
+==============================
+public class FizzBuzz_Mutant5 {
+    //@ requires n != Integer.MIN_VALUE;
+    //@ ensures \result == (n % 3 == 0) ? 3 : ((n % 5 == 0) ? 5 : 0);
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        if (n % 3 == 0) {
+            res += 3;
+        }
+        else if (n % 5 == 0) { // changed from second if to else if
+            res += 5;
+        }
+        return res;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/FizzBuzz_Mutant5.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == (n % 3 == 0) ? 3 : ((n % 5 == 0) ? 5 : 0);
+                        ^
+/root/082602-gpt-specgen/tmp/FizzBuzz_Mutant5.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == (n % 3 == 0) ? 3 : ((n % 5 == 0) ? 5 : 0);
+                                        ^
+2 errors
+
+==============================
+public class FizzBuzz_Mutant5 {
+    //@ requires n != Integer.MIN_VALUE;
+    //@ ensures \result == ((n % 3 == 0) ? 3 : ((n % 5 == 0) ? 5 : 0));
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        if (n % 3 == 0) {
+            res += 3;
+        }
+        else if (n % 5 == 0) { // changed from second if to else if
+            res += 5;
+        }
+        return res;
+    }
+}
+==============================
+
+==============================

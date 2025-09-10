@@ -1,0 +1,41 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class AddLoopFor_Mutant1 {
+    public static int addLoop(int x, int y) {
+        int sum = y;
+        if (x <= 0) {
+            int n = 0;
+            for(n = x; n > 0; ) {
+                sum = sum + 1;
+                n = n - 1;
+            }
+        } else {
+            int n = 0;
+            for(n = -x; n > 0; ) {
+                sum = sum - 1;
+                n = n - 1;
+            }
+        }
+        return sum;
+    }
+}
+
+```
+*end* role user
+start role assistant
+```
+T1: x <= 0
+D1: sum == y + (-x)
+
+T2: x > 0
+D2: sum == y - x
+```
+*end* role assistant
+start role user
+When the variables are assigned as x: -31040	y: 0	，the output of the program violates T: x <= 0	D: sum == y + (-x)，please regenerate the FSF according this counterexample！
+*end* role user
+start role remark
+Validation FAIL--Conversation rounds number is over the maxRounds
+Current conversation round is: [1]
+*end* role remark

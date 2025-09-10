@@ -1,0 +1,35 @@
+public class Return100_Mutant3 {
+    //@ ensures \result == 0; 
+    public static int return100 () {
+        int res = 0;
+        //@ maintaining res == \old(res);
+        //@ maintaining 0 <= i && i <= 100;
+        //@ decreases 100 - i;
+        for(int i = 0; i < 100; i++) { // CHANGED: moved declaration of i inside the loop
+            res = i; // CHANGED: reassigning i to res instead of incrementing res
+        }
+        return res;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/Return100_Mutant3.java:5: error: cannot find symbol
+        //@ maintaining res == \old(res);
+                                    ^
+  symbol:   variable res
+  location: class Return100_Mutant3
+1 error
+
+==============================
+public class Return100_Mutant3 {
+    //@ ensures \result == 0; 
+    public static int return100 () {
+        int res = 0;
+        //@ maintaining 0 <= i && i <= 100;
+        //@ decreases 100 - i;
+        for(int i = 0; i < 100; i++) { // CHANGED: moved declaration of i inside the loop
+            res = i; // CHANGED: reassigning i to res instead of incrementing res
+        }
+        return res;
+    }
+}
+==============================

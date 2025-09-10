@@ -1,0 +1,195 @@
+public class Return100Nested_Mutant3 {
+    //@ ensures \result == 100;
+    public static int return100 () {
+        int res = 0;
+        //@ maintaining res == 2 * (i * 10 + j);
+        //@ decreases 100 - (i * 10 + j);
+        for(int i = 0; i < 10; i++) {
+            for(int j = 0; j < 10; j++) {
+                res = res + 2;
+            }
+        }
+        return res;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant3.java:5: error: cannot find symbol
+        //@ maintaining res == 2 * (i * 10 + j);
+                                             ^
+  symbol:   variable j
+  location: class Return100Nested_Mutant3
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant3.java:6: error: cannot find symbol
+        //@ decreases 100 - (i * 10 + j);
+                                      ^
+  symbol:   variable j
+  location: class Return100Nested_Mutant3
+2 errors
+
+==============================
+public class Return100Nested_Mutant3 {
+    //@ ensures \result == 100;
+    public static int return100 () {
+        int res = 0;
+        //@ maintaining res == 2 * (i * 10 + j);
+        //@ decreases 100 - (i * 10 + j);
+        for(int i = 0; i < 10; i++) {
+            for(int j = 0; j < 10; j++) {
+                res = res + 2;
+            }
+        }
+        return res;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant3.java:5: error: cannot find symbol
+        //@ maintaining res == 2 * (i * 10 + j);
+                                             ^
+  symbol:   variable j
+  location: class Return100Nested_Mutant3
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant3.java:6: error: cannot find symbol
+        //@ decreases 100 - (i * 10 + j);
+                                      ^
+  symbol:   variable j
+  location: class Return100Nested_Mutant3
+2 errors
+
+==============================
+public class Return100Nested_Mutant3 {
+    //@ ensures \result == 100;
+    public static int return100 () {
+        int res = 0;
+        //@ maintaining res == 2 * (i * 10 + j);
+        //@ decreases 100 - (i * 10 + j);
+        for(int i = 0; i < 10; i++) {
+            for(int j = 0; j < 10; j++) {
+                res = res + 2;
+            }
+        }
+        return res;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant3.java:5: error: cannot find symbol
+        //@ maintaining res == 2 * (i * 10 + j);
+                                             ^
+  symbol:   variable j
+  location: class Return100Nested_Mutant3
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant3.java:6: error: cannot find symbol
+        //@ decreases 100 - (i * 10 + j);
+                                      ^
+  symbol:   variable j
+  location: class Return100Nested_Mutant3
+2 errors
+
+==============================
+public class Return100Nested_Mutant3 {
+    //@ ensures \result == 100;
+    public static int return100 () {
+        int res = 0;
+        //@ maintaining res == 2 * (i * 10);
+        //@ decreases 10 - i;
+        for(int i = 0; i < 10; i++) {
+            for(int j = 0; j < 10; j++) {
+                res = res + 2;
+            }
+        }
+        return res;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant3.java:12: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant3.java:2:) in method return100
+        return res;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant3.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant3.java:12:
+    //@ ensures \result == 100;
+        ^
+2 verification failures
+
+==============================
+public class Return100Nested_Mutant3 {
+    //@ ensures \result == 100;  
+    public static int return100 () {
+        int res = 0;
+        //@ maintaining res == 2 * (i * 10);
+        //@ decreases 10 - i;
+        for(int i = 0; i < 10; i++) {
+            for(int j = 0; j < 10; j++) {
+                res = res + 2;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant3.java:12: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant3.java:2:) in method return100
+        return res;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant3.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant3.java:12:
+    //@ ensures \result == 100;  
+        ^
+2 verification failures
+
+==============================
+public class Return100Nested_Mutant3 {
+ 
+    public static int return100 () {
+        int res = 0;
+        //@ maintaining res == 2 * (i * 10);
+        //@ decreases 10 - i;
+        for(int i = 0; i < 10; i++) {
+            for(int j = 0; j < 10; j++) {
+                res = res + 2;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant3.java:5: verify: The prover cannot establish an assertion (LoopInvariant) in method return100
+        //@ maintaining res == 2 * (i * 10);
+            ^
+1 verification failure
+
+==============================
+public class Return100Nested_Mutant3 {
+ 
+    public static int return100 () {
+        int res = 0;
+        //@ maintaining res == 2 * (i * 10);  
+        //@ decreases 10 - i;
+        for(int i = 0; i < 10; i++) {
+            for(int j = 0; j < 10; j++) {
+                res = res + 2;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant3.java:5: verify: The prover cannot establish an assertion (LoopInvariant) in method return100
+        //@ maintaining res == 2 * (i * 10);  
+            ^
+1 verification failure
+
+==============================
+public class Return100Nested_Mutant3 {
+ 
+    public static int return100 () {
+        int res = 0;
+ 
+        //@ decreases 10 - i;
+        for(int i = 0; i < 10; i++) {
+            for(int j = 0; j < 10; j++) {
+                res = res + 2;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+
+==============================

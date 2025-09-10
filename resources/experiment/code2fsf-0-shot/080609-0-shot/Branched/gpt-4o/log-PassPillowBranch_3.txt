@@ -1,0 +1,32 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class PassPillowBranch_Mutant3 {
+    public static int passPillow(int n, int time) {
+        time = time % ((n - 1) * 2);
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 2;
+    }
+}
+
+```
+*end* role user
+start role assistant
+```
+T1: n <= 1 || (n - 1) * 2 == 0
+D1: Exception
+T2: n > 1 && (n - 1) * 2 != 0 && time < n
+D2: return_value == time + 1
+T3: n > 1 && (n - 1) * 2 != 0 && time >= n
+D3: return_value == n * 2 - time - 2
+```
+*end* role assistant
+start role user
+When the variables are assigned as time: -2	n: 2	，the output of the program violates T: n > 1 && (n - 1) * 2 != 0 && time < n	D: return_value == time + 1，please regenerate the FSF according this counterexample！
+*end* role user
+start role remark
+Validation FAIL--Conversation rounds number is over the maxRounds
+Current conversation round is: [1]
+*end* role remark

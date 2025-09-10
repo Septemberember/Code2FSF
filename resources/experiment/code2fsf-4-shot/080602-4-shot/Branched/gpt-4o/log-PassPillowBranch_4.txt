@@ -1,0 +1,34 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class PassPillowBranch_Mutant4 {
+    public static int passPillow(int n, int time) {
+        time = time % ((n - 1) * 3); // changed multiplier 2 to 3
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+
+```
+*end* role user
+start role assistant
+```
+T1: n <= 1 || time % ((n - 1) * 3) < n
+D1: return_value == (time % ((n - 1) * 3)) + 1
+
+T2: n > 1 && time % ((n - 1) * 3) >= n
+D2: return_value == n * 2 - (time % ((n - 1) * 3)) - 1
+
+T3: n <= 0
+D3: Exception
+```
+*end* role assistant
+start role user
+It was found that T in the FSF does not satisfy the mutual exclusivity requirement,especially, Ti && Tj :[(n <= 1 || time % ((n - 1) * 3) < n) && (n <= 0)] is satisfiable assigned as [n=-1974468607, time=-1896873984]，please regenerate FSF，making sure the mutual exclusivity of FSF
+*end* role user
+start role remark
+Validation FAIL--Conversation rounds number is over the maxRounds
+Current conversation round is: [1]
+*end* role remark

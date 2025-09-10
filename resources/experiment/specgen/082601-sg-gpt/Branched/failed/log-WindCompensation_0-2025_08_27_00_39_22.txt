@@ -1,0 +1,73 @@
+public class WindCompensation_Original {
+    //@ requires windSpeed >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == spec_windCompensation(windSpeed);
+    public static int windCompensation(int windSpeed) {
+        int compensation = 0;
+        if (windSpeed > 20) {
+            compensation = (windSpeed - 20) * 2;
+        } else if (windSpeed > 10) {
+            compensation = windSpeed - 10;
+        }
+        return compensation;
+    }
+
+    /*@ requires windSpeed >= 0;
+        ensures \result >= 0;
+        ensures windSpeed > 20 ==> \result == (windSpeed - 20) * 2;
+        ensures windSpeed <= 20 && windSpeed > 10 ==> \result == windSpeed - 10;
+        ensures windSpeed <= 10 ==> \result == 0;
+    */
+    public static model function int spec_windCompensation(int windSpeed) {
+        if (windSpeed > 20) {
+            return (windSpeed - 20) * 2;
+        } else if (windSpeed > 10) {
+            return windSpeed - 10;
+        } else {
+            return 0;
+        }
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/WindCompensation_Original.java:21: error: ';' expected
+    public static model function int spec_windCompensation(int windSpeed) {
+                                ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/WindCompensation_Original.java:21: error: Method specs may not precede a variable declaration
+    public static model function int spec_windCompensation(int windSpeed) {
+                        ^
+2 errors
+
+==============================
+public class WindCompensation_Original {
+    //@ requires windSpeed >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == spec_windCompensation(windSpeed);
+    public static int windCompensation(int windSpeed) {
+        int compensation = 0;
+        if (windSpeed > 20) {
+            compensation = (windSpeed - 20) * 2;
+        } else if (windSpeed > 10) {
+            compensation = windSpeed - 10;
+        }
+        return compensation;
+    }
+
+    /*@ requires windSpeed >= 0;
+        ensures \result >= 0;
+        ensures windSpeed > 20 ==> \result == (windSpeed - 20) * 2;
+        ensures windSpeed <= 20 && windSpeed > 10 ==> \result == windSpeed - 10;
+        ensures windSpeed <= 10 ==> \result == 0;
+    */
+    public static int spec_windCompensation(int windSpeed) {
+        if (windSpeed > 20) {
+            return (windSpeed - 20) * 2;
+        } else if (windSpeed > 10) {
+            return windSpeed - 10;
+        } else {
+            return 0;
+        }
+    }
+}
+==============================
+
+==============================

@@ -1,0 +1,106 @@
+public class PassPillowBranch_Mutant1 {
+    //@ ensures \result >= 0;
+    //@ ensures \result <= n;
+    public static int passPillow(int n, int time) {
+        time = time % (n + 1) * 2; // changed subtraction to addition
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/PassPillowBranch_Mutant1.java:5: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method passPillow
+        time = time % (n + 1) * 2; // changed subtraction to addition
+                    ^
+1 verification failure
+
+==============================
+public class PassPillowBranch_Mutant1 {
+    //@ requires n >= 0;
+    //@ requires time >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result <= n;
+    public static int passPillow(int n, int time) {
+        time = time % (n + 1) * 2; // changed subtraction to addition
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/PassPillowBranch_Mutant1.java:11: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/PassPillowBranch_Mutant1.java:4:) in method passPillow
+        return n * 2 - time - 1;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/PassPillowBranch_Mutant1.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/PassPillowBranch_Mutant1.java:11:
+    //@ ensures \result >= 0;
+        ^
+2 verification failures
+
+==============================
+public class PassPillowBranch_Mutant1 {
+    //@ requires n >= 0;
+    //@ requires time >= 0;
+    //@ ensures \result > 0;  
+    //@ ensures \result <= n;
+    public static int passPillow(int n, int time) {
+        time = time % (n + 1) * 2; // changed subtraction to addition
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/PassPillowBranch_Mutant1.java:11: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/PassPillowBranch_Mutant1.java:4:) in method passPillow
+        return n * 2 - time - 1;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/PassPillowBranch_Mutant1.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/PassPillowBranch_Mutant1.java:11:
+    //@ ensures \result > 0;  
+        ^
+2 verification failures
+
+==============================
+public class PassPillowBranch_Mutant1 {
+    //@ requires n >= 0;
+    //@ requires time >= 0;
+    //@ ensures \result >= 0;  
+    //@ ensures \result <= n;
+    public static int passPillow(int n, int time) {
+        time = time % (n + 1) * 2; // changed subtraction to addition
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/PassPillowBranch_Mutant1.java:11: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/PassPillowBranch_Mutant1.java:4:) in method passPillow
+        return n * 2 - time - 1;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/PassPillowBranch_Mutant1.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/PassPillowBranch_Mutant1.java:11:
+    //@ ensures \result >= 0;  
+        ^
+2 verification failures
+
+==============================
+public class PassPillowBranch_Mutant1 {
+    //@ requires n >= 0;
+    //@ requires time >= 0;
+    //@ ensures \result + 1 >= 0;  
+    //@ ensures \result <= n;
+    public static int passPillow(int n, int time) {
+        time = time % (n + 1) * 2; // changed subtraction to addition
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+
+==============================
+
+==============================

@@ -1,0 +1,14 @@
+public class ReLU_Mutant3 {
+    /*@ public normal_behavior
+      @    requires x < 0.0;
+      @    ensures \result == x; @*/
+    public static double computeReLU(double x) {
+        if(x < 0.0) {
+            return x;
+        }
+        return 0.0;
+    }
+}
+==============================
+
+==============================

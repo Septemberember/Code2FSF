@@ -1,0 +1,668 @@
+public class Calculator_Mutant5 {
+    //@ ensures \result == num1 + num2 <==> operator == '+';
+    //@ ensures \result == num1 - num2 <==> operator == '-';
+    //@ ensures \result == num1 * num2 <==> operator == '*';
+    //@ ensures \result == num1 / num2 <==> operator == '/';
+    //@ ensures \result == num1 + num2 <==> operator == '%';
+    //@ ensures \result == -1 <==> operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%';
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 * num2;
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 + num2; //mutated % with +
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:3:) in method calculate
+        return output;
+        ^
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29:
+    //@ ensures \result == num1 - num2 <==> operator == '-';
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant5 {
+    //@ ensures \result == num1 + num2 <==> operator == '+';
+    //@ ensures \result == num1 - num2 <==> operator == '-';  
+    //@ ensures \result == num1 * num2 <==> operator == '*';
+    //@ ensures \result == num1 / num2 <==> operator == '/';
+    //@ ensures \result == num1 + num2 <==> operator == '%';
+    //@ ensures \result == -1 <==> operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%';
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 * num2;
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 + num2; //mutated % with +
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:3:) in method calculate
+        return output;
+        ^
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29:
+    //@ ensures \result == num1 - num2 <==> operator == '-';  
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant5 {
+    //@ ensures \result == num1 + num2 <==> operator == '+';
+    //@ ensures \result == num1 + num2 <==> operator == '-';  
+    //@ ensures \result == num1 * num2 <==> operator == '*';
+    //@ ensures \result == num1 / num2 <==> operator == '/';
+    //@ ensures \result == num1 + num2 <==> operator == '%';
+    //@ ensures \result == -1 <==> operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%';
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 * num2;
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 + num2; //mutated % with +
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:3:) in method calculate
+        return output;
+        ^
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29:
+    //@ ensures \result == num1 + num2 <==> operator == '-';  
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant5 {
+    //@ ensures \result == num1 + num2 <==> operator == '+';
+ 
+    //@ ensures \result == num1 * num2 <==> operator == '*';
+    //@ ensures \result == num1 / num2 <==> operator == '/';
+    //@ ensures \result == num1 + num2 <==> operator == '%';
+    //@ ensures \result == -1 <==> operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%';
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 * num2;
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 + num2; //mutated % with +
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:4:) in method calculate
+        return output;
+        ^
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:4: verify: Associated declaration: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29:
+    //@ ensures \result == num1 * num2 <==> operator == '*';
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant5 {
+    //@ ensures \result == num1 + num2 <==> operator == '+';
+ 
+    //@ ensures \result == num1 * num2 <==> operator == '*';  
+    //@ ensures \result == num1 / num2 <==> operator == '/';
+    //@ ensures \result == num1 + num2 <==> operator == '%';
+    //@ ensures \result == -1 <==> operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%';
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 * num2;
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 + num2; //mutated % with +
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:4:) in method calculate
+        return output;
+        ^
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:4: verify: Associated declaration: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29:
+    //@ ensures \result == num1 * num2 <==> operator == '*';  
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant5 {
+    //@ ensures \result == num1 + num2 <==> operator == '+';
+ 
+ 
+    //@ ensures \result == num1 / num2 <==> operator == '/';
+    //@ ensures \result == num1 + num2 <==> operator == '%';
+    //@ ensures \result == -1 <==> operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%';
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 * num2;
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 + num2; //mutated % with +
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:5: verify: The prover cannot establish an assertion (UndefinedDivideByZero) in method calculate
+    //@ ensures \result == num1 / num2 <==> operator == '/';
+                                ^
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29: verify: Associated method exit
+        return output;
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant5 {
+    //@ ensures \result == num1 + num2 <==> operator == '+';
+ 
+ 
+    //@ ensures \result == num1 / num2 <==> operator == '/';  
+    //@ ensures \result == num1 + num2 <==> operator == '%';
+    //@ ensures \result == -1 <==> operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%';
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 * num2;
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 + num2; //mutated % with +
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:5: verify: The prover cannot establish an assertion (UndefinedDivideByZero) in method calculate
+    //@ ensures \result == num1 / num2 <==> operator == '/';  
+                                ^
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29: verify: Associated method exit
+        return output;
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant5 {
+    //@ ensures \result == num1 + num2 <==> operator == '+';
+ 
+ 
+ 
+    //@ ensures \result == num1 + num2 <==> operator == '%';
+    //@ ensures \result == -1 <==> operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%';
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 * num2;
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 + num2; //mutated % with +
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:6:) in method calculate
+        return output;
+        ^
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:6: verify: Associated declaration: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29:
+    //@ ensures \result == num1 + num2 <==> operator == '%';
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant5 {
+    //@ ensures \result == num1 + num2 <==> operator == '+';
+ 
+ 
+ 
+    //@ ensures \result == num1 + num2 <==> operator == '%';  
+    //@ ensures \result == -1 <==> operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%';
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 * num2;
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 + num2; //mutated % with +
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:6:) in method calculate
+        return output;
+        ^
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:6: verify: Associated declaration: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29:
+    //@ ensures \result == num1 + num2 <==> operator == '%';  
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant5 {
+    //@ ensures \result == num1 + num2 <==> operator == '+';
+ 
+ 
+ 
+    //@ ensures \result == num1 - num2 <==> operator == '%';  
+    //@ ensures \result == -1 <==> operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%';
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 * num2;
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 + num2; //mutated % with +
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:6:) in method calculate
+        return output;
+        ^
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:6: verify: Associated declaration: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29:
+    //@ ensures \result == num1 - num2 <==> operator == '%';  
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant5 {
+    //@ ensures \result == num1 + num2 <==> operator == '+';
+ 
+ 
+ 
+ 
+    //@ ensures \result == -1 <==> operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%';
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 * num2;
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 + num2; //mutated % with +
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:7:) in method calculate
+        return output;
+        ^
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:7: verify: Associated declaration: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29:
+    //@ ensures \result == -1 <==> operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%';
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant5 {
+    //@ ensures \result == num1 + num2 <==> operator == '+';
+ 
+ 
+ 
+ 
+    //@ ensures \result == -1 <==> operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%';  
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 * num2;
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 + num2; //mutated % with +
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:7:) in method calculate
+        return output;
+        ^
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:7: verify: Associated declaration: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29:
+    //@ ensures \result == -1 <==> operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%';  
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant5 {
+    //@ ensures \result == num1 + num2 <==> operator == '+';
+ 
+ 
+ 
+ 
+ 
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 * num2;
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 + num2; //mutated % with +
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:2:) in method calculate
+        return output;
+        ^
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29:
+    //@ ensures \result == num1 + num2 <==> operator == '+';
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant5 {
+    //@ ensures \result == num1 + num2 <==> operator == '+';  
+ 
+ 
+ 
+ 
+ 
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 * num2;
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 + num2; //mutated % with +
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:2:) in method calculate
+        return output;
+        ^
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29:
+    //@ ensures \result == num1 + num2 <==> operator == '+';  
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant5 {
+    //@ ensures \result == num1 - num2 <==> operator == '+';  
+ 
+ 
+ 
+ 
+ 
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 * num2;
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 + num2; //mutated % with +
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:2:) in method calculate
+        return output;
+        ^
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:29:
+    //@ ensures \result == num1 - num2 <==> operator == '+';  
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant5 {
+ 
+ 
+ 
+ 
+ 
+ 
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 * num2;
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 + num2; //mutated % with +
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/Calculator_Mutant5.java:21: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method calculate
+                output = num1 / num2;
+                              ^
+1 verification failure
+
+==============================

@@ -1,0 +1,605 @@
+public class AddHalfSelf_Original{
+    //@ ensures x < 0 ==> \result == x - (\num_of int i; 0 <= i && i <= -x; i % 2 == 0);
+    //@ ensures x >= 0 ==> \result == x + (\num_of int i; 0 <= i && i <= x; i % 2 == 0);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == (\num_of int i; 0 <= i && i <= x; i % 2 == 0) - (\num_of int i; 0 <= i && i <= n; i % 2 == 0);
+        //@ decreases n;
+        while(n > 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddHalfSelf_Original.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method addHalfSelf
+        //@ maintaining addNum == (\num_of int i; 0 <= i && i <= x; i % 2 == 0) - (\num_of int i; 0 <= i && i <= n; i % 2 == 0);
+            ^
+1 verification failure
+
+==============================
+public class AddHalfSelf_Original{
+    //@ ensures x < 0 ==> \result == x - (\num_of int i; 0 <= i && i <= -x; i % 2 == 0);
+    //@ ensures x >= 0 ==> \result == x + (\num_of int i; 0 <= i && i <= x; i % 2 == 0);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == (\num_of int i; 0 < i && i < x; i % 2 == 0) - (\num_of int i; 0 < i && i < n; i % 2 == 0);  
+        //@ decreases n;
+        while(n > 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddHalfSelf_Original.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method addHalfSelf
+        //@ maintaining addNum == (\num_of int i; 0 < i && i < x; i % 2 == 0) - (\num_of int i; 0 < i && i < n; i % 2 == 0);  
+            ^
+1 verification failure
+
+==============================
+public class AddHalfSelf_Original{
+    //@ ensures x < 0 ==> \result == x - (\num_of int i; 0 <= i && i <= -x; i % 2 == 0);
+    //@ ensures x >= 0 ==> \result == x + (\num_of int i; 0 <= i && i <= x; i % 2 == 0);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == (\num_of int i; 0 < i && i < x; i % 2 == 0) - (\num_of int i; 0 < i && i <= n; i % 2 == 0);  
+        //@ decreases n;
+        while(n > 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddHalfSelf_Original.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method addHalfSelf
+        //@ maintaining addNum == (\num_of int i; 0 < i && i < x; i % 2 == 0) - (\num_of int i; 0 < i && i <= n; i % 2 == 0);  
+            ^
+1 verification failure
+
+==============================
+public class AddHalfSelf_Original{
+    //@ ensures x < 0 ==> \result == x - (\num_of int i; 0 <= i && i <= -x; i % 2 == 0);
+    //@ ensures x >= 0 ==> \result == x + (\num_of int i; 0 <= i && i <= x; i % 2 == 0);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == (\num_of int i; 0 < i && i < x; i % 2 == 0) - (\num_of int i; 0 < i && i - 1 <= n; i % 2 == 0);  
+        //@ decreases n;
+        while(n > 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddHalfSelf_Original.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method addHalfSelf
+        //@ maintaining addNum == (\num_of int i; 0 < i && i < x; i % 2 == 0) - (\num_of int i; 0 < i && i - 1 <= n; i % 2 == 0);  
+            ^
+1 verification failure
+
+==============================
+public class AddHalfSelf_Original{
+    //@ ensures x < 0 ==> \result == x - (\num_of int i; 0 <= i && i <= -x; i % 2 == 0);
+    //@ ensures x >= 0 ==> \result == x + (\num_of int i; 0 <= i && i <= x; i % 2 == 0);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == (\num_of int i; 0 < i && i < x; i % 2 == 0) - (\num_of int i; 0 <= i && i < n; i % 2 == 0);  
+        //@ decreases n;
+        while(n > 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddHalfSelf_Original.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method addHalfSelf
+        //@ maintaining addNum == (\num_of int i; 0 < i && i < x; i % 2 == 0) - (\num_of int i; 0 <= i && i < n; i % 2 == 0);  
+            ^
+1 verification failure
+
+==============================
+public class AddHalfSelf_Original{
+    //@ ensures x < 0 ==> \result == x - (\num_of int i; 0 <= i && i <= -x; i % 2 == 0);
+    //@ ensures x >= 0 ==> \result == x + (\num_of int i; 0 <= i && i <= x; i % 2 == 0);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == (\num_of int i; 0 < i && i < x; i % 2 == 0) - (\num_of int i; 0 <= i && i <= n; i % 2 == 0);  
+        //@ decreases n;
+        while(n > 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddHalfSelf_Original.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method addHalfSelf
+        //@ maintaining addNum == (\num_of int i; 0 < i && i < x; i % 2 == 0) - (\num_of int i; 0 <= i && i <= n; i % 2 == 0);  
+            ^
+1 verification failure
+
+==============================
+public class AddHalfSelf_Original{
+    //@ ensures x < 0 ==> \result == x - (\num_of int i; 0 <= i && i <= -x; i % 2 == 0);
+    //@ ensures x >= 0 ==> \result == x + (\num_of int i; 0 <= i && i <= x; i % 2 == 0);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == (\num_of int i; 0 < i && i < x; i % 2 == 0) - (\num_of int i; 0 <= i && i - 1 <= n; i % 2 == 0);  
+        //@ decreases n;
+        while(n > 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddHalfSelf_Original.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method addHalfSelf
+        //@ maintaining addNum == (\num_of int i; 0 < i && i < x; i % 2 == 0) - (\num_of int i; 0 <= i && i - 1 <= n; i % 2 == 0);  
+            ^
+1 verification failure
+
+==============================
+public class AddHalfSelf_Original{
+    //@ ensures x < 0 ==> \result == x - (\num_of int i; 0 <= i && i <= -x; i % 2 == 0);
+    //@ ensures x >= 0 ==> \result == x + (\num_of int i; 0 <= i && i <= x; i % 2 == 0);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == (\num_of int i; 0 < i && i < x; i % 2 == 0) - (\num_of int i; 0 - 1 <= i && i < n; i % 2 == 0);  
+        //@ decreases n;
+        while(n > 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddHalfSelf_Original.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method addHalfSelf
+        //@ maintaining addNum == (\num_of int i; 0 < i && i < x; i % 2 == 0) - (\num_of int i; 0 - 1 <= i && i < n; i % 2 == 0);  
+            ^
+1 verification failure
+
+==============================
+public class AddHalfSelf_Original{
+    //@ ensures x < 0 ==> \result == x - (\num_of int i; 0 <= i && i <= -x; i % 2 == 0);
+    //@ ensures x >= 0 ==> \result == x + (\num_of int i; 0 <= i && i <= x; i % 2 == 0);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == (\num_of int i; 0 < i && i < x; i % 2 == 0) - (\num_of int i; 0 - 1 <= i && i <= n; i % 2 == 0);  
+        //@ decreases n;
+        while(n > 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddHalfSelf_Original.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method addHalfSelf
+        //@ maintaining addNum == (\num_of int i; 0 < i && i < x; i % 2 == 0) - (\num_of int i; 0 - 1 <= i && i <= n; i % 2 == 0);  
+            ^
+1 verification failure
+
+==============================
+public class AddHalfSelf_Original{
+    //@ ensures x < 0 ==> \result == x - (\num_of int i; 0 <= i && i <= -x; i % 2 == 0);
+    //@ ensures x >= 0 ==> \result == x + (\num_of int i; 0 <= i && i <= x; i % 2 == 0);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == (\num_of int i; 0 < i && i < x; i % 2 == 0) - (\num_of int i; 0 - 1 <= i && i - 1 <= n; i % 2 == 0);  
+        //@ decreases n;
+        while(n > 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddHalfSelf_Original.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method addHalfSelf
+        //@ maintaining addNum == (\num_of int i; 0 < i && i < x; i % 2 == 0) - (\num_of int i; 0 - 1 <= i && i - 1 <= n; i % 2 == 0);  
+            ^
+1 verification failure
+
+==============================
+public class AddHalfSelf_Original{
+    //@ ensures x < 0 ==> \result == x - (\num_of int i; 0 <= i && i <= -x; i % 2 == 0);
+    //@ ensures x >= 0 ==> \result == x + (\num_of int i; 0 <= i && i <= x; i % 2 == 0);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == (\num_of int i; 0 < i && i <= x; i % 2 == 0) - (\num_of int i; 0 < i && i < n; i % 2 == 0);  
+        //@ decreases n;
+        while(n > 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddHalfSelf_Original.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method addHalfSelf
+        //@ maintaining addNum == (\num_of int i; 0 < i && i <= x; i % 2 == 0) - (\num_of int i; 0 < i && i < n; i % 2 == 0);  
+            ^
+1 verification failure
+
+==============================
+public class AddHalfSelf_Original{
+    //@ ensures x < 0 ==> \result == x - (\num_of int i; 0 <= i && i <= -x; i % 2 == 0);
+    //@ ensures x >= 0 ==> \result == x + (\num_of int i; 0 <= i && i <= x; i % 2 == 0);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == (\num_of int i; 0 < i && i <= x; i % 2 == 0) - (\num_of int i; 0 < i && i <= n; i % 2 == 0);  
+        //@ decreases n;
+        while(n > 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddHalfSelf_Original.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method addHalfSelf
+        //@ maintaining addNum == (\num_of int i; 0 < i && i <= x; i % 2 == 0) - (\num_of int i; 0 < i && i <= n; i % 2 == 0);  
+            ^
+1 verification failure
+
+==============================
+public class AddHalfSelf_Original{
+    //@ ensures x < 0 ==> \result == x - (\num_of int i; 0 <= i && i <= -x; i % 2 == 0);
+    //@ ensures x >= 0 ==> \result == x + (\num_of int i; 0 <= i && i <= x; i % 2 == 0);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == (\num_of int i; 0 < i && i <= x; i % 2 == 0) - (\num_of int i; 0 < i && i - 1 <= n; i % 2 == 0);  
+        //@ decreases n;
+        while(n > 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddHalfSelf_Original.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method addHalfSelf
+        //@ maintaining addNum == (\num_of int i; 0 < i && i <= x; i % 2 == 0) - (\num_of int i; 0 < i && i - 1 <= n; i % 2 == 0);  
+            ^
+1 verification failure
+
+==============================
+public class AddHalfSelf_Original{
+    //@ ensures x < 0 ==> \result == x - (\num_of int i; 0 <= i && i <= -x; i % 2 == 0);
+    //@ ensures x >= 0 ==> \result == x + (\num_of int i; 0 <= i && i <= x; i % 2 == 0);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == (\num_of int i; 0 < i && i <= x; i % 2 == 0) - (\num_of int i; 0 <= i && i < n; i % 2 == 0);  
+        //@ decreases n;
+        while(n > 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddHalfSelf_Original.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method addHalfSelf
+        //@ maintaining addNum == (\num_of int i; 0 < i && i <= x; i % 2 == 0) - (\num_of int i; 0 <= i && i < n; i % 2 == 0);  
+            ^
+1 verification failure
+
+==============================
+public class AddHalfSelf_Original{
+    //@ ensures x < 0 ==> \result == x - (\num_of int i; 0 <= i && i <= -x; i % 2 == 0);
+    //@ ensures x >= 0 ==> \result == x + (\num_of int i; 0 <= i && i <= x; i % 2 == 0);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == (\num_of int i; 0 < i && i <= x; i % 2 == 0) - (\num_of int i; 0 <= i && i <= n; i % 2 == 0);  
+        //@ decreases n;
+        while(n > 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddHalfSelf_Original.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method addHalfSelf
+        //@ maintaining addNum == (\num_of int i; 0 < i && i <= x; i % 2 == 0) - (\num_of int i; 0 <= i && i <= n; i % 2 == 0);  
+            ^
+1 verification failure
+
+==============================
+public class AddHalfSelf_Original{
+    //@ ensures x < 0 ==> \result == x - (\num_of int i; 0 <= i && i <= -x; i % 2 == 0);
+    //@ ensures x >= 0 ==> \result == x + (\num_of int i; 0 <= i && i <= x; i % 2 == 0);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == (\num_of int i; 0 < i && i <= x; i % 2 == 0) - (\num_of int i; 0 <= i && i - 1 <= n; i % 2 == 0);  
+        //@ decreases n;
+        while(n > 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddHalfSelf_Original.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method addHalfSelf
+        //@ maintaining addNum == (\num_of int i; 0 < i && i <= x; i % 2 == 0) - (\num_of int i; 0 <= i && i - 1 <= n; i % 2 == 0);  
+            ^
+1 verification failure
+
+==============================
+public class AddHalfSelf_Original{
+    //@ ensures x < 0 ==> \result == x - (\num_of int i; 0 <= i && i <= -x; i % 2 == 0);
+    //@ ensures x >= 0 ==> \result == x + (\num_of int i; 0 <= i && i <= x; i % 2 == 0);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == (\num_of int i; 0 < i && i <= x; i % 2 == 0) - (\num_of int i; 0 - 1 <= i && i < n; i % 2 == 0);  
+        //@ decreases n;
+        while(n > 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddHalfSelf_Original.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method addHalfSelf
+        //@ maintaining addNum == (\num_of int i; 0 < i && i <= x; i % 2 == 0) - (\num_of int i; 0 - 1 <= i && i < n; i % 2 == 0);  
+            ^
+1 verification failure
+
+==============================
+public class AddHalfSelf_Original{
+    //@ ensures x < 0 ==> \result == x - (\num_of int i; 0 <= i && i <= -x; i % 2 == 0);
+    //@ ensures x >= 0 ==> \result == x + (\num_of int i; 0 <= i && i <= x; i % 2 == 0);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == (\num_of int i; 0 < i && i <= x; i % 2 == 0) - (\num_of int i; 0 - 1 <= i && i <= n; i % 2 == 0);  
+        //@ decreases n;
+        while(n > 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+
+==============================

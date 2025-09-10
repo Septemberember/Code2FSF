@@ -1,0 +1,52 @@
+public class PassPillowBranch_Mutant1 {
+    /*@ spec_public @*/ public static int passPillow(int n, int time) {
+        time = time % (n + 1) * 2; // changed subtraction to addition
+        //@ maintaining time >= 0;
+        //@ maintaining time < n + 1;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/PassPillowBranch_Mutant1.java:4: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining time >= 0;
+            ^
+1 error
+
+==============================
+public class PassPillowBranch_Mutant1 {
+    /*@ spec_public @*/ public static int passPillow(int n, int time) {
+        time = time % (n + 1) * 2; // changed subtraction to addition
+        if (time < n) {
+            //@ assert time >= 0;
+            //@ assert time < n + 1;
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/PassPillowBranch_Mutant1.java:3: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method passPillow
+        time = time % (n + 1) * 2; // changed subtraction to addition
+                    ^
+1 verification failure
+
+==============================
+public class PassPillowBranch_Mutant1 {
+    /*@ spec_public @*/ public static int passPillow(int n, int time) {
+        //@ assume n >= 0;
+        //@ assume time >= 0;
+        time = time % (n + 1) * 2; // changed subtraction to addition
+        if (time < n) {
+            //@ assert time >= 0;
+            //@ assert time < n + 1;
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+==============================
+
+==============================

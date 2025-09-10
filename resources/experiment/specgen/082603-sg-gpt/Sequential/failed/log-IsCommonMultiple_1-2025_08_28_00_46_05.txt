@@ -1,0 +1,10 @@
+public class IsCommonMultiple_Mutant1 {
+    /*@ public normal_behavior
+      @    requires true;
+      @    ensures \result <==> (m % a != 0 && m % b != 0);
+      @*/
+    public static boolean isCommonMultiple(int a, int b, int m) {
+        return m % a != 0 && m % b != 0;
+    }
+}
+==============================

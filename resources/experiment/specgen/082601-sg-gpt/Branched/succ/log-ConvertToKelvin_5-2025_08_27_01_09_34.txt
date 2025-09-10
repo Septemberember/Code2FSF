@@ -1,0 +1,168 @@
+public class ConvertToKelvin_Mutant5 {
+    //@ ensures \result >= 0.0;
+    //@ ensures \result == 0.0 ==> celsius < 0.0;
+    //@ ensures \result == celsius + 273.15 && celsius >= 0.0;
+    public static /*@ pure @*/ double convertTemperature(double celsius) {
+        if(celsius < 0.0) { // Added a conditional statement
+            return 0;
+        }
+        return celsius + 273.15;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:4:) in method convertTemperature
+            return 0;
+            ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:7:
+    //@ ensures \result == celsius + 273.15 && celsius >= 0.0;
+        ^
+2 verification failures
+
+==============================
+public class ConvertToKelvin_Mutant5 {
+    //@ ensures \result >= 0.0;
+    //@ ensures \result == 0.0 ==> celsius < 0.0;
+    //@ ensures \result == celsius + 273.15 && celsius > 0.0;  
+    public static /*@ pure @*/ double convertTemperature(double celsius) {
+        if(celsius < 0.0) { // Added a conditional statement
+            return 0;
+        }
+        return celsius + 273.15;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:4:) in method convertTemperature
+            return 0;
+            ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:7:
+    //@ ensures \result == celsius + 273.15 && celsius > 0.0;  
+        ^
+2 verification failures
+
+==============================
+public class ConvertToKelvin_Mutant5 {
+    //@ ensures \result >= 0.0;
+    //@ ensures \result == 0.0 ==> celsius < 0.0;
+    //@ ensures \result == celsius + 273.15 && celsius >= 0.0;  
+    public static /*@ pure @*/ double convertTemperature(double celsius) {
+        if(celsius < 0.0) { // Added a conditional statement
+            return 0;
+        }
+        return celsius + 273.15;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:4:) in method convertTemperature
+            return 0;
+            ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:7:
+    //@ ensures \result == celsius + 273.15 && celsius >= 0.0;  
+        ^
+2 verification failures
+
+==============================
+public class ConvertToKelvin_Mutant5 {
+    //@ ensures \result >= 0.0;
+    //@ ensures \result == 0.0 ==> celsius < 0.0;
+    //@ ensures \result == celsius + 273.15 && celsius + 1 >= 0.0;  
+    public static /*@ pure @*/ double convertTemperature(double celsius) {
+        if(celsius < 0.0) { // Added a conditional statement
+            return 0;
+        }
+        return celsius + 273.15;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:4:) in method convertTemperature
+            return 0;
+            ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:7:
+    //@ ensures \result == celsius + 273.15 && celsius + 1 >= 0.0;  
+        ^
+2 verification failures
+
+==============================
+public class ConvertToKelvin_Mutant5 {
+    //@ ensures \result >= 0.0;
+    //@ ensures \result == 0.0 ==> celsius < 0.0;
+    //@ ensures \result == celsius - 273.15 && celsius > 0.0;  
+    public static /*@ pure @*/ double convertTemperature(double celsius) {
+        if(celsius < 0.0) { // Added a conditional statement
+            return 0;
+        }
+        return celsius + 273.15;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:4:) in method convertTemperature
+            return 0;
+            ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:7:
+    //@ ensures \result == celsius - 273.15 && celsius > 0.0;  
+        ^
+2 verification failures
+
+==============================
+public class ConvertToKelvin_Mutant5 {
+    //@ ensures \result >= 0.0;
+    //@ ensures \result == 0.0 ==> celsius < 0.0;
+    //@ ensures \result == celsius - 273.15 && celsius >= 0.0;  
+    public static /*@ pure @*/ double convertTemperature(double celsius) {
+        if(celsius < 0.0) { // Added a conditional statement
+            return 0;
+        }
+        return celsius + 273.15;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:4:) in method convertTemperature
+            return 0;
+            ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:7:
+    //@ ensures \result == celsius - 273.15 && celsius >= 0.0;  
+        ^
+2 verification failures
+
+==============================
+public class ConvertToKelvin_Mutant5 {
+    //@ ensures \result >= 0.0;
+    //@ ensures \result == 0.0 ==> celsius < 0.0;
+    //@ ensures \result == celsius - 273.15 && celsius + 1 >= 0.0;  
+    public static /*@ pure @*/ double convertTemperature(double celsius) {
+        if(celsius < 0.0) { // Added a conditional statement
+            return 0;
+        }
+        return celsius + 273.15;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:4:) in method convertTemperature
+            return 0;
+            ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ConvertToKelvin_Mutant5.java:7:
+    //@ ensures \result == celsius - 273.15 && celsius + 1 >= 0.0;  
+        ^
+2 verification failures
+
+==============================
+public class ConvertToKelvin_Mutant5 {
+    //@ ensures \result >= 0.0;
+    //@ ensures \result == 0.0 ==> celsius < 0.0;
+ 
+    public static /*@ pure @*/ double convertTemperature(double celsius) {
+        if(celsius < 0.0) { // Added a conditional statement
+            return 0;
+        }
+        return celsius + 273.15;
+    }
+}
+
+==============================
+
+==============================

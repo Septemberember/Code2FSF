@@ -1,0 +1,32 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class IsCommonFactorBranch_Mutant5 {
+    public static boolean isCommonFactor (int a, int b, int factor) {
+        if (a % factor != 0 || b % factor != 0) {
+            return false;
+        }
+        return true;
+    }
+}
+
+```
+*end* role user
+start role assistant
+```
+T1: (a % factor == 0) && (b % factor == 0)
+D1: return_value == true
+T2: (a % factor != 0) || (b % factor != 0)
+D2: return_value == false
+```
+*end* role assistant
+start role user
+Unexpected exception thrown by the program under T: (a % factor == 0) && (b % factor == 0), please regenerate the FSF according to this exception!Exception founded:Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at IsCommonFactorBranch_Mutant5.isCommonFactor(IsCommonFactorBranch_Mutant5.java:7)
+	at IsCommonFactorBranch_Mutant5.main(IsCommonFactorBranch_Mutant5.java:22)
+
+*end* role user
+start role remark
+Validation FAIL--Conversation rounds number is over the maxRounds
+Current conversation round is: [1]
+*end* role remark

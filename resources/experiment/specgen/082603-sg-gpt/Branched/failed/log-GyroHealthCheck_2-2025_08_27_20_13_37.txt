@@ -1,0 +1,42 @@
+public class GyroHealthCheck_Mutant2 {
+    /*@ spec_public @*/ public static int gyroHealthCheck(int x, int y, int z) {
+        int diffXY = x - y;
+        int diffYZ = y - z;
+        int diffXZ = x - z;
+        if (diffXZ < 0) diffXZ = -diffXZ;
+        int alarm = 0;
+	//@ maintaining diffXY == x - y;
+	//@ maintaining diffYZ == y - z;
+	//@ maintaining diffXZ == x - z;
+	//@ maintaining alarm == 0 || alarm == 1;
+	//@ decreases 0;
+        if (diffXY > 10 || diffYZ > 10 || diffXZ > 10) {
+            alarm = 1;
+        }
+	//@ assert alarm == 0 || alarm == 1;
+        return alarm;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/GyroHealthCheck_Mutant2.java:8: error: Loop specifications must immediately precede a loop statement
+	//@ maintaining diffXY == x - y;
+	    ^
+1 error
+
+==============================
+public class GyroHealthCheck_Mutant2 {
+    /*@ spec_public @*/ public static int gyroHealthCheck(int x, int y, int z) {
+        int diffXY = x - y;
+        int diffYZ = y - z;
+        int diffXZ = x - z;
+        if (diffXZ < 0) diffXZ = -diffXZ;
+        int alarm = 0;
+        if (diffXY > 10 || diffYZ > 10 || diffXZ > 10) {
+            alarm = 1;
+        }
+        return alarm;
+    }
+}
+==============================
+
+==============================

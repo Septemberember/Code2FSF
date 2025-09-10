@@ -1,0 +1,17 @@
+public class ChangeCase_Mutant1 {
+    //@ requires Character.MIN_VALUE <= c && c <= Character.MAX_VALUE;
+    //@ ensures Character.isUpperCase(\result) ==> Character.toLowerCase(c) == \result;
+    //@ ensures Character.isLowerCase(\result) ==> Character.toUpperCase(c) == \result;
+    public static char changeCase(char c) {
+        char result = ' ';
+        if (c < 'a') {
+            result = c;
+        } else if (c >= 'z') {
+            result = (char) (c - 'a' + 'A');
+        } else {
+            result = 'c';
+        }
+        return result;
+    }
+}
+==============================

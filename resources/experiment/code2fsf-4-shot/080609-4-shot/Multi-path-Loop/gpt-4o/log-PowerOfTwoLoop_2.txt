@@ -1,0 +1,43 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class PowerOfTwoLoop_Mutant2 {
+
+    public static boolean isPowerOfTwo(int n) {
+        if (n <= 0) {
+            return true;
+        }
+        while (n % 2 == 0) {
+            n /= 2;
+        }
+        return n == 1;
+    }
+}
+
+```
+*end* role user
+start role assistant
+```
+T1: n <= 0
+D1: return_value == true
+
+T2: n > 0 && n % 2 != 0 && n != 1
+D2: return_value == false
+
+T3: n > 0 && n % 2 == 0 && n / 2 == 1
+D3: return_value == true
+
+T4: n > 0 && n % 2 == 0 && n / 2 != 1
+D4: return_value == (n / 2 == 1)
+
+T5: n == 1
+D5: return_value == true
+```
+*end* role assistant
+start role user
+When the variables are assigned as n: 8	，the output of the program violates T: n > 0 && n % 2 == 0 && n / 2 != 1	D: return_value == (n / 2 == 1)，please regenerate the FSF according this counterexample！
+*end* role user
+start role remark
+Validation FAIL--Conversation rounds number is over the maxRounds
+Current conversation round is: [1]
+*end* role remark

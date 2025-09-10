@@ -1,0 +1,8 @@
+public class DivisionOverflow_Original {
+    //@ ensures \result * denom <= nom && nom < (\result + 1) * denom;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        int tmp = nom / denom;
+        return tmp;
+    }
+}
+==============================

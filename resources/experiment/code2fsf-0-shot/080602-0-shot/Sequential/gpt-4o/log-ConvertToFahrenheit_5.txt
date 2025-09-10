@@ -1,0 +1,18 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class ConvertToFahrenheit_Mutant5 {
+    public static double convertTemperature(double celsius) {
+        return celsius * 2.00 + 32.00;
+    }
+}
+
+```
+*end* role user
+start role user
+There is no FSF in history conversation, retry the conversation, please regenerate the FSF for given program.
+*end* role user
+start role remark
+Validation FAIL--Conversation rounds number is over the maxRounds
+Current conversation round is: [1]
+*end* role remark

@@ -1,0 +1,8 @@
+experimentName: 082704-conversational-NL
+model: gpt-4o
+category: NestedLoop
+total number: 27
+success number: 27
+success rate: 100.0%
+failed number: 0
+exception number: 0

@@ -1,0 +1,1111 @@
+public class AddHalfSelf_Mutant3{
+    //@ ensures \result == x - (\num_of_even_numbers_in_range(x, x) - \num_of_even_numbers_in_range(x, x-1));
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x > 0){
+            n = -x;
+        }
+	//@ maintaining n <= 0;
+        //@ maintaining addNum == \num_of_even_numbers_in_range(x, n);
+        while(n < 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n++;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:2: error: This backslash token is unknown: \num_of_even_numbers_in_range
+    //@ ensures \result == x - (\num_of_even_numbers_in_range(x, x) - \num_of_even_numbers_in_range(x, x-1));
+                                ^
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:2: error: This backslash token is unknown: \num_of_even_numbers_in_range
+    //@ ensures \result == x - (\num_of_even_numbers_in_range(x, x) - \num_of_even_numbers_in_range(x, x-1));
+                                                                      ^
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:10: error: This backslash token is unknown: \num_of_even_numbers_in_range
+        //@ maintaining addNum == \num_of_even_numbers_in_range(x, n);
+                                  ^
+3 errors
+
+==============================
+public class AddHalfSelf_Mutant3{
+    //@ ensures \result == x - (countEvenNumbersInRange(x, x) - countEvenNumbersInRange(x, x-1));
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x > 0){
+            n = -x;
+        }
+	//@ maintaining n <= 0;
+        //@ maintaining addNum == countEvenNumbersInRange(x, n);
+        while(n < 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n++;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+
+    //@ ensures \result >= 0;
+    //@ ensures \result == countEvenNumbersInRange(x, y);
+    private static int countEvenNumbersInRange(int x, int y) {
+        int count = 0;
+        for (int i = x; i <= y; i++) {
+            if (i % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:2: error: An identifier with private visibility may not be used in a ensures clause with public visibility
+    //@ ensures \result == x - (countEvenNumbersInRange(x, x) - countEvenNumbersInRange(x, x-1));
+                                ^
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:2: error: An identifier with private visibility may not be used in a ensures clause with public visibility
+    //@ ensures \result == x - (countEvenNumbersInRange(x, x) - countEvenNumbersInRange(x, x-1));
+                                                                ^
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant3{
+    //@ ensures \result == x - (countEvenNumbersInRange(x, x) - countEvenNumbersInRange(x, x-1));
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x > 0){
+            n = -x;
+        }
+	//@ maintaining n <= 0;
+        //@ maintaining addNum == countEvenNumbersInRange(x, n);
+        while(n < 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n++;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+
+    //@ spec_public
+    //@ ensures \result >= 0;
+    //@ ensures \result == countEvenNumbersInRange(x, y);
+    private static int countEvenNumbersInRange(int x, int y) {
+        int count = 0;
+        for (int i = x; i <= y; i++) {
+            if (i % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:25: error: No modifiers are allowed prior to a lightweight specification case
+    //@ spec_public
+        ^
+1 error
+
+==============================
+public class AddHalfSelf_Mutant3{
+    //@ ensures \result == x - (countEvenNumbersInRange(x, x) - countEvenNumbersInRange(x, x-1));
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x > 0){
+            n = -x;
+        }
+	//@ maintaining n <= 0;
+        //@ maintaining addNum == countEvenNumbersInRange(x, n);
+        while(n < 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n++;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+
+    //@ ensures \result >= 0;
+    //@ ensures \result == countEvenNumbersInRange(x, y);
+    private static int countEvenNumbersInRange(int x, int y) {
+        int count = 0;
+        for (int i = x; i <= y; i++) {
+            if (i % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:2: error: An identifier with private visibility may not be used in a ensures clause with public visibility
+    //@ ensures \result == x - (countEvenNumbersInRange(x, x) - countEvenNumbersInRange(x, x-1));
+                                ^
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:2: error: An identifier with private visibility may not be used in a ensures clause with public visibility
+    //@ ensures \result == x - (countEvenNumbersInRange(x, x) - countEvenNumbersInRange(x, x-1));
+                                                                ^
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant3{
+    //@ ensures \result == x - (countEvenNumbersInRange(x, x) - countEvenNumbersInRange(x, x-1));
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x > 0){
+            n = -x;
+        }
+	//@ maintaining n <= 0;
+        //@ maintaining addNum == countEvenNumbersInRange(x, n);
+        while(n < 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n++;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+
+    //@ spec_public
+    //@ ensures \result >= 0;
+    //@ ensures \result == countEvenNumbersInRange(x, y);
+    private static int countEvenNumbersInRange(int x, int y) {
+        int count = 0;
+        for (int i = x; i <= y; i++) {
+            if (i % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:25: error: No modifiers are allowed prior to a lightweight specification case
+    //@ spec_public
+        ^
+1 error
+
+==============================
+public class AddHalfSelf_Mutant3{
+    //@ ensures \result == x - (countEvenNumbersInRange(x, x) - countEvenNumbersInRange(x, x-1));
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x > 0){
+            n = -x;
+        }
+	//@ maintaining n <= 0;
+        //@ maintaining addNum == countEvenNumbersInRange(x, n);
+        while(n < 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n++;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+
+    //@ ensures \result >= 0;
+    //@ ensures \result == countEvenNumbersInRange(x, y);
+    private static int countEvenNumbersInRange(int x, int y) {
+        int count = 0;
+        for (int i = x; i <= y; i++) {
+            if (i % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:2: error: An identifier with private visibility may not be used in a ensures clause with public visibility
+    //@ ensures \result == x - (countEvenNumbersInRange(x, x) - countEvenNumbersInRange(x, x-1));
+                                ^
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:2: error: An identifier with private visibility may not be used in a ensures clause with public visibility
+    //@ ensures \result == x - (countEvenNumbersInRange(x, x) - countEvenNumbersInRange(x, x-1));
+                                                                ^
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant3{
+    //@ ensures \result == x - (countEvenNumbersInRange(x, x) - countEvenNumbersInRange(x, x-1));
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x > 0){
+            n = -x;
+        }
+	//@ maintaining n <= 0;
+        //@ maintaining addNum == countEvenNumbersInRange(x, n);
+        while(n < 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n++;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+
+    //@ spec_public
+    //@ ensures \result >= 0;
+    //@ ensures \result == countEvenNumbersInRange(x, y);
+    private static int countEvenNumbersInRange(int x, int y) {
+        int count = 0;
+        for (int i = x; i <= y; i++) {
+            if (i % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:25: error: No modifiers are allowed prior to a lightweight specification case
+    //@ spec_public
+        ^
+1 error
+
+==============================
+public class AddHalfSelf_Mutant3{
+    //@ ensures \result == x - (countEvenNumbersInRange(x, x) - countEvenNumbersInRange(x, x-1));
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x > 0){
+            n = -x;
+        }
+	//@ maintaining n <= 0;
+        //@ maintaining addNum == countEvenNumbersInRange(x, n);
+        while(n < 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n++;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+
+    //@ ensures \result >= 0;
+    //@ ensures \result == countEvenNumbersInRange(x, y);
+    private static int countEvenNumbersInRange(int x, int y) {
+        int count = 0;
+        for (int i = x; i <= y; i++) {
+            if (i % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:2: error: An identifier with private visibility may not be used in a ensures clause with public visibility
+    //@ ensures \result == x - (countEvenNumbersInRange(x, x) - countEvenNumbersInRange(x, x-1));
+                                ^
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:2: error: An identifier with private visibility may not be used in a ensures clause with public visibility
+    //@ ensures \result == x - (countEvenNumbersInRange(x, x) - countEvenNumbersInRange(x, x-1));
+                                                                ^
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant3{
+    //@ ensures \result == x - (countEvenNumbersInRange(x, x) - countEvenNumbersInRange(x, x-1));
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x > 0){
+            n = -x;
+        }
+	//@ maintaining n <= 0;
+        //@ maintaining addNum == countEvenNumbersInRange(x, n);
+        while(n < 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n++;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+
+    //@ spec_public
+    //@ ensures \result >= 0;
+    //@ ensures \result == countEvenNumbersInRange(x, y);
+    private static int countEvenNumbersInRange(int x, int y) {
+        int count = 0;
+        for (int i = x; i <= y; i++) {
+            if (i % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:25: error: No modifiers are allowed prior to a lightweight specification case
+    //@ spec_public
+        ^
+1 error
+
+==============================
+public class AddHalfSelf_Mutant3{
+    //@ ensures \result == x - (countEvenNumbersInRange(x, x) - countEvenNumbersInRange(x, x-1));
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x > 0){
+            n = -x;
+        }
+	//@ maintaining n <= 0;
+        //@ maintaining addNum == countEvenNumbersInRange(x, n);
+        while(n < 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n++;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+
+    //@ ensures \result >= 0;
+    //@ ensures \result == countEvenNumbersInRange(x, y);
+    private static int countEvenNumbersInRange(int x, int y) {
+        int count = 0;
+        for (int i = x; i <= y; i++) {
+            if (i % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:2: error: An identifier with private visibility may not be used in a ensures clause with public visibility
+    //@ ensures \result == x - (countEvenNumbersInRange(x, x) - countEvenNumbersInRange(x, x-1));
+                                ^
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:2: error: An identifier with private visibility may not be used in a ensures clause with public visibility
+    //@ ensures \result == x - (countEvenNumbersInRange(x, x) - countEvenNumbersInRange(x, x-1));
+                                                                ^
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant3{
+    //@ ensures \result == x + (countEvenNumbersInRange(x, x) + countEvenNumbersInRange(x, x-1));  
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x > 0){
+            n = -x;
+        }
+	//@ maintaining n <= 0;
+        //@ maintaining addNum == countEvenNumbersInRange(x, n);
+        while(n < 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n++;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+
+    //@ ensures \result >= 0;
+    //@ ensures \result == countEvenNumbersInRange(x, y);
+    private static int countEvenNumbersInRange(int x, int y) {
+        int count = 0;
+        for (int i = x; i <= y; i++) {
+            if (i % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:2: error: An identifier with private visibility may not be used in a ensures clause with public visibility
+    //@ ensures \result == x + (countEvenNumbersInRange(x, x) + countEvenNumbersInRange(x, x-1));  
+                                ^
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:2: error: An identifier with private visibility may not be used in a ensures clause with public visibility
+    //@ ensures \result == x + (countEvenNumbersInRange(x, x) + countEvenNumbersInRange(x, x-1));  
+                                                                ^
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant3{
+    //@ ensures \result == x - (countEvenNumbersInRange(x, x) + countEvenNumbersInRange(x, x-1));  
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x > 0){
+            n = -x;
+        }
+	//@ maintaining n <= 0;
+        //@ maintaining addNum == countEvenNumbersInRange(x, n);
+        while(n < 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n++;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+
+    //@ ensures \result >= 0;
+    //@ ensures \result == countEvenNumbersInRange(x, y);
+    private static int countEvenNumbersInRange(int x, int y) {
+        int count = 0;
+        for (int i = x; i <= y; i++) {
+            if (i % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:2: error: An identifier with private visibility may not be used in a ensures clause with public visibility
+    //@ ensures \result == x - (countEvenNumbersInRange(x, x) + countEvenNumbersInRange(x, x-1));  
+                                ^
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:2: error: An identifier with private visibility may not be used in a ensures clause with public visibility
+    //@ ensures \result == x - (countEvenNumbersInRange(x, x) + countEvenNumbersInRange(x, x-1));  
+                                                                ^
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant3{
+ 
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x > 0){
+            n = -x;
+        }
+	//@ maintaining n <= 0;
+        //@ maintaining addNum == countEvenNumbersInRange(x, n);
+        while(n < 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n++;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+
+    //@ ensures \result >= 0;
+    //@ ensures \result == countEvenNumbersInRange(x, y);
+    private static int countEvenNumbersInRange(int x, int y) {
+        int count = 0;
+        for (int i = x; i <= y; i++) {
+            if (i % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:26: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+    //@ ensures \result == countEvenNumbersInRange(x, y);
+                                                  ^
+  Reason: No logical function for method AddHalfSelf_Mutant3.countEvenNumbersInRange(x, y) countEvenNumbersInRange(int,int)
+error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+  Reason: Unexpected exception: APPLY-HELPER java.lang.NullPointerException: Cannot read field "type" because "rhs" is null
+java.lang.NullPointerException: Cannot read field "type" because "rhs" is null
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitBinary(JmlAssertionAdder.java:13632)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2111)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1554)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertJML(JmlAssertionAdder.java:1648)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.applyHelper(JmlAssertionAdder.java:10710)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitApply(JmlAssertionAdder.java:8031)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(JCTree.java:1752)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1554)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitBinary(JmlAssertionAdder.java:13597)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2111)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1554)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertJML(JmlAssertionAdder.java:1648)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertJML(JmlAssertionAdder.java:1665)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.loopHelperInitialInvariant(JmlAssertionAdder.java:16669)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlWhileLoop(JmlAssertionAdder.java:19911)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlWhileLoop.accept(JmlTree.java:2036)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convert(JmlAssertionAdder.java:1441)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertMethodBodyNoInit(JmlAssertionAdder.java:1235)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlMethodDecl(JmlAssertionAdder.java:17247)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlMethodDecl.accept(JmlTree.java:1383)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlClassDecl(JmlAssertionAdder.java:15904)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlClassDecl.accept(JmlTree.java:1295)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convert(JmlAssertionAdder.java:1441)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.check(JmlEsc.java:112)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.esc(JmlCompiler.java:536)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.flow(JmlCompiler.java:362)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:936)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.compile(JmlCompiler.java:197)
+	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:321)
+	at jdk.compiler/org.jmlspecs.openjml.Main.compile(Main.java:534)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:374)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:332)
+	at jdk.compiler/org.jmlspecs.openjml.Main.main(Main.java:295)
+	at jdk.compiler/com.sun.tools.javac.Main.main(Main.java:53)
+java.lang.NullPointerException: Cannot read field "type" because "rhs" is null
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitBinary(JmlAssertionAdder.java:13632)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2111)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1554)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertJML(JmlAssertionAdder.java:1648)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.applyHelper(JmlAssertionAdder.java:10710)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitApply(JmlAssertionAdder.java:8031)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(JCTree.java:1752)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1554)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitBinary(JmlAssertionAdder.java:13597)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2111)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1554)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertJML(JmlAssertionAdder.java:1648)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertJML(JmlAssertionAdder.java:1665)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.loopHelperInitialInvariant(JmlAssertionAdder.java:16669)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlWhileLoop(JmlAssertionAdder.java:19911)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlWhileLoop.accept(JmlTree.java:2036)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convert(JmlAssertionAdder.java:1441)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertMethodBodyNoInit(JmlAssertionAdder.java:1235)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlMethodDecl(JmlAssertionAdder.java:17247)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlMethodDecl.accept(JmlTree.java:1383)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlClassDecl(JmlAssertionAdder.java:15904)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlClassDecl.accept(JmlTree.java:1295)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convert(JmlAssertionAdder.java:1441)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.check(JmlEsc.java:112)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.esc(JmlCompiler.java:536)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.flow(JmlCompiler.java:362)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:936)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.compile(JmlCompiler.java:197)
+	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:321)
+	at jdk.compiler/org.jmlspecs.openjml.Main.compile(Main.java:534)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:374)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:332)
+	at jdk.compiler/org.jmlspecs.openjml.Main.main(Main.java:295)
+	at jdk.compiler/com.sun.tools.javac.Main.main(Main.java:53)
+java.lang.NullPointerException: Cannot read field "type" because "rhs" is null
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitBinary(JmlAssertionAdder.java:13632)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2111)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1554)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertJML(JmlAssertionAdder.java:1648)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.addPostConditions(JmlAssertionAdder.java:5428)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertMethodBodyNoInit(JmlAssertionAdder.java:1256)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlMethodDecl(JmlAssertionAdder.java:17247)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlMethodDecl.accept(JmlTree.java:1383)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlClassDecl(JmlAssertionAdder.java:15904)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlClassDecl.accept(JmlTree.java:1295)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convert(JmlAssertionAdder.java:1441)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.check(JmlEsc.java:112)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.esc(JmlCompiler.java:536)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.flow(JmlCompiler.java:362)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:936)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.compile(JmlCompiler.java:197)
+	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:321)
+	at jdk.compiler/org.jmlspecs.openjml.Main.compile(Main.java:534)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:374)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:332)
+	at jdk.compiler/org.jmlspecs.openjml.Main.main(Main.java:295)
+	at jdk.compiler/com.sun.tools.javac.Main.main(Main.java:53)
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant3{
+ 
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x > 0){
+            n = -x;
+        }
+	//@ maintaining n <= 0;
+        //@ maintaining addNum == countEvenNumbersInRange(x, n);
+        while(n < 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n++;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+
+    //@ ensures \result >= 0;
+    //@ ensures \result == countEvenNumbersInRange(x, y);  
+    private static int countEvenNumbersInRange(int x, int y) {
+        int count = 0;
+        for (int i = x; i <= y; i++) {
+            if (i % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:26: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+    //@ ensures \result == countEvenNumbersInRange(x, y);  
+                                                  ^
+  Reason: No logical function for method AddHalfSelf_Mutant3.countEvenNumbersInRange(x, y) countEvenNumbersInRange(int,int)
+error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+  Reason: Unexpected exception: APPLY-HELPER java.lang.NullPointerException: Cannot read field "type" because "rhs" is null
+java.lang.NullPointerException: Cannot read field "type" because "rhs" is null
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitBinary(JmlAssertionAdder.java:13632)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2111)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1554)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertJML(JmlAssertionAdder.java:1648)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.applyHelper(JmlAssertionAdder.java:10710)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitApply(JmlAssertionAdder.java:8031)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(JCTree.java:1752)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1554)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitBinary(JmlAssertionAdder.java:13597)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2111)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1554)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertJML(JmlAssertionAdder.java:1648)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertJML(JmlAssertionAdder.java:1665)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.loopHelperInitialInvariant(JmlAssertionAdder.java:16669)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlWhileLoop(JmlAssertionAdder.java:19911)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlWhileLoop.accept(JmlTree.java:2036)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convert(JmlAssertionAdder.java:1441)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertMethodBodyNoInit(JmlAssertionAdder.java:1235)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlMethodDecl(JmlAssertionAdder.java:17247)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlMethodDecl.accept(JmlTree.java:1383)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlClassDecl(JmlAssertionAdder.java:15904)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlClassDecl.accept(JmlTree.java:1295)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convert(JmlAssertionAdder.java:1441)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.check(JmlEsc.java:112)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.esc(JmlCompiler.java:536)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.flow(JmlCompiler.java:362)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:936)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.compile(JmlCompiler.java:197)
+	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:321)
+	at jdk.compiler/org.jmlspecs.openjml.Main.compile(Main.java:534)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:374)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:332)
+	at jdk.compiler/org.jmlspecs.openjml.Main.main(Main.java:295)
+	at jdk.compiler/com.sun.tools.javac.Main.main(Main.java:53)
+java.lang.NullPointerException: Cannot read field "type" because "rhs" is null
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitBinary(JmlAssertionAdder.java:13632)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2111)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1554)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertJML(JmlAssertionAdder.java:1648)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.applyHelper(JmlAssertionAdder.java:10710)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitApply(JmlAssertionAdder.java:8031)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(JCTree.java:1752)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1554)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitBinary(JmlAssertionAdder.java:13597)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2111)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1554)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertJML(JmlAssertionAdder.java:1648)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertJML(JmlAssertionAdder.java:1665)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.loopHelperInitialInvariant(JmlAssertionAdder.java:16669)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlWhileLoop(JmlAssertionAdder.java:19911)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlWhileLoop.accept(JmlTree.java:2036)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convert(JmlAssertionAdder.java:1441)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertMethodBodyNoInit(JmlAssertionAdder.java:1235)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlMethodDecl(JmlAssertionAdder.java:17247)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlMethodDecl.accept(JmlTree.java:1383)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlClassDecl(JmlAssertionAdder.java:15904)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlClassDecl.accept(JmlTree.java:1295)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convert(JmlAssertionAdder.java:1441)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.check(JmlEsc.java:112)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.esc(JmlCompiler.java:536)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.flow(JmlCompiler.java:362)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:936)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.compile(JmlCompiler.java:197)
+	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:321)
+	at jdk.compiler/org.jmlspecs.openjml.Main.compile(Main.java:534)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:374)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:332)
+	at jdk.compiler/org.jmlspecs.openjml.Main.main(Main.java:295)
+	at jdk.compiler/com.sun.tools.javac.Main.main(Main.java:53)
+java.lang.NullPointerException: Cannot read field "type" because "rhs" is null
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitBinary(JmlAssertionAdder.java:13632)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2111)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1554)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertJML(JmlAssertionAdder.java:1648)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.addPostConditions(JmlAssertionAdder.java:5428)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertMethodBodyNoInit(JmlAssertionAdder.java:1256)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlMethodDecl(JmlAssertionAdder.java:17247)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlMethodDecl.accept(JmlTree.java:1383)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlClassDecl(JmlAssertionAdder.java:15904)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlClassDecl.accept(JmlTree.java:1295)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convert(JmlAssertionAdder.java:1441)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.check(JmlEsc.java:112)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.esc(JmlCompiler.java:536)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.flow(JmlCompiler.java:362)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:936)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.compile(JmlCompiler.java:197)
+	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:321)
+	at jdk.compiler/org.jmlspecs.openjml.Main.compile(Main.java:534)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:374)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:332)
+	at jdk.compiler/org.jmlspecs.openjml.Main.main(Main.java:295)
+	at jdk.compiler/com.sun.tools.javac.Main.main(Main.java:53)
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant3{
+ 
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x > 0){
+            n = -x;
+        }
+	//@ maintaining n <= 0;
+        //@ maintaining addNum == countEvenNumbersInRange(x, n);
+        while(n < 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n++;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+
+    //@ ensures \result >= 0;
+ 
+    private static int countEvenNumbersInRange(int x, int y) {
+        int count = 0;
+        for (int i = x; i <= y; i++) {
+            if (i % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method addHalfSelf
+        //@ maintaining addNum == countEvenNumbersInRange(x, n);
+            ^
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:34: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:25:) in method countEvenNumbersInRange
+        return count;
+        ^
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:25: verify: Associated declaration: /root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:34:
+    //@ ensures \result >= 0;
+        ^
+3 verification failures
+
+==============================
+public class AddHalfSelf_Mutant3{
+ 
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x > 0){
+            n = -x;
+        }
+	//@ maintaining n <= 0;
+        //@ maintaining addNum == countEvenNumbersInRange(x, n);  
+        while(n < 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n++;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+
+    //@ ensures \result > 0;  
+ 
+    private static int countEvenNumbersInRange(int x, int y) {
+        int count = 0;
+        for (int i = x; i <= y; i++) {
+            if (i % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method addHalfSelf
+        //@ maintaining addNum == countEvenNumbersInRange(x, n);  
+            ^
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:34: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:25:) in method countEvenNumbersInRange
+        return count;
+        ^
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:25: verify: Associated declaration: /root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:34:
+    //@ ensures \result > 0;  
+        ^
+3 verification failures
+
+==============================
+public class AddHalfSelf_Mutant3{
+ 
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x > 0){
+            n = -x;
+        }
+	//@ maintaining n <= 0;
+ 
+        while(n < 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n++;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+
+    //@ ensures \result >= 0;  
+ 
+    private static int countEvenNumbersInRange(int x, int y) {
+        int count = 0;
+        for (int i = x; i <= y; i++) {
+            if (i % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:34: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:25:) in method countEvenNumbersInRange
+        return count;
+        ^
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:25: verify: Associated declaration: /root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:34:
+    //@ ensures \result >= 0;  
+        ^
+2 verification failures
+
+==============================
+public class AddHalfSelf_Mutant3{
+ 
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x > 0){
+            n = -x;
+        }
+	//@ maintaining n <= 0;
+ 
+        while(n < 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n++;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+
+    //@ ensures \result + 1 >= 0;  
+ 
+    private static int countEvenNumbersInRange(int x, int y) {
+        int count = 0;
+        for (int i = x; i <= y; i++) {
+            if (i % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:34: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:25:) in method countEvenNumbersInRange
+        return count;
+        ^
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:25: verify: Associated declaration: /root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant3.java:34:
+    //@ ensures \result + 1 >= 0;  
+        ^
+2 verification failures
+
+==============================
+public class AddHalfSelf_Mutant3{
+ 
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x > 0){
+            n = -x;
+        }
+	//@ maintaining n <= 0;
+ 
+        while(n < 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n++;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+
+ 
+ 
+    private static int countEvenNumbersInRange(int x, int y) {
+        int count = 0;
+        for (int i = x; i <= y; i++) {
+            if (i % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+
+==============================
+
+==============================

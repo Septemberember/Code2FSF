@@ -1,0 +1,63 @@
+public class CanWinNim_Mutant4 {
+	//@ requires n >= 0;
+	//@ ensures \result == mutant_canWinNim(n);
+    public static boolean canWinNim(int n) {
+	//@ assert n % 4 != 1 ==> mutant_canWinNim(n) == true;
+	//@ assert n % 4 == 1 ==> mutant_canWinNim(n) == false;
+        return n % 4 != 1;   // Change 0 to 1
+    }
+
+	/*@ 	requires n >= 0;
+            	ensures \result == (n % 4 == 1);
+        public model function static pure boolean mutant_canWinNim(int n) {
+            return n % 4 == 1;
+        }@*/
+}
+==============================
+/root/082602-gpt-specgen/tmp/CanWinNim_Mutant4.java:12: error: <identifier> expected
+        public model function static pure boolean mutant_canWinNim(int n) {
+                             ^
+/root/082602-gpt-specgen/tmp/CanWinNim_Mutant4.java:12: error: Method specs may not precede a variable declaration
+        public model function static pure boolean mutant_canWinNim(int n) {
+                              ^
+2 errors
+
+==============================
+public class CanWinNim_Mutant4 {
+	//@ requires n >= 0;
+	//@ ensures \result == mutant_canWinNim(n);
+    public static boolean canWinNim(int n) {
+	//@ assert n % 4 != 1 ==> mutant_canWinNim(n) == true;
+	//@ assert n % 4 == 1 ==> mutant_canWinNim(n) == false;
+        return n % 4 != 1;   // Change 0 to 1
+    }
+
+	/*@ 	requires n >= 0;
+            	ensures \result == (n % 4 == 1);
+        public static boolean mutant_canWinNim(int n) {
+            return n % 4 == 1;
+        }@*/
+}
+==============================
+/root/082602-gpt-specgen/tmp/CanWinNim_Mutant4.java:12: error: A JML method declaration must be marked model: CanWinNim_Mutant4.mutant_canWinNim(int)
+        public static boolean mutant_canWinNim(int n) {
+                              ^
+1 error
+
+==============================
+public class CanWinNim_Mutant4 {
+	//@ requires n >= 0;
+	//@ ensures \result == mutant_canWinNim(n);
+    public static boolean canWinNim(int n) {
+	//@ assert n % 4 != 1 ==> mutant_canWinNim(n) == true;
+	//@ assert n % 4 == 1 ==> mutant_canWinNim(n) == false;
+        return n % 4 != 1;   // Change 0 to 1
+    }
+
+	/*@ 	requires n >= 0;
+            	ensures \result == (n % 4 == 1);
+        public model static boolean mutant_canWinNim(int n) {
+            return n % 4 == 1;
+        }@*/
+}
+==============================

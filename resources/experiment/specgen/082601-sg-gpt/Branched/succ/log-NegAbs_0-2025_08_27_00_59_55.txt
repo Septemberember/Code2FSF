@@ -1,0 +1,55 @@
+public class NegAbs_Original {
+	//@ ensures \result == num ==> num < 0;
+	//@ ensures \result == -num ==> num >= 0;
+	public static int negAbs(int num) {
+        	if (num < 0)
+            		return num;
+        	else
+            		return -num;
+    	}
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NegAbs_Original.java:8: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NegAbs_Original.java:2:) in method negAbs
+            		return -num;
+            		^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NegAbs_Original.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NegAbs_Original.java:8:
+	//@ ensures \result == num ==> num < 0;
+	    ^
+2 verification failures
+
+==============================
+public class NegAbs_Original {
+	//@ ensures \result == num ==> num < 0;  
+	//@ ensures \result == -num ==> num >= 0;
+	public static int negAbs(int num) {
+        	if (num < 0)
+            		return num;
+        	else
+            		return -num;
+    	}
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NegAbs_Original.java:8: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NegAbs_Original.java:2:) in method negAbs
+            		return -num;
+            		^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NegAbs_Original.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NegAbs_Original.java:8:
+	//@ ensures \result == num ==> num < 0;  
+	    ^
+2 verification failures
+
+==============================
+public class NegAbs_Original {
+	//@ ensures \result == num ==> num <= 0;  
+	//@ ensures \result == -num ==> num >= 0;
+	public static int negAbs(int num) {
+        	if (num < 0)
+            		return num;
+        	else
+            		return -num;
+    	}
+}
+
+==============================
+
+==============================

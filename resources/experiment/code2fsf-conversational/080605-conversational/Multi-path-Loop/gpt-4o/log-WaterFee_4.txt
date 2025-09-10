@@ -1,0 +1,45 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class WaterFee_Original {
+    public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+        while (n > 0) {
+            if (n < 3) {
+                fee += 3;
+            } else if (n < 10) {
+                fee += 4;
+            } else {
+                fee += 5;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+```
+*end* role user
+start role assistant
+```
+T1: tons < 0
+D1: return_value == 0
+
+T2: tons == 0
+D2: return_value == 0
+
+T3: tons >= 1 && tons < 3
+D3: return_value == 3 * tons
+
+T4: tons >= 3 && tons < 10
+D4: return_value == 3 * 2 + 4 * (tons - 2)
+
+T5: tons >= 10
+D5: return_value == 3 * 2 + 4 * 7 + 5 * (tons - 9)
+```
+*end* role assistant
+start role remark
+Validation SUCCESS--partially verified!
+Current conversation round is: [1]
+*end* role remark

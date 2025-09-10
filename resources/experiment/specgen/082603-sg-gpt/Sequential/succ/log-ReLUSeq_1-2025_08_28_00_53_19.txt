@@ -1,0 +1,10 @@
+public class ReLUSeq_Mutant1 {
+    //@ requires true;
+    //@ ensures \result == (x > 0.0 ? x : 0);
+    /*@ pure @*/ public static double computeReLU(double x) {
+        return ((x > 0.0) ? x : 0);
+    }
+}
+==============================
+
+==============================

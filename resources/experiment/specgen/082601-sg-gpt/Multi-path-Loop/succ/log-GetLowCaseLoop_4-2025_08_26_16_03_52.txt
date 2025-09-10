@@ -1,0 +1,3618 @@
+public class GetLowCaseLoop_M4 {
+    //@ ensures \result == t;
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c - 'A' + 'a';
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:2: error: cannot find symbol
+    //@ ensures \result == t;
+                           ^
+  symbol:   variable t
+  location: class GetLowCaseLoop_M4
+1 error
+
+==============================
+public class GetLowCaseLoop_M4 {
+    //@ ensures \result == t;
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c - 'A' + 'a';
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:2: error: cannot find symbol
+    //@ ensures \result == t;
+                           ^
+  symbol:   variable t
+  location: class GetLowCaseLoop_M4
+1 error
+
+==============================
+public class GetLowCaseLoop_M4 {
+    //@ ensures \result == t;
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c - 'A' + 'a';
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:2: error: cannot find symbol
+    //@ ensures \result == t;
+                           ^
+  symbol:   variable t
+  location: class GetLowCaseLoop_M4
+1 error
+
+==============================
+public class GetLowCaseLoop_M4 {
+    //@ ensures \result == t;
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c - 'A' + 'a';
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:2: error: cannot find symbol
+    //@ ensures \result == t;
+                           ^
+  symbol:   variable t
+  location: class GetLowCaseLoop_M4
+1 error
+
+==============================
+public class GetLowCaseLoop_M4 {
+    //@ ensures \result == t;
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c - 'A' + 'a';
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:2: error: cannot find symbol
+    //@ ensures \result == t;
+                           ^
+  symbol:   variable t
+  location: class GetLowCaseLoop_M4
+1 error
+
+==============================
+public class GetLowCaseLoop_M4 {
+    //@ ensures \result == t;
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c - 'A' + 'a';
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:2: error: cannot find symbol
+    //@ ensures \result == t;
+                           ^
+  symbol:   variable t
+  location: class GetLowCaseLoop_M4
+1 error
+
+==============================
+public class GetLowCaseLoop_M4 {
+    //@ ensures \result == t;
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c - 'A' + 'a';
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:2: error: cannot find symbol
+    //@ ensures \result == t;
+                           ^
+  symbol:   variable t
+  location: class GetLowCaseLoop_M4
+1 error
+
+==============================
+public class GetLowCaseLoop_M4 {
+    //@ ensures \result == t;
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c - 'A' + 'a';
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:2: error: cannot find symbol
+    //@ ensures \result == t;
+                           ^
+  symbol:   variable t
+  location: class GetLowCaseLoop_M4
+1 error
+
+==============================
+public class GetLowCaseLoop_M4 {
+    //@ ensures \result == t;
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c - 'A' + 'a';
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:2: error: cannot find symbol
+    //@ ensures \result == t;
+                           ^
+  symbol:   variable t
+  location: class GetLowCaseLoop_M4
+1 error
+
+==============================
+public class GetLowCaseLoop_M4 {
+    //@ ensures \result == t;
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c - 'A' + 'a';
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:2: error: cannot find symbol
+    //@ ensures \result == t;
+                           ^
+  symbol:   variable t
+  location: class GetLowCaseLoop_M4
+1 error
+
+==============================
+public class GetLowCaseLoop_M4 {
+    //@ ensures \result == t;
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c - 'A' + 'a';
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:2: error: cannot find symbol
+    //@ ensures \result == t;
+                           ^
+  symbol:   variable t
+  location: class GetLowCaseLoop_M4
+1 error
+
+==============================
+public class GetLowCaseLoop_M4 {
+    //@ ensures \result == t;
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c - 'A' + 'a';
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:2: error: cannot find symbol
+    //@ ensures \result == t;
+                           ^
+  symbol:   variable t
+  location: class GetLowCaseLoop_M4
+1 error
+
+==============================
+public class GetLowCaseLoop_M4 {
+    //@ ensures \result == t;
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c - 'A' + 'a';
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:2: error: cannot find symbol
+    //@ ensures \result == t;
+                           ^
+  symbol:   variable t
+  location: class GetLowCaseLoop_M4
+1 error
+
+==============================
+public class GetLowCaseLoop_M4 {
+    //@ ensures \result == t;
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c - 'A' + 'a';
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:2: error: cannot find symbol
+    //@ ensures \result == t;
+                           ^
+  symbol:   variable t
+  location: class GetLowCaseLoop_M4
+1 error
+
+==============================
+public class GetLowCaseLoop_M4 {
+    //@ ensures \result == t;
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c - 'A' + 'a';
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:2: error: cannot find symbol
+    //@ ensures \result == t;
+                           ^
+  symbol:   variable t
+  location: class GetLowCaseLoop_M4
+1 error
+
+==============================
+public class GetLowCaseLoop_M4 {
+    //@ ensures \result == t;
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c - 'A' + 'a';
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:2: error: cannot find symbol
+    //@ ensures \result == t;
+                           ^
+  symbol:   variable t
+  location: class GetLowCaseLoop_M4
+1 error
+
+==============================
+public class GetLowCaseLoop_M4 {
+    //@ ensures \result == t;
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c - 'A' + 'a';
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:2: error: cannot find symbol
+    //@ ensures \result == t;
+                           ^
+  symbol:   variable t
+  location: class GetLowCaseLoop_M4
+1 error
+
+==============================
+public class GetLowCaseLoop_M4 {
+    //@ ensures \result == t;
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c - 'A' + 'a';
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:2: error: cannot find symbol
+    //@ ensures \result == t;
+                           ^
+  symbol:   variable t
+  location: class GetLowCaseLoop_M4
+1 error
+
+==============================
+public class GetLowCaseLoop_M4 {
+    //@ ensures \result == t;
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c - 'A' + 'a';
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:2: error: cannot find symbol
+    //@ ensures \result == t;
+                           ^
+  symbol:   variable t
+  location: class GetLowCaseLoop_M4
+1 error
+
+==============================
+public class GetLowCaseLoop_M4 {
+    //@ ensures \result == t;
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c - 'A' + 'a';
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:2: error: cannot find symbol
+    //@ ensures \result == t;
+                           ^
+  symbol:   variable t
+  location: class GetLowCaseLoop_M4
+1 error
+
+==============================
+public class GetLowCaseLoop_M4 {
+    //@ ensures \result == t;  
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c - 'A' + 'a';
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:2: error: cannot find symbol
+    //@ ensures \result == t;  
+                           ^
+  symbol:   variable t
+  location: class GetLowCaseLoop_M4
+1 error
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c - 'A' + 'a';
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining t <= 'z' && t != c - 'A' + 'a';
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c - 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining t < 'z' && t != c - 'A' + 'a';  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c - 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining t <= 'z' && t != c - 'A' + 'a';  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t - 1 <= 'z' && t != c - 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining t - 1 <= 'z' && t != c - 'A' + 'a';  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' < ch && ch < t; 'F' < ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' < ch && ch < t; 'F' < ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' < ch && ch < t; 'F' < ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' < ch && ch < t; 'F' < ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' < ch && ch < t; 'F' < ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' < ch && ch < t; 'F' < ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' < ch && ch < t; 'F' <= ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' < ch && ch < t; 'F' <= ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' < ch && ch < t; 'F' <= ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' < ch && ch < t; 'F' <= ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' < ch && ch < t; 'F' <= ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' < ch && ch < t; 'F' <= ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' < ch && ch < t; 'F' - 1 <= ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' < ch && ch < t; 'F' - 1 <= ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' < ch && ch < t; 'F' - 1 <= ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' < ch && ch < t; 'F' - 1 <= ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' < ch && ch < t; 'F' - 1 <= ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' < ch && ch < t; 'F' - 1 <= ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' < ch && ch <= t; 'F' < ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' < ch && ch <= t; 'F' < ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' < ch && ch <= t; 'F' < ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' < ch && ch <= t; 'F' < ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' < ch && ch <= t; 'F' < ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' < ch && ch <= t; 'F' < ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' < ch && ch <= t; 'F' <= ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' < ch && ch <= t; 'F' <= ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' < ch && ch <= t; 'F' <= ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' < ch && ch <= t; 'F' <= ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' < ch && ch <= t; 'F' <= ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' < ch && ch <= t; 'F' <= ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' < ch && ch <= t; 'F' - 1 <= ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' < ch && ch <= t; 'F' - 1 <= ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' < ch && ch <= t; 'F' - 1 <= ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' < ch && ch <= t; 'F' - 1 <= ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' < ch && ch <= t; 'F' - 1 <= ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' < ch && ch <= t; 'F' - 1 <= ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' < ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' < ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' < ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' < ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' < ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' < ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' <= ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' - 1 <= ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' - 1 <= ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' - 1 <= ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' - 1 <= ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' - 1 <= ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'F' - 1 <= ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch <= t; 'F' < ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' <= ch && ch <= t; 'F' < ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch <= t; 'F' < ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' <= ch && ch <= t; 'F' < ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch <= t; 'F' < ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' <= ch && ch <= t; 'F' < ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch <= t; 'F' <= ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' <= ch && ch <= t; 'F' <= ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch <= t; 'F' <= ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' <= ch && ch <= t; 'F' <= ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch <= t; 'F' <= ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' <= ch && ch <= t; 'F' <= ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch <= t; 'F' - 1 <= ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' <= ch && ch <= t; 'F' - 1 <= ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch <= t; 'F' - 1 <= ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' <= ch && ch <= t; 'F' - 1 <= ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch <= t; 'F' - 1 <= ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' <= ch && ch <= t; 'F' - 1 <= ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch < t; 'F' < ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch < t; 'F' < ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch < t; 'F' < ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch < t; 'F' < ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch < t; 'F' < ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch < t; 'F' < ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch < t; 'F' <= ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch < t; 'F' <= ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch < t; 'F' <= ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch < t; 'F' <= ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch < t; 'F' <= ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch < t; 'F' <= ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch < t; 'F' - 1 <= ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch < t; 'F' - 1 <= ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch < t; 'F' - 1 <= ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch < t; 'F' - 1 <= ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch < t; 'F' - 1 <= ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch < t; 'F' - 1 <= ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch <= t; 'F' < ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch <= t; 'F' < ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch <= t; 'F' < ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch <= t; 'F' < ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch <= t; 'F' < ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch <= t; 'F' < ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch <= t; 'F' <= ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch <= t; 'F' <= ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch <= t; 'F' <= ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch <= t; 'F' <= ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch <= t; 'F' <= ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch <= t; 'F' <= ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch <= t; 'F' - 1 <= ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch <= t; 'F' - 1 <= ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch <= t; 'F' - 1 <= ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch <= t; 'F' - 1 <= ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch <= t; 'F' - 1 <= ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\forall char ch; 'f' - 1 <= ch && ch <= t; 'F' - 1 <= ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' < ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' < ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' < ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' < ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' < ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' < ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' < ch || ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' < ch || ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' < ch || ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' < ch || ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' < ch || ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' < ch || ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' <= ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' <= ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' <= ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' <= ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' <= ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' <= ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' <= ch || ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' <= ch || ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' <= ch || ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' <= ch || ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' <= ch || ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' <= ch || ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' - 1 <= ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' - 1 <= ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' - 1 <= ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' - 1 <= ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' - 1 <= ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' - 1 <= ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' - 1 <= ch || ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' - 1 <= ch || ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' - 1 <= ch || ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' - 1 <= ch || ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' - 1 <= ch || ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch < t; 'F' - 1 <= ch || ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' < ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' < ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' < ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' < ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' < ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' < ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' < ch || ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' < ch || ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' < ch || ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' < ch || ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' < ch || ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' < ch || ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' <= ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' <= ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' <= ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' <= ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' <= ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' <= ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' <= ch || ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' <= ch || ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' <= ch || ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' <= ch || ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' <= ch || ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' <= ch || ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' - 1 <= ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' - 1 <= ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' - 1 <= ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' - 1 <= ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' - 1 <= ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' - 1 <= ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' - 1 <= ch || ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' - 1 <= ch || ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' - 1 <= ch || ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' - 1 <= ch || ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' - 1 <= ch || ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' < ch && ch <= t; 'F' - 1 <= ch || ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' < ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' < ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' < ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' < ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' < ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' < ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' < ch || ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' < ch || ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' < ch || ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' < ch || ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' < ch || ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' < ch || ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' <= ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' <= ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' <= ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' <= ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' <= ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' <= ch || ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' <= ch || ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' <= ch || ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' <= ch || ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' <= ch || ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' <= ch || ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' - 1 <= ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' - 1 <= ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' - 1 <= ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' - 1 <= ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' - 1 <= ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' - 1 <= ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' - 1 <= ch || ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' - 1 <= ch || ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' - 1 <= ch || ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' - 1 <= ch || ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' - 1 <= ch || ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' <= ch && ch < t; 'F' - 1 <= ch || ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch <= t; 'F' < ch && ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' <= ch && ch <= t; 'F' < ch && ch < 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch <= t; 'F' < ch && ch <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' <= ch && ch <= t; 'F' < ch && ch <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch <= t; 'F' < ch && ch - 1 <= 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining (\exists char ch; 'f' <= ch && ch <= t; 'F' < ch && ch - 1 <= 'Z');  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch <= t; 'F' < ch || ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:5: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining t < 'z' && t != c + 'A' + 'a';  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c + 'A' - 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch <= t; 'F' < ch || ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining t < 'z' && t != c + 'A' - 'a';  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t < 'z' && t != c - 'A' - 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch <= t; 'F' < ch || ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining t < 'z' && t != c - 'A' - 'a';  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch <= t; 'F' < ch || ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:5: verify: The prover cannot establish an assertion (LoopInvariant) in method getLowCase
+        //@ maintaining t <= 'z' && t != c + 'A' + 'a';  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c + 'A' - 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch <= t; 'F' < ch || ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining t <= 'z' && t != c + 'A' - 'a';  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t <= 'z' && t != c - 'A' - 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch <= t; 'F' < ch || ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/GetLowCaseLoop_M4.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method getLowCase
+        //@ maintaining t <= 'z' && t != c - 'A' - 'a';  
+            ^
+1 verification failure
+
+==============================
+public class GetLowCaseLoop_M4 {
+ 
+    public static char getLowCase(char c) {
+        char t = 'f';
+        //@ maintaining t - 1 <= 'z' && t != c + 'A' + 'a';  
+        //@ maintaining (\exists char ch; 'f' <= ch && ch <= t; 'F' < ch || ch < 'Z');  
+        //@ maintaining (\forall char ch; 'f' <= ch && ch < t; 'a' <= ch && ch <= 'z');
+        //@ decreases 'z' - t;
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            if(c < 'F' || c > 'Z') {
+                return 0;
+            }
+            t++;
+        }
+        return t;
+    }
+}
+
+==============================
+
+==============================

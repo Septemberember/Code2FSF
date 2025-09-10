@@ -1,0 +1,12 @@
+public class SmallestEvenMul_Mutant3 {
+
+    /*@ public normal_behavior
+      @    ensures \result == (n / 2 == 0 ? n : 2 * n);
+      @*/
+    public static int smallestEvenMultiple(int n) {
+        return n / 2 == 0 ? n : 2 * n;
+    }
+}
+==============================
+
+==============================

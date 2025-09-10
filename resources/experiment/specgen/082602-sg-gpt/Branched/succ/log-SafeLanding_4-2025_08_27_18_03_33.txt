@@ -1,0 +1,22 @@
+public class SafeLanding_Mutant4 {
+    //@ requires height >= Integer.MIN_VALUE && height <= Integer.MAX_VALUE &&
+    //@           speed >= Integer.MIN_VALUE && speed <= Integer.MAX_VALUE &&
+    //@           tilt >= Integer.MIN_VALUE && tilt <= Integer.MAX_VALUE;
+    //@ ensures \result <==> height <= 5 && speed <= 3 && tilt <= 10;
+    public static boolean safeLanding(int height, int speed, int tilt) {
+        boolean safe = true;
+        if (height > 5) {
+            safe = false;
+        }
+        if (speed > 3) {
+            safe = false;
+        }
+        if (tilt > 10) {
+            safe = false;
+        }
+        return safe;
+    }
+}
+==============================
+
+==============================

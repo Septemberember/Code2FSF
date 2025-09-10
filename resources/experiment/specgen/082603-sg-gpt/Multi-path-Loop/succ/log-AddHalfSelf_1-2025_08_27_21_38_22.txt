@@ -1,0 +1,208 @@
+public class AddHalfSelf_Mutant1{
+    //@ ensures \result == x - (\old(x) % 2 == 0 ? 1 : 0) * (\old(x) < 0 ? -1 : 1);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum >= 0;
+        //@ decreasing n;
+        while(n > 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum - 1;
+        }
+        else{
+            return x + addNum + 1;
+        }
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant1.java:19: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant1.java:2:) in method addHalfSelf
+            return x - addNum - 1;
+            ^
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant1.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant1.java:19:
+    //@ ensures \result == x - (\old(x) % 2 == 0 ? 1 : 0) * (\old(x) < 0 ? -1 : 1);
+        ^
+2 verification failures
+
+==============================
+public class AddHalfSelf_Mutant1{
+    //@ ensures \result == x - (\old(x) % 2 == 0 ? 1 : 0) * (\old(x) < 0 ? -1 : 1);  
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum >= 0;
+        //@ decreasing n;
+        while(n > 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum - 1;
+        }
+        else{
+            return x + addNum + 1;
+        }
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant1.java:19: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant1.java:2:) in method addHalfSelf
+            return x - addNum - 1;
+            ^
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant1.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant1.java:19:
+    //@ ensures \result == x - (\old(x) % 2 == 0 ? 1 : 0) * (\old(x) < 0 ? -1 : 1);  
+        ^
+2 verification failures
+
+==============================
+public class AddHalfSelf_Mutant1{
+    //@ ensures \result == x - (\old(x) % 2 == 0 ? 1 : 0) * (\old(x) <= 0 ? -1 : 1);  
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum >= 0;
+        //@ decreasing n;
+        while(n > 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum - 1;
+        }
+        else{
+            return x + addNum + 1;
+        }
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant1.java:19: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant1.java:2:) in method addHalfSelf
+            return x - addNum - 1;
+            ^
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant1.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant1.java:19:
+    //@ ensures \result == x - (\old(x) % 2 == 0 ? 1 : 0) * (\old(x) <= 0 ? -1 : 1);  
+        ^
+2 verification failures
+
+==============================
+public class AddHalfSelf_Mutant1{
+    //@ ensures \result == x + (\old(x) % 2 == 0 ? 1 : 0) * (\old(x) < 0 ? -1 : 1);  
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum >= 0;
+        //@ decreasing n;
+        while(n > 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum - 1;
+        }
+        else{
+            return x + addNum + 1;
+        }
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant1.java:19: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant1.java:2:) in method addHalfSelf
+            return x - addNum - 1;
+            ^
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant1.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant1.java:19:
+    //@ ensures \result == x + (\old(x) % 2 == 0 ? 1 : 0) * (\old(x) < 0 ? -1 : 1);  
+        ^
+2 verification failures
+
+==============================
+public class AddHalfSelf_Mutant1{
+    //@ ensures \result == x + (\old(x) % 2 == 0 ? 1 : 0) * (\old(x) <= 0 ? -1 : 1);  
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum >= 0;
+        //@ decreasing n;
+        while(n > 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum - 1;
+        }
+        else{
+            return x + addNum + 1;
+        }
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant1.java:19: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant1.java:2:) in method addHalfSelf
+            return x - addNum - 1;
+            ^
+/root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant1.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/AddHalfSelf_Mutant1.java:19:
+    //@ ensures \result == x + (\old(x) % 2 == 0 ? 1 : 0) * (\old(x) <= 0 ? -1 : 1);  
+        ^
+2 verification failures
+
+==============================
+public class AddHalfSelf_Mutant1{
+ 
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum >= 0;
+        //@ decreasing n;
+        while(n > 0){
+            if(n % 2 == 0){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum - 1;
+        }
+        else{
+            return x + addNum + 1;
+        }
+    }
+}
+
+==============================
+
+==============================

@@ -1,0 +1,82 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class AltitudeController_Mutant3 {
+    public static int altitudeController(int currentHeight,int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = 0;
+        absError = error < 0 ? -error : error + 10; //Added 10 to error
+        int controlSignal = 0;
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        return controlSignal;
+    }
+}
+
+```
+*end* role user
+start role assistant
+```
+T1: error < 0 && -error > 30 && error > 0
+D1: Exception
+
+T2: error < 0 && -error > 30 && error <= 0
+D2: controlSignal == -5
+
+T3: error < 0 && -error > 20 && -error <= 30 && error > 0
+D3: Exception
+
+T4: error < 0 && -error > 20 && -error <= 30 && error <= 0
+D4: controlSignal == -3
+
+T5: error < 0 && -error > 10 && -error <= 20 && error > 0
+D5: Exception
+
+T6: error < 0 && -error > 10 && -error <= 20 && error <= 0
+D6: controlSignal == -2
+
+T7: error < 0 && -error <= 10 && error > 0
+D7: Exception
+
+T8: error < 0 && -error <= 10 && error <= 0
+D8: controlSignal == error
+
+T9: error >= 0 && (error + 10) > 30 && error > 0
+D9: controlSignal == 5
+
+T10: error >= 0 && (error + 10) > 30 && error <= 0
+D10: Exception
+
+T11: error >= 0 && (error + 10) > 20 && (error + 10) <= 30 && error > 0
+D11: controlSignal == 3
+
+T12: error >= 0 && (error + 10) > 20 && (error + 10) <= 30 && error <= 0
+D12: Exception
+
+T13: error >= 0 && (error + 10) > 10 && (error + 10) <= 20 && error > 0
+D13: controlSignal == 2
+
+T14: error >= 0 && (error + 10) > 10 && (error + 10) <= 20 && error <= 0
+D14: Exception
+
+T15: error >= 0 && (error + 10) <= 10 && error > 0
+D15: controlSignal == error
+
+T16: error >= 0 && (error + 10) <= 10 && error <= 0
+D16: Exception
+```
+*end* role assistant
+start role user
+There exist variables which do not belong to input params of the program:error, please regenerate the FSF, avoiding these variables!
+*end* role user
+start role remark
+Validation FAIL--Conversation rounds number is over the maxRounds
+Current conversation round is: [1]
+*end* role remark

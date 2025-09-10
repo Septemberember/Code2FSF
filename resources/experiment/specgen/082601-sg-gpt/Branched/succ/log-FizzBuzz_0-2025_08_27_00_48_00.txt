@@ -1,0 +1,160 @@
+public class FizzBuzz_Original {
+
+    //@ ensures \result % 3 == 0 && \result % 5 == 0 ==> \result == 3 + 5;
+    //@ ensures \result % 3 == 0 && \result % 5 != 0 ==> \result == 3;
+    //@ ensures \result % 3 != 0 && \result % 5 == 0 ==> \result == 5;
+    //@ ensures \result % 3 != 0 && \result % 5 != 0 ==> \result == 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        if (n % 3 == 0) {
+            res += 3;
+        }
+        if (n % 5 == 0) {
+            res += 5;
+        }
+        return res;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/FizzBuzz_Original.java:15: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/FizzBuzz_Original.java:6:) in method fizzBuzz
+        return res;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/FizzBuzz_Original.java:6: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/FizzBuzz_Original.java:15:
+    //@ ensures \result % 3 != 0 && \result % 5 != 0 ==> \result == 0;
+        ^
+2 verification failures
+
+==============================
+public class FizzBuzz_Original {
+
+    //@ ensures \result % 3 == 0 && \result % 5 == 0 ==> \result == 3 + 5;
+    //@ ensures \result % 3 == 0 && \result % 5 != 0 ==> \result == 3;
+    //@ ensures \result % 3 != 0 && \result % 5 == 0 ==> \result == 5;
+    //@ ensures \result % 3 != 0 && \result % 5 != 0 ==> \result == 0;  
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        if (n % 3 == 0) {
+            res += 3;
+        }
+        if (n % 5 == 0) {
+            res += 5;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/FizzBuzz_Original.java:15: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/FizzBuzz_Original.java:6:) in method fizzBuzz
+        return res;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/FizzBuzz_Original.java:6: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/FizzBuzz_Original.java:15:
+    //@ ensures \result % 3 != 0 && \result % 5 != 0 ==> \result == 0;  
+        ^
+2 verification failures
+
+==============================
+public class FizzBuzz_Original {
+
+    //@ ensures \result % 3 == 0 && \result % 5 == 0 ==> \result == 3 + 5;
+    //@ ensures \result % 3 == 0 && \result % 5 != 0 ==> \result == 3;
+    //@ ensures \result % 3 != 0 && \result % 5 == 0 ==> \result == 5;
+ 
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        if (n % 3 == 0) {
+            res += 3;
+        }
+        if (n % 5 == 0) {
+            res += 5;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/FizzBuzz_Original.java:15: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/FizzBuzz_Original.java:3:) in method fizzBuzz
+        return res;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/FizzBuzz_Original.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/FizzBuzz_Original.java:15:
+    //@ ensures \result % 3 == 0 && \result % 5 == 0 ==> \result == 3 + 5;
+        ^
+2 verification failures
+
+==============================
+public class FizzBuzz_Original {
+
+    //@ ensures \result % 3 == 0 && \result % 5 == 0 ==> \result == 3 + 5;  
+    //@ ensures \result % 3 == 0 && \result % 5 != 0 ==> \result == 3;
+    //@ ensures \result % 3 != 0 && \result % 5 == 0 ==> \result == 5;
+ 
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        if (n % 3 == 0) {
+            res += 3;
+        }
+        if (n % 5 == 0) {
+            res += 5;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/FizzBuzz_Original.java:15: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/FizzBuzz_Original.java:3:) in method fizzBuzz
+        return res;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/FizzBuzz_Original.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/FizzBuzz_Original.java:15:
+    //@ ensures \result % 3 == 0 && \result % 5 == 0 ==> \result == 3 + 5;  
+        ^
+2 verification failures
+
+==============================
+public class FizzBuzz_Original {
+
+    //@ ensures \result % 3 == 0 && \result % 5 == 0 ==> \result == 3 - 5;  
+    //@ ensures \result % 3 == 0 && \result % 5 != 0 ==> \result == 3;
+    //@ ensures \result % 3 != 0 && \result % 5 == 0 ==> \result == 5;
+ 
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        if (n % 3 == 0) {
+            res += 3;
+        }
+        if (n % 5 == 0) {
+            res += 5;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/FizzBuzz_Original.java:15: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/FizzBuzz_Original.java:3:) in method fizzBuzz
+        return res;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/FizzBuzz_Original.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/FizzBuzz_Original.java:15:
+    //@ ensures \result % 3 == 0 && \result % 5 == 0 ==> \result == 3 - 5;  
+        ^
+2 verification failures
+
+==============================
+public class FizzBuzz_Original {
+
+ 
+    //@ ensures \result % 3 == 0 && \result % 5 != 0 ==> \result == 3;
+    //@ ensures \result % 3 != 0 && \result % 5 == 0 ==> \result == 5;
+ 
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        if (n % 3 == 0) {
+            res += 3;
+        }
+        if (n % 5 == 0) {
+            res += 5;
+        }
+        return res;
+    }
+}
+
+==============================
+
+==============================

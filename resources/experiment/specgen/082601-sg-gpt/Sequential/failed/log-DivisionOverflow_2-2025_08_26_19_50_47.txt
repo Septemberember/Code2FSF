@@ -1,0 +1,126 @@
+public class DivisionOverflow_Mutant2 {
+    //@ ensures \result == nom / (denom + 1);
+    public static int division_test_fail_overflow(int nom, int denom) {
+        int tmp = nom / (denom+1); // modifying denom by adding 1
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant2.java:4: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method division_test_fail_overflow
+        int tmp = nom / (denom+1); // modifying denom by adding 1
+                      ^
+1 verification failure
+
+==============================
+public class DivisionOverflow_Mutant2 {
+    //@ ensures \result == nom / (denom + 1);
+    //@ ensures Integer.MIN_VALUE <= nom / (denom + 1) && nom / (denom + 1) <= Integer.MAX_VALUE;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        int tmp = nom / (denom+1); // modifying denom by adding 1
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant2.java:5: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method division_test_fail_overflow
+        int tmp = nom / (denom+1); // modifying denom by adding 1
+                      ^
+1 verification failure
+
+==============================
+public class DivisionOverflow_Mutant2 {
+    //@ ensures \result == nom / (denom + 1);
+    //@ ensures Integer.MIN_VALUE <= nom / (denom + 1) && nom / (denom + 1) <= Integer.MAX_VALUE;
+    //@ assume Integer.MIN_VALUE <= nom / (denom + 1) && nom / (denom + 1) <= Integer.MAX_VALUE;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        int tmp = nom / (denom+1); // modifying denom by adding 1
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant2.java:4: error: The token assume is illegal or not implemented for a type or method clause (JmlParser.classOrInterfaceBodyDeclaration)
+    //@ assume Integer.MIN_VALUE <= nom / (denom + 1) && nom / (denom + 1) <= Integer.MAX_VALUE;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant2.java:2: error: Method specifications without a following method declaration
+    //@ ensures \result == nom / (denom + 1);
+        ^
+2 errors
+
+==============================
+public class DivisionOverflow_Mutant2 {
+    //@ ensures \result == nom / (denom + 1);
+    //@ ensures Integer.MIN_VALUE <= nom / (denom + 1) && nom / (denom + 1) <= Integer.MAX_VALUE;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        int tmp = nom / (denom+1); // modifying denom by adding 1
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant2.java:5: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method division_test_fail_overflow
+        int tmp = nom / (denom+1); // modifying denom by adding 1
+                      ^
+1 verification failure
+
+==============================
+public class DivisionOverflow_Mutant2 {
+    //@ ensures \result == nom / (denom + 1);
+    //@ ensures Integer.MIN_VALUE <= nom / (denom + 1) && nom / (denom + 1) <= Integer.MAX_VALUE;
+    //@ assume Integer.MIN_VALUE <= nom / (denom + 1) && nom / (denom + 1) <= Integer.MAX_VALUE;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        int tmp = nom / (denom+1); // modifying denom by adding 1
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant2.java:4: error: The token assume is illegal or not implemented for a type or method clause (JmlParser.classOrInterfaceBodyDeclaration)
+    //@ assume Integer.MIN_VALUE <= nom / (denom + 1) && nom / (denom + 1) <= Integer.MAX_VALUE;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant2.java:2: error: Method specifications without a following method declaration
+    //@ ensures \result == nom / (denom + 1);
+        ^
+2 errors
+
+==============================
+public class DivisionOverflow_Mutant2 {
+    //@ ensures \result == nom / (denom + 1);
+    //@ ensures Integer.MIN_VALUE <= nom / (denom + 1) && nom / (denom + 1) <= Integer.MAX_VALUE;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        int tmp = nom / (denom+1); // modifying denom by adding 1
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant2.java:5: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method division_test_fail_overflow
+        int tmp = nom / (denom+1); // modifying denom by adding 1
+                      ^
+1 verification failure
+
+==============================
+public class DivisionOverflow_Mutant2 {
+    //@ ensures \result == nom / (denom + 1);
+    //@ ensures Integer.MIN_VALUE <= nom / (denom + 1) && nom / (denom + 1) <= Integer.MAX_VALUE;
+    //@ assume denom + 1 != 0;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        int tmp = nom / (denom+1); // modifying denom by adding 1
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant2.java:4: error: The token assume is illegal or not implemented for a type or method clause (JmlParser.classOrInterfaceBodyDeclaration)
+    //@ assume denom + 1 != 0;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant2.java:2: error: Method specifications without a following method declaration
+    //@ ensures \result == nom / (denom + 1);
+        ^
+2 errors
+
+==============================
+public class DivisionOverflow_Mutant2 {
+    //@ ensures \result == nom / (denom + 1);
+    //@ ensures Integer.MIN_VALUE <= nom / (denom + 1) && nom / (denom + 1) <= Integer.MAX_VALUE;
+    //@ requires denom + 1 != 0;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        int tmp = nom / (denom+1); // modifying denom by adding 1
+        return tmp;
+    }
+}
+==============================

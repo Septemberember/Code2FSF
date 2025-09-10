@@ -1,0 +1,15 @@
+public class Abs_Mutant5 {
+    /*@ public normal_behavior
+      @    requires num >= Integer.MIN_VALUE && num <= Integer.MAX_VALUE;
+      @    ensures \result >= 0 && (\result == -num || \result == 0);
+      @*/
+    public static int Abs(int num) {
+        if (num < 0)
+            return -num;
+        else
+            return 0;
+    }
+}
+==============================
+
+==============================

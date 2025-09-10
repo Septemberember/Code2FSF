@@ -1,0 +1,31 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class WindCompensation_Mutant5 {
+    public static int windCompensation(int windSpeed) {
+        int compensation = 5;
+        if (windSpeed > 20) {
+            compensation += (windSpeed - 20) * 2;
+        } else if (windSpeed > 10) {
+            compensation += windSpeed - 10;
+        }
+        return compensation;
+    }
+}
+
+```
+*end* role user
+start role assistant
+```
+T1: windSpeed <= 10
+D1: return_value == 5
+T2: windSpeed > 10 && windSpeed <= 20
+D2: return_value == 5 + (windSpeed - 10)
+T3: windSpeed > 20
+D3: return_value == 5 + (windSpeed - 20) * 2
+```
+*end* role assistant
+start role remark
+Validation SUCCESS--totally verified!
+Current conversation round is: [1]
+*end* role remark

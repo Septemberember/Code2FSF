@@ -1,0 +1,117 @@
+public class NumberOfCuts_Mutant1 {
+    //@ ensures \result == 1 <==> n == 1;
+    //@ ensures \result == n / 2 <==> n % 2 == 0 && n != 1;
+    //@ ensures \result == n <==> n % 2 != 0 && n != 1;
+    public static int numberOfCuts(int n) {
+        if (n == 1) {
+            return 1; // mutated line
+        }
+        if (n % 2 == 0) {
+            return n / 2;
+        }
+        return n;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant1.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant1.java:4:) in method numberOfCuts
+            return 1; // mutated line
+            ^
+/root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant1.java:4: verify: Associated declaration: /root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant1.java:7:
+    //@ ensures \result == n <==> n % 2 != 0 && n != 1;
+        ^
+2 verification failures
+
+==============================
+public class NumberOfCuts_Mutant1 {
+    //@ ensures \result == 1 <==> n == 1;
+    //@ ensures \result == n / 2 <==> n % 2 == 0 && n != 1;
+    //@ ensures \result == n <==> n % 2 != 0 && n != 1;  
+    public static int numberOfCuts(int n) {
+        if (n == 1) {
+            return 1; // mutated line
+        }
+        if (n % 2 == 0) {
+            return n / 2;
+        }
+        return n;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant1.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant1.java:4:) in method numberOfCuts
+            return 1; // mutated line
+            ^
+/root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant1.java:4: verify: Associated declaration: /root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant1.java:7:
+    //@ ensures \result == n <==> n % 2 != 0 && n != 1;  
+        ^
+2 verification failures
+
+==============================
+public class NumberOfCuts_Mutant1 {
+    //@ ensures \result == 1 <==> n == 1;
+    //@ ensures \result == n / 2 <==> n % 2 == 0 && n != 1;
+ 
+    public static int numberOfCuts(int n) {
+        if (n == 1) {
+            return 1; // mutated line
+        }
+        if (n % 2 == 0) {
+            return n / 2;
+        }
+        return n;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant1.java:10: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant1.java:2:) in method numberOfCuts
+            return n / 2;
+            ^
+/root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant1.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant1.java:10:
+    //@ ensures \result == 1 <==> n == 1;
+        ^
+2 verification failures
+
+==============================
+public class NumberOfCuts_Mutant1 {
+    //@ ensures \result == 1 <==> n == 1;  
+    //@ ensures \result == n / 2 <==> n % 2 == 0 && n != 1;
+ 
+    public static int numberOfCuts(int n) {
+        if (n == 1) {
+            return 1; // mutated line
+        }
+        if (n % 2 == 0) {
+            return n / 2;
+        }
+        return n;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant1.java:10: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant1.java:2:) in method numberOfCuts
+            return n / 2;
+            ^
+/root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant1.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant1.java:10:
+    //@ ensures \result == 1 <==> n == 1;  
+        ^
+2 verification failures
+
+==============================
+public class NumberOfCuts_Mutant1 {
+ 
+    //@ ensures \result == n / 2 <==> n % 2 == 0 && n != 1;
+ 
+    public static int numberOfCuts(int n) {
+        if (n == 1) {
+            return 1; // mutated line
+        }
+        if (n % 2 == 0) {
+            return n / 2;
+        }
+        return n;
+    }
+}
+
+==============================
+
+==============================

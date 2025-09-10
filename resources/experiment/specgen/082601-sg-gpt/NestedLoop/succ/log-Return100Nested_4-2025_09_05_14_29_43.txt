@@ -1,0 +1,193 @@
+public class Return100Nested_Mutant4 {
+    //@ ensures \result == 100;
+    public static int return100 () {
+        int res = 1;
+        //@ maintaining res == 1;
+        //@ maintaining 0 <= i && i <= 10;
+        for(int i = 0; i < 10; i++) {
+            //@ maintaining res == 1 + i*10;
+            //@ maintaining 0 <= j && j <= 10;
+            for(int j = 0; j < 10; j++) {
+                res = res + 1;
+            }
+        }
+        return res;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant4.java:14: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant4.java:2:) in method return100
+        return res;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant4.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant4.java:14:
+    //@ ensures \result == 100;
+        ^
+2 verification failures
+
+==============================
+public class Return100Nested_Mutant4 {
+    //@ ensures \result == 100;  
+    public static int return100 () {
+        int res = 1;
+        //@ maintaining res == 1;
+        //@ maintaining 0 <= i && i <= 10;
+        for(int i = 0; i < 10; i++) {
+            //@ maintaining res == 1 + i*10;
+            //@ maintaining 0 <= j && j <= 10;
+            for(int j = 0; j < 10; j++) {
+                res = res + 1;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant4.java:14: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant4.java:2:) in method return100
+        return res;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant4.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant4.java:14:
+    //@ ensures \result == 100;  
+        ^
+2 verification failures
+
+==============================
+public class Return100Nested_Mutant4 {
+ 
+    public static int return100 () {
+        int res = 1;
+        //@ maintaining res == 1;
+        //@ maintaining 0 <= i && i <= 10;
+        for(int i = 0; i < 10; i++) {
+            //@ maintaining res == 1 + i*10;
+            //@ maintaining 0 <= j && j <= 10;
+            for(int j = 0; j < 10; j++) {
+                res = res + 1;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant4.java:8: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method return100
+            //@ maintaining res == 1 + i*10;
+                ^
+1 verification failure
+
+==============================
+public class Return100Nested_Mutant4 {
+ 
+    public static int return100 () {
+        int res = 1;
+        //@ maintaining res == 1;
+        //@ maintaining 0 <= i && i <= 10;
+        for(int i = 0; i < 10; i++) {
+            //@ maintaining res == 1 + i*10;  
+            //@ maintaining 0 <= j && j <= 10;
+            for(int j = 0; j < 10; j++) {
+                res = res + 1;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant4.java:8: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method return100
+            //@ maintaining res == 1 + i*10;  
+                ^
+1 verification failure
+
+==============================
+public class Return100Nested_Mutant4 {
+ 
+    public static int return100 () {
+        int res = 1;
+        //@ maintaining res == 1;
+        //@ maintaining 0 <= i && i <= 10;
+        for(int i = 0; i < 10; i++) {
+            //@ maintaining res == 1 - i*10;  
+            //@ maintaining 0 <= j && j <= 10;
+            for(int j = 0; j < 10; j++) {
+                res = res + 1;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant4.java:8: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method return100
+            //@ maintaining res == 1 - i*10;  
+                ^
+1 verification failure
+
+==============================
+public class Return100Nested_Mutant4 {
+ 
+    public static int return100 () {
+        int res = 1;
+        //@ maintaining res == 1;
+        //@ maintaining 0 <= i && i <= 10;
+        for(int i = 0; i < 10; i++) {
+ 
+            //@ maintaining 0 <= j && j <= 10;
+            for(int j = 0; j < 10; j++) {
+                res = res + 1;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant4.java:5: verify: The prover cannot establish an assertion (LoopInvariant) in method return100
+        //@ maintaining res == 1;
+            ^
+1 verification failure
+
+==============================
+public class Return100Nested_Mutant4 {
+ 
+    public static int return100 () {
+        int res = 1;
+        //@ maintaining res == 1;  
+        //@ maintaining 0 <= i && i <= 10;
+        for(int i = 0; i < 10; i++) {
+ 
+            //@ maintaining 0 <= j && j <= 10;
+            for(int j = 0; j < 10; j++) {
+                res = res + 1;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100Nested_Mutant4.java:5: verify: The prover cannot establish an assertion (LoopInvariant) in method return100
+        //@ maintaining res == 1;  
+            ^
+1 verification failure
+
+==============================
+public class Return100Nested_Mutant4 {
+ 
+    public static int return100 () {
+        int res = 1;
+ 
+        //@ maintaining 0 <= i && i <= 10;
+        for(int i = 0; i < 10; i++) {
+ 
+            //@ maintaining 0 <= j && j <= 10;
+            for(int j = 0; j < 10; j++) {
+                res = res + 1;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+
+==============================

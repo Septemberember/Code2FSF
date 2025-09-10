@@ -1,0 +1,149 @@
+public class MyPower_Original {
+    //@ ensures \result == x^n;
+    public static int power(int x, int n) {
+        int res = 1;
+        //@ maintaining 0 <= i && i <= n;
+        //@ maintaining res == x^i;
+        //@ decreases n - i;
+        for(int i = 0; i < n; i++){
+            res = res * x;
+        }
+        return res;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Original.java:2: error: bad operand types for binary operator '^'
+    //@ ensures \result == x^n;
+                            ^
+  first type:  boolean
+  second type: int
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Original.java:6: error: bad operand types for binary operator '^'
+        //@ maintaining res == x^i;
+                                ^
+  first type:  boolean
+  second type: int
+2 errors
+
+==============================
+public class MyPower_Original {
+    //@ ensures \result == Math.pow(x, n);
+    public static int power(int x, int n) {
+        int res = 1;
+        //@ maintaining 0 <= i && i <= n;
+        //@ maintaining res == Math.pow(x, i);
+        //@ decreases n - i;
+        for(int i = 0; i < n; i++){
+            res = res * x;
+        }
+        return res;
+    }
+}
+==============================
+java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Spliterators.spliterator(Spliterators.java:178)
+	at java.base/java.util.Arrays.spliterator(Arrays.java:5295)
+	at java.base/java.util.Arrays.stream(Arrays.java:5446)
+	at java.base/java.util.Arrays.stream(Arrays.java:5427)
+	at java.base/java.util.stream.Stream.of(Stream.java:1424)
+	at jdk.compiler/com.sun.tools.javac.comp.Operators$OperatorHelper.doLookup(Operators.java:287)
+	at jdk.compiler/com.sun.tools.javac.comp.Operators$BinaryOperatorHelper.doLookup(Operators.java:359)
+	at jdk.compiler/com.sun.tools.javac.comp.Operators$BinaryEqualityOperator.resolve(Operators.java:626)
+	at jdk.compiler/com.sun.tools.javac.comp.Operators.lambda$resolveBinary$4(Operators.java:164)
+	at jdk.compiler/com.sun.tools.javac.comp.Operators$$Lambda$141/0x00000001001d77f0.apply(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.Spliterators$IteratorSpliterator.tryAdvance(Spliterators.java:1812)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:502)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:488)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at jdk.compiler/com.sun.tools.javac.comp.Operators.resolve(Operators.java:178)
+	at jdk.compiler/com.sun.tools.javac.comp.Operators.resolveBinary(Operators.java:161)
+	at jdk.compiler/com.sun.tools.javac.comp.JmlOperators.resolveBinary(JmlOperators.java:66)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTreeUtils.findBinOpSymbol(JmlTreeUtils.java:294)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTreeUtils.makeEquality(JmlTreeUtils.java:904)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlocker2.doAssignment(BasicBlocker2.java:1973)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlocker2.visitAssign(BasicBlocker2.java:1952)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCAssign.accept(JCTree.java:1996)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlocker2.scan(BasicBlocker2.java:338)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlocker2.visitExec(BasicBlocker2.java:962)
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Original.java:3: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+    public static int power(int x, int n) {
+                      ^
+  Reason: Prover aborted with exception: ZZZZZ
+1 error
+
+==============================
+public class MyPower_Original {
+    //@ ensures \result == Math.pow(x, n);
+    public static int power(int x, int n) {
+        int res = 1;
+        //@ maintaining 0 <= i && i <= n;
+        //@ maintaining res == Math.pow(x, i);
+        //@ decreases n - i;
+        for(int i = 0; i < n; i++){
+            res = res * x;
+        }
+        return res;
+    }
+}
+==============================
+java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.HashMap.resize(HashMap.java:704)
+	at java.base/java.util.HashMap.putVal(HashMap.java:663)
+	at java.base/java.util.HashMap.put(HashMap.java:612)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlocker2$VarMap.putSAVersion(BasicBlocker2.java:2491)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlocker2.initMap(BasicBlocker2.java:883)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlocker2.setCurrentBlock(BasicBlocker2.java:545)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlocker2.setCurrentBlock(BasicBlocker2.java:152)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.startBlock(BasicBlockerParent.java:463)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processBlock(BasicBlockerParent.java:404)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processBlocks(BasicBlockerParent.java:352)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.loopHelper(BasicBlockerParent.java:1385)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.visitJmlWhileLoop(BasicBlockerParent.java:1282)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlWhileLoop.accept(JmlTree.java:2036)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processStats(BasicBlockerParent.java:426)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processCurrentBlock(BasicBlockerParent.java:418)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processBlock(BasicBlockerParent.java:405)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processBlocks(BasicBlockerParent.java:352)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.visitTry(BasicBlockerParent.java:1048)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCTry.accept(JCTree.java:1401)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processStats(BasicBlockerParent.java:426)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processCurrentBlock(BasicBlockerParent.java:418)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processBlock(BasicBlockerParent.java:405)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processBlocks(BasicBlockerParent.java:352)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlocker2.convertMethodBody(BasicBlocker2.java:617)
+	at jdk.compiler/org.jmlspecs.openjml.esc.MethodProverSMT.prove(MethodProverSMT.java:361)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.doMethod(JmlEsc.java:329)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.visitMethodDef(JmlEsc.java:221)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.visitJmlMethodDecl(JmlTreeScanner.java:238)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlMethodDecl.accept(JmlTree.java:1383)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.visitClassDef(JmlEsc.java:169)
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Original.java:3: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+    public static int power(int x, int n) {
+                      ^
+  Reason: Prover aborted with exception: ZZZZZ
+1 error
+
+==============================
+public class MyPower_Original {
+    //@ ensures \result == Math.pow(x, n);
+    public static int power(int x, int n) {
+        int res = 1;
+        //@ maintaining 0 <= i && i <= n;
+        //@ maintaining res == Math.pow(x, i);
+        //@ decreases n - i;
+        for(int i = 0; i < n; i++){
+            res = res * x;
+        }
+        return res;
+    }
+}
+==============================

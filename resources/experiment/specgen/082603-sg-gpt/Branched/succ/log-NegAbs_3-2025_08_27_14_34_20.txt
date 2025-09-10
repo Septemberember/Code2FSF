@@ -1,0 +1,97 @@
+public class NegAbs_Mutant3 {
+    //@ ensures \result >= 0;
+    //@ ensures (\result == -num || \result == num);
+    public static int negAbs(int num) {
+        if (num < 0)
+            return -num;
+        else
+            return -num;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/NegAbs_Mutant3.java:8: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/NegAbs_Mutant3.java:2:) in method negAbs
+            return -num;
+            ^
+/root/082602-gpt-specgen/tmp/NegAbs_Mutant3.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/NegAbs_Mutant3.java:8:
+    //@ ensures \result >= 0;
+        ^
+2 verification failures
+
+==============================
+public class NegAbs_Mutant3 {
+    //@ ensures \result > 0;  
+    //@ ensures (\result == -num || \result == num);
+    public static int negAbs(int num) {
+        if (num < 0)
+            return -num;
+        else
+            return -num;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/NegAbs_Mutant3.java:8: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/NegAbs_Mutant3.java:2:) in method negAbs
+            return -num;
+            ^
+/root/082602-gpt-specgen/tmp/NegAbs_Mutant3.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/NegAbs_Mutant3.java:8:
+    //@ ensures \result > 0;  
+        ^
+2 verification failures
+
+==============================
+public class NegAbs_Mutant3 {
+    //@ ensures \result >= 0;  
+    //@ ensures (\result == -num || \result == num);
+    public static int negAbs(int num) {
+        if (num < 0)
+            return -num;
+        else
+            return -num;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/NegAbs_Mutant3.java:8: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/NegAbs_Mutant3.java:2:) in method negAbs
+            return -num;
+            ^
+/root/082602-gpt-specgen/tmp/NegAbs_Mutant3.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/NegAbs_Mutant3.java:8:
+    //@ ensures \result >= 0;  
+        ^
+2 verification failures
+
+==============================
+public class NegAbs_Mutant3 {
+    //@ ensures \result + 1 >= 0;  
+    //@ ensures (\result == -num || \result == num);
+    public static int negAbs(int num) {
+        if (num < 0)
+            return -num;
+        else
+            return -num;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/NegAbs_Mutant3.java:8: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/NegAbs_Mutant3.java:2:) in method negAbs
+            return -num;
+            ^
+/root/082602-gpt-specgen/tmp/NegAbs_Mutant3.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/NegAbs_Mutant3.java:8:
+    //@ ensures \result + 1 >= 0;  
+        ^
+2 verification failures
+
+==============================
+public class NegAbs_Mutant3 {
+ 
+    //@ ensures (\result == -num || \result == num);
+    public static int negAbs(int num) {
+        if (num < 0)
+            return -num;
+        else
+            return -num;
+    }
+}
+
+==============================
+
+==============================

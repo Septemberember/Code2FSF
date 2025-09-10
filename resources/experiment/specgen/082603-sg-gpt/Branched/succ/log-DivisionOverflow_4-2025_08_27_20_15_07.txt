@@ -1,0 +1,129 @@
+public class DivisionOverflow_Mutant4 {
+    //@ ensures \result == nom / denom;
+    //@ ensures denom != 0 ==> \result * denom == nom;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //~should_fail
+        if (denom != 0) { //add a check for denominator to be non-zero
+            int tmp = nom / denom;
+            return tmp;
+        }
+        return 0;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant4.java:2: verify: The prover cannot establish an assertion (UndefinedDivideByZero) in method division_test_fail_overflow
+    //@ ensures \result == nom / denom;
+                               ^
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant4.java:10: verify: Associated method exit
+        return 0;
+        ^
+2 verification failures
+
+==============================
+public class DivisionOverflow_Mutant4 {
+    //@ ensures \result == nom / denom;
+    //@ ensures denom != 0 ==> \result * denom == nom;
+    //@ assume Integer.MIN_VALUE <= nom / denom && nom / denom <= Integer.MAX_VALUE;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //~should_fail
+        if (denom != 0) { //add a check for denominator to be non-zero
+            int tmp = nom / denom;
+            return tmp;
+        }
+        return 0;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant4.java:4: error: The token assume is illegal or not implemented for a type or method clause (JmlParser.classOrInterfaceBodyDeclaration)
+    //@ assume Integer.MIN_VALUE <= nom / denom && nom / denom <= Integer.MAX_VALUE;
+        ^
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant4.java:2: error: Method specifications without a following method declaration
+    //@ ensures \result == nom / denom;
+        ^
+2 errors
+
+==============================
+public class DivisionOverflow_Mutant4 {
+    //@ ensures \result == nom / denom;
+    //@ ensures denom != 0 ==> \result * denom == nom;
+    //@ ensures Integer.MIN_VALUE <= \result && \result <= Integer.MAX_VALUE;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //~should_fail
+        if (denom != 0) { //add a check for denominator to be non-zero
+            int tmp = nom / denom;
+            return tmp;
+        }
+        return 0;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant4.java:2: verify: The prover cannot establish an assertion (UndefinedDivideByZero) in method division_test_fail_overflow
+    //@ ensures \result == nom / denom;
+                               ^
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant4.java:11: verify: Associated method exit
+        return 0;
+        ^
+2 verification failures
+
+==============================
+public class DivisionOverflow_Mutant4 {
+    //@ ensures \result == nom / denom;
+    //@ ensures denom != 0 ==> \result * denom == nom;
+    //@ ensures Integer.MIN_VALUE <= \result && \result <= Integer.MAX_VALUE;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //@ assume denom != 0;
+        //@ assume nom >= Integer.MIN_VALUE && nom <= Integer.MAX_VALUE;
+        //@ assume denom >= Integer.MIN_VALUE && denom <= Integer.MAX_VALUE;
+        int tmp = nom / denom;
+        return tmp;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant4.java:10: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant4.java:3:) in method division_test_fail_overflow
+        return tmp;
+        ^
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant4.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant4.java:10:
+    //@ ensures denom != 0 ==> \result * denom == nom;
+        ^
+2 verification failures
+
+==============================
+public class DivisionOverflow_Mutant4 {
+    //@ ensures \result == nom / denom;
+    //@ ensures denom != 0 ==> \result * denom == nom;  
+    //@ ensures Integer.MIN_VALUE <= \result && \result <= Integer.MAX_VALUE;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //@ assume denom != 0;
+        //@ assume nom >= Integer.MIN_VALUE && nom <= Integer.MAX_VALUE;
+        //@ assume denom >= Integer.MIN_VALUE && denom <= Integer.MAX_VALUE;
+        int tmp = nom / denom;
+        return tmp;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant4.java:10: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant4.java:3:) in method division_test_fail_overflow
+        return tmp;
+        ^
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant4.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant4.java:10:
+    //@ ensures denom != 0 ==> \result * denom == nom;  
+        ^
+2 verification failures
+
+==============================
+public class DivisionOverflow_Mutant4 {
+    //@ ensures \result == nom / denom;
+ 
+    //@ ensures Integer.MIN_VALUE <= \result && \result <= Integer.MAX_VALUE;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //@ assume denom != 0;
+        //@ assume nom >= Integer.MIN_VALUE && nom <= Integer.MAX_VALUE;
+        //@ assume denom >= Integer.MIN_VALUE && denom <= Integer.MAX_VALUE;
+        int tmp = nom / denom;
+        return tmp;
+    }
+}
+
+==============================
+
+==============================

@@ -1,0 +1,9 @@
+public class SmallestEvenMul_Original {
+
+    //@ ensures \result % 2 == 0;
+    //@ ensures \result >= n;
+    public static int smallestEvenMultiple(int n) {
+        return n % 2 == 0 ? n : 2 * n;
+    }
+}
+==============================

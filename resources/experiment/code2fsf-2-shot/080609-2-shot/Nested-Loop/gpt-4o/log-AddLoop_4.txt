@@ -1,0 +1,32 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class AddLoop_Mutant4 {
+    public static int AddLoop(int x, int y) {
+        int sum = x;
+        if (y >= 0) {
+            int n = y;
+            while (n > 0) {
+                sum = sum + 1;
+                n = n - 1;
+            }
+        } else {
+            int n = -y;
+            while (n > 0) {
+                sum = sum - 1;
+                n = n - 1;
+            }
+        }
+        return sum;
+    }
+}
+
+```
+*end* role user
+start role user
+There is no FSF in history conversation, retry the conversation, please regenerate the FSF for given program.
+*end* role user
+start role remark
+Validation FAIL--Conversation rounds number is over the maxRounds
+Current conversation round is: [1]
+*end* role remark

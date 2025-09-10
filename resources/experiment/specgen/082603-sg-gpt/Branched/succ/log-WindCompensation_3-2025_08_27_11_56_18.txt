@@ -1,0 +1,41 @@
+public class WindCompensation_Mutant3 {
+    //@ requires windSpeed >= 0;
+    //@ ensures \result == (windSpeed > 20) ? (windSpeed - 20) * 2 : (windSpeed > 10) ? (windSpeed - 10) * 2 : 0;
+    /*@ pure @*/ public static int windCompensation(int windSpeed) {
+        int compensation = 0;
+        if (windSpeed > 20) {
+            compensation = (windSpeed - 20) * 2;
+        } else if (windSpeed > 10) {
+            compensation = (windSpeed - 10) * 2;
+        }
+        return compensation;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/WindCompensation_Mutant3.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == (windSpeed > 20) ? (windSpeed - 20) * 2 : (windSpeed > 10) ? (windSpeed - 10) * 2 : 0;
+                        ^
+/root/082602-gpt-specgen/tmp/WindCompensation_Mutant3.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == (windSpeed > 20) ? (windSpeed - 20) * 2 : (windSpeed > 10) ? (windSpeed - 10) * 2 : 0;
+                                            ^
+2 errors
+
+==============================
+public class WindCompensation_Mutant3 {
+    //@ requires windSpeed >= 0;
+    //@ ensures windSpeed > 20 ==> \result == (windSpeed - 20) * 2;
+    //@ ensures windSpeed <= 20 && windSpeed > 10 ==> \result == (windSpeed - 10) * 2;
+    //@ ensures windSpeed <= 10 ==> \result == 0;
+    /*@ pure @*/ public static int windCompensation(int windSpeed) {
+        int compensation = 0;
+        if (windSpeed > 20) {
+            compensation = (windSpeed - 20) * 2;
+        } else if (windSpeed > 10) {
+            compensation = (windSpeed - 10) * 2;
+        }
+        return compensation;
+    }
+}
+==============================
+
+==============================

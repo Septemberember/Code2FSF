@@ -1,0 +1,13 @@
+public class SmallestEvenMulBranch_Mutant1 {
+    //@ ensures n % 3 == 0 ==> \result == n;
+    //@ ensures n % 3 != 0 ==> \result == 2 * n;
+    public static int smallestEvenMultiple(int n) {
+        if (n % 3 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+}
+==============================
+
+==============================

@@ -1,0 +1,104 @@
+public class IsCommonMultipleBranch_Mutant2 {
+    //@ requires Integer.MIN_VALUE <= a && a <= Integer.MAX_VALUE && Integer.MIN_VALUE <= b && b <= Integer.MAX_VALUE && Integer.MIN_VALUE <= m && m <= Integer.MAX_VALUE;
+    //@ ensures \result == (m % a != 0) || (m % b != 0);
+    public static boolean isCommonMultiple(int a, int b, int m) {
+        if (m % a != 0) {
+            return true;
+        }
+        if (m % b != 0) {
+            return false;
+        }
+        return true;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/IsCommonMultipleBranch_Mutant2.java:5: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method isCommonMultiple
+        if (m % a != 0) {
+              ^
+1 verification failure
+
+==============================
+public class IsCommonMultipleBranch_Mutant2 {
+    //@ requires Integer.MIN_VALUE <= a && a <= Integer.MAX_VALUE && Integer.MIN_VALUE <= b && b <= Integer.MAX_VALUE && Integer.MIN_VALUE <= m && m <= Integer.MAX_VALUE && a != 0;
+    //@ ensures \result == (m % a != 0) || (m % b != 0);
+    public static boolean isCommonMultiple(int a, int b, int m) {
+        if (m % a != 0) {
+            return true;
+        }
+        if (m % b != 0) {
+            return false;
+        }
+        return true;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/IsCommonMultipleBranch_Mutant2.java:8: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method isCommonMultiple
+        if (m % b != 0) {
+              ^
+1 verification failure
+
+==============================
+public class IsCommonMultipleBranch_Mutant2 {
+    //@ requires Integer.MIN_VALUE <= a && a <= Integer.MAX_VALUE && Integer.MIN_VALUE <= b && b <= Integer.MAX_VALUE && Integer.MIN_VALUE <= m && m <= Integer.MAX_VALUE && a != 0 && b != 0;
+    //@ ensures \result == (m % a != 0) || (m % b != 0);
+    public static boolean isCommonMultiple(int a, int b, int m) {
+        if (m % a != 0) {
+            return true;
+        }
+        if (m % b != 0) {
+            return false;
+        }
+        return true;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/IsCommonMultipleBranch_Mutant2.java:11: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/IsCommonMultipleBranch_Mutant2.java:3:) in method isCommonMultiple
+        return true;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/IsCommonMultipleBranch_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/IsCommonMultipleBranch_Mutant2.java:11:
+    //@ ensures \result == (m % a != 0) || (m % b != 0);
+        ^
+2 verification failures
+
+==============================
+public class IsCommonMultipleBranch_Mutant2 {
+    //@ requires Integer.MIN_VALUE <= a && a <= Integer.MAX_VALUE && Integer.MIN_VALUE <= b && b <= Integer.MAX_VALUE && Integer.MIN_VALUE <= m && m <= Integer.MAX_VALUE && a != 0 && b != 0;
+    //@ ensures \result == (m % a != 0) || (m % b != 0);  
+    public static boolean isCommonMultiple(int a, int b, int m) {
+        if (m % a != 0) {
+            return true;
+        }
+        if (m % b != 0) {
+            return false;
+        }
+        return true;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/IsCommonMultipleBranch_Mutant2.java:11: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/IsCommonMultipleBranch_Mutant2.java:3:) in method isCommonMultiple
+        return true;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/IsCommonMultipleBranch_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/IsCommonMultipleBranch_Mutant2.java:11:
+    //@ ensures \result == (m % a != 0) || (m % b != 0);  
+        ^
+2 verification failures
+
+==============================
+public class IsCommonMultipleBranch_Mutant2 {
+    //@ requires Integer.MIN_VALUE <= a && a <= Integer.MAX_VALUE && Integer.MIN_VALUE <= b && b <= Integer.MAX_VALUE && Integer.MIN_VALUE <= m && m <= Integer.MAX_VALUE && a != 0 && b != 0;
+ 
+    public static boolean isCommonMultiple(int a, int b, int m) {
+        if (m % a != 0) {
+            return true;
+        }
+        if (m % b != 0) {
+            return false;
+        }
+        return true;
+    }
+}
+
+==============================
+
+==============================

@@ -1,0 +1,184 @@
+public class DivisionOverflow_Mutant5 {
+    //@ requires denom != 0;
+    //@ ensures \result == denom / nom;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //~should_fail
+        int tmp = denom / nom; // swapping numerator and denominator
+        return tmp;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:6: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method division_test_fail_overflow
+        int tmp = denom / nom; // swapping numerator and denominator
+                        ^
+1 verification failure
+
+==============================
+public class DivisionOverflow_Mutant5 {
+    //@ requires denom != 0;
+    //@ ensures \result == denom / nom;
+    //@ assume Integer.MIN_VALUE <= denom / nom && denom / nom <= Integer.MAX_VALUE;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //~should_fail
+        int tmp = denom / nom; // swapping numerator and denominator
+        return tmp;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:4: error: The token assume is illegal or not implemented for a type or method clause (JmlParser.classOrInterfaceBodyDeclaration)
+    //@ assume Integer.MIN_VALUE <= denom / nom && denom / nom <= Integer.MAX_VALUE;
+        ^
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:2: error: Method specifications without a following method declaration
+    //@ requires denom != 0;
+        ^
+2 errors
+
+==============================
+public class DivisionOverflow_Mutant5 {
+    //@ requires denom != 0;
+    //@ ensures \result == denom / nom;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //~should_fail
+        int tmp = denom / nom; // swapping numerator and denominator
+        return tmp;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:6: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method division_test_fail_overflow
+        int tmp = denom / nom; // swapping numerator and denominator
+                        ^
+1 verification failure
+
+==============================
+public class DivisionOverflow_Mutant5 {
+    //@ requires denom != 0;
+    //@ ensures \result == denom / nom;
+    //@ assume Integer.MIN_VALUE <= denom && denom <= Integer.MAX_VALUE;
+    //@ assume Integer.MIN_VALUE <= nom && nom <= Integer.MAX_VALUE;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //~should_fail
+        int tmp = denom / nom; // swapping numerator and denominator
+        return tmp;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:4: error: The token assume is illegal or not implemented for a type or method clause (JmlParser.classOrInterfaceBodyDeclaration)
+    //@ assume Integer.MIN_VALUE <= denom && denom <= Integer.MAX_VALUE;
+        ^
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:2: error: Method specifications without a following method declaration
+    //@ requires denom != 0;
+        ^
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:5: error: The token assume is illegal or not implemented for a type or method clause (JmlParser.classOrInterfaceBodyDeclaration)
+    //@ assume Integer.MIN_VALUE <= nom && nom <= Integer.MAX_VALUE;
+        ^
+3 errors
+
+==============================
+public class DivisionOverflow_Mutant5 {
+    //@ requires denom != 0;
+    //@ ensures \result == denom / nom;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //~should_fail
+        int tmp = denom / nom; // swapping numerator and denominator
+        return tmp;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:6: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method division_test_fail_overflow
+        int tmp = denom / nom; // swapping numerator and denominator
+                        ^
+1 verification failure
+
+==============================
+public class DivisionOverflow_Mutant5 {
+    //@ requires denom != 0;
+    //@ ensures \result == denom / nom;
+    //@ assume Integer.MIN_VALUE <= denom / nom && denom / nom <= Integer.MAX_VALUE;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //~should_fail
+        int tmp = denom / nom; // swapping numerator and denominator
+        return tmp;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:4: error: The token assume is illegal or not implemented for a type or method clause (JmlParser.classOrInterfaceBodyDeclaration)
+    //@ assume Integer.MIN_VALUE <= denom / nom && denom / nom <= Integer.MAX_VALUE;
+        ^
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:2: error: Method specifications without a following method declaration
+    //@ requires denom != 0;
+        ^
+2 errors
+
+==============================
+public class DivisionOverflow_Mutant5 {
+    //@ requires denom != 0;
+    //@ ensures \result == denom / nom;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //~should_fail
+        int tmp = denom / nom; // swapping numerator and denominator
+        return tmp;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:6: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method division_test_fail_overflow
+        int tmp = denom / nom; // swapping numerator and denominator
+                        ^
+1 verification failure
+
+==============================
+public class DivisionOverflow_Mutant5 {
+    //@ requires denom != 0;
+    //@ ensures \result == denom / nom;
+    //@ assume Integer.MAX_VALUE / nom >= denom && Integer.MIN_VALUE / nom <= denom;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //~should_fail
+        int tmp = denom / nom; // swapping numerator and denominator
+        return tmp;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:4: error: The token assume is illegal or not implemented for a type or method clause (JmlParser.classOrInterfaceBodyDeclaration)
+    //@ assume Integer.MAX_VALUE / nom >= denom && Integer.MIN_VALUE / nom <= denom;
+        ^
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:2: error: Method specifications without a following method declaration
+    //@ requires denom != 0;
+        ^
+2 errors
+
+==============================
+public class DivisionOverflow_Mutant5 {
+    //@ requires denom != 0;
+    //@ ensures \result == denom / nom;
+    //@ assume Integer.MAX_VALUE / nom >= denom && Integer.MIN_VALUE / nom <= denom;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //~should_fail
+        int tmp = denom / nom; // swapping numerator and denominator
+        return tmp;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:4: error: The token assume is illegal or not implemented for a type or method clause (JmlParser.classOrInterfaceBodyDeclaration)
+    //@ assume Integer.MAX_VALUE / nom >= denom && Integer.MIN_VALUE / nom <= denom;
+        ^
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:2: error: Method specifications without a following method declaration
+    //@ requires denom != 0;
+        ^
+2 errors
+
+==============================
+public class DivisionOverflow_Mutant5 {
+    //@ requires denom != 0;
+    //@ ensures \result == denom / nom;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //~should_fail
+        int tmp = denom / nom; // swapping numerator and denominator
+        return tmp;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:6: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method division_test_fail_overflow
+        int tmp = denom / nom; // swapping numerator and denominator
+                        ^
+1 verification failure
+
+==============================

@@ -1,0 +1,67 @@
+public class Return100_Mutant2 {
+    //@ ensures \result == 100;
+    public /*@ pure @*/ static int return100 () {
+        int res = 0;
+        int i = 0;
+        //@ maintaining i >= 0 && i <= 101;
+        //@ maintaining res == i;
+        //@ decreases 101 - i;
+        for(i = 0; i <= 100; i++) { // CHANGED: condition changed to <=
+            res = res + 1;
+        }
+        return res;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100_Mutant2.java:12: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100_Mutant2.java:2:) in method return100
+        return res;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100_Mutant2.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100_Mutant2.java:12:
+    //@ ensures \result == 100;
+        ^
+2 verification failures
+
+==============================
+public class Return100_Mutant2 {
+    //@ ensures \result == 100;  
+    public /*@ pure @*/ static int return100 () {
+        int res = 0;
+        int i = 0;
+        //@ maintaining i >= 0 && i <= 101;
+        //@ maintaining res == i;
+        //@ decreases 101 - i;
+        for(i = 0; i <= 100; i++) { // CHANGED: condition changed to <=
+            res = res + 1;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100_Mutant2.java:12: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100_Mutant2.java:2:) in method return100
+        return res;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100_Mutant2.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Return100_Mutant2.java:12:
+    //@ ensures \result == 100;  
+        ^
+2 verification failures
+
+==============================
+public class Return100_Mutant2 {
+ 
+    public /*@ pure @*/ static int return100 () {
+        int res = 0;
+        int i = 0;
+        //@ maintaining i >= 0 && i <= 101;
+        //@ maintaining res == i;
+        //@ decreases 101 - i;
+        for(i = 0; i <= 100; i++) { // CHANGED: condition changed to <=
+            res = res + 1;
+        }
+        return res;
+    }
+}
+
+==============================
+
+==============================

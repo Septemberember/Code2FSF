@@ -1,0 +1,512 @@
+public class Calculator_Mutant3 {
+    //@ requires operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%';
+    //@ ensures \result == num1 + num2 && operator == '+';
+    //@ ensures \result == num1 - num2 && operator == '-';
+    //@ ensures \result == num1 / num2 && operator == '*'; // This is a mutation error, should be operator == '/'
+    //@ ensures \result == num1 / num2 && operator == '/';
+    //@ ensures \result == num1 % num2 && operator == '%';
+    //@ ensures \result == -1 && (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%');
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 / num2; //mutated * with /
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 % num2;
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:30: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:4:) in method calculate
+        return output;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:30:
+    //@ ensures \result == num1 - num2 && operator == '-';
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant3 {
+    //@ requires operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%';
+    //@ ensures \result == num1 + num2 && operator == '+';
+    //@ ensures \result == num1 - num2 && operator == '-';  
+    //@ ensures \result == num1 / num2 && operator == '*'; // This is a mutation error, should be operator == '/'
+    //@ ensures \result == num1 / num2 && operator == '/';
+    //@ ensures \result == num1 % num2 && operator == '%';
+    //@ ensures \result == -1 && (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%');
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 / num2; //mutated * with /
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 % num2;
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:30: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:4:) in method calculate
+        return output;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:30:
+    //@ ensures \result == num1 - num2 && operator == '-';  
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant3 {
+    //@ requires operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%';
+    //@ ensures \result == num1 + num2 && operator == '+';
+    //@ ensures \result == num1 + num2 && operator == '-';  
+    //@ ensures \result == num1 / num2 && operator == '*'; // This is a mutation error, should be operator == '/'
+    //@ ensures \result == num1 / num2 && operator == '/';
+    //@ ensures \result == num1 % num2 && operator == '%';
+    //@ ensures \result == -1 && (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%');
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 / num2; //mutated * with /
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 % num2;
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:30: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:4:) in method calculate
+        return output;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:30:
+    //@ ensures \result == num1 + num2 && operator == '-';  
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant3 {
+    //@ requires operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%';
+    //@ ensures \result == num1 + num2 && operator == '+';
+ 
+    //@ ensures \result == num1 / num2 && operator == '*'; // This is a mutation error, should be operator == '/'
+    //@ ensures \result == num1 / num2 && operator == '/';
+    //@ ensures \result == num1 % num2 && operator == '%';
+    //@ ensures \result == -1 && (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%');
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 / num2; //mutated * with /
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 % num2;
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:5: verify: The prover cannot establish an assertion (UndefinedDivideByZero) in method calculate
+    //@ ensures \result == num1 / num2 && operator == '*'; // This is a mutation error, should be operator == '/'
+                                ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:30: verify: Associated method exit
+        return output;
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant3 {
+    //@ requires operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%';
+    //@ ensures \result == num1 + num2 && operator == '+';
+ 
+    //@ ensures \result == num1 / num2 && operator == '*'; // This is a mutation error, should be operator == '/'  
+    //@ ensures \result == num1 / num2 && operator == '/';
+    //@ ensures \result == num1 % num2 && operator == '%';
+    //@ ensures \result == -1 && (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%');
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 / num2; //mutated * with /
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 % num2;
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:5: verify: The prover cannot establish an assertion (UndefinedDivideByZero) in method calculate
+    //@ ensures \result == num1 / num2 && operator == '*'; // This is a mutation error, should be operator == '/'  
+                                ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:30: verify: Associated method exit
+        return output;
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant3 {
+    //@ requires operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%';
+    //@ ensures \result == num1 + num2 && operator == '+';
+ 
+ 
+    //@ ensures \result == num1 / num2 && operator == '/';
+    //@ ensures \result == num1 % num2 && operator == '%';
+    //@ ensures \result == -1 && (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%');
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 / num2; //mutated * with /
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 % num2;
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:6: verify: The prover cannot establish an assertion (UndefinedDivideByZero) in method calculate
+    //@ ensures \result == num1 / num2 && operator == '/';
+                                ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:30: verify: Associated method exit
+        return output;
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant3 {
+    //@ requires operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%';
+    //@ ensures \result == num1 + num2 && operator == '+';
+ 
+ 
+    //@ ensures \result == num1 / num2 && operator == '/';  
+    //@ ensures \result == num1 % num2 && operator == '%';
+    //@ ensures \result == -1 && (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%');
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 / num2; //mutated * with /
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 % num2;
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:6: verify: The prover cannot establish an assertion (UndefinedDivideByZero) in method calculate
+    //@ ensures \result == num1 / num2 && operator == '/';  
+                                ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:30: verify: Associated method exit
+        return output;
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant3 {
+    //@ requires operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%';
+    //@ ensures \result == num1 + num2 && operator == '+';
+ 
+ 
+ 
+    //@ ensures \result == num1 % num2 && operator == '%';
+    //@ ensures \result == -1 && (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%');
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 / num2; //mutated * with /
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 % num2;
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:7: verify: The prover cannot establish an assertion (UndefinedDivideByZero) in method calculate
+    //@ ensures \result == num1 % num2 && operator == '%';
+                                ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:30: verify: Associated method exit
+        return output;
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant3 {
+    //@ requires operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%';
+    //@ ensures \result == num1 + num2 && operator == '+';
+ 
+ 
+ 
+    //@ ensures \result == num1 % num2 && operator == '%';  
+    //@ ensures \result == -1 && (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%');
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 / num2; //mutated * with /
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 % num2;
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:7: verify: The prover cannot establish an assertion (UndefinedDivideByZero) in method calculate
+    //@ ensures \result == num1 % num2 && operator == '%';  
+                                ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:30: verify: Associated method exit
+        return output;
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant3 {
+    //@ requires operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%';
+    //@ ensures \result == num1 + num2 && operator == '+';
+ 
+ 
+ 
+ 
+    //@ ensures \result == -1 && (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%');
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 / num2; //mutated * with /
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 % num2;
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:30: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:8:) in method calculate
+        return output;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:8: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:30:
+    //@ ensures \result == -1 && (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%');
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant3 {
+    //@ requires operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%';
+    //@ ensures \result == num1 + num2 && operator == '+';
+ 
+ 
+ 
+ 
+    //@ ensures \result == -1 && (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%');  
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 / num2; //mutated * with /
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 % num2;
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:30: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:8:) in method calculate
+        return output;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:8: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:30:
+    //@ ensures \result == -1 && (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%');  
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Mutant3 {
+    //@ requires operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%';
+    //@ ensures \result == num1 + num2 && operator == '+';
+ 
+ 
+ 
+ 
+ 
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 / num2; //mutated * with /
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 % num2;
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Mutant3.java:25: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method calculate
+                output = num1 % num2;
+                              ^
+1 verification failure
+
+==============================

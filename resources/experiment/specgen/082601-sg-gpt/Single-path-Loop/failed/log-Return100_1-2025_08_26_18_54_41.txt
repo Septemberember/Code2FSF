@@ -1,0 +1,18 @@
+public class Return100_Mutant1 {
+    /*@ spec_public @*/ public static int return100 () {
+        int res = 0;
+        int i = 0;
+        //@ maintaining i >= 0 && i <= 100;
+        //@ maintaining res == i * 2;
+        for(i = 0; i < 100; i++) {
+            res = res + 2; // CHANGED: incremented by 2 instead of 1
+        }
+        //@ assert res == 200;
+        //@ assert i == 100;
+        //@ ensures \result == 200;
+        return res;
+    }
+}
+==============================
+
+==============================

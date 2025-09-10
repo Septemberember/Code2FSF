@@ -1,0 +1,43 @@
+public class ConvertToKelvin_Mutant2 {
+    //@ ensures \result == celsius + 273.15;
+    public static double convertTemperature(double celsius) {
+        return celsius - 273.15; // Changed addition to subtraction
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/ConvertToKelvin_Mutant2.java:4: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/ConvertToKelvin_Mutant2.java:2:) in method convertTemperature
+        return celsius - 273.15; // Changed addition to subtraction
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/ConvertToKelvin_Mutant2.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/ConvertToKelvin_Mutant2.java:4:
+    //@ ensures \result == celsius + 273.15;
+        ^
+2 verification failures
+
+==============================
+public class ConvertToKelvin_Mutant2 {
+    //@ ensures \result == celsius + 273.15;  
+    public static double convertTemperature(double celsius) {
+        return celsius - 273.15; // Changed addition to subtraction
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/ConvertToKelvin_Mutant2.java:4: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/ConvertToKelvin_Mutant2.java:2:) in method convertTemperature
+        return celsius - 273.15; // Changed addition to subtraction
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/ConvertToKelvin_Mutant2.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/ConvertToKelvin_Mutant2.java:4:
+    //@ ensures \result == celsius + 273.15;  
+        ^
+2 verification failures
+
+==============================
+public class ConvertToKelvin_Mutant2 {
+    //@ ensures \result == celsius - 273.15;  
+    public static double convertTemperature(double celsius) {
+        return celsius - 273.15; // Changed addition to subtraction
+    }
+}
+
+==============================
+
+==============================

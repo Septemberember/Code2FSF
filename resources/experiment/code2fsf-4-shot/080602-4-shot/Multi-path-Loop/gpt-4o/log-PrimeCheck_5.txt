@@ -1,0 +1,40 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class PrimeCheck_Mutant5 {
+    public static boolean isPrime(int a) {
+        int i = 2;
+        int mid = a / 2;
+        while (i <= mid) {
+            if (a % i == 0)
+                return true;
+            i++;
+        }
+        return false;
+    }
+}
+
+```
+*end* role user
+start role assistant
+```
+T1: a <= 1
+D1: return_value == false
+
+T2: a > 1 && (a % i == 0 for some i in [2, a/2])
+D2: return_value == true
+
+T3: a > 1 && (a % i != 0 for all i in [2, a/2])
+D3: return_value == false
+
+T4: a == 0
+D4: Exception (ArithmeticException: division by zero in a/2)
+```
+*end* role assistant
+start role user
+It was found that T in the FSF does not meet the requirements and causes a parsing failure. Please carefully review my original instructions and regenerate the FSF accordingly.
+*end* role user
+start role remark
+Validation FAIL--Conversation rounds number is over the maxRounds
+Current conversation round is: [1]
+*end* role remark

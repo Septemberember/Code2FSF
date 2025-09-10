@@ -1,0 +1,97 @@
+public class XOR_Mutant3 {
+    /*@ public normal_behavior
+      @    requires true;
+      @    ensures \result <==> ((b1 && !b2) || (!b1 && b2));
+      @*/
+    public static boolean xor(boolean b1, boolean b2) {
+        if(b1 == true) {
+            if(b2 == true) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else {
+            if(b2 == true) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/XOR_Mutant3.java:9: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/XOR_Mutant3.java:4:) in method xor
+                return true;
+                ^
+/root/082602-gpt-specgen/tmp/XOR_Mutant3.java:4: verify: Associated declaration: /root/082602-gpt-specgen/tmp/XOR_Mutant3.java:9:
+      @    ensures \result <==> ((b1 && !b2) || (!b1 && b2));
+           ^
+2 verification failures
+
+==============================
+public class XOR_Mutant3 {
+    /*@ public normal_behavior
+      @    requires true;
+      @    ensures \result <==> ((b1 && !b2) || (!b1 && b2));  
+      @*/
+    public static boolean xor(boolean b1, boolean b2) {
+        if(b1 == true) {
+            if(b2 == true) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else {
+            if(b2 == true) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/XOR_Mutant3.java:9: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/XOR_Mutant3.java:4:) in method xor
+                return true;
+                ^
+/root/082602-gpt-specgen/tmp/XOR_Mutant3.java:4: verify: Associated declaration: /root/082602-gpt-specgen/tmp/XOR_Mutant3.java:9:
+      @    ensures \result <==> ((b1 && !b2) || (!b1 && b2));  
+           ^
+2 verification failures
+
+==============================
+public class XOR_Mutant3 {
+    /*@ public normal_behavior
+      @    requires true;
+ 
+      @*/
+    public static boolean xor(boolean b1, boolean b2) {
+        if(b1 == true) {
+            if(b2 == true) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else {
+            if(b2 == true) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+    }
+}
+
+==============================
+
+==============================

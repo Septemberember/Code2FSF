@@ -1,0 +1,306 @@
+public class Calculator_Original {
+
+    //@ requires operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%';
+    //@ ensures \result == num1 + num2;
+    //@ ensures \result == num1 - num2;
+    //@ ensures \result == num1 * num2;
+    //@ ensures \result == num1 / num2;
+    //@ ensures \result == num1 % num2;
+    //@ ensures \result == -1;
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 * num2;
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 % num2;
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Original.java:7: verify: The prover cannot establish an assertion (UndefinedDivideByZero) in method calculate
+    //@ ensures \result == num1 / num2;
+                                ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Original.java:31: verify: Associated method exit
+        return output;
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Original {
+
+    //@ requires operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%';
+    //@ ensures (operator == '+' ==> \result == num1 + num2) &&
+    //@         (operator == '-' ==> \result == num1 - num2) &&
+    //@         (operator == '*' ==> \result == num1 * num2) &&
+    //@         (operator == '/' ==> \result == num1 / num2) &&
+    //@         (operator == '%' ==> \result == num1 % num2) &&
+    //@         (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%' ==> \result == -1);
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 * num2;
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 % num2;
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Original.java:26: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method calculate
+                output = num1 % num2;
+                              ^
+1 verification failure
+
+==============================
+public class Calculator_Original {
+
+    //@ requires operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%';
+    //@ requires operator != '/' || num2 != 0;
+    //@ ensures (operator == '+' ==> \result == num1 + num2) &&
+    //@         (operator == '-' ==> \result == num1 - num2) &&
+    //@         (operator == '*' ==> \result == num1 * num2) &&
+    //@         (operator == '/' ==> \result == num1 / num2) &&
+    //@         (operator == '%' ==> \result == num1 % num2) &&
+    //@         (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%' ==> \result == -1);
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 * num2;
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 % num2;
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Original.java:27: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method calculate
+                output = num1 % num2;
+                              ^
+1 verification failure
+
+==============================
+public class Calculator_Original {
+
+    //@ requires operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%';
+    //@ requires (operator != '/' || num2 != 0) && (operator != '%' || num2 != 0);
+    //@ ensures (operator == '+' ==> \result == num1 + num2) &&
+    //@         (operator == '-' ==> \result == num1 - num2) &&
+    //@         (operator == '*' ==> \result == num1 * num2) &&
+    //@         (operator == '/' ==> \result == num1 / num2) &&
+    //@         (operator == '%' ==> \result == num1 % num2) &&
+    //@         (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%' ==> \result == -1);
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 * num2;
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 % num2;
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Original.java:32: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Original.java:5:) in method calculate
+        return output;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Original.java:5: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Original.java:32:
+    //@ ensures (operator == '+' ==> \result == num1 + num2) &&
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Original {
+
+    //@ requires operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%';
+    //@ requires (operator != '/' || num2 != 0) && (operator != '%' || num2 != 0);
+    //@ ensures (operator == '+' ==> \result == num1 + num2) &&  
+    //@         (operator == '-' ==> \result == num1 - num2) &&
+    //@         (operator == '*' ==> \result == num1 * num2) &&
+    //@         (operator == '/' ==> \result == num1 / num2) &&
+    //@         (operator == '%' ==> \result == num1 % num2) &&
+    //@         (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%' ==> \result == -1);
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 * num2;
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 % num2;
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Original.java:32: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Original.java:5:) in method calculate
+        return output;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Original.java:5: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Original.java:32:
+    //@ ensures (operator == '+' ==> \result == num1 + num2) &&  
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Original {
+
+    //@ requires operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%';
+    //@ requires (operator != '/' || num2 != 0) && (operator != '%' || num2 != 0);
+    //@ ensures (operator == '+' ==> \result == num1 - num2) &&  
+    //@         (operator == '-' ==> \result == num1 - num2) &&
+    //@         (operator == '*' ==> \result == num1 * num2) &&
+    //@         (operator == '/' ==> \result == num1 / num2) &&
+    //@         (operator == '%' ==> \result == num1 % num2) &&
+    //@         (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%' ==> \result == -1);
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 * num2;
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 % num2;
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Original.java:32: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Original.java:5:) in method calculate
+        return output;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Original.java:5: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Original.java:32:
+    //@ ensures (operator == '+' ==> \result == num1 - num2) &&  
+        ^
+2 verification failures
+
+==============================
+public class Calculator_Original {
+
+    //@ requires operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%';
+    //@ requires (operator != '/' || num2 != 0) && (operator != '%' || num2 != 0);
+ 
+    //@         (operator == '-' ==> \result == num1 - num2) &&
+    //@         (operator == '*' ==> \result == num1 * num2) &&
+    //@         (operator == '/' ==> \result == num1 / num2) &&
+    //@         (operator == '%' ==> \result == num1 % num2) &&
+    //@         (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%' ==> \result == -1);
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 + num2;
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 * num2;
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 % num2;
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Original.java:6: error: illegal start of type
+    //@         (operator == '-' ==> \result == num1 - num2) &&
+                ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Original.java:6: error: <identifier> expected
+    //@         (operator == '-' ==> \result == num1 - num2) &&
+                         ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/Calculator_Original.java:6: error: ';' expected
+    //@         (operator == '-' ==> \result == num1 - num2) &&
+                                                            ^
+3 errors
+
+==============================

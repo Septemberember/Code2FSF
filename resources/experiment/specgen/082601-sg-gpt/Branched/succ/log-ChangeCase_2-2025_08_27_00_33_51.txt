@@ -1,0 +1,1015 @@
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result >= 'a' ==> c >= 'a';
+    //@ ensures \result >= 'A' ==> c >= 'A';
+    //@ ensures \result >= 'a' ==> c <= 'z';
+    //@ ensures \result >= 'A' ==> c <= 'Z';
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:5:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:5: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result >= 'a' ==> c <= 'z';
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result >= 'a' ==> c >= 'a';
+    //@ ensures \result >= 'A' ==> c >= 'A';
+    //@ ensures \result > 'a' ==> c < 'z';  
+    //@ ensures \result >= 'A' ==> c <= 'Z';
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:5:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:5: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result > 'a' ==> c < 'z';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result >= 'a' ==> c >= 'a';
+    //@ ensures \result >= 'A' ==> c >= 'A';
+    //@ ensures \result > 'a' ==> c <= 'z';  
+    //@ ensures \result >= 'A' ==> c <= 'Z';
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:5:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:5: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result > 'a' ==> c <= 'z';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result >= 'a' ==> c >= 'a';
+    //@ ensures \result >= 'A' ==> c >= 'A';
+    //@ ensures \result > 'a' ==> c - 1 <= 'z';  
+    //@ ensures \result >= 'A' ==> c <= 'Z';
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:5:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:5: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result > 'a' ==> c - 1 <= 'z';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result >= 'a' ==> c >= 'a';
+    //@ ensures \result >= 'A' ==> c >= 'A';
+    //@ ensures \result >= 'a' ==> c < 'z';  
+    //@ ensures \result >= 'A' ==> c <= 'Z';
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:5:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:5: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result >= 'a' ==> c < 'z';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result >= 'a' ==> c >= 'a';
+    //@ ensures \result >= 'A' ==> c >= 'A';
+    //@ ensures \result >= 'a' ==> c <= 'z';  
+    //@ ensures \result >= 'A' ==> c <= 'Z';
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:5:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:5: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result >= 'a' ==> c <= 'z';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result >= 'a' ==> c >= 'a';
+    //@ ensures \result >= 'A' ==> c >= 'A';
+    //@ ensures \result >= 'a' ==> c - 1 <= 'z';  
+    //@ ensures \result >= 'A' ==> c <= 'Z';
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:5:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:5: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result >= 'a' ==> c - 1 <= 'z';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result >= 'a' ==> c >= 'a';
+    //@ ensures \result >= 'A' ==> c >= 'A';
+    //@ ensures \result + 1 >= 'a' ==> c < 'z';  
+    //@ ensures \result >= 'A' ==> c <= 'Z';
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:5:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:5: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result + 1 >= 'a' ==> c < 'z';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result >= 'a' ==> c >= 'a';
+    //@ ensures \result >= 'A' ==> c >= 'A';
+    //@ ensures \result + 1 >= 'a' ==> c <= 'z';  
+    //@ ensures \result >= 'A' ==> c <= 'Z';
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:5:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:5: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result + 1 >= 'a' ==> c <= 'z';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result >= 'a' ==> c >= 'a';
+    //@ ensures \result >= 'A' ==> c >= 'A';
+    //@ ensures \result + 1 >= 'a' ==> c - 1 <= 'z';  
+    //@ ensures \result >= 'A' ==> c <= 'Z';
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:5:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:5: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result + 1 >= 'a' ==> c - 1 <= 'z';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result >= 'a' ==> c >= 'a';
+    //@ ensures \result >= 'A' ==> c >= 'A';
+ 
+    //@ ensures \result >= 'A' ==> c <= 'Z';
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:6:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:6: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result >= 'A' ==> c <= 'Z';
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result >= 'a' ==> c >= 'a';
+    //@ ensures \result >= 'A' ==> c >= 'A';
+ 
+    //@ ensures \result > 'A' ==> c < 'Z';  
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:6:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:6: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result > 'A' ==> c < 'Z';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result >= 'a' ==> c >= 'a';
+    //@ ensures \result >= 'A' ==> c >= 'A';
+ 
+    //@ ensures \result > 'A' ==> c <= 'Z';  
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:6:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:6: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result > 'A' ==> c <= 'Z';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result >= 'a' ==> c >= 'a';
+    //@ ensures \result >= 'A' ==> c >= 'A';
+ 
+    //@ ensures \result > 'A' ==> c - 1 <= 'Z';  
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:6:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:6: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result > 'A' ==> c - 1 <= 'Z';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result >= 'a' ==> c >= 'a';
+    //@ ensures \result >= 'A' ==> c >= 'A';
+ 
+    //@ ensures \result >= 'A' ==> c < 'Z';  
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:6:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:6: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result >= 'A' ==> c < 'Z';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result >= 'a' ==> c >= 'a';
+    //@ ensures \result >= 'A' ==> c >= 'A';
+ 
+    //@ ensures \result >= 'A' ==> c <= 'Z';  
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:6:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:6: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result >= 'A' ==> c <= 'Z';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result >= 'a' ==> c >= 'a';
+    //@ ensures \result >= 'A' ==> c >= 'A';
+ 
+    //@ ensures \result >= 'A' ==> c - 1 <= 'Z';  
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:6:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:6: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result >= 'A' ==> c - 1 <= 'Z';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result >= 'a' ==> c >= 'a';
+    //@ ensures \result >= 'A' ==> c >= 'A';
+ 
+    //@ ensures \result + 1 >= 'A' ==> c < 'Z';  
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:6:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:6: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result + 1 >= 'A' ==> c < 'Z';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result >= 'a' ==> c >= 'a';
+    //@ ensures \result >= 'A' ==> c >= 'A';
+ 
+    //@ ensures \result + 1 >= 'A' ==> c <= 'Z';  
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:6:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:6: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result + 1 >= 'A' ==> c <= 'Z';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result >= 'a' ==> c >= 'a';
+    //@ ensures \result >= 'A' ==> c >= 'A';
+ 
+    //@ ensures \result + 1 >= 'A' ==> c - 1 <= 'Z';  
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:6:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:6: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result + 1 >= 'A' ==> c - 1 <= 'Z';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result >= 'a' ==> c >= 'a';
+    //@ ensures \result >= 'A' ==> c >= 'A';
+ 
+ 
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:3:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result >= 'a' ==> c >= 'a';
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result > 'a' ==> c > 'a';  
+    //@ ensures \result >= 'A' ==> c >= 'A';
+ 
+ 
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:3:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result > 'a' ==> c > 'a';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result > 'a' ==> c >= 'a';  
+    //@ ensures \result >= 'A' ==> c >= 'A';
+ 
+ 
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:3:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result > 'a' ==> c >= 'a';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result > 'a' ==> c + 1 >= 'a';  
+    //@ ensures \result >= 'A' ==> c >= 'A';
+ 
+ 
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:3:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result > 'a' ==> c + 1 >= 'a';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result >= 'a' ==> c > 'a';  
+    //@ ensures \result >= 'A' ==> c >= 'A';
+ 
+ 
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:3:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result >= 'a' ==> c > 'a';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result >= 'a' ==> c >= 'a';  
+    //@ ensures \result >= 'A' ==> c >= 'A';
+ 
+ 
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:3:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result >= 'a' ==> c >= 'a';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result >= 'a' ==> c + 1 >= 'a';  
+    //@ ensures \result >= 'A' ==> c >= 'A';
+ 
+ 
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:3:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result >= 'a' ==> c + 1 >= 'a';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result + 1 >= 'a' ==> c > 'a';  
+    //@ ensures \result >= 'A' ==> c >= 'A';
+ 
+ 
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:3:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result + 1 >= 'a' ==> c > 'a';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result + 1 >= 'a' ==> c >= 'a';  
+    //@ ensures \result >= 'A' ==> c >= 'A';
+ 
+ 
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:3:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result + 1 >= 'a' ==> c >= 'a';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+    //@ ensures \result + 1 >= 'a' ==> c + 1 >= 'a';  
+    //@ ensures \result >= 'A' ==> c >= 'A';
+ 
+ 
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:3:) in method changeCase
+        return result;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ChangeCase_Mutant2.java:20:
+    //@ ensures \result + 1 >= 'a' ==> c + 1 >= 'a';  
+        ^
+2 verification failures
+
+==============================
+public class ChangeCase_Mutant2 {
+    //@ ensures \result >= 'a' && \result <= 'z' || \result >= 'A' && \result <= 'Z' || \result == c;
+ 
+    //@ ensures \result >= 'A' ==> c >= 'A';
+ 
+ 
+    public static char changeCase(char c) {
+        char result;
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) (c - 'a' + 'A');
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+
+==============================
+
+==============================

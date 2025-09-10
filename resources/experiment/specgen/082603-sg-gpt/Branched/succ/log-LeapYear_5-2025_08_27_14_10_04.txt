@@ -1,0 +1,76 @@
+public class LeapYear_Mutant5 {
+    //@ ensures \result == (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 500 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            } else
+                leap = true;
+        } else
+            leap = false;
+        return leap;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/LeapYear_Mutant5.java:15: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/LeapYear_Mutant5.java:2:) in method isLeapYear
+        return leap;
+        ^
+/root/082602-gpt-specgen/tmp/LeapYear_Mutant5.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/LeapYear_Mutant5.java:15:
+    //@ ensures \result == (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+        ^
+2 verification failures
+
+==============================
+public class LeapYear_Mutant5 {
+    //@ ensures \result == (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));  
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 500 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            } else
+                leap = true;
+        } else
+            leap = false;
+        return leap;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/LeapYear_Mutant5.java:15: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/LeapYear_Mutant5.java:2:) in method isLeapYear
+        return leap;
+        ^
+/root/082602-gpt-specgen/tmp/LeapYear_Mutant5.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/LeapYear_Mutant5.java:15:
+    //@ ensures \result == (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));  
+        ^
+2 verification failures
+
+==============================
+public class LeapYear_Mutant5 {
+ 
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 500 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            } else
+                leap = true;
+        } else
+            leap = false;
+        return leap;
+    }
+}
+
+==============================
+
+==============================

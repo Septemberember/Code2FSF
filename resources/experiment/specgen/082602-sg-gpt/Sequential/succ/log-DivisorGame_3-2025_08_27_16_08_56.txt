@@ -1,0 +1,9 @@
+public class DivisorGame_Mutant3 {
+    //@ ensures \result <==> n % 3 == 0;
+    public static /*@ pure @*/ boolean divisorGame(int n) {
+        return n % 3 == 0;
+    }
+}
+==============================
+
+==============================

@@ -1,0 +1,60 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class GCD_Original {
+
+	public static int gcd(int num1, int num2){
+		int result = 1;
+		if(0 > num1){
+			num1 = -num1
+		}
+		if(0 > num2){
+			num2 = -num2;
+		}
+		if (num1 == 0 && num2 == 0) {
+			return -1;
+		}
+
+		if (num1 == 0 || num2 == 0) {
+			if(num1 > num2) {
+				return num1;
+			} else {
+				return num2;
+			}
+		}
+
+		for (int i = 1; i <= num1 && i <= num2; i++) {
+            if (num1 % i == 0 && num2 % i == 0) {
+        		result = i;
+			}
+        }
+		return result;
+	}
+}
+
+```
+*end* role user
+start role assistant
+```
+T1: num1 == 0 && num2 == 0
+D1: return_value == -1
+
+T2: num1 == 0 && num2 != 0
+D2: return_value == num2
+
+T3: num1 != 0 && num2 == 0
+D3: return_value == num1
+
+T4: num1 != 0 && num2 != 0 && num1 > 0 && num2 > 0
+D4: return_value is the greatest integer that divides both num1 and num2
+
+T5: num1 != 0 && num2 != 0 && num1 < 0 && num2 > 0
+D5: return_value is the greatest integer that divides both -num1 and num2
+
+T6: num1 != 0 && num2 != 0 && num1 > 0 && num2 < 0
+D6: return_value is the greatest integer that divides both num1 and -num2
+
+T7: num1 != 0 && num2 != 0 && num1 < 0 && num2 < 0
+D7: return_value is the greatest integer that divides both -num1 and -num2
+```
+*end* role assistant

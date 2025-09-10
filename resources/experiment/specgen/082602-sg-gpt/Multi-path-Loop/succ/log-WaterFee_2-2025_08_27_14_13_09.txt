@@ -1,0 +1,2610 @@
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 <= i && i < tons - n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 <= i && i < tons - n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 < i && i < tons - n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 < i && i < tons - n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 < i && i < tons - n; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 < i && i < tons - n; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 < i && i < tons - n; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 < i && i < tons - n; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 < i && i < tons - n; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 < i && i < tons - n; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 < i && i <= tons - n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 < i && i <= tons - n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 < i && i <= tons - n; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 < i && i <= tons - n; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 < i && i <= tons - n; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 < i && i <= tons - n; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 < i && i <= tons - n; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 < i && i <= tons - n; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 <= i && i < tons - n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 <= i && i < tons - n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 <= i && i < tons - n; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 <= i && i < tons - n; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 <= i && i < tons - n; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 <= i && i < tons - n; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 <= i && i < tons - n; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 <= i && i < tons - n; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 <= i && i <= tons - n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 <= i && i <= tons - n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 <= i && i <= tons - n; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 <= i && i <= tons - n; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 <= i && i <= tons - n; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 <= i && i <= tons - n; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 <= i && i <= tons - n; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 <= i && i <= tons - n; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i < tons - n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i < tons - n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i < tons - n; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i < tons - n; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i < tons - n; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i < tons - n; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i < tons - n; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i < tons - n; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i <= tons - n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i <= tons - n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i <= tons - n; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i <= tons - n; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i <= tons - n; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i <= tons - n; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i <= tons - n; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i <= tons - n; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 < i && i < tons + n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 < i && i < tons + n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 < i && i < tons + n; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 < i && i < tons + n; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 < i && i < tons + n; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 < i && i < tons + n; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 < i && i < tons + n; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 < i && i < tons + n; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 < i && i <= tons + n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 < i && i <= tons + n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 < i && i <= tons + n; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 < i && i <= tons + n; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 < i && i <= tons + n; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 < i && i <= tons + n; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 < i && i <= tons + n; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 < i && i <= tons + n; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 <= i && i < tons + n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 <= i && i < tons + n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 <= i && i < tons + n; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 <= i && i < tons + n; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 <= i && i < tons + n; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 <= i && i < tons + n; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 <= i && i < tons + n; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 <= i && i < tons + n; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 <= i && i <= tons + n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 <= i && i <= tons + n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 <= i && i <= tons + n; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 <= i && i <= tons + n; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 <= i && i <= tons + n; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 <= i && i <= tons + n; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 <= i && i <= tons + n; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 <= i && i <= tons + n; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i < tons + n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i < tons + n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i < tons + n; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i < tons + n; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i < tons + n; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i < tons + n; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i < tons + n; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i < tons + n; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i <= tons + n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i <= tons + n; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i <= tons + n; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i <= tons + n; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i <= tons + n; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i <= tons + n; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i <= tons + n; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method calcWaterFee
+        //@ maintaining fee == (\sum int i; 0 - 1 <= i && i <= tons + n; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+            ^
+1 verification failure
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:3:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result >= 0;
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result > 0;  
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:3:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result > 0;  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result >= 0;  
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:3:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result >= 0;  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+    //@ ensures \result + 1 >= 0;  
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:3:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result + 1 >= 0;  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+    //@ ensures \result == (\sum int i; 0 < i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result == (\sum int i; 0 < i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+    //@ ensures \result == (\sum int i; 0 < i && i < tons; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result == (\sum int i; 0 < i && i < tons; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+    //@ ensures \result == (\sum int i; 0 < i && i < tons; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result == (\sum int i; 0 < i && i < tons; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+    //@ ensures \result == (\sum int i; 0 < i && i < tons; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result == (\sum int i; 0 < i && i < tons; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+    //@ ensures \result == (\sum int i; 0 < i && i <= tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result == (\sum int i; 0 < i && i <= tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+    //@ ensures \result == (\sum int i; 0 < i && i <= tons; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result == (\sum int i; 0 < i && i <= tons; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+    //@ ensures \result == (\sum int i; 0 < i && i <= tons; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result == (\sum int i; 0 < i && i <= tons; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+    //@ ensures \result == (\sum int i; 0 < i && i <= tons; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result == (\sum int i; 0 < i && i <= tons; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result == (\sum int i; 0 <= i && i < tons; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+    //@ ensures \result == (\sum int i; 0 <= i && i <= tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result == (\sum int i; 0 <= i && i <= tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+    //@ ensures \result == (\sum int i; 0 <= i && i <= tons; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result == (\sum int i; 0 <= i && i <= tons; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+    //@ ensures \result == (\sum int i; 0 <= i && i <= tons; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result == (\sum int i; 0 <= i && i <= tons; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+    //@ ensures \result == (\sum int i; 0 <= i && i <= tons; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result == (\sum int i; 0 <= i && i <= tons; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+    //@ ensures \result == (\sum int i; 0 - 1 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result == (\sum int i; 0 - 1 <= i && i < tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+    //@ ensures \result == (\sum int i; 0 - 1 <= i && i < tons; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result == (\sum int i; 0 - 1 <= i && i < tons; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+    //@ ensures \result == (\sum int i; 0 - 1 <= i && i < tons; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result == (\sum int i; 0 - 1 <= i && i < tons; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+    //@ ensures \result == (\sum int i; 0 - 1 <= i && i < tons; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result == (\sum int i; 0 - 1 <= i && i < tons; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+    //@ ensures \result == (\sum int i; 0 - 1 <= i && i <= tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result == (\sum int i; 0 - 1 <= i && i <= tons; (i > 10 ? 5 : (i > 3 ? 4 : 3)));  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+    //@ ensures \result == (\sum int i; 0 - 1 <= i && i <= tons; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result == (\sum int i; 0 - 1 <= i && i <= tons; (i > 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+    //@ ensures \result == (\sum int i; 0 - 1 <= i && i <= tons; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result == (\sum int i; 0 - 1 <= i && i <= tons; (i >= 10 ? 5 : (i > 3 ? 4 : 3)));  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+    //@ ensures \result == (\sum int i; 0 - 1 <= i && i <= tons; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4:) in method calcWaterFee
+        return fee;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WaterFee_Mutant2.java:22:
+    //@ ensures \result == (\sum int i; 0 - 1 <= i && i <= tons; (i >= 10 ? 5 : (i >= 3 ? 4 : 3)));  
+        ^
+2 verification failures
+
+==============================
+public class WaterFee_Mutant2 {
+    //@ requires tons >= 0;
+ 
+ 
+    /*@ pure @*/ public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+
+        //@ maintaining n >= 0;
+ 
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+
+==============================
+
+==============================

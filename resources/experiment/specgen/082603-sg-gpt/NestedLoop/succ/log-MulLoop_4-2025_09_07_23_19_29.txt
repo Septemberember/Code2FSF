@@ -1,0 +1,645 @@
+public class MulLoop_Mutant4 {
+    //@ ensures \result == a*b;
+    public static int mulLoop(int a, int b) {
+        int res = 0;
+        if (b >= 0) {
+            //@ maintaining 0 <= i && i <= b && res == a*i;
+            //@ decreases b - i;
+            for(int i = 0; i < b; i=i+2) { // increased the counter by 2
+                res = res + a;
+            }
+        } else {
+            //@ maintaining 0 <= i && i <= -b && res == -a*i;
+            //@ decreases -b - i;
+            for(int i = 0; i < -b; i=i+2) { // increased the counter by 2
+                res = res - a;
+            }
+        }
+        return res;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method mulLoop
+            //@ maintaining 0 <= i && i <= b && res == a*i;
+                ^
+1 verification failure
+
+==============================
+public class MulLoop_Mutant4 {
+    //@ ensures \result == a*b;
+    public static int mulLoop(int a, int b) {
+        int res = 0;
+        if (b >= 0) {
+            //@ maintaining 0 < i && i < b && res == a*i;  
+            //@ decreases b - i;
+            for(int i = 0; i < b; i=i+2) { // increased the counter by 2
+                res = res + a;
+            }
+        } else {
+            //@ maintaining 0 <= i && i <= -b && res == -a*i;
+            //@ decreases -b - i;
+            for(int i = 0; i < -b; i=i+2) { // increased the counter by 2
+                res = res - a;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mulLoop
+            //@ maintaining 0 < i && i < b && res == a*i;  
+                ^
+1 verification failure
+
+==============================
+public class MulLoop_Mutant4 {
+    //@ ensures \result == a*b;
+    public static int mulLoop(int a, int b) {
+        int res = 0;
+        if (b >= 0) {
+            //@ maintaining 0 < i && i <= b && res == a*i;  
+            //@ decreases b - i;
+            for(int i = 0; i < b; i=i+2) { // increased the counter by 2
+                res = res + a;
+            }
+        } else {
+            //@ maintaining 0 <= i && i <= -b && res == -a*i;
+            //@ decreases -b - i;
+            for(int i = 0; i < -b; i=i+2) { // increased the counter by 2
+                res = res - a;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mulLoop
+            //@ maintaining 0 < i && i <= b && res == a*i;  
+                ^
+1 verification failure
+
+==============================
+public class MulLoop_Mutant4 {
+    //@ ensures \result == a*b;
+    public static int mulLoop(int a, int b) {
+        int res = 0;
+        if (b >= 0) {
+            //@ maintaining 0 < i && i - 1 <= b && res == a*i;  
+            //@ decreases b - i;
+            for(int i = 0; i < b; i=i+2) { // increased the counter by 2
+                res = res + a;
+            }
+        } else {
+            //@ maintaining 0 <= i && i <= -b && res == -a*i;
+            //@ decreases -b - i;
+            for(int i = 0; i < -b; i=i+2) { // increased the counter by 2
+                res = res - a;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mulLoop
+            //@ maintaining 0 < i && i - 1 <= b && res == a*i;  
+                ^
+1 verification failure
+
+==============================
+public class MulLoop_Mutant4 {
+    //@ ensures \result == a*b;
+    public static int mulLoop(int a, int b) {
+        int res = 0;
+        if (b >= 0) {
+            //@ maintaining 0 <= i && i < b && res == a*i;  
+            //@ decreases b - i;
+            for(int i = 0; i < b; i=i+2) { // increased the counter by 2
+                res = res + a;
+            }
+        } else {
+            //@ maintaining 0 <= i && i <= -b && res == -a*i;
+            //@ decreases -b - i;
+            for(int i = 0; i < -b; i=i+2) { // increased the counter by 2
+                res = res - a;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mulLoop
+            //@ maintaining 0 <= i && i < b && res == a*i;  
+                ^
+1 verification failure
+
+==============================
+public class MulLoop_Mutant4 {
+    //@ ensures \result == a*b;
+    public static int mulLoop(int a, int b) {
+        int res = 0;
+        if (b >= 0) {
+            //@ maintaining 0 <= i && i <= b && res == a*i;  
+            //@ decreases b - i;
+            for(int i = 0; i < b; i=i+2) { // increased the counter by 2
+                res = res + a;
+            }
+        } else {
+            //@ maintaining 0 <= i && i <= -b && res == -a*i;
+            //@ decreases -b - i;
+            for(int i = 0; i < -b; i=i+2) { // increased the counter by 2
+                res = res - a;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method mulLoop
+            //@ maintaining 0 <= i && i <= b && res == a*i;  
+                ^
+1 verification failure
+
+==============================
+public class MulLoop_Mutant4 {
+    //@ ensures \result == a*b;
+    public static int mulLoop(int a, int b) {
+        int res = 0;
+        if (b >= 0) {
+            //@ maintaining 0 <= i && i - 1 <= b && res == a*i;  
+            //@ decreases b - i;
+            for(int i = 0; i < b; i=i+2) { // increased the counter by 2
+                res = res + a;
+            }
+        } else {
+            //@ maintaining 0 <= i && i <= -b && res == -a*i;
+            //@ decreases -b - i;
+            for(int i = 0; i < -b; i=i+2) { // increased the counter by 2
+                res = res - a;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:18: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:2:) in method mulLoop
+        return res;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:18:
+    //@ ensures \result == a*b;
+        ^
+2 verification failures
+
+==============================
+public class MulLoop_Mutant4 {
+    //@ ensures \result == a*b;  
+    public static int mulLoop(int a, int b) {
+        int res = 0;
+        if (b >= 0) {
+            //@ maintaining 0 <= i && i - 1 <= b && res == a*i;  
+            //@ decreases b - i;
+            for(int i = 0; i < b; i=i+2) { // increased the counter by 2
+                res = res + a;
+            }
+        } else {
+            //@ maintaining 0 <= i && i <= -b && res == -a*i;
+            //@ decreases -b - i;
+            for(int i = 0; i < -b; i=i+2) { // increased the counter by 2
+                res = res - a;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:18: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:2:) in method mulLoop
+        return res;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:18:
+    //@ ensures \result == a*b;  
+        ^
+2 verification failures
+
+==============================
+public class MulLoop_Mutant4 {
+ 
+    public static int mulLoop(int a, int b) {
+        int res = 0;
+        if (b >= 0) {
+            //@ maintaining 0 <= i && i - 1 <= b && res == a*i;  
+            //@ decreases b - i;
+            for(int i = 0; i < b; i=i+2) { // increased the counter by 2
+                res = res + a;
+            }
+        } else {
+            //@ maintaining 0 <= i && i <= -b && res == -a*i;
+            //@ decreases -b - i;
+            for(int i = 0; i < -b; i=i+2) { // increased the counter by 2
+                res = res - a;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method mulLoop
+            //@ maintaining 0 <= i && i - 1 <= b && res == a*i;  
+                ^
+1 verification failure
+
+==============================
+public class MulLoop_Mutant4 {
+ 
+    public static int mulLoop(int a, int b) {
+        int res = 0;
+        if (b >= 0) {
+            //@ maintaining 0 - 1 <= i && i < b && res == a*i;  
+            //@ decreases b - i;
+            for(int i = 0; i < b; i=i+2) { // increased the counter by 2
+                res = res + a;
+            }
+        } else {
+            //@ maintaining 0 <= i && i <= -b && res == -a*i;
+            //@ decreases -b - i;
+            for(int i = 0; i < -b; i=i+2) { // increased the counter by 2
+                res = res - a;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mulLoop
+            //@ maintaining 0 - 1 <= i && i < b && res == a*i;  
+                ^
+1 verification failure
+
+==============================
+public class MulLoop_Mutant4 {
+ 
+    public static int mulLoop(int a, int b) {
+        int res = 0;
+        if (b >= 0) {
+            //@ maintaining 0 - 1 <= i && i <= b && res == a*i;  
+            //@ decreases b - i;
+            for(int i = 0; i < b; i=i+2) { // increased the counter by 2
+                res = res + a;
+            }
+        } else {
+            //@ maintaining 0 <= i && i <= -b && res == -a*i;
+            //@ decreases -b - i;
+            for(int i = 0; i < -b; i=i+2) { // increased the counter by 2
+                res = res - a;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method mulLoop
+            //@ maintaining 0 - 1 <= i && i <= b && res == a*i;  
+                ^
+1 verification failure
+
+==============================
+public class MulLoop_Mutant4 {
+ 
+    public static int mulLoop(int a, int b) {
+        int res = 0;
+        if (b >= 0) {
+            //@ maintaining 0 - 1 <= i && i - 1 <= b && res == a*i;  
+            //@ decreases b - i;
+            for(int i = 0; i < b; i=i+2) { // increased the counter by 2
+                res = res + a;
+            }
+        } else {
+            //@ maintaining 0 <= i && i <= -b && res == -a*i;
+            //@ decreases -b - i;
+            for(int i = 0; i < -b; i=i+2) { // increased the counter by 2
+                res = res - a;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method mulLoop
+            //@ maintaining 0 - 1 <= i && i - 1 <= b && res == a*i;  
+                ^
+1 verification failure
+
+==============================
+public class MulLoop_Mutant4 {
+ 
+    public static int mulLoop(int a, int b) {
+        int res = 0;
+        if (b >= 0) {
+ 
+            //@ decreases b - i;
+            for(int i = 0; i < b; i=i+2) { // increased the counter by 2
+                res = res + a;
+            }
+        } else {
+            //@ maintaining 0 <= i && i <= -b && res == -a*i;
+            //@ decreases -b - i;
+            for(int i = 0; i < -b; i=i+2) { // increased the counter by 2
+                res = res - a;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:12: verify: The prover cannot establish an assertion (LoopInvariant) in method mulLoop
+            //@ maintaining 0 <= i && i <= -b && res == -a*i;
+                ^
+1 verification failure
+
+==============================
+public class MulLoop_Mutant4 {
+ 
+    public static int mulLoop(int a, int b) {
+        int res = 0;
+        if (b >= 0) {
+ 
+            //@ decreases b - i;
+            for(int i = 0; i < b; i=i+2) { // increased the counter by 2
+                res = res + a;
+            }
+        } else {
+            //@ maintaining 0 < i && i < -b && res == -a*i;  
+            //@ decreases -b - i;
+            for(int i = 0; i < -b; i=i+2) { // increased the counter by 2
+                res = res - a;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mulLoop
+            //@ maintaining 0 < i && i < -b && res == -a*i;  
+                ^
+1 verification failure
+
+==============================
+public class MulLoop_Mutant4 {
+ 
+    public static int mulLoop(int a, int b) {
+        int res = 0;
+        if (b >= 0) {
+ 
+            //@ decreases b - i;
+            for(int i = 0; i < b; i=i+2) { // increased the counter by 2
+                res = res + a;
+            }
+        } else {
+            //@ maintaining 0 < i && i <= -b && res == -a*i;  
+            //@ decreases -b - i;
+            for(int i = 0; i < -b; i=i+2) { // increased the counter by 2
+                res = res - a;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mulLoop
+            //@ maintaining 0 < i && i <= -b && res == -a*i;  
+                ^
+1 verification failure
+
+==============================
+public class MulLoop_Mutant4 {
+ 
+    public static int mulLoop(int a, int b) {
+        int res = 0;
+        if (b >= 0) {
+ 
+            //@ decreases b - i;
+            for(int i = 0; i < b; i=i+2) { // increased the counter by 2
+                res = res + a;
+            }
+        } else {
+            //@ maintaining 0 < i && i - 1 <= -b && res == -a*i;  
+            //@ decreases -b - i;
+            for(int i = 0; i < -b; i=i+2) { // increased the counter by 2
+                res = res - a;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mulLoop
+            //@ maintaining 0 < i && i - 1 <= -b && res == -a*i;  
+                ^
+1 verification failure
+
+==============================
+public class MulLoop_Mutant4 {
+ 
+    public static int mulLoop(int a, int b) {
+        int res = 0;
+        if (b >= 0) {
+ 
+            //@ decreases b - i;
+            for(int i = 0; i < b; i=i+2) { // increased the counter by 2
+                res = res + a;
+            }
+        } else {
+            //@ maintaining 0 <= i && i < -b && res == -a*i;  
+            //@ decreases -b - i;
+            for(int i = 0; i < -b; i=i+2) { // increased the counter by 2
+                res = res - a;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:12: verify: The prover cannot establish an assertion (LoopInvariant) in method mulLoop
+            //@ maintaining 0 <= i && i < -b && res == -a*i;  
+                ^
+1 verification failure
+
+==============================
+public class MulLoop_Mutant4 {
+ 
+    public static int mulLoop(int a, int b) {
+        int res = 0;
+        if (b >= 0) {
+ 
+            //@ decreases b - i;
+            for(int i = 0; i < b; i=i+2) { // increased the counter by 2
+                res = res + a;
+            }
+        } else {
+            //@ maintaining 0 <= i && i <= -b && res == -a*i;  
+            //@ decreases -b - i;
+            for(int i = 0; i < -b; i=i+2) { // increased the counter by 2
+                res = res - a;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:12: verify: The prover cannot establish an assertion (LoopInvariant) in method mulLoop
+            //@ maintaining 0 <= i && i <= -b && res == -a*i;  
+                ^
+1 verification failure
+
+==============================
+public class MulLoop_Mutant4 {
+ 
+    public static int mulLoop(int a, int b) {
+        int res = 0;
+        if (b >= 0) {
+ 
+            //@ decreases b - i;
+            for(int i = 0; i < b; i=i+2) { // increased the counter by 2
+                res = res + a;
+            }
+        } else {
+            //@ maintaining 0 <= i && i - 1 <= -b && res == -a*i;  
+            //@ decreases -b - i;
+            for(int i = 0; i < -b; i=i+2) { // increased the counter by 2
+                res = res - a;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:12: verify: The prover cannot establish an assertion (LoopInvariant) in method mulLoop
+            //@ maintaining 0 <= i && i - 1 <= -b && res == -a*i;  
+                ^
+1 verification failure
+
+==============================
+public class MulLoop_Mutant4 {
+ 
+    public static int mulLoop(int a, int b) {
+        int res = 0;
+        if (b >= 0) {
+ 
+            //@ decreases b - i;
+            for(int i = 0; i < b; i=i+2) { // increased the counter by 2
+                res = res + a;
+            }
+        } else {
+            //@ maintaining 0 - 1 <= i && i < -b && res == -a*i;  
+            //@ decreases -b - i;
+            for(int i = 0; i < -b; i=i+2) { // increased the counter by 2
+                res = res - a;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:12: verify: The prover cannot establish an assertion (LoopInvariant) in method mulLoop
+            //@ maintaining 0 - 1 <= i && i < -b && res == -a*i;  
+                ^
+1 verification failure
+
+==============================
+public class MulLoop_Mutant4 {
+ 
+    public static int mulLoop(int a, int b) {
+        int res = 0;
+        if (b >= 0) {
+ 
+            //@ decreases b - i;
+            for(int i = 0; i < b; i=i+2) { // increased the counter by 2
+                res = res + a;
+            }
+        } else {
+            //@ maintaining 0 - 1 <= i && i <= -b && res == -a*i;  
+            //@ decreases -b - i;
+            for(int i = 0; i < -b; i=i+2) { // increased the counter by 2
+                res = res - a;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:12: verify: The prover cannot establish an assertion (LoopInvariant) in method mulLoop
+            //@ maintaining 0 - 1 <= i && i <= -b && res == -a*i;  
+                ^
+1 verification failure
+
+==============================
+public class MulLoop_Mutant4 {
+ 
+    public static int mulLoop(int a, int b) {
+        int res = 0;
+        if (b >= 0) {
+ 
+            //@ decreases b - i;
+            for(int i = 0; i < b; i=i+2) { // increased the counter by 2
+                res = res + a;
+            }
+        } else {
+            //@ maintaining 0 - 1 <= i && i - 1 <= -b && res == -a*i;  
+            //@ decreases -b - i;
+            for(int i = 0; i < -b; i=i+2) { // increased the counter by 2
+                res = res - a;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MulLoop_Mutant4.java:12: verify: The prover cannot establish an assertion (LoopInvariant) in method mulLoop
+            //@ maintaining 0 - 1 <= i && i - 1 <= -b && res == -a*i;  
+                ^
+1 verification failure
+
+==============================
+public class MulLoop_Mutant4 {
+ 
+    public static int mulLoop(int a, int b) {
+        int res = 0;
+        if (b >= 0) {
+ 
+            //@ decreases b - i;
+            for(int i = 0; i < b; i=i+2) { // increased the counter by 2
+                res = res + a;
+            }
+        } else {
+ 
+            //@ decreases -b - i;
+            for(int i = 0; i < -b; i=i+2) { // increased the counter by 2
+                res = res - a;
+            }
+        }
+        return res;
+    }
+}
+
+==============================
+
+==============================

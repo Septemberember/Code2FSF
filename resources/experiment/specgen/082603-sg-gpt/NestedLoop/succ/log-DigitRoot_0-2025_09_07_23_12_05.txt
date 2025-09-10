@@ -1,0 +1,843 @@
+public class DigitRoot_Original {
+    //@ ensures \result >= 0 && \result < 10;
+    public static int function(int num) {
+        //@ maintaining num >= 10 ==> 0 <= sum && sum < num;
+        //@ decreases num;
+        while (num >= 10) {
+            int sum = 0;
+            //@ maintaining 0 <= sum && sum < num;
+            //@ maintaining num > 0;
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:4: error: cannot find symbol
+        //@ maintaining num >= 10 ==> 0 <= sum && sum < num;
+                                           ^
+  symbol:   variable sum
+  location: class DigitRoot_Original
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:4: error: cannot find symbol
+        //@ maintaining num >= 10 ==> 0 <= sum && sum < num;
+                                                  ^
+  symbol:   variable sum
+  location: class DigitRoot_Original
+2 errors
+
+==============================
+public class DigitRoot_Original {
+    //@ ensures \result >= 0 && \result < 10;
+    public static int function(int num) {
+        //@ ghost int sum;
+        //@ maintaining num >= 10 ==> 0 <= sum && sum < num;
+        //@ decreases num;
+        while (num >= 10) {
+            int sum = 0;
+            //@ maintaining 0 <= sum && sum < num;
+            //@ maintaining num > 0;
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:8: error: variable sum is already defined in method function(int)
+            int sum = 0;
+                ^
+1 error
+
+==============================
+public class DigitRoot_Original {
+    //@ ensures \result >= 0 && \result < 10;
+    public static int function(int num) {
+        //@ ghost int sum;
+        //@ maintaining num >= 10 ==> 0 <= sum && sum < num;
+        //@ decreases num;
+        while (num >= 10) {
+            sum = 0;
+            //@ maintaining 0 <= sum && sum < num;
+            //@ maintaining num > 0;
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:8: error: cannot find symbol
+            sum = 0;
+            ^
+  symbol:   variable sum
+  location: class DigitRoot_Original
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:13: error: cannot find symbol
+                sum = sum + (num % 10);
+                ^
+  symbol:   variable sum
+  location: class DigitRoot_Original
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:13: error: cannot find symbol
+                sum = sum + (num % 10);
+                      ^
+  symbol:   variable sum
+  location: class DigitRoot_Original
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:16: error: cannot find symbol
+            num = sum;
+                  ^
+  symbol:   variable sum
+  location: class DigitRoot_Original
+4 errors
+
+==============================
+public class DigitRoot_Original {
+    //@ ghost int sum;
+    //@ ensures \result >= 0 && \result < 10;
+    public static int function(int num) {
+        //@ maintaining num >= 10 ==> 0 <= sum && sum < num;
+        //@ decreases num;
+        while (num >= 10) {
+            sum = 0;
+            //@ maintaining 0 <= sum && sum < num;
+            //@ maintaining num > 0;
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:5: error: non-static variable sum cannot be referenced from a static context
+        //@ maintaining num >= 10 ==> 0 <= sum && sum < num;
+                                           ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:5: error: non-static variable sum cannot be referenced from a static context
+        //@ maintaining num >= 10 ==> 0 <= sum && sum < num;
+                                                  ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:8: error: cannot find symbol
+            sum = 0;
+            ^
+  symbol:   variable sum
+  location: class DigitRoot_Original
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:9: error: non-static variable sum cannot be referenced from a static context
+            //@ maintaining 0 <= sum && sum < num;
+                                 ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:9: error: non-static variable sum cannot be referenced from a static context
+            //@ maintaining 0 <= sum && sum < num;
+                                        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:13: error: cannot find symbol
+                sum = sum + (num % 10);
+                ^
+  symbol:   variable sum
+  location: class DigitRoot_Original
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:13: error: cannot find symbol
+                sum = sum + (num % 10);
+                      ^
+  symbol:   variable sum
+  location: class DigitRoot_Original
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:16: error: cannot find symbol
+            num = sum;
+                  ^
+  symbol:   variable sum
+  location: class DigitRoot_Original
+8 errors
+
+==============================
+public class DigitRoot_Original {
+    //@ ghost int sum;
+    //@ ensures \result >= 0 && \result < 10;
+    public static int function(int num) {
+        int sum = 0;
+        //@ maintaining num >= 10 ==> 0 <= sum && sum < num;
+        //@ decreases num;
+        while (num >= 10) {
+            sum = 0;
+            //@ maintaining 0 <= sum && sum < num;
+            //@ maintaining num > 0;
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:10: verify: The prover cannot establish an assertion (LoopInvariant) in method function
+            //@ maintaining 0 <= sum && sum < num;
+                ^
+1 verification failure
+
+==============================
+public class DigitRoot_Original {
+    //@ ghost int sum;
+    //@ ensures \result >= 0 && \result < 10;
+    public static int function(int num) {
+        int sum = 0;
+        //@ maintaining num >= 10 ==> 0 <= sum && sum < num;
+        //@ decreases num;
+        while (num >= 10) {
+            sum = 0;
+            //@ maintaining 0 < sum && sum < num;  
+            //@ maintaining num > 0;
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method function
+            //@ maintaining 0 < sum && sum < num;  
+                ^
+1 verification failure
+
+==============================
+public class DigitRoot_Original {
+    //@ ghost int sum;
+    //@ ensures \result >= 0 && \result < 10;
+    public static int function(int num) {
+        int sum = 0;
+        //@ maintaining num >= 10 ==> 0 <= sum && sum < num;
+        //@ decreases num;
+        while (num >= 10) {
+            sum = 0;
+            //@ maintaining 0 < sum && sum <= num;  
+            //@ maintaining num > 0;
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method function
+            //@ maintaining 0 < sum && sum <= num;  
+                ^
+1 verification failure
+
+==============================
+public class DigitRoot_Original {
+    //@ ghost int sum;
+    //@ ensures \result >= 0 && \result < 10;
+    public static int function(int num) {
+        int sum = 0;
+        //@ maintaining num >= 10 ==> 0 <= sum && sum < num;
+        //@ decreases num;
+        while (num >= 10) {
+            sum = 0;
+            //@ maintaining 0 <= sum && sum < num;  
+            //@ maintaining num > 0;
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:10: verify: The prover cannot establish an assertion (LoopInvariant) in method function
+            //@ maintaining 0 <= sum && sum < num;  
+                ^
+1 verification failure
+
+==============================
+public class DigitRoot_Original {
+    //@ ghost int sum;
+    //@ ensures \result >= 0 && \result < 10;
+    public static int function(int num) {
+        int sum = 0;
+        //@ maintaining num >= 10 ==> 0 <= sum && sum < num;
+        //@ decreases num;
+        while (num >= 10) {
+            sum = 0;
+            //@ maintaining 0 <= sum && sum <= num;  
+            //@ maintaining num > 0;
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:10: verify: The prover cannot establish an assertion (LoopInvariant) in method function
+            //@ maintaining 0 <= sum && sum <= num;  
+                ^
+1 verification failure
+
+==============================
+public class DigitRoot_Original {
+    //@ ghost int sum;
+    //@ ensures \result >= 0 && \result < 10;
+    public static int function(int num) {
+        int sum = 0;
+        //@ maintaining num >= 10 ==> 0 <= sum && sum < num;
+        //@ decreases num;
+        while (num >= 10) {
+            sum = 0;
+            //@ maintaining 0 - 1 <= sum && sum < num;  
+            //@ maintaining num > 0;
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:10: verify: The prover cannot establish an assertion (LoopInvariant) in method function
+            //@ maintaining 0 - 1 <= sum && sum < num;  
+                ^
+1 verification failure
+
+==============================
+public class DigitRoot_Original {
+    //@ ghost int sum;
+    //@ ensures \result >= 0 && \result < 10;
+    public static int function(int num) {
+        int sum = 0;
+        //@ maintaining num >= 10 ==> 0 <= sum && sum < num;
+        //@ decreases num;
+        while (num >= 10) {
+            sum = 0;
+            //@ maintaining 0 - 1 <= sum && sum <= num;  
+            //@ maintaining num > 0;
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:10: verify: The prover cannot establish an assertion (LoopInvariant) in method function
+            //@ maintaining 0 - 1 <= sum && sum <= num;  
+                ^
+1 verification failure
+
+==============================
+public class DigitRoot_Original {
+    //@ ghost int sum;
+    //@ ensures \result >= 0 && \result < 10;
+    public static int function(int num) {
+        int sum = 0;
+        //@ maintaining num >= 10 ==> 0 <= sum && sum < num;
+        //@ decreases num;
+        while (num >= 10) {
+            sum = 0;
+ 
+            //@ maintaining num > 0;
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:11: verify: The prover cannot establish an assertion (LoopInvariant) in method function
+            //@ maintaining num > 0;
+                ^
+1 verification failure
+
+==============================
+public class DigitRoot_Original {
+    //@ ghost int sum;
+    //@ ensures \result >= 0 && \result < 10;
+    public static int function(int num) {
+        int sum = 0;
+        //@ maintaining num >= 10 ==> 0 <= sum && sum < num;
+        //@ decreases num;
+        while (num >= 10) {
+            sum = 0;
+ 
+            //@ maintaining num > 0;  
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:11: verify: The prover cannot establish an assertion (LoopInvariant) in method function
+            //@ maintaining num > 0;  
+                ^
+1 verification failure
+
+==============================
+public class DigitRoot_Original {
+    //@ ghost int sum;
+    //@ ensures \result >= 0 && \result < 10;
+    public static int function(int num) {
+        int sum = 0;
+        //@ maintaining num >= 10 ==> 0 <= sum && sum < num;
+        //@ decreases num;
+        while (num >= 10) {
+            sum = 0;
+ 
+            //@ maintaining num >= 0;  
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method function
+        //@ maintaining num >= 10 ==> 0 <= sum && sum < num;
+            ^
+1 verification failure
+
+==============================
+public class DigitRoot_Original {
+    //@ ghost int sum;
+    //@ ensures \result >= 0 && \result < 10;
+    public static int function(int num) {
+        int sum = 0;
+        //@ maintaining num > 10 ==> 0 < sum && sum < num;  
+        //@ decreases num;
+        while (num >= 10) {
+            sum = 0;
+ 
+            //@ maintaining num >= 0;  
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method function
+        //@ maintaining num > 10 ==> 0 < sum && sum < num;  
+            ^
+1 verification failure
+
+==============================
+public class DigitRoot_Original {
+    //@ ghost int sum;
+    //@ ensures \result >= 0 && \result < 10;
+    public static int function(int num) {
+        int sum = 0;
+        //@ maintaining num > 10 ==> 0 < sum && sum <= num;  
+        //@ decreases num;
+        while (num >= 10) {
+            sum = 0;
+ 
+            //@ maintaining num >= 0;  
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method function
+        //@ maintaining num > 10 ==> 0 < sum && sum <= num;  
+            ^
+1 verification failure
+
+==============================
+public class DigitRoot_Original {
+    //@ ghost int sum;
+    //@ ensures \result >= 0 && \result < 10;
+    public static int function(int num) {
+        int sum = 0;
+        //@ maintaining num > 10 ==> 0 <= sum && sum < num;  
+        //@ decreases num;
+        while (num >= 10) {
+            sum = 0;
+ 
+            //@ maintaining num >= 0;  
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:6: verify: The prover cannot establish an assertion (LoopInvariant) in method function
+        //@ maintaining num > 10 ==> 0 <= sum && sum < num;  
+            ^
+1 verification failure
+
+==============================
+public class DigitRoot_Original {
+    //@ ghost int sum;
+    //@ ensures \result >= 0 && \result < 10;
+    public static int function(int num) {
+        int sum = 0;
+        //@ maintaining num > 10 ==> 0 <= sum && sum <= num;  
+        //@ decreases num;
+        while (num >= 10) {
+            sum = 0;
+ 
+            //@ maintaining num >= 0;  
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:7: verify: The prover cannot establish an assertion (LoopDecreases) in method function
+        //@ decreases num;
+            ^
+1 verification failure
+
+==============================
+public class DigitRoot_Original {
+    //@ ghost int sum;
+    //@ ensures \result >= 0 && \result < 10;
+    public static int function(int num) {
+        int sum = 0;
+        //@ maintaining num > 10 ==> 0 <= sum && sum <= num;  
+        //@ decreases num;  
+        while (num >= 10) {
+            sum = 0;
+ 
+            //@ maintaining num >= 0;  
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:7: verify: The prover cannot establish an assertion (LoopDecreases) in method function
+        //@ decreases num;  
+            ^
+1 verification failure
+
+==============================
+public class DigitRoot_Original {
+    //@ ghost int sum;
+    //@ ensures \result >= 0 && \result < 10;
+    public static int function(int num) {
+        int sum = 0;
+        //@ maintaining num > 10 ==> 0 <= sum && sum <= num;  
+ 
+        while (num >= 10) {
+            sum = 0;
+ 
+            //@ maintaining num >= 0;  
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:19: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:3:) in method function
+        return num;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:19:
+    //@ ensures \result >= 0 && \result < 10;
+        ^
+2 verification failures
+
+==============================
+public class DigitRoot_Original {
+    //@ ghost int sum;
+    //@ ensures \result > 0 && \result < 10;  
+    public static int function(int num) {
+        int sum = 0;
+        //@ maintaining num > 10 ==> 0 <= sum && sum <= num;  
+ 
+        while (num >= 10) {
+            sum = 0;
+ 
+            //@ maintaining num >= 0;  
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:19: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:3:) in method function
+        return num;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:19:
+    //@ ensures \result > 0 && \result < 10;  
+        ^
+2 verification failures
+
+==============================
+public class DigitRoot_Original {
+    //@ ghost int sum;
+    //@ ensures \result > 0 && \result <= 10;  
+    public static int function(int num) {
+        int sum = 0;
+        //@ maintaining num > 10 ==> 0 <= sum && sum <= num;  
+ 
+        while (num >= 10) {
+            sum = 0;
+ 
+            //@ maintaining num >= 0;  
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:19: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:3:) in method function
+        return num;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:19:
+    //@ ensures \result > 0 && \result <= 10;  
+        ^
+2 verification failures
+
+==============================
+public class DigitRoot_Original {
+    //@ ghost int sum;
+    //@ ensures \result >= 0 && \result < 10;  
+    public static int function(int num) {
+        int sum = 0;
+        //@ maintaining num > 10 ==> 0 <= sum && sum <= num;  
+ 
+        while (num >= 10) {
+            sum = 0;
+ 
+            //@ maintaining num >= 0;  
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:19: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:3:) in method function
+        return num;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:19:
+    //@ ensures \result >= 0 && \result < 10;  
+        ^
+2 verification failures
+
+==============================
+public class DigitRoot_Original {
+    //@ ghost int sum;
+    //@ ensures \result >= 0 && \result <= 10;  
+    public static int function(int num) {
+        int sum = 0;
+        //@ maintaining num > 10 ==> 0 <= sum && sum <= num;  
+ 
+        while (num >= 10) {
+            sum = 0;
+ 
+            //@ maintaining num >= 0;  
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:19: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:3:) in method function
+        return num;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:19:
+    //@ ensures \result >= 0 && \result <= 10;  
+        ^
+2 verification failures
+
+==============================
+public class DigitRoot_Original {
+    //@ ghost int sum;
+    //@ ensures \result + 1 >= 0 && \result < 10;  
+    public static int function(int num) {
+        int sum = 0;
+        //@ maintaining num > 10 ==> 0 <= sum && sum <= num;  
+ 
+        while (num >= 10) {
+            sum = 0;
+ 
+            //@ maintaining num >= 0;  
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:19: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:3:) in method function
+        return num;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:19:
+    //@ ensures \result + 1 >= 0 && \result < 10;  
+        ^
+2 verification failures
+
+==============================
+public class DigitRoot_Original {
+    //@ ghost int sum;
+    //@ ensures \result + 1 >= 0 && \result <= 10;  
+    public static int function(int num) {
+        int sum = 0;
+        //@ maintaining num > 10 ==> 0 <= sum && sum <= num;  
+ 
+        while (num >= 10) {
+            sum = 0;
+ 
+            //@ maintaining num >= 0;  
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:19: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:3:) in method function
+        return num;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DigitRoot_Original.java:19:
+    //@ ensures \result + 1 >= 0 && \result <= 10;  
+        ^
+2 verification failures
+
+==============================
+public class DigitRoot_Original {
+    //@ ghost int sum;
+ 
+    public static int function(int num) {
+        int sum = 0;
+        //@ maintaining num > 10 ==> 0 <= sum && sum <= num;  
+ 
+        while (num >= 10) {
+            sum = 0;
+ 
+            //@ maintaining num >= 0;  
+            //@ decreases num;
+            while (num > 0) {
+                sum = sum + (num % 10);
+                num = num / 10;
+            }
+            num = sum;
+        }
+        return num;
+    }
+}
+
+==============================
+
+==============================

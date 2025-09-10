@@ -1,0 +1,543 @@
+public class SafeLanding_Mutant2 {
+    //@ requires true;
+    //@ ensures \result == (height <= 5 && speed < 3 && tilt <= 10) ? 1 : 0;
+    public static int safeLanding(int height, int speed, int tilt) {
+        int safe = 1;
+        if (height > 5) {
+            safe = 0;
+        }
+        if (speed >= 3) {
+            safe = 0;
+        }
+        if (tilt > 10) {
+            safe = 0;
+        }
+        return safe;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == (height <= 5 && speed < 3 && tilt <= 10) ? 1 : 0;
+                        ^
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == (height <= 5 && speed < 3 && tilt <= 10) ? 1 : 0;
+                                                                    ^
+2 errors
+
+==============================
+public class SafeLanding_Mutant2 {
+    //@ requires true;
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+    public static int safeLanding(int height, int speed, int tilt) {
+        int safe = 1;
+        if (height > 5) {
+            safe = 0;
+        }
+        if (speed >= 3) {
+            safe = 0;
+        }
+        if (tilt > 10) {
+            safe = 0;
+        }
+        return safe;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+                        ^
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+                                                                          ^
+2 errors
+
+==============================
+public class SafeLanding_Mutant2 {
+    //@ requires true;
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+    public static int safeLanding(int height, int speed, int tilt) {
+        int safe = 1;
+        if (height > 5) {
+            safe = 0;
+        }
+        if (speed >= 3) {
+            safe = 0;
+        }
+        if (tilt > 10) {
+            safe = 0;
+        }
+        return safe;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+                        ^
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+                                                                          ^
+2 errors
+
+==============================
+public class SafeLanding_Mutant2 {
+    //@ requires true;
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+    public static int safeLanding(int height, int speed, int tilt) {
+        int safe = 1;
+        if (height > 5) {
+            safe = 0;
+        }
+        if (speed >= 3) {
+            safe = 0;
+        }
+        if (tilt > 10) {
+            safe = 0;
+        }
+        return safe;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+                        ^
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+                                                                          ^
+2 errors
+
+==============================
+public class SafeLanding_Mutant2 {
+    //@ requires true;
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+    public static int safeLanding(int height, int speed, int tilt) {
+        int safe = 1;
+        if (height > 5) {
+            safe = 0;
+        }
+        if (speed >= 3) {
+            safe = 0;
+        }
+        if (tilt > 10) {
+            safe = 0;
+        }
+        return safe;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+                        ^
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+                                                                          ^
+2 errors
+
+==============================
+public class SafeLanding_Mutant2 {
+    //@ requires true;
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+    public static int safeLanding(int height, int speed, int tilt) {
+        int safe = 1;
+        if (height > 5) {
+            safe = 0;
+        }
+        if (speed >= 3) {
+            safe = 0;
+        }
+        if (tilt > 10) {
+            safe = 0;
+        }
+        return safe;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+                        ^
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+                                                                          ^
+2 errors
+
+==============================
+public class SafeLanding_Mutant2 {
+    //@ requires true;
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+    public static int safeLanding(int height, int speed, int tilt) {
+        int safe = 1;
+        if (height > 5) {
+            safe = 0;
+        }
+        if (speed >= 3) {
+            safe = 0;
+        }
+        if (tilt > 10) {
+            safe = 0;
+        }
+        return safe;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+                        ^
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+                                                                          ^
+2 errors
+
+==============================
+public class SafeLanding_Mutant2 {
+    //@ requires true;
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+    public static int safeLanding(int height, int speed, int tilt) {
+        int safe = 1;
+        if (height > 5) {
+            safe = 0;
+        }
+        if (speed >= 3) {
+            safe = 0;
+        }
+        if (tilt > 10) {
+            safe = 0;
+        }
+        return safe;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+                        ^
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+                                                                          ^
+2 errors
+
+==============================
+public class SafeLanding_Mutant2 {
+    //@ requires true;
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+    public static int safeLanding(int height, int speed, int tilt) {
+        int safe = 1;
+        if (height > 5) {
+            safe = 0;
+        }
+        if (speed >= 3) {
+            safe = 0;
+        }
+        if (tilt > 10) {
+            safe = 0;
+        }
+        return safe;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+                        ^
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+                                                                          ^
+2 errors
+
+==============================
+public class SafeLanding_Mutant2 {
+    //@ requires true;
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+    public static int safeLanding(int height, int speed, int tilt) {
+        int safe = 1;
+        if (height > 5) {
+            safe = 0;
+        }
+        if (speed >= 3) {
+            safe = 0;
+        }
+        if (tilt > 10) {
+            safe = 0;
+        }
+        return safe;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+                        ^
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;
+                                                                          ^
+2 errors
+
+==============================
+public class SafeLanding_Mutant2 {
+    //@ requires true;
+    //@ ensures \result == ((height < 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;  
+    public static int safeLanding(int height, int speed, int tilt) {
+        int safe = 1;
+        if (height > 5) {
+            safe = 0;
+        }
+        if (speed >= 3) {
+            safe = 0;
+        }
+        if (tilt > 10) {
+            safe = 0;
+        }
+        return safe;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == ((height < 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;  
+                        ^
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == ((height < 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;  
+                                                                         ^
+2 errors
+
+==============================
+public class SafeLanding_Mutant2 {
+    //@ requires true;
+    //@ ensures \result == ((height < 5) && (speed <= 3) && (tilt < 10)) ? 1 : 0;  
+    public static int safeLanding(int height, int speed, int tilt) {
+        int safe = 1;
+        if (height > 5) {
+            safe = 0;
+        }
+        if (speed >= 3) {
+            safe = 0;
+        }
+        if (tilt > 10) {
+            safe = 0;
+        }
+        return safe;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == ((height < 5) && (speed <= 3) && (tilt < 10)) ? 1 : 0;  
+                        ^
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == ((height < 5) && (speed <= 3) && (tilt < 10)) ? 1 : 0;  
+                                                                         ^
+2 errors
+
+==============================
+public class SafeLanding_Mutant2 {
+    //@ requires true;
+    //@ ensures \result == ((height < 5) && (speed <= 3) && (tilt - 1 <= 10)) ? 1 : 0;  
+    public static int safeLanding(int height, int speed, int tilt) {
+        int safe = 1;
+        if (height > 5) {
+            safe = 0;
+        }
+        if (speed >= 3) {
+            safe = 0;
+        }
+        if (tilt > 10) {
+            safe = 0;
+        }
+        return safe;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == ((height < 5) && (speed <= 3) && (tilt - 1 <= 10)) ? 1 : 0;  
+                        ^
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == ((height < 5) && (speed <= 3) && (tilt - 1 <= 10)) ? 1 : 0;  
+                                                                              ^
+2 errors
+
+==============================
+public class SafeLanding_Mutant2 {
+    //@ requires true;
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;  
+    public static int safeLanding(int height, int speed, int tilt) {
+        int safe = 1;
+        if (height > 5) {
+            safe = 0;
+        }
+        if (speed >= 3) {
+            safe = 0;
+        }
+        if (tilt > 10) {
+            safe = 0;
+        }
+        return safe;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;  
+                        ^
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == ((height <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;  
+                                                                          ^
+2 errors
+
+==============================
+public class SafeLanding_Mutant2 {
+    //@ requires true;
+    //@ ensures \result == ((height <= 5) && (speed <= 3) && (tilt < 10)) ? 1 : 0;  
+    public static int safeLanding(int height, int speed, int tilt) {
+        int safe = 1;
+        if (height > 5) {
+            safe = 0;
+        }
+        if (speed >= 3) {
+            safe = 0;
+        }
+        if (tilt > 10) {
+            safe = 0;
+        }
+        return safe;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == ((height <= 5) && (speed <= 3) && (tilt < 10)) ? 1 : 0;  
+                        ^
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == ((height <= 5) && (speed <= 3) && (tilt < 10)) ? 1 : 0;  
+                                                                          ^
+2 errors
+
+==============================
+public class SafeLanding_Mutant2 {
+    //@ requires true;
+    //@ ensures \result == ((height <= 5) && (speed <= 3) && (tilt - 1 <= 10)) ? 1 : 0;  
+    public static int safeLanding(int height, int speed, int tilt) {
+        int safe = 1;
+        if (height > 5) {
+            safe = 0;
+        }
+        if (speed >= 3) {
+            safe = 0;
+        }
+        if (tilt > 10) {
+            safe = 0;
+        }
+        return safe;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == ((height <= 5) && (speed <= 3) && (tilt - 1 <= 10)) ? 1 : 0;  
+                        ^
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == ((height <= 5) && (speed <= 3) && (tilt - 1 <= 10)) ? 1 : 0;  
+                                                                               ^
+2 errors
+
+==============================
+public class SafeLanding_Mutant2 {
+    //@ requires true;
+    //@ ensures \result == ((height - 1 <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;  
+    public static int safeLanding(int height, int speed, int tilt) {
+        int safe = 1;
+        if (height > 5) {
+            safe = 0;
+        }
+        if (speed >= 3) {
+            safe = 0;
+        }
+        if (tilt > 10) {
+            safe = 0;
+        }
+        return safe;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == ((height - 1 <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;  
+                        ^
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == ((height - 1 <= 5) && (speed < 3) && (tilt <= 10)) ? 1 : 0;  
+                                                                              ^
+2 errors
+
+==============================
+public class SafeLanding_Mutant2 {
+    //@ requires true;
+    //@ ensures \result == ((height - 1 <= 5) && (speed <= 3) && (tilt < 10)) ? 1 : 0;  
+    public static int safeLanding(int height, int speed, int tilt) {
+        int safe = 1;
+        if (height > 5) {
+            safe = 0;
+        }
+        if (speed >= 3) {
+            safe = 0;
+        }
+        if (tilt > 10) {
+            safe = 0;
+        }
+        return safe;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == ((height - 1 <= 5) && (speed <= 3) && (tilt < 10)) ? 1 : 0;  
+                        ^
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == ((height - 1 <= 5) && (speed <= 3) && (tilt < 10)) ? 1 : 0;  
+                                                                              ^
+2 errors
+
+==============================
+public class SafeLanding_Mutant2 {
+    //@ requires true;
+    //@ ensures \result == ((height - 1 <= 5) && (speed <= 3) && (tilt - 1 <= 10)) ? 1 : 0;  
+    public static int safeLanding(int height, int speed, int tilt) {
+        int safe = 1;
+        if (height > 5) {
+            safe = 0;
+        }
+        if (speed >= 3) {
+            safe = 0;
+        }
+        if (tilt > 10) {
+            safe = 0;
+        }
+        return safe;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == ((height - 1 <= 5) && (speed <= 3) && (tilt - 1 <= 10)) ? 1 : 0;  
+                        ^
+/root/082602-gpt-specgen/tmp/SafeLanding_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == ((height - 1 <= 5) && (speed <= 3) && (tilt - 1 <= 10)) ? 1 : 0;  
+                                                                                   ^
+2 errors
+
+==============================
+public class SafeLanding_Mutant2 {
+    //@ requires true;
+ 
+    public static int safeLanding(int height, int speed, int tilt) {
+        int safe = 1;
+        if (height > 5) {
+            safe = 0;
+        }
+        if (speed >= 3) {
+            safe = 0;
+        }
+        if (tilt > 10) {
+            safe = 0;
+        }
+        return safe;
+    }
+}
+
+==============================
+
+==============================

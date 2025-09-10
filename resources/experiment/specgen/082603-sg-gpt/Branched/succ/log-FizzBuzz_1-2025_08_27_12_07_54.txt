@@ -1,0 +1,67 @@
+public class FizzBuzz_Mutant1 {
+    //@ requires true;
+    //@ ensures \result == 0 || \result == 5;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        if (n % 3 == 0) {
+            res += 5; // change from 3 to 5
+        }
+        if (n % 5 == 0) {
+            res += 5;
+        }
+        return res;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:12: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:3:) in method fizzBuzz
+        return res;
+        ^
+/root/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:12:
+    //@ ensures \result == 0 || \result == 5;
+        ^
+2 verification failures
+
+==============================
+public class FizzBuzz_Mutant1 {
+    //@ requires true;
+    //@ ensures \result == 0 || \result == 5;  
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        if (n % 3 == 0) {
+            res += 5; // change from 3 to 5
+        }
+        if (n % 5 == 0) {
+            res += 5;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:12: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:3:) in method fizzBuzz
+        return res;
+        ^
+/root/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:12:
+    //@ ensures \result == 0 || \result == 5;  
+        ^
+2 verification failures
+
+==============================
+public class FizzBuzz_Mutant1 {
+    //@ requires true;
+ 
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        if (n % 3 == 0) {
+            res += 5; // change from 3 to 5
+        }
+        if (n % 5 == 0) {
+            res += 5;
+        }
+        return res;
+    }
+}
+
+==============================
+
+==============================

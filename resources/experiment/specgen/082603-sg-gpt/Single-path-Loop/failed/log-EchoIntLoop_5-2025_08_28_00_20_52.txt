@@ -1,0 +1,264 @@
+public class EchoIntLoop_Mutant5 {
+    //@ ensures \result == 0;
+    /*@ pure @*/ public static int echo(int x) {
+        int res = 0;
+        //@ maintaining res == \sum i; 0 <= i && i < \old(x); -1;
+        //@ decreases x - i;
+        for(int i = 0; i < x; i++) {
+            res = res - 1;
+        }
+        return res;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/EchoIntLoop_Mutant5.java:5: error: <identifier> expected
+        //@ maintaining res == \sum i; 0 <= i && i < \old(x); -1;
+                                     ^
+1 error
+
+==============================
+public class EchoIntLoop_Mutant5 {
+    //@ ensures \result == 0;
+    /*@ pure @*/ public static int echo(int x) {
+        int res = 0;
+        //@ maintaining res == \sum int i; 0 <= i && i < \old(x); -1;
+        //@ decreases x - i;
+        for(int i = 0; i < x; i++) {
+            res = res - 1;
+        }
+        return res;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/EchoIntLoop_Mutant5.java:5: error: variable i is already defined in method echo(int)
+        //@ maintaining res == \sum int i; 0 <= i && i < \old(x); -1;
+                                        ^
+1 error
+
+==============================
+public class EchoIntLoop_Mutant5 {
+    //@ ensures \result == 0;
+    /*@ pure @*/ public static int echo(int x) {
+        int res = 0;
+        //@ maintaining res == \sum int j; 0 <= j && j < \old(x); -1;
+        //@ decreases x - j;
+        for(int j = 0; j < x; j++) {
+            res = res - 1;
+        }
+        return res;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/EchoIntLoop_Mutant5.java:5: error: variable j is already defined in method echo(int)
+        //@ maintaining res == \sum int j; 0 <= j && j < \old(x); -1;
+                                        ^
+1 error
+
+==============================
+public class EchoIntLoop_Mutant5 {
+    //@ ensures \result == 0;
+    /*@ pure @*/ public static int echo(int x) {
+        int res = 0;
+        //@ maintaining res == \sum int k; 0 <= k && k < \old(x); -1;
+        //@ decreases x - k;
+        for(int k = 0; k < x; k++) {
+            res = res - 1;
+        }
+        return res;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/EchoIntLoop_Mutant5.java:5: error: variable k is already defined in method echo(int)
+        //@ maintaining res == \sum int k; 0 <= k && k < \old(x); -1;
+                                        ^
+1 error
+
+==============================
+public class EchoIntLoop_Mutant5 {
+    //@ ensures \result == 0;
+    /*@ pure @*/ public static int echo(int x) {
+        int res = 0;
+        //@ maintaining res == \sum int m; 0 <= m && m < \old(x); -1;
+        //@ decreases x - m;
+        for(int m = 0; m < x; m++) {
+            res = res - 1;
+        }
+        return res;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/EchoIntLoop_Mutant5.java:5: error: variable m is already defined in method echo(int)
+        //@ maintaining res == \sum int m; 0 <= m && m < \old(x); -1;
+                                        ^
+1 error
+
+==============================
+public class EchoIntLoop_Mutant5 {
+    //@ ensures \result == 0;
+    /*@ pure @*/ public static int echo(int x) {
+        int res = 0;
+        //@ maintaining res == \sum int n; 0 <= n && n < \old(x); -1;
+        //@ decreases x - n;
+        for(int n = 0; n < x; n++) {
+            res = res - 1;
+        }
+        return res;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/EchoIntLoop_Mutant5.java:5: error: variable n is already defined in method echo(int)
+        //@ maintaining res == \sum int n; 0 <= n && n < \old(x); -1;
+                                        ^
+1 error
+
+==============================
+public class EchoIntLoop_Mutant5 {
+    //@ ensures \result == 0;
+    /*@ pure @*/ public static int echo(int x) {
+        int res = 0;
+        //@ maintaining res == \sum int a; 0 <= a && a < \old(x); -1;
+        //@ decreases x - a;
+        for(int a = 0; a < x; a++) {
+            res = res - 1;
+        }
+        return res;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/EchoIntLoop_Mutant5.java:5: error: variable a is already defined in method echo(int)
+        //@ maintaining res == \sum int a; 0 <= a && a < \old(x); -1;
+                                        ^
+1 error
+
+==============================
+public class EchoIntLoop_Mutant5 {
+    //@ ensures \result == 0;
+    /*@ pure @*/ public static int echo(int x) {
+        int res = 0;
+        //@ maintaining res == \sum int b; 0 <= b && b < \old(x); -1;
+        //@ decreases x - b;
+        for(int b = 0; b < x; b++) {
+            res = res - 1;
+        }
+        return res;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/EchoIntLoop_Mutant5.java:5: error: variable b is already defined in method echo(int)
+        //@ maintaining res == \sum int b; 0 <= b && b < \old(x); -1;
+                                        ^
+1 error
+
+==============================
+public class EchoIntLoop_Mutant5 {
+    //@ ensures \result == 0;
+    /*@ pure @*/ public static int echo(int x) {
+        int res = 0;
+        //@ maintaining res == \sum int c; 0 <= c && c < \old(x); -1;
+        //@ decreases x - c;
+        for(int c = 0; c < x; c++) {
+            res = res - 1;
+        }
+        return res;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/EchoIntLoop_Mutant5.java:5: error: variable c is already defined in method echo(int)
+        //@ maintaining res == \sum int c; 0 <= c && c < \old(x); -1;
+                                        ^
+1 error
+
+==============================
+public class EchoIntLoop_Mutant5 {
+    //@ ensures \result == 0;
+    /*@ pure @*/ public static int echo(int x) {
+        int res = 0;
+        //@ maintaining res == \sum int d; 0 <= d && d < \old(x); -1;
+        //@ decreases x - d;
+        for(int d = 0; d < x; d++) {
+            res = res - 1;
+        }
+        return res;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/EchoIntLoop_Mutant5.java:5: error: variable d is already defined in method echo(int)
+        //@ maintaining res == \sum int d; 0 <= d && d < \old(x); -1;
+                                        ^
+1 error
+
+==============================
+public class EchoIntLoop_Mutant5 {
+    //@ ensures \result == 0;
+    /*@ pure @*/ public static int echo(int x) {
+        int res = 0;
+        //@ maintaining res == \sum int d; 0 < d && d < \old(x); -1;  
+        //@ decreases x - d;
+        for(int d = 0; d < x; d++) {
+            res = res - 1;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/EchoIntLoop_Mutant5.java:5: error: variable d is already defined in method echo(int)
+        //@ maintaining res == \sum int d; 0 < d && d < \old(x); -1;  
+                                        ^
+1 error
+
+==============================
+public class EchoIntLoop_Mutant5 {
+    //@ ensures \result == 0;
+    /*@ pure @*/ public static int echo(int x) {
+        int res = 0;
+        //@ maintaining res == \sum int d; 0 < d && d <= \old(x); -1;  
+        //@ decreases x - d;
+        for(int d = 0; d < x; d++) {
+            res = res - 1;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/EchoIntLoop_Mutant5.java:5: error: variable d is already defined in method echo(int)
+        //@ maintaining res == \sum int d; 0 < d && d <= \old(x); -1;  
+                                        ^
+1 error
+
+==============================
+public class EchoIntLoop_Mutant5 {
+    //@ ensures \result == 0;
+    /*@ pure @*/ public static int echo(int x) {
+        int res = 0;
+        //@ maintaining res == \sum int d; 0 <= d && d < \old(x); -1;  
+        //@ decreases x - d;
+        for(int d = 0; d < x; d++) {
+            res = res - 1;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/EchoIntLoop_Mutant5.java:5: error: variable d is already defined in method echo(int)
+        //@ maintaining res == \sum int d; 0 <= d && d < \old(x); -1;  
+                                        ^
+1 error
+
+==============================
+public class EchoIntLoop_Mutant5 {
+    //@ ensures \result == 0;
+    /*@ pure @*/ public static int echo(int x) {
+        int res = 0;
+        //@ maintaining res == \sum int d; 0 <= d && d <= \old(x); -1;  
+        //@ decreases x - d;
+        for(int d = 0; d < x; d++) {
+            res = res - 1;
+        }
+        return res;
+    }
+}
+
+==============================

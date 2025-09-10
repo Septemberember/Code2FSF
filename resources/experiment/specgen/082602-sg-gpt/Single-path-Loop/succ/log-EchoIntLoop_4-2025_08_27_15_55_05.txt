@@ -1,0 +1,61 @@
+public class EchoIntLoop_Mutant4 {
+    //@ ensures \result == 2 * x;
+    public static int echo(int x) {
+        int res = 0;
+        //@ maintaining res == 2 * i;
+        //@ decreases x - i;
+        for(int i = 0; i < x; i++) {
+            res = res + 2;
+        }
+        return res;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/EchoIntLoop_Mutant4.java:10: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/EchoIntLoop_Mutant4.java:2:) in method echo
+        return res;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/EchoIntLoop_Mutant4.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/EchoIntLoop_Mutant4.java:10:
+    //@ ensures \result == 2 * x;
+        ^
+2 verification failures
+
+==============================
+public class EchoIntLoop_Mutant4 {
+    //@ ensures \result == 2 * x;  
+    public static int echo(int x) {
+        int res = 0;
+        //@ maintaining res == 2 * i;
+        //@ decreases x - i;
+        for(int i = 0; i < x; i++) {
+            res = res + 2;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/EchoIntLoop_Mutant4.java:10: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/EchoIntLoop_Mutant4.java:2:) in method echo
+        return res;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/EchoIntLoop_Mutant4.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/EchoIntLoop_Mutant4.java:10:
+    //@ ensures \result == 2 * x;  
+        ^
+2 verification failures
+
+==============================
+public class EchoIntLoop_Mutant4 {
+ 
+    public static int echo(int x) {
+        int res = 0;
+        //@ maintaining res == 2 * i;
+        //@ decreases x - i;
+        for(int i = 0; i < x; i++) {
+            res = res + 2;
+        }
+        return res;
+    }
+}
+
+==============================
+
+==============================

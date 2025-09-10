@@ -1,0 +1,45 @@
+public class MyPower_Mutant2 {
+    //@ ensures \result >= 1;
+    //@ ensures \result == 1 ==> n == 0;
+    //@ ensures \result == x^ n;
+    public static int power(int x, int n) {
+        int res = 1;
+        //@ maintaining 1 <= i && i <= n + 1;
+        //@ maintaining res == x^(i-1);
+        //@ decreases n - i;
+        for(int i = 1; i <= n; i++){
+            res = res * x;
+        }
+        return res;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant2.java:4: error: bad operand types for binary operator '^'
+    //@ ensures \result == x^ n;
+                            ^
+  first type:  boolean
+  second type: int
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant2.java:8: error: bad operand types for binary operator '^'
+        //@ maintaining res == x^(i-1);
+                                ^
+  first type:  boolean
+  second type: int
+2 errors
+
+==============================
+public class MyPower_Mutant2 {
+    //@ ensures \result >= 1;
+    //@ ensures \result == 1 ==> n == 0;
+    //@ ensures \result == Math.pow(x, n);
+    public static int power(int x, int n) {
+        int res = 1;
+        //@ maintaining 1 <= i && i <= n + 1;
+        //@ maintaining res == Math.pow(x, i-1);
+        //@ decreases n - i;
+        for(int i = 1; i <= n; i++){
+            res = res * x;
+        }
+        return res;
+    }
+}
+==============================

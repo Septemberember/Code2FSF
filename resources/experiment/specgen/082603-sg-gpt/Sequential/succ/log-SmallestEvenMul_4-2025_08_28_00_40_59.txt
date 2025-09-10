@@ -1,0 +1,7 @@
+public class SmallestEvenMul_Mutant4 {
+    //@ ensures \result == 0;
+    /*@ pure @*/ public static int smallestEvenMultiple(int n) {
+        return 0;
+    }
+}
+==============================

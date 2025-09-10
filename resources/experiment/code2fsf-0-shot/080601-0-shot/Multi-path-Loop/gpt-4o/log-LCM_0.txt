@@ -1,0 +1,65 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class LCM_Original {
+
+    public static int lcm(int num1, int num2)
+    {
+        if (num1 == 0 || num2 == 0) {
+            return -1;
+        }
+        if (num1 < 0)
+            num1 = -num1;
+        if (num2 < 0)
+            num2 = -num2;
+
+        int result = 0;
+        if( num1 > num2 ){
+            result = num1;
+        }
+        else{
+            result = num2;
+        }
+
+            while (result < Integer.MAX_VALUE)
+            {
+                if (result % num1 == 0 && result % num2 == 0)
+                {
+                    break;
+                }
+                result++;
+            }
+
+        if (result % num1 == 0 && result % num2 == 0) {
+            return result;
+        }
+        return -1;
+    }
+
+}
+
+```
+*end* role user
+start role assistant
+```
+T1: num1 == 0 || num2 == 0
+D1: return_value == -1
+T2: num1 < 0 && num2 < 0
+D2: return_value == lcm(-num1, -num2)
+T3: num1 < 0 && num2 >= 0
+D3: return_value == lcm(-num1, num2)
+T4: num1 >= 0 && num2 < 0
+D4: return_value == lcm(num1, -num2)
+T5: num1 > num2 && num1 >= 0 && num2 >= 0
+D5: return_value == lcm(num1, num2)
+T6: num1 <= num2 && num1 >= 0 && num2 >= 0
+D6: return_value == lcm(num1, num2)
+```
+*end* role assistant
+start role user
+It was found that T in the FSF does not satisfy the mutual exclusivity requirement,especially, Ti && Tj :[(num1 == 0 || num2 == 0) && (num1 < 0 && num2 >= 0)] is satisfiable assigned as [num1=-2147483648, num2=0]，please regenerate FSF，making sure the mutual exclusivity of FSF
+*end* role user
+start role remark
+Validation FAIL--Conversation rounds number is over the maxRounds
+Current conversation round is: [1]
+*end* role remark

@@ -1,0 +1,55 @@
+public class SmallestEvenMulBranch_Mutant3 {
+    //@ requires n != Integer.MIN_VALUE;
+    //@ ensures \result % 2 == 0 && (\result == 2 * n || \result == n);
+    public static int smallestEvenMultiple(int n) {
+        if (n % 2 != 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant3.java:6: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant3.java:3:) in method smallestEvenMultiple
+            return n;
+            ^
+/root/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant3.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant3.java:6:
+    //@ ensures \result % 2 == 0 && (\result == 2 * n || \result == n);
+        ^
+2 verification failures
+
+==============================
+public class SmallestEvenMulBranch_Mutant3 {
+    //@ requires n != Integer.MIN_VALUE;
+    //@ ensures \result % 2 == 0 && (\result == 2 * n || \result == n);  
+    public static int smallestEvenMultiple(int n) {
+        if (n % 2 != 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant3.java:6: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant3.java:3:) in method smallestEvenMultiple
+            return n;
+            ^
+/root/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant3.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant3.java:6:
+    //@ ensures \result % 2 == 0 && (\result == 2 * n || \result == n);  
+        ^
+2 verification failures
+
+==============================
+public class SmallestEvenMulBranch_Mutant3 {
+    //@ requires n != Integer.MIN_VALUE;
+ 
+    public static int smallestEvenMultiple(int n) {
+        if (n % 2 != 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+}
+
+==============================
+
+==============================

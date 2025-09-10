@@ -1,0 +1,42 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class SubLoop_Mutant5 {
+    public static int subLoop(int x, int y) {
+        int sum = x;
+        if (y > 0) {
+            int n = 0;
+            while (n > 0) {
+                sum = sum - 1;
+                n = n - 1;
+            }
+        } else {
+            int n = -y;
+            while (n > 0) {
+                sum = sum + 1;
+                n = n - 1;
+            }
+        }
+        return sum;
+    }
+}
+
+```
+*end* role user
+start role assistant
+```
+T1: y > 0 && n <= 0
+D1: return_value == x
+T2: y > 0 && n > 0
+D2: return_value == x - n
+T3: y <= 0
+D3: return_value == x + (-y)
+```
+*end* role assistant
+start role user
+There exist variables which do not belong to input params of the program:n, please regenerate the FSF, avoiding these variables!
+*end* role user
+start role remark
+Validation FAIL--Conversation rounds number is over the maxRounds
+Current conversation round is: [1]
+*end* role remark

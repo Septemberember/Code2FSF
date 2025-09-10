@@ -1,0 +1,27 @@
+public class CanWinNim_Mutant5 {
+    //@ requires true;
+    //@ ensures \result == n % 2 != 0;
+    /*@ spec_public @*/ public static boolean canWinNim(int n) {
+        return n % 2 != 0;   // Change 4 to 2
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/CanWinNim_Mutant5.java:3: error: incomparable types: boolean and int
+    //@ ensures \result == n % 2 != 0;
+                        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/CanWinNim_Mutant5.java:3: error: incomparable types: boolean and int
+    //@ ensures \result == n % 2 != 0;
+                                 ^
+2 errors
+
+==============================
+public class CanWinNim_Mutant5 {
+    //@ requires true;
+    //@ ensures \result == (n % 2 != 0);
+    /*@ spec_public @*/ public static boolean canWinNim(int n) {
+        return n % 2 != 0;   // Change 4 to 2
+    }
+}
+==============================
+
+==============================

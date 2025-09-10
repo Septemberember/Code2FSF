@@ -1,0 +1,40 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class PrimeCheck_Mutant2 {
+    public static boolean isPrime(int a) {
+        int i = 2;
+        int mid = a / 2;
+        while (i < mid) {
+            if (a % i == 0)
+                return false;
+            i++;
+        }
+        return true;
+    }
+}
+
+```
+*end* role user
+start role assistant
+```
+T1: a <= 1
+D1: return_value == true
+
+T2: a > 1 && (a % i == 0 && i < mid)
+D2: return_value == false
+
+T3: a > 1 && !(a % i == 0 && i < mid)
+D3: return_value == true
+
+T4: a == 2
+D4: return_value == true
+```
+*end* role assistant
+start role user
+There exist variables which do not belong to input params of the program:i,mid, please regenerate the FSF, avoiding these variables!
+*end* role user
+start role remark
+Validation FAIL--Conversation rounds number is over the maxRounds
+Current conversation round is: [1]
+*end* role remark

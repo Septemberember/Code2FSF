@@ -1,0 +1,14 @@
+public class SmallestEvenMulBranch_Mutant5 {
+
+    //@ ensures n%2 == 0 ==> \result == n;
+    //@ ensures n%2 != 0 ==> \result == n;
+    public static /*@ pure @*/ int smallestEvenMultiple(int n) {
+        if (n % 2 == 0) {
+            return n;
+        }
+        return n;
+    }
+}
+==============================
+
+==============================

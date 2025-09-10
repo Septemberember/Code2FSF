@@ -1,0 +1,55 @@
+public class SmallestEvenMulBranch_Mutant1 {
+    //@ ensures \result % 2 == 0;
+    //@ ensures \result % 3 == 0 <==> n % 3 == 0;
+    public static int smallestEvenMultiple(int n) {
+        if (n % 3 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant1.java:6: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant1.java:2:) in method smallestEvenMultiple
+            return n;
+            ^
+/root/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant1.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant1.java:6:
+    //@ ensures \result % 2 == 0;
+        ^
+2 verification failures
+
+==============================
+public class SmallestEvenMulBranch_Mutant1 {
+    //@ ensures \result % 2 == 0;  
+    //@ ensures \result % 3 == 0 <==> n % 3 == 0;
+    public static int smallestEvenMultiple(int n) {
+        if (n % 3 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant1.java:6: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant1.java:2:) in method smallestEvenMultiple
+            return n;
+            ^
+/root/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant1.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant1.java:6:
+    //@ ensures \result % 2 == 0;  
+        ^
+2 verification failures
+
+==============================
+public class SmallestEvenMulBranch_Mutant1 {
+ 
+    //@ ensures \result % 3 == 0 <==> n % 3 == 0;
+    public static int smallestEvenMultiple(int n) {
+        if (n % 3 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+}
+
+==============================
+
+==============================

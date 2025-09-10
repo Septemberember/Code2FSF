@@ -1,0 +1,48 @@
+public class LeapYear_Mutant4 {
+    //@ ensures \result == (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) <==> leap == true;
+    //@ ensures \result == !(year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) <==> leap == false;
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0)
+                    leap = true;
+            } else
+                leap = true;
+        } else
+            leap = false;
+        return leap;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/LeapYear_Mutant4.java:2: error: cannot find symbol
+    //@ ensures \result == (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) <==> leap == true;
+                                                                                        ^
+  symbol:   variable leap
+  location: class LeapYear_Mutant4
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/LeapYear_Mutant4.java:3: error: cannot find symbol
+    //@ ensures \result == !(year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) <==> leap == false;
+                                                                                         ^
+  symbol:   variable leap
+  location: class LeapYear_Mutant4
+2 errors
+
+==============================
+public class LeapYear_Mutant4 {
+    //@ ensures \result == (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0)
+                    leap = true;
+            } else
+                leap = true;
+        } else
+            leap = false;
+        return leap;
+    }
+}
+==============================
+
+==============================

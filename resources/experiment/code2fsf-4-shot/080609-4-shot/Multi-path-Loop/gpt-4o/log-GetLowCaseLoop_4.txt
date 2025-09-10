@@ -1,0 +1,40 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class GetLowCaseLoop {
+    public static char getLowCase(char c) {
+        if(c < 'F' || c > 'Z') {
+            return 0;
+        }
+        char t = 'f';
+        while(t <= 'z' && t != c - 'A' + 'a') {
+            t++;
+        }
+        return t;
+    }
+}
+
+```
+*end* role user
+start role assistant
+```
+T1: c < 'F' || c > 'Z'
+D1: return_value == 0
+
+T2: c >= 'F' && c <= 'Z' && (c - 'A' + 'a') < 'f'
+D2: return_value == 'f'
+
+T3: c >= 'F' && c <= 'Z' && (c - 'A' + 'a') > 'z'
+D3: return_value == 'f'
+
+T4: c >= 'F' && c <= 'Z' && (c - 'A' + 'a') >= 'f' && (c - 'A' + 'a') <= 'z'
+D4: return_value == (c - 'A' + 'a')
+```
+*end* role assistant
+start role user
+There exists c >= 'F' && c <= 'Z' && (c - 'A' + 'a') < 'f' in the FSF, and it is a unsatisfiable，please regenerate the FSF，avoiding contains this kind of unsatisfiable T!
+*end* role user
+start role remark
+Validation FAIL--Conversation rounds number is over the maxRounds
+Current conversation round is: [1]
+*end* role remark

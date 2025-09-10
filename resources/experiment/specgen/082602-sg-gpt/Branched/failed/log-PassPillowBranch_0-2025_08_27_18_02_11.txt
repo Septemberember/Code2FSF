@@ -1,0 +1,56 @@
+public class PassPillowBranch_Original {
+    //@ ensures \result > 0 && \result <= n;
+    public static int passPillow(int n, int time) {
+        if(n - 1 < 0){
+            throw new IllegalArgumentException("n is less than 1");
+        }
+        time = time % ((n - 1) * 2);
+        //@ maintaining 0 <= time && time < (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/PassPillowBranch_Original.java:8: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 <= time && time < (n - 1) * 2;
+            ^
+1 error
+
+==============================
+public class PassPillowBranch_Original {
+    //@ ensures \result > 0 && \result <= n;
+    public static int passPillow(int n, int time) {
+        if(n - 1 < 0){
+            throw new IllegalArgumentException("n is less than 1");
+        }
+        time = time % ((n - 1) * 2);
+        //@ maintaining 0 <= time && time < (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/PassPillowBranch_Original.java:8: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 <= time && time < (n - 1) * 2;
+            ^
+1 error
+
+==============================
+public class PassPillowBranch_Original {
+    //@ ensures \result > 0 && \result <= n;
+    public static int passPillow(int n, int time) {
+        if(n - 1 < 0){
+            throw new IllegalArgumentException("n is less than 1");
+        }
+        time = time % ((n - 1) * 2);
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+}
+==============================

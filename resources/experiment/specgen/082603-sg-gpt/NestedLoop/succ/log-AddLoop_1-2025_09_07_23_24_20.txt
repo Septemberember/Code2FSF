@@ -1,0 +1,684 @@
+public class AddLoop_Mutant1 {
+    //@ ensures \result == x + y;
+    public static int AddLoop(int x, int y) {
+        int sum = x;
+        if (y > 0) {
+            int n = y;
+	    //@ maintaining n >= 0;
+	    //@ maintaining sum == x + (y - n);
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum + 1;
+                n = n - 2;
+            }
+        } else {
+            int n = -y;
+	    //@ maintaining n >= 0;
+	    //@ maintaining sum == x + (y + n);
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum - 1;
+                n = n - 2;
+            }
+        }
+        return sum;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:7: verify: The prover cannot establish an assertion (LoopInvariant) in method AddLoop
+	    //@ maintaining n >= 0;
+	        ^
+1 verification failure
+
+==============================
+public class AddLoop_Mutant1 {
+    //@ ensures \result == x + y;
+    public static int AddLoop(int x, int y) {
+        int sum = x;
+        if (y > 0) {
+            int n = y;
+	    //@ maintaining n > 0;  
+	    //@ maintaining sum == x + (y - n);
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum + 1;
+                n = n - 2;
+            }
+        } else {
+            int n = -y;
+	    //@ maintaining n >= 0;
+	    //@ maintaining sum == x + (y + n);
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum - 1;
+                n = n - 2;
+            }
+        }
+        return sum;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:7: verify: The prover cannot establish an assertion (LoopInvariant) in method AddLoop
+	    //@ maintaining n > 0;  
+	        ^
+1 verification failure
+
+==============================
+public class AddLoop_Mutant1 {
+    //@ ensures \result == x + y;
+    public static int AddLoop(int x, int y) {
+        int sum = x;
+        if (y > 0) {
+            int n = y;
+	    //@ maintaining n >= 0;  
+	    //@ maintaining sum == x + (y - n);
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum + 1;
+                n = n - 2;
+            }
+        } else {
+            int n = -y;
+	    //@ maintaining n >= 0;
+	    //@ maintaining sum == x + (y + n);
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum - 1;
+                n = n - 2;
+            }
+        }
+        return sum;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:7: verify: The prover cannot establish an assertion (LoopInvariant) in method AddLoop
+	    //@ maintaining n >= 0;  
+	        ^
+1 verification failure
+
+==============================
+public class AddLoop_Mutant1 {
+    //@ ensures \result == x + y;
+    public static int AddLoop(int x, int y) {
+        int sum = x;
+        if (y > 0) {
+            int n = y;
+	    //@ maintaining n + 1 >= 0;  
+	    //@ maintaining sum == x + (y - n);
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum + 1;
+                n = n - 2;
+            }
+        } else {
+            int n = -y;
+	    //@ maintaining n >= 0;
+	    //@ maintaining sum == x + (y + n);
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum - 1;
+                n = n - 2;
+            }
+        }
+        return sum;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:24: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:2:) in method AddLoop
+        return sum;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:24:
+    //@ ensures \result == x + y;
+        ^
+2 verification failures
+
+==============================
+public class AddLoop_Mutant1 {
+    //@ ensures \result == x + y;  
+    public static int AddLoop(int x, int y) {
+        int sum = x;
+        if (y > 0) {
+            int n = y;
+	    //@ maintaining n + 1 >= 0;  
+	    //@ maintaining sum == x + (y - n);
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum + 1;
+                n = n - 2;
+            }
+        } else {
+            int n = -y;
+	    //@ maintaining n >= 0;
+	    //@ maintaining sum == x + (y + n);
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum - 1;
+                n = n - 2;
+            }
+        }
+        return sum;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:24: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:2:) in method AddLoop
+        return sum;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:24:
+    //@ ensures \result == x + y;  
+        ^
+2 verification failures
+
+==============================
+public class AddLoop_Mutant1 {
+    //@ ensures \result == x - y;  
+    public static int AddLoop(int x, int y) {
+        int sum = x;
+        if (y > 0) {
+            int n = y;
+	    //@ maintaining n + 1 >= 0;  
+	    //@ maintaining sum == x + (y - n);
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum + 1;
+                n = n - 2;
+            }
+        } else {
+            int n = -y;
+	    //@ maintaining n >= 0;
+	    //@ maintaining sum == x + (y + n);
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum - 1;
+                n = n - 2;
+            }
+        }
+        return sum;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:24: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:2:) in method AddLoop
+        return sum;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:24:
+    //@ ensures \result == x - y;  
+        ^
+2 verification failures
+
+==============================
+public class AddLoop_Mutant1 {
+ 
+    public static int AddLoop(int x, int y) {
+        int sum = x;
+        if (y > 0) {
+            int n = y;
+	    //@ maintaining n + 1 >= 0;  
+	    //@ maintaining sum == x + (y - n);
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum + 1;
+                n = n - 2;
+            }
+        } else {
+            int n = -y;
+	    //@ maintaining n >= 0;
+	    //@ maintaining sum == x + (y + n);
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum - 1;
+                n = n - 2;
+            }
+        }
+        return sum;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:8: verify: The prover cannot establish an assertion (LoopInvariant) in method AddLoop
+	    //@ maintaining sum == x + (y - n);
+	        ^
+1 verification failure
+
+==============================
+public class AddLoop_Mutant1 {
+ 
+    public static int AddLoop(int x, int y) {
+        int sum = x;
+        if (y > 0) {
+            int n = y;
+	    //@ maintaining n + 1 >= 0;  
+	    //@ maintaining sum == x + (y - n);  
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum + 1;
+                n = n - 2;
+            }
+        } else {
+            int n = -y;
+	    //@ maintaining n >= 0;
+	    //@ maintaining sum == x + (y + n);
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum - 1;
+                n = n - 2;
+            }
+        }
+        return sum;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:8: verify: The prover cannot establish an assertion (LoopInvariant) in method AddLoop
+	    //@ maintaining sum == x + (y - n);  
+	        ^
+1 verification failure
+
+==============================
+public class AddLoop_Mutant1 {
+ 
+    public static int AddLoop(int x, int y) {
+        int sum = x;
+        if (y > 0) {
+            int n = y;
+	    //@ maintaining n + 1 >= 0;  
+	    //@ maintaining sum == x + (y + n);  
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum + 1;
+                n = n - 2;
+            }
+        } else {
+            int n = -y;
+	    //@ maintaining n >= 0;
+	    //@ maintaining sum == x + (y + n);
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum - 1;
+                n = n - 2;
+            }
+        }
+        return sum;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:8: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method AddLoop
+	    //@ maintaining sum == x + (y + n);  
+	        ^
+1 verification failure
+
+==============================
+public class AddLoop_Mutant1 {
+ 
+    public static int AddLoop(int x, int y) {
+        int sum = x;
+        if (y > 0) {
+            int n = y;
+	    //@ maintaining n + 1 >= 0;  
+	    //@ maintaining sum == x - (y + n);  
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum + 1;
+                n = n - 2;
+            }
+        } else {
+            int n = -y;
+	    //@ maintaining n >= 0;
+	    //@ maintaining sum == x + (y + n);
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum - 1;
+                n = n - 2;
+            }
+        }
+        return sum;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:8: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method AddLoop
+	    //@ maintaining sum == x - (y + n);  
+	        ^
+1 verification failure
+
+==============================
+public class AddLoop_Mutant1 {
+ 
+    public static int AddLoop(int x, int y) {
+        int sum = x;
+        if (y > 0) {
+            int n = y;
+	    //@ maintaining n + 1 >= 0;  
+	    //@ maintaining sum == x - (y - n);  
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum + 1;
+                n = n - 2;
+            }
+        } else {
+            int n = -y;
+	    //@ maintaining n >= 0;
+	    //@ maintaining sum == x + (y + n);
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum - 1;
+                n = n - 2;
+            }
+        }
+        return sum;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:8: verify: The prover cannot establish an assertion (LoopInvariant) in method AddLoop
+	    //@ maintaining sum == x - (y - n);  
+	        ^
+1 verification failure
+
+==============================
+public class AddLoop_Mutant1 {
+ 
+    public static int AddLoop(int x, int y) {
+        int sum = x;
+        if (y > 0) {
+            int n = y;
+	    //@ maintaining n + 1 >= 0;  
+ 
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum + 1;
+                n = n - 2;
+            }
+        } else {
+            int n = -y;
+	    //@ maintaining n >= 0;
+	    //@ maintaining sum == x + (y + n);
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum - 1;
+                n = n - 2;
+            }
+        }
+        return sum;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:16: verify: The prover cannot establish an assertion (LoopInvariant) in method AddLoop
+	    //@ maintaining n >= 0;
+	        ^
+1 verification failure
+
+==============================
+public class AddLoop_Mutant1 {
+ 
+    public static int AddLoop(int x, int y) {
+        int sum = x;
+        if (y > 0) {
+            int n = y;
+	    //@ maintaining n + 1 >= 0;  
+ 
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum + 1;
+                n = n - 2;
+            }
+        } else {
+            int n = -y;
+	    //@ maintaining n > 0;  
+	    //@ maintaining sum == x + (y + n);
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum - 1;
+                n = n - 2;
+            }
+        }
+        return sum;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:16: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method AddLoop
+	    //@ maintaining n > 0;  
+	        ^
+1 verification failure
+
+==============================
+public class AddLoop_Mutant1 {
+ 
+    public static int AddLoop(int x, int y) {
+        int sum = x;
+        if (y > 0) {
+            int n = y;
+	    //@ maintaining n + 1 >= 0;  
+ 
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum + 1;
+                n = n - 2;
+            }
+        } else {
+            int n = -y;
+	    //@ maintaining n >= 0;  
+	    //@ maintaining sum == x + (y + n);
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum - 1;
+                n = n - 2;
+            }
+        }
+        return sum;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:16: verify: The prover cannot establish an assertion (LoopInvariant) in method AddLoop
+	    //@ maintaining n >= 0;  
+	        ^
+1 verification failure
+
+==============================
+public class AddLoop_Mutant1 {
+ 
+    public static int AddLoop(int x, int y) {
+        int sum = x;
+        if (y > 0) {
+            int n = y;
+	    //@ maintaining n + 1 >= 0;  
+ 
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum + 1;
+                n = n - 2;
+            }
+        } else {
+            int n = -y;
+	    //@ maintaining n + 1 >= 0;  
+	    //@ maintaining sum == x + (y + n);
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum - 1;
+                n = n - 2;
+            }
+        }
+        return sum;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:17: verify: The prover cannot establish an assertion (LoopInvariant) in method AddLoop
+	    //@ maintaining sum == x + (y + n);
+	        ^
+1 verification failure
+
+==============================
+public class AddLoop_Mutant1 {
+ 
+    public static int AddLoop(int x, int y) {
+        int sum = x;
+        if (y > 0) {
+            int n = y;
+	    //@ maintaining n + 1 >= 0;  
+ 
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum + 1;
+                n = n - 2;
+            }
+        } else {
+            int n = -y;
+	    //@ maintaining n + 1 >= 0;  
+	    //@ maintaining sum == x + (y + n);  
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum - 1;
+                n = n - 2;
+            }
+        }
+        return sum;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:17: verify: The prover cannot establish an assertion (LoopInvariant) in method AddLoop
+	    //@ maintaining sum == x + (y + n);  
+	        ^
+1 verification failure
+
+==============================
+public class AddLoop_Mutant1 {
+ 
+    public static int AddLoop(int x, int y) {
+        int sum = x;
+        if (y > 0) {
+            int n = y;
+	    //@ maintaining n + 1 >= 0;  
+ 
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum + 1;
+                n = n - 2;
+            }
+        } else {
+            int n = -y;
+	    //@ maintaining n + 1 >= 0;  
+	    //@ maintaining sum == x + (y - n);  
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum - 1;
+                n = n - 2;
+            }
+        }
+        return sum;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:17: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method AddLoop
+	    //@ maintaining sum == x + (y - n);  
+	        ^
+1 verification failure
+
+==============================
+public class AddLoop_Mutant1 {
+ 
+    public static int AddLoop(int x, int y) {
+        int sum = x;
+        if (y > 0) {
+            int n = y;
+	    //@ maintaining n + 1 >= 0;  
+ 
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum + 1;
+                n = n - 2;
+            }
+        } else {
+            int n = -y;
+	    //@ maintaining n + 1 >= 0;  
+	    //@ maintaining sum == x - (y + n);  
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum - 1;
+                n = n - 2;
+            }
+        }
+        return sum;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:17: verify: The prover cannot establish an assertion (LoopInvariant) in method AddLoop
+	    //@ maintaining sum == x - (y + n);  
+	        ^
+1 verification failure
+
+==============================
+public class AddLoop_Mutant1 {
+ 
+    public static int AddLoop(int x, int y) {
+        int sum = x;
+        if (y > 0) {
+            int n = y;
+	    //@ maintaining n + 1 >= 0;  
+ 
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum + 1;
+                n = n - 2;
+            }
+        } else {
+            int n = -y;
+	    //@ maintaining n + 1 >= 0;  
+	    //@ maintaining sum == x - (y - n);  
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum - 1;
+                n = n - 2;
+            }
+        }
+        return sum;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AddLoop_Mutant1.java:17: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method AddLoop
+	    //@ maintaining sum == x - (y - n);  
+	        ^
+1 verification failure
+
+==============================
+public class AddLoop_Mutant1 {
+ 
+    public static int AddLoop(int x, int y) {
+        int sum = x;
+        if (y > 0) {
+            int n = y;
+	    //@ maintaining n + 1 >= 0;  
+ 
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum + 1;
+                n = n - 2;
+            }
+        } else {
+            int n = -y;
+	    //@ maintaining n + 1 >= 0;  
+ 
+	    //@ decreases n;
+            while (n > 0) {
+                sum = sum - 1;
+                n = n - 2;
+            }
+        }
+        return sum;
+    }
+}
+
+==============================
+
+==============================

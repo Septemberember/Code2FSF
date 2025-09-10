@@ -1,0 +1,25 @@
+public class ChangeCase_Mutant5 {
+
+    /*@ public normal_behavior
+      @    requires (int)Character.MIN_VALUE <= (int)c && (int)c <= (int)Character.MAX_VALUE;
+      @    ensures (int)Character.MIN_VALUE <= (int)\result && (int)\result <= (int)Character.MAX_VALUE;
+      @*/
+    public static char changeCase(char c) {
+        char result = ' ';
+        if (c > 'z') {
+            result = c;
+        } else if (c >= 'a') {
+            result = (char) ('a' - 'A' + c);
+        } else if (c > 'Z') {
+            result = c;
+        } else if (c >= 'A') {
+            result = (char) (c - 'A' + 'a');
+        } else {
+            result = c;
+        }
+        return result;
+    }
+}
+==============================
+
+==============================

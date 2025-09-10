@@ -1,0 +1,774 @@
+public class AddHalfSelf_Mutant2{
+    //@ ensures \result == x - (\num_of_odd_values_in_range(0, x) * (x < 0 ? -1 : 1));
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == \num_of_odd_values_in_range(0, x);
+        while(n > 0){
+            if(n % 2 == 1){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:2: error: This backslash token is unknown: \num_of_odd_values_in_range
+    //@ ensures \result == x - (\num_of_odd_values_in_range(0, x) * (x < 0 ? -1 : 1));
+                                ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:10: error: This backslash token is unknown: \num_of_odd_values_in_range
+        //@ maintaining addNum == \num_of_odd_values_in_range(0, x);
+                                  ^
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant2{
+    //@ ensures \result == x - (countOddValuesInRange(0, x) * (x < 0 ? -1 : 1));
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == countOddValuesInRange(0, x);
+        while(n > 0){
+            if(n % 2 == 1){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:2: error: cannot find symbol
+    //@ ensures \result == x - (countOddValuesInRange(0, x) * (x < 0 ? -1 : 1));
+                                ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:10: error: cannot find symbol
+        //@ maintaining addNum == countOddValuesInRange(0, x);
+                                  ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant2{
+    //@ requires x >= 0;
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == countOddValuesInRange(0, x);
+        while(n > 0){
+            if(n % 2 == 1){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:3: error: cannot find symbol
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+                               ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:11: error: cannot find symbol
+        //@ maintaining addNum == countOddValuesInRange(0, x);
+                                  ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant2{
+    //@ requires x >= 0;
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+        while(n > 0){
+            if(n % 2 == 1){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:3: error: cannot find symbol
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+                               ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:11: error: cannot find symbol
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+                                  ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant2{
+    //@ requires x >= 0;
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+        while(n > 0){
+            if(n % 2 == 1){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:3: error: cannot find symbol
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+                               ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:11: error: cannot find symbol
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+                                  ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant2{
+    //@ requires x >= 0;
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+        while(n > 0){
+            if(n % 2 == 1){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:3: error: cannot find symbol
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+                               ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:11: error: cannot find symbol
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+                                  ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant2{
+    //@ requires x >= 0;
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+        while(n > 0){
+            if(n % 2 == 1){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:3: error: cannot find symbol
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+                               ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:11: error: cannot find symbol
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+                                  ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant2{
+    //@ requires x >= 0;
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+        while(n > 0){
+            if(n % 2 == 1){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:3: error: cannot find symbol
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+                               ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:11: error: cannot find symbol
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+                                  ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant2{
+    //@ requires x >= 0;
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+        while(n > 0){
+            if(n % 2 == 1){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:3: error: cannot find symbol
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+                               ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:11: error: cannot find symbol
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+                                  ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant2{
+    //@ requires x >= 0;
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+        while(n > 0){
+            if(n % 2 == 1){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:3: error: cannot find symbol
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+                               ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:11: error: cannot find symbol
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+                                  ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant2{
+    //@ requires x >= 0;
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+        while(n > 0){
+            if(n % 2 == 1){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:3: error: cannot find symbol
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+                               ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:11: error: cannot find symbol
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+                                  ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant2{
+    //@ requires x >= 0;
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+        while(n > 0){
+            if(n % 2 == 1){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:3: error: cannot find symbol
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+                               ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:11: error: cannot find symbol
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+                                  ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant2{
+    //@ requires x >= 0;
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+        while(n > 0){
+            if(n % 2 == 1){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:3: error: cannot find symbol
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+                               ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:11: error: cannot find symbol
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+                                  ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant2{
+    //@ requires x >= 0;
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+        while(n > 0){
+            if(n % 2 == 1){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:3: error: cannot find symbol
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+                               ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:11: error: cannot find symbol
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+                                  ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant2{
+    //@ requires x >= 0;
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+        while(n > 0){
+            if(n % 2 == 1){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:3: error: cannot find symbol
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+                               ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:11: error: cannot find symbol
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+                                  ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant2{
+    //@ requires x >= 0;
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+        while(n > 0){
+            if(n % 2 == 1){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:3: error: cannot find symbol
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+                               ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:11: error: cannot find symbol
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+                                  ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant2{
+    //@ requires x >= 0;
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+        while(n > 0){
+            if(n % 2 == 1){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:3: error: cannot find symbol
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+                               ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:11: error: cannot find symbol
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+                                  ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant2{
+    //@ requires x >= 0;
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+        while(n > 0){
+            if(n % 2 == 1){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:3: error: cannot find symbol
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+                               ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:11: error: cannot find symbol
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+                                  ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant2{
+    //@ requires x >= 0;
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+        while(n > 0){
+            if(n % 2 == 1){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:3: error: cannot find symbol
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+                               ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:11: error: cannot find symbol
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+                                  ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+2 errors
+
+==============================
+public class AddHalfSelf_Mutant2{
+    //@ requires x >= 0;
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+    public static int addHalfSelf(int x){
+        int n = x;
+        int addNum = 0;
+        if(x < 0){
+            n = -x;
+        }
+        //@ maintaining n >= 0;
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+        while(n > 0){
+            if(n % 2 == 1){
+                addNum++;
+            }
+            n--;
+        }
+        if(x < 0){
+            return x - addNum;
+        }
+        else{
+            return x + addNum;
+        }
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:3: error: cannot find symbol
+    //@ ensures \result == x + countOddValuesInRange(0, x);
+                               ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/AddHalfSelf_Mutant2.java:11: error: cannot find symbol
+        //@ maintaining addNum == countOddValuesInRange(0, n);
+                                  ^
+  symbol:   method countOddValuesInRange(int,int)
+  location: class AddHalfSelf_Mutant2
+2 errors
+
+==============================

@@ -1,0 +1,55 @@
+public class Conjunction_Mutant2 {
+    /*@ spec_public*/ public static boolean conjunctOf(boolean b1, boolean b2) {
+        //@ requires b1 == true || b1 == false;
+        //@ requires b2 == true || b2 == false;
+        //@ ensures \result == (b1 == false || b2 == false) ? (b1 == false) : true;
+        if(b1 == false)
+            return true;
+        if(b2 == false)
+            return false;
+        return true;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Conjunction_Mutant2.java:5: verify: The prover cannot establish an assertion (Postcondition) in method conjunctOf
+        //@ ensures \result == (b1 == false || b2 == false) ? (b1 == false) : true;
+            ^
+1 verification failure
+
+==============================
+public class Conjunction_Mutant2 {
+    /*@ spec_public*/ public static boolean conjunctOf(boolean b1, boolean b2) {
+        //@ requires b1 == true || b1 == false;
+        //@ requires b2 == true || b2 == false;
+        //@ ensures \result == (b1 == false || b2 == false) ? (b1 == false) : true;  
+        if(b1 == false)
+            return true;
+        if(b2 == false)
+            return false;
+        return true;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Conjunction_Mutant2.java:5: verify: The prover cannot establish an assertion (Postcondition) in method conjunctOf
+        //@ ensures \result == (b1 == false || b2 == false) ? (b1 == false) : true;  
+            ^
+1 verification failure
+
+==============================
+public class Conjunction_Mutant2 {
+    /*@ spec_public*/ public static boolean conjunctOf(boolean b1, boolean b2) {
+        //@ requires b1 == true || b1 == false;
+        //@ requires b2 == true || b2 == false;
+ 
+        if(b1 == false)
+            return true;
+        if(b2 == false)
+            return false;
+        return true;
+    }
+}
+
+==============================
+
+==============================

@@ -1,0 +1,17 @@
+public class IsCommonFactorBranch_Mutant3 {
+    //@ requires factor != 0;
+    //@ ensures \result ==> a % factor == 1 && b % factor == 1;
+    //@ ensures !\result ==> a % factor != 1 || b % factor != 1;
+    public static boolean isCommonFactor (int a, int b, int factor) {
+        if (a % factor != 1) {
+            return false;
+        }
+        if (b % factor != 1) {
+            return false;
+        }
+        return true;
+    }
+}
+==============================
+
+==============================

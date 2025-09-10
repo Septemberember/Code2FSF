@@ -1,0 +1,112 @@
+public class PowerOfTwoBranch_Original {
+    //@ ensures \result == false;
+    //@ ensures \result == true;
+    public static boolean isPowerOfTwo(int n) {
+        if (n <= 0) {
+            return false;
+        }
+        if ((n & (n - 1)) != 0) {
+            return false;
+        }
+        return true;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PowerOfTwoBranch_Original.java:6: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PowerOfTwoBranch_Original.java:3:) in method isPowerOfTwo
+            return false;
+            ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PowerOfTwoBranch_Original.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PowerOfTwoBranch_Original.java:6:
+    //@ ensures \result == true;
+        ^
+2 verification failures
+
+==============================
+public class PowerOfTwoBranch_Original {
+    //@ ensures \result == false;
+    //@ ensures \result == true;  
+    public static boolean isPowerOfTwo(int n) {
+        if (n <= 0) {
+            return false;
+        }
+        if ((n & (n - 1)) != 0) {
+            return false;
+        }
+        return true;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PowerOfTwoBranch_Original.java:6: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PowerOfTwoBranch_Original.java:3:) in method isPowerOfTwo
+            return false;
+            ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PowerOfTwoBranch_Original.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PowerOfTwoBranch_Original.java:6:
+    //@ ensures \result == true;  
+        ^
+2 verification failures
+
+==============================
+public class PowerOfTwoBranch_Original {
+    //@ ensures \result == false;
+ 
+    public static boolean isPowerOfTwo(int n) {
+        if (n <= 0) {
+            return false;
+        }
+        if ((n & (n - 1)) != 0) {
+            return false;
+        }
+        return true;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PowerOfTwoBranch_Original.java:11: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PowerOfTwoBranch_Original.java:2:) in method isPowerOfTwo
+        return true;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PowerOfTwoBranch_Original.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PowerOfTwoBranch_Original.java:11:
+    //@ ensures \result == false;
+        ^
+2 verification failures
+
+==============================
+public class PowerOfTwoBranch_Original {
+    //@ ensures \result == false;  
+ 
+    public static boolean isPowerOfTwo(int n) {
+        if (n <= 0) {
+            return false;
+        }
+        if ((n & (n - 1)) != 0) {
+            return false;
+        }
+        return true;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PowerOfTwoBranch_Original.java:11: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PowerOfTwoBranch_Original.java:2:) in method isPowerOfTwo
+        return true;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PowerOfTwoBranch_Original.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PowerOfTwoBranch_Original.java:11:
+    //@ ensures \result == false;  
+        ^
+2 verification failures
+
+==============================
+public class PowerOfTwoBranch_Original {
+ 
+ 
+    public static boolean isPowerOfTwo(int n) {
+        if (n <= 0) {
+            return false;
+        }
+        if ((n & (n - 1)) != 0) {
+            return false;
+        }
+        return true;
+    }
+}
+
+==============================
+
+==============================

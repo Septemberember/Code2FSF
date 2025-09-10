@@ -1,0 +1,290 @@
+public class AltitudeController_Mutant3 {
+    //@ requires Integer.MIN_VALUE < currentHeight && currentHeight < Integer.MAX_VALUE;
+    //@ requires Integer.MIN_VALUE < targetHeight && targetHeight < Integer.MAX_VALUE;
+    //@ ensures Integer.MIN_VALUE < \result && \result < Integer.MAX_VALUE;
+    //@ ensures \result == 5 || \result == -5 || \result == 3 || \result == -3 || \result == 2 || \result == -2 || \result == currentHeight - targetHeight;
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = 0;
+        absError = error < 0 ? -error : error + 10; //Added 10 to error
+        int controlSignal = 0;
+        while (true) {
+            //@ maintaining absError >= 0;
+            //@ maintaining controlSignal == 5 || controlSignal == -5 || controlSignal == 3 || controlSignal == -3 || controlSignal == 2 || controlSignal == -2 || controlSignal == currentHeight - targetHeight;
+            if (absError > 30) {
+                controlSignal = error > 0 ? 5 : -5;
+            } else if (absError > 20) {
+                controlSignal = error > 0 ? 3 : -3;
+            } else if (absError > 10) {
+                controlSignal = error > 0 ? 2 : -2;
+            } else {
+                controlSignal = error;
+            }
+            break;
+        }
+        return controlSignal;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant3.java:12: error: Loop specifications must immediately precede a loop statement
+            //@ maintaining absError >= 0;
+                ^
+1 error
+
+==============================
+public class AltitudeController_Mutant3 {
+    //@ requires Integer.MIN_VALUE < currentHeight && currentHeight < Integer.MAX_VALUE;
+    //@ requires Integer.MIN_VALUE < targetHeight && targetHeight < Integer.MAX_VALUE;
+    //@ ensures Integer.MIN_VALUE < \result && \result < Integer.MAX_VALUE;
+    //@ ensures \result == 5 || \result == -5 || \result == 3 || \result == -3 || \result == 2 || \result == -2 || \result == currentHeight - targetHeight;
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = 0;
+        absError = error < 0 ? -error : error + 10; //Added 10 to error
+        int controlSignal = 0;
+        
+        //@ maintaining absError >= 0;
+        //@ maintaining controlSignal == 5 || controlSignal == -5 || controlSignal == 3 || controlSignal == -3 || controlSignal == 2 || controlSignal == -2 || controlSignal == currentHeight - targetHeight;
+        while (true) {
+            if (absError > 30) {
+                controlSignal = error > 0 ? 5 : -5;
+            } else if (absError > 20) {
+                controlSignal = error > 0 ? 3 : -3;
+            } else if (absError > 10) {
+                controlSignal = error > 0 ? 2 : -2;
+            } else {
+                controlSignal = error;
+            }
+            break;
+        }
+        return controlSignal;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant3.java:13: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method altitudeController
+        //@ maintaining controlSignal == 5 || controlSignal == -5 || controlSignal == 3 || controlSignal == -3 || controlSignal == 2 || controlSignal == -2 || controlSignal == currentHeight - targetHeight;
+            ^
+1 verification failure
+
+==============================
+public class AltitudeController_Mutant3 {
+    //@ requires Integer.MIN_VALUE < currentHeight && currentHeight < Integer.MAX_VALUE;
+    //@ requires Integer.MIN_VALUE < targetHeight && targetHeight < Integer.MAX_VALUE;
+    //@ ensures Integer.MIN_VALUE < \result && \result < Integer.MAX_VALUE;
+    //@ ensures \result == 5 || \result == -5 || \result == 3 || \result == -3 || \result == 2 || \result == -2 || \result == currentHeight - targetHeight;
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = 0;
+        absError = error < 0 ? -error : error + 10; //Added 10 to error
+        int controlSignal = 0;
+        
+        //@ maintaining absError >= 0;
+        //@ maintaining controlSignal == 5 || controlSignal == -5 || controlSignal == 3 || controlSignal == -3 || controlSignal == 2 || controlSignal == -2 || controlSignal == currentHeight - targetHeight;  
+        while (true) {
+            if (absError > 30) {
+                controlSignal = error > 0 ? 5 : -5;
+            } else if (absError > 20) {
+                controlSignal = error > 0 ? 3 : -3;
+            } else if (absError > 10) {
+                controlSignal = error > 0 ? 2 : -2;
+            } else {
+                controlSignal = error;
+            }
+            break;
+        }
+        return controlSignal;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant3.java:13: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method altitudeController
+        //@ maintaining controlSignal == 5 || controlSignal == -5 || controlSignal == 3 || controlSignal == -3 || controlSignal == 2 || controlSignal == -2 || controlSignal == currentHeight - targetHeight;  
+            ^
+1 verification failure
+
+==============================
+public class AltitudeController_Mutant3 {
+    //@ requires Integer.MIN_VALUE < currentHeight && currentHeight < Integer.MAX_VALUE;
+    //@ requires Integer.MIN_VALUE < targetHeight && targetHeight < Integer.MAX_VALUE;
+    //@ ensures Integer.MIN_VALUE < \result && \result < Integer.MAX_VALUE;
+    //@ ensures \result == 5 || \result == -5 || \result == 3 || \result == -3 || \result == 2 || \result == -2 || \result == currentHeight - targetHeight;
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = 0;
+        absError = error < 0 ? -error : error + 10; //Added 10 to error
+        int controlSignal = 0;
+        
+        //@ maintaining absError >= 0;
+        //@ maintaining controlSignal == 5 || controlSignal == -5 || controlSignal == 3 || controlSignal == -3 || controlSignal == 2 || controlSignal == -2 || controlSignal == currentHeight + targetHeight;  
+        while (true) {
+            if (absError > 30) {
+                controlSignal = error > 0 ? 5 : -5;
+            } else if (absError > 20) {
+                controlSignal = error > 0 ? 3 : -3;
+            } else if (absError > 10) {
+                controlSignal = error > 0 ? 2 : -2;
+            } else {
+                controlSignal = error;
+            }
+            break;
+        }
+        return controlSignal;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant3.java:13: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method altitudeController
+        //@ maintaining controlSignal == 5 || controlSignal == -5 || controlSignal == 3 || controlSignal == -3 || controlSignal == 2 || controlSignal == -2 || controlSignal == currentHeight + targetHeight;  
+            ^
+1 verification failure
+
+==============================
+public class AltitudeController_Mutant3 {
+    //@ requires Integer.MIN_VALUE < currentHeight && currentHeight < Integer.MAX_VALUE;
+    //@ requires Integer.MIN_VALUE < targetHeight && targetHeight < Integer.MAX_VALUE;
+    //@ ensures Integer.MIN_VALUE < \result && \result < Integer.MAX_VALUE;
+    //@ ensures \result == 5 || \result == -5 || \result == 3 || \result == -3 || \result == 2 || \result == -2 || \result == currentHeight - targetHeight;
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = 0;
+        absError = error < 0 ? -error : error + 10; //Added 10 to error
+        int controlSignal = 0;
+        
+        //@ maintaining absError >= 0;
+ 
+        while (true) {
+            if (absError > 30) {
+                controlSignal = error > 0 ? 5 : -5;
+            } else if (absError > 20) {
+                controlSignal = error > 0 ? 3 : -3;
+            } else if (absError > 10) {
+                controlSignal = error > 0 ? 2 : -2;
+            } else {
+                controlSignal = error;
+            }
+            break;
+        }
+        return controlSignal;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant3.java:26: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant3.java:5:) in method altitudeController
+        return controlSignal;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant3.java:5: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant3.java:26:
+    //@ ensures \result == 5 || \result == -5 || \result == 3 || \result == -3 || \result == 2 || \result == -2 || \result == currentHeight - targetHeight;
+        ^
+2 verification failures
+
+==============================
+public class AltitudeController_Mutant3 {
+    //@ requires Integer.MIN_VALUE < currentHeight && currentHeight < Integer.MAX_VALUE;
+    //@ requires Integer.MIN_VALUE < targetHeight && targetHeight < Integer.MAX_VALUE;
+    //@ ensures Integer.MIN_VALUE < \result && \result < Integer.MAX_VALUE;
+    //@ ensures \result == 5 || \result == -5 || \result == 3 || \result == -3 || \result == 2 || \result == -2 || \result == currentHeight - targetHeight;  
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = 0;
+        absError = error < 0 ? -error : error + 10; //Added 10 to error
+        int controlSignal = 0;
+        
+        //@ maintaining absError >= 0;
+ 
+        while (true) {
+            if (absError > 30) {
+                controlSignal = error > 0 ? 5 : -5;
+            } else if (absError > 20) {
+                controlSignal = error > 0 ? 3 : -3;
+            } else if (absError > 10) {
+                controlSignal = error > 0 ? 2 : -2;
+            } else {
+                controlSignal = error;
+            }
+            break;
+        }
+        return controlSignal;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant3.java:26: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant3.java:5:) in method altitudeController
+        return controlSignal;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant3.java:5: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant3.java:26:
+    //@ ensures \result == 5 || \result == -5 || \result == 3 || \result == -3 || \result == 2 || \result == -2 || \result == currentHeight - targetHeight;  
+        ^
+2 verification failures
+
+==============================
+public class AltitudeController_Mutant3 {
+    //@ requires Integer.MIN_VALUE < currentHeight && currentHeight < Integer.MAX_VALUE;
+    //@ requires Integer.MIN_VALUE < targetHeight && targetHeight < Integer.MAX_VALUE;
+    //@ ensures Integer.MIN_VALUE < \result && \result < Integer.MAX_VALUE;
+    //@ ensures \result == 5 || \result == -5 || \result == 3 || \result == -3 || \result == 2 || \result == -2 || \result == currentHeight + targetHeight;  
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = 0;
+        absError = error < 0 ? -error : error + 10; //Added 10 to error
+        int controlSignal = 0;
+        
+        //@ maintaining absError >= 0;
+ 
+        while (true) {
+            if (absError > 30) {
+                controlSignal = error > 0 ? 5 : -5;
+            } else if (absError > 20) {
+                controlSignal = error > 0 ? 3 : -3;
+            } else if (absError > 10) {
+                controlSignal = error > 0 ? 2 : -2;
+            } else {
+                controlSignal = error;
+            }
+            break;
+        }
+        return controlSignal;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant3.java:26: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant3.java:5:) in method altitudeController
+        return controlSignal;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant3.java:5: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant3.java:26:
+    //@ ensures \result == 5 || \result == -5 || \result == 3 || \result == -3 || \result == 2 || \result == -2 || \result == currentHeight + targetHeight;  
+        ^
+2 verification failures
+
+==============================
+public class AltitudeController_Mutant3 {
+    //@ requires Integer.MIN_VALUE < currentHeight && currentHeight < Integer.MAX_VALUE;
+    //@ requires Integer.MIN_VALUE < targetHeight && targetHeight < Integer.MAX_VALUE;
+    //@ ensures Integer.MIN_VALUE < \result && \result < Integer.MAX_VALUE;
+ 
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = 0;
+        absError = error < 0 ? -error : error + 10; //Added 10 to error
+        int controlSignal = 0;
+        
+        //@ maintaining absError >= 0;
+ 
+        while (true) {
+            if (absError > 30) {
+                controlSignal = error > 0 ? 5 : -5;
+            } else if (absError > 20) {
+                controlSignal = error > 0 ? 3 : -3;
+            } else if (absError > 10) {
+                controlSignal = error > 0 ? 2 : -2;
+            } else {
+                controlSignal = error;
+            }
+            break;
+        }
+        return controlSignal;
+    }
+}
+
+==============================
+
+==============================

@@ -1,0 +1,17 @@
+public class NegAbs_Mutant5 {
+    /*@ public normal_behavior
+      @    requires num < 0;
+      @    ensures \result == num; @*/
+    /*@ public normal_behavior
+      @    requires num >= 0;
+      @    ensures \result == num + 1; @*/
+    public static int negAbs(int num) {
+        if (num < 0)
+            return num;
+        else
+            return num + 1;
+    }
+}
+==============================
+
+==============================

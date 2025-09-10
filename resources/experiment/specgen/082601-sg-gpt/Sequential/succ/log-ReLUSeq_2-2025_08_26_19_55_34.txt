@@ -1,0 +1,118 @@
+public class ReLUSeq_Mutant2 {
+    //@ ensures \result >= 0.0;
+    //@ ensures \result == x ==> x >= 0.0;
+    public static double computeReLU(double x) {
+        return ((x >= 0.0) ? x : -1);
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ReLUSeq_Mutant2.java:5: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ReLUSeq_Mutant2.java:2:) in method computeReLU
+        return ((x >= 0.0) ? x : -1);
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ReLUSeq_Mutant2.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ReLUSeq_Mutant2.java:5:
+    //@ ensures \result >= 0.0;
+        ^
+2 verification failures
+
+==============================
+public class ReLUSeq_Mutant2 {
+    //@ ensures \result > 0.0;  
+    //@ ensures \result == x ==> x >= 0.0;
+    public static double computeReLU(double x) {
+        return ((x >= 0.0) ? x : -1);
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ReLUSeq_Mutant2.java:5: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ReLUSeq_Mutant2.java:2:) in method computeReLU
+        return ((x >= 0.0) ? x : -1);
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ReLUSeq_Mutant2.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ReLUSeq_Mutant2.java:5:
+    //@ ensures \result > 0.0;  
+        ^
+2 verification failures
+
+==============================
+public class ReLUSeq_Mutant2 {
+    //@ ensures \result >= 0.0;  
+    //@ ensures \result == x ==> x >= 0.0;
+    public static double computeReLU(double x) {
+        return ((x >= 0.0) ? x : -1);
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ReLUSeq_Mutant2.java:5: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ReLUSeq_Mutant2.java:2:) in method computeReLU
+        return ((x >= 0.0) ? x : -1);
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ReLUSeq_Mutant2.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ReLUSeq_Mutant2.java:5:
+    //@ ensures \result >= 0.0;  
+        ^
+2 verification failures
+
+==============================
+public class ReLUSeq_Mutant2 {
+    //@ ensures \result + 1 >= 0.0;  
+    //@ ensures \result == x ==> x >= 0.0;
+    public static double computeReLU(double x) {
+        return ((x >= 0.0) ? x : -1);
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ReLUSeq_Mutant2.java:5: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ReLUSeq_Mutant2.java:3:) in method computeReLU
+        return ((x >= 0.0) ? x : -1);
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ReLUSeq_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ReLUSeq_Mutant2.java:5:
+    //@ ensures \result == x ==> x >= 0.0;
+        ^
+2 verification failures
+
+==============================
+public class ReLUSeq_Mutant2 {
+    //@ ensures \result + 1 >= 0.0;  
+    //@ ensures \result == x ==> x > 0.0;  
+    public static double computeReLU(double x) {
+        return ((x >= 0.0) ? x : -1);
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ReLUSeq_Mutant2.java:5: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ReLUSeq_Mutant2.java:3:) in method computeReLU
+        return ((x >= 0.0) ? x : -1);
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ReLUSeq_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ReLUSeq_Mutant2.java:5:
+    //@ ensures \result == x ==> x > 0.0;  
+        ^
+2 verification failures
+
+==============================
+public class ReLUSeq_Mutant2 {
+    //@ ensures \result + 1 >= 0.0;  
+    //@ ensures \result == x ==> x >= 0.0;  
+    public static double computeReLU(double x) {
+        return ((x >= 0.0) ? x : -1);
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ReLUSeq_Mutant2.java:5: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ReLUSeq_Mutant2.java:3:) in method computeReLU
+        return ((x >= 0.0) ? x : -1);
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ReLUSeq_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/ReLUSeq_Mutant2.java:5:
+    //@ ensures \result == x ==> x >= 0.0;  
+        ^
+2 verification failures
+
+==============================
+public class ReLUSeq_Mutant2 {
+    //@ ensures \result + 1 >= 0.0;  
+    //@ ensures \result == x ==> x + 1 >= 0.0;  
+    public static double computeReLU(double x) {
+        return ((x >= 0.0) ? x : -1);
+    }
+}
+
+==============================
+
+==============================

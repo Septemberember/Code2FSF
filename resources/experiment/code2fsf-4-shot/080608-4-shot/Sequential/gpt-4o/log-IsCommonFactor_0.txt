@@ -1,0 +1,31 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class IsCommonFactor_Original {
+
+    public static boolean isCommonFactor(int a, int b, int factor) {
+        return a % factor == 0 && b % factor == 0;
+    }
+}
+
+```
+*end* role user
+start role assistant
+```
+T1: a % factor == 0 && b % factor == 0
+D1: return_value == true
+
+T2: a % factor != 0 || b % factor != 0
+D2: return_value == false
+```
+*end* role assistant
+start role user
+Unexpected exception thrown by the program under T: a % factor == 0 && b % factor == 0, please regenerate the FSF according to this exception!Exception founded:Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at IsCommonFactor_Original.isCommonFactor(IsCommonFactor_Original.java:7)
+	at IsCommonFactor_Original.main(IsCommonFactor_Original.java:15)
+
+*end* role user
+start role remark
+Validation FAIL--Conversation rounds number is over the maxRounds
+Current conversation round is: [1]
+*end* role remark

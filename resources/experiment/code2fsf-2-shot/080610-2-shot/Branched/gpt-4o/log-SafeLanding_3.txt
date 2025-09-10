@@ -1,0 +1,28 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class SafeLanding_Mutant3 {
+    public static int safeLanding(int height, int speed, int tilt) {
+        int safe = 1;
+        if (height > 5) {
+            safe = 0;
+        }
+        if (speed > 3) {
+            safe = 0;
+        }
+        if (tilt >= 10) {
+            safe = 0;
+        }
+        return safe;
+    }
+}
+
+```
+*end* role user
+start role user
+There is no FSF in history conversation, retry the conversation, please regenerate the FSF for given program.
+*end* role user
+start role remark
+Validation FAIL--Conversation rounds number is over the maxRounds
+Current conversation round is: [1]
+*end* role remark

@@ -1,0 +1,57 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class Calculator_Mutant1 {
+    public static int calculate(int num1, int num2, char operator) {
+        int output;
+        switch(operator) {
+            case '+':
+                output = num1 - num2; //mutated + with -
+                break;
+            case '-':
+                output = num1 - num2;
+                break;
+            case '*':
+                output = num1 * num2;
+                break;
+            case '/':
+                output = num1 / num2;
+                break;
+            case '%':
+                output = num1 % num2;
+                break;
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+```
+*end* role user
+start role assistant
+```
+T1: operator == '+' && num2 == 0
+D1: return_value == num1
+T2: operator == '+' && num2 != 0
+D2: return_value == num1 - num2
+T3: operator == '-'
+D3: return_value == num1 - num2
+T4: operator == '*'
+D4: return_value == num1 * num2
+T5: operator == '/' && num2 == 0
+D5: Exception
+T6: operator == '/' && num2 != 0
+D6: return_value == num1 / num2
+T7: operator == '%' && num2 == 0
+D7: Exception
+T8: operator == '%' && num2 != 0
+D8: return_value == num1 % num2
+T9: operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%'
+D9: return_value == -1
+```
+*end* role assistant
+start role remark
+Validation SUCCESS--totally verified!
+Current conversation round is: [1]
+*end* role remark

@@ -1,0 +1,8 @@
+public class PowerOfTwo_Original {
+	//@ requires true;
+	//@ ensures \result == (n > 0 && (n & (n - 1)) == 0);
+	public static boolean isPowerOfTwo(int n) {
+		return n > 0 && (n & (n - 1)) == 0;
+	}
+}
+==============================

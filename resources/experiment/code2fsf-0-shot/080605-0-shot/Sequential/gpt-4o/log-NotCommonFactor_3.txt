@@ -1,0 +1,28 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class NotCommonFactor_Mutant3 {
+
+    public static boolean notCommonFactor(int a, int b, int factor) {
+        return a % factor != 0 || b % factor == 0; // Changed != to == in second condition
+    }
+}
+
+```
+*end* role user
+start role assistant
+```
+T1:
+D1: return_value == (a % factor != 0 || b % factor == 0)
+
+T2: factor == 0
+D2: Exception
+```
+*end* role assistant
+start role user
+The generated FSF lacks completeness，specifically,(!((factor == 0)))is satisfiable assigned as !((factor == 0))，please regenerate the FSF，making sure the completeness of FSF
+*end* role user
+start role remark
+Validation FAIL--Conversation rounds number is over the maxRounds
+Current conversation round is: [1]
+*end* role remark

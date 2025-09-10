@@ -1,0 +1,111 @@
+public class SmallestEvenMul_Original {
+
+    //@ ensures \result % 2 == 0;
+    //@ ensures \result >= n && (\result % n == 0) && (\result % 2 == 0);
+    public static int smallestEvenMultiple(int n) {
+        return n % 2 == 0 ? n : 2 * n;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMul_Original.java:4: verify: The prover cannot establish an assertion (UndefinedDivideByZero) in method smallestEvenMultiple
+    //@ ensures \result >= n && (\result % n == 0) && (\result % 2 == 0);
+                                         ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMul_Original.java:6: verify: Associated method exit
+        return n % 2 == 0 ? n : 2 * n;
+        ^
+2 verification failures
+
+==============================
+public class SmallestEvenMul_Original {
+
+    //@ ensures \result % 2 == 0;
+    //@ ensures \result >= n && (\result % n == 0) && (\result % 2 == 0);
+    //@ ensures (\result == n && n % 2 == 0) || (\result == 2 * n && n % 2 != 0);
+    public static int smallestEvenMultiple(int n) {
+        return n % 2 == 0 ? n : 2 * n;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMul_Original.java:4: verify: The prover cannot establish an assertion (UndefinedDivideByZero) in method smallestEvenMultiple
+    //@ ensures \result >= n && (\result % n == 0) && (\result % 2 == 0);
+                                         ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMul_Original.java:7: verify: Associated method exit
+        return n % 2 == 0 ? n : 2 * n;
+        ^
+2 verification failures
+
+==============================
+public class SmallestEvenMul_Original {
+
+    //@ ensures \result % 2 == 0;
+    //@ ensures \result >= n && (\result % n == 0) && (\result % 2 == 0);
+    //@ ensures (\result == n && n % 2 == 0) || (\result == 2 * n && n % 2 != 0);
+    public static int smallestEvenMultiple(int n) {
+        //@ assume n != 0;
+        return n % 2 == 0 ? n : 2 * n;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMul_Original.java:8: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMul_Original.java:4:) in method smallestEvenMultiple
+        return n % 2 == 0 ? n : 2 * n;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMul_Original.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMul_Original.java:8:
+    //@ ensures \result >= n && (\result % n == 0) && (\result % 2 == 0);
+        ^
+2 verification failures
+
+==============================
+public class SmallestEvenMul_Original {
+
+    //@ ensures \result % 2 == 0;
+    //@ ensures \result > n && (\result % n == 0) && (\result % 2 == 0);  
+    //@ ensures (\result == n && n % 2 == 0) || (\result == 2 * n && n % 2 != 0);
+    public static int smallestEvenMultiple(int n) {
+        //@ assume n != 0;
+        return n % 2 == 0 ? n : 2 * n;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMul_Original.java:8: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMul_Original.java:4:) in method smallestEvenMultiple
+        return n % 2 == 0 ? n : 2 * n;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMul_Original.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMul_Original.java:8:
+    //@ ensures \result > n && (\result % n == 0) && (\result % 2 == 0);  
+        ^
+2 verification failures
+
+==============================
+public class SmallestEvenMul_Original {
+
+    //@ ensures \result % 2 == 0;
+    //@ ensures \result >= n && (\result % n == 0) && (\result % 2 == 0);  
+    //@ ensures (\result == n && n % 2 == 0) || (\result == 2 * n && n % 2 != 0);
+    public static int smallestEvenMultiple(int n) {
+        //@ assume n != 0;
+        return n % 2 == 0 ? n : 2 * n;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMul_Original.java:8: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMul_Original.java:4:) in method smallestEvenMultiple
+        return n % 2 == 0 ? n : 2 * n;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMul_Original.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMul_Original.java:8:
+    //@ ensures \result >= n && (\result % n == 0) && (\result % 2 == 0);  
+        ^
+2 verification failures
+
+==============================
+public class SmallestEvenMul_Original {
+
+    //@ ensures \result % 2 == 0;
+    //@ ensures \result + 1 >= n && (\result % n == 0) && (\result % 2 == 0);  
+    //@ ensures (\result == n && n % 2 == 0) || (\result == 2 * n && n % 2 != 0);
+    public static int smallestEvenMultiple(int n) {
+        //@ assume n != 0;
+        return n % 2 == 0 ? n : 2 * n;
+    }
+}
+
+==============================

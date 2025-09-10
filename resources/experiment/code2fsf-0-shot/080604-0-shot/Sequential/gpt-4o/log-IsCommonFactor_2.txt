@@ -1,0 +1,47 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class IsCommonFactor_Mutant2 {
+
+    public static boolean isCommonFactor(int a, int b, int factor) {
+        return a % factor != 0 && b % factor == 0; // changed '==' to '!=' at a % factor
+    }
+}
+
+```
+*end* role user
+start role assistant
+```
+T1:
+a % factor == 0 && b % factor == 0
+D1:
+return_value == false
+
+T2:
+a % factor == 0 && b % factor != 0
+D2:
+return_value == false
+
+T3:
+a % factor != 0 && b % factor == 0
+D3:
+return_value == true
+
+T4:
+a % factor != 0 && b % factor != 0
+D4:
+return_value == false
+
+T5:
+factor == 0
+D5:
+Exception
+```
+*end* role assistant
+start role user
+It was found that T in the FSF does not meet the requirements and causes a parsing failure. Please carefully review my original instructions and regenerate the FSF accordingly.
+*end* role user
+start role remark
+Validation FAIL--Conversation rounds number is over the maxRounds
+Current conversation round is: [1]
+*end* role remark

@@ -1,0 +1,12 @@
+public class DivisionOverflow_Original {
+
+    //@ requires denom != 0;
+    //@ ensures \result >= Integer.MIN_VALUE && \result <= Integer.MAX_VALUE;
+    public static /*@ pure @*/ int division_test_fail_overflow(int nom, int denom) {
+        int tmp = nom / denom;
+        return tmp;
+    }
+}
+==============================
+
+==============================

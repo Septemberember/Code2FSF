@@ -1,0 +1,165 @@
+public class DivisionOverflow_Original {
+    //@ ensures \result == nom / denom;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        int tmp = nom / denom;
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DivisionOverflow_Original.java:4: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method division_test_fail_overflow
+        int tmp = nom / denom;
+                      ^
+1 verification failure
+
+==============================
+public class DivisionOverflow_Original {
+    //@ ensures \result == nom / denom;
+    //@ ensures Integer.MIN_VALUE <= nom / denom && nom / denom <= Integer.MAX_VALUE;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        int tmp = nom / denom;
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DivisionOverflow_Original.java:5: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method division_test_fail_overflow
+        int tmp = nom / denom;
+                      ^
+1 verification failure
+
+==============================
+public class DivisionOverflow_Original {
+    //@ ensures \result == nom / denom;
+    //@ ensures Integer.MIN_VALUE <= nom / denom && nom / denom <= Integer.MAX_VALUE;
+    //@ assume Integer.MIN_VALUE <= nom / denom && nom / denom <= Integer.MAX_VALUE;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        int tmp = nom / denom;
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DivisionOverflow_Original.java:4: error: The token assume is illegal or not implemented for a type or method clause (JmlParser.classOrInterfaceBodyDeclaration)
+    //@ assume Integer.MIN_VALUE <= nom / denom && nom / denom <= Integer.MAX_VALUE;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DivisionOverflow_Original.java:2: error: Method specifications without a following method declaration
+    //@ ensures \result == nom / denom;
+        ^
+2 errors
+
+==============================
+public class DivisionOverflow_Original {
+    //@ ensures \result == nom / denom;
+    //@ ensures Integer.MIN_VALUE <= nom / denom && nom / denom <= Integer.MAX_VALUE;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        int tmp = nom / denom;
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DivisionOverflow_Original.java:5: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method division_test_fail_overflow
+        int tmp = nom / denom;
+                      ^
+1 verification failure
+
+==============================
+public class DivisionOverflow_Original {
+    //@ ensures \result == nom / denom;
+    //@ ensures Integer.MIN_VALUE <= nom / denom && nom / denom <= Integer.MAX_VALUE;
+    //@ assume Integer.MIN_VALUE <= nom / denom && nom / denom <= Integer.MAX_VALUE;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        int tmp = nom / denom;
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DivisionOverflow_Original.java:4: error: The token assume is illegal or not implemented for a type or method clause (JmlParser.classOrInterfaceBodyDeclaration)
+    //@ assume Integer.MIN_VALUE <= nom / denom && nom / denom <= Integer.MAX_VALUE;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DivisionOverflow_Original.java:2: error: Method specifications without a following method declaration
+    //@ ensures \result == nom / denom;
+        ^
+2 errors
+
+==============================
+public class DivisionOverflow_Original {
+    //@ ensures \result == nom / denom;
+    //@ ensures Integer.MIN_VALUE <= nom / denom && nom / denom <= Integer.MAX_VALUE;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        int tmp = nom / denom;
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DivisionOverflow_Original.java:5: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method division_test_fail_overflow
+        int tmp = nom / denom;
+                      ^
+1 verification failure
+
+==============================
+public class DivisionOverflow_Original {
+    //@ ensures \result == nom / denom;
+    //@ ensures Integer.MIN_VALUE <= nom / denom && nom / denom <= Integer.MAX_VALUE;
+    //@ assume Integer.MIN_VALUE <= nom / denom && nom / denom <= Integer.MAX_VALUE;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        int tmp = nom / denom;
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DivisionOverflow_Original.java:4: error: The token assume is illegal or not implemented for a type or method clause (JmlParser.classOrInterfaceBodyDeclaration)
+    //@ assume Integer.MIN_VALUE <= nom / denom && nom / denom <= Integer.MAX_VALUE;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DivisionOverflow_Original.java:2: error: Method specifications without a following method declaration
+    //@ ensures \result == nom / denom;
+        ^
+2 errors
+
+==============================
+public class DivisionOverflow_Original {
+    //@ ensures \result == nom / denom;
+    //@ ensures Integer.MIN_VALUE <= nom / denom && nom / denom <= Integer.MAX_VALUE;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        int tmp = nom / denom;
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DivisionOverflow_Original.java:5: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method division_test_fail_overflow
+        int tmp = nom / denom;
+                      ^
+1 verification failure
+
+==============================
+public class DivisionOverflow_Original {
+    //@ ensures \result == nom / denom;
+    //@ ensures Integer.MIN_VALUE <= nom / denom && nom / denom <= Integer.MAX_VALUE;
+    //@ assume Integer.MIN_VALUE <= nom / denom && nom / denom <= Integer.MAX_VALUE;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        int tmp = nom / denom;
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DivisionOverflow_Original.java:4: error: The token assume is illegal or not implemented for a type or method clause (JmlParser.classOrInterfaceBodyDeclaration)
+    //@ assume Integer.MIN_VALUE <= nom / denom && nom / denom <= Integer.MAX_VALUE;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DivisionOverflow_Original.java:2: error: Method specifications without a following method declaration
+    //@ ensures \result == nom / denom;
+        ^
+2 errors
+
+==============================
+public class DivisionOverflow_Original {
+    //@ ensures \result == nom / denom;
+    //@ ensures Integer.MIN_VALUE <= nom / denom && nom / denom <= Integer.MAX_VALUE;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        int tmp = nom / denom;
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/DivisionOverflow_Original.java:5: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method division_test_fail_overflow
+        int tmp = nom / denom;
+                      ^
+1 verification failure
+
+==============================

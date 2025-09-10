@@ -1,0 +1,41 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class AddLoop_Mutant4 {
+    public static int AddLoop(int x, int y) {
+        int sum = x;
+        if (y >= 0) {
+            int n = y;
+            while (n > 0) {
+                sum = sum + 1;
+                n = n - 1;
+            }
+        } else {
+            int n = -y;
+            while (n > 0) {
+                sum = sum - 1;
+                n = n - 1;
+            }
+        }
+        return sum;
+    }
+}
+
+```
+*end* role user
+start role user
+Did not get correct response from llm, try again!
+*end* role user
+start role assistant
+```
+T1: y >= 0
+D1: return_value == x + y
+
+T2: y < 0
+D2: return_value == x + y
+```
+*end* role assistant
+start role remark
+Validation SUCCESS--partially verified!
+Current conversation round is: [2]
+*end* role remark

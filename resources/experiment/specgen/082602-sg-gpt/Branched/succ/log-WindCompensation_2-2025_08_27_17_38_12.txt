@@ -1,0 +1,92 @@
+public class WindCompensation_Mutant2 {
+    //@ ensures \result == 0 ==> windSpeed < 10;
+    //@ ensures windSpeed >= 20 ==> \result == (windSpeed - 20) * 2;
+    //@ ensures 10 < windSpeed && windSpeed < 20 ==> \result == windSpeed - 10;
+    public static int windCompensation(int windSpeed) {
+        int compensation = 0;
+        if (windSpeed >= 20) {
+            compensation = (windSpeed - 20) * 2;
+        } else if (windSpeed > 10) {
+            compensation = windSpeed - 10;
+        }
+        return compensation;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WindCompensation_Mutant2.java:12: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WindCompensation_Mutant2.java:2:) in method windCompensation
+        return compensation;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WindCompensation_Mutant2.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WindCompensation_Mutant2.java:12:
+    //@ ensures \result == 0 ==> windSpeed < 10;
+        ^
+2 verification failures
+
+==============================
+public class WindCompensation_Mutant2 {
+    //@ ensures \result == 0 ==> windSpeed < 10;  
+    //@ ensures windSpeed >= 20 ==> \result == (windSpeed - 20) * 2;
+    //@ ensures 10 < windSpeed && windSpeed < 20 ==> \result == windSpeed - 10;
+    public static int windCompensation(int windSpeed) {
+        int compensation = 0;
+        if (windSpeed >= 20) {
+            compensation = (windSpeed - 20) * 2;
+        } else if (windSpeed > 10) {
+            compensation = windSpeed - 10;
+        }
+        return compensation;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WindCompensation_Mutant2.java:12: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WindCompensation_Mutant2.java:2:) in method windCompensation
+        return compensation;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WindCompensation_Mutant2.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WindCompensation_Mutant2.java:12:
+    //@ ensures \result == 0 ==> windSpeed < 10;  
+        ^
+2 verification failures
+
+==============================
+public class WindCompensation_Mutant2 {
+    //@ ensures \result == 0 ==> windSpeed <= 10;  
+    //@ ensures windSpeed >= 20 ==> \result == (windSpeed - 20) * 2;
+    //@ ensures 10 < windSpeed && windSpeed < 20 ==> \result == windSpeed - 10;
+    public static int windCompensation(int windSpeed) {
+        int compensation = 0;
+        if (windSpeed >= 20) {
+            compensation = (windSpeed - 20) * 2;
+        } else if (windSpeed > 10) {
+            compensation = windSpeed - 10;
+        }
+        return compensation;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WindCompensation_Mutant2.java:12: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WindCompensation_Mutant2.java:2:) in method windCompensation
+        return compensation;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WindCompensation_Mutant2.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/WindCompensation_Mutant2.java:12:
+    //@ ensures \result == 0 ==> windSpeed <= 10;  
+        ^
+2 verification failures
+
+==============================
+public class WindCompensation_Mutant2 {
+ 
+    //@ ensures windSpeed >= 20 ==> \result == (windSpeed - 20) * 2;
+    //@ ensures 10 < windSpeed && windSpeed < 20 ==> \result == windSpeed - 10;
+    public static int windCompensation(int windSpeed) {
+        int compensation = 0;
+        if (windSpeed >= 20) {
+            compensation = (windSpeed - 20) * 2;
+        } else if (windSpeed > 10) {
+            compensation = windSpeed - 10;
+        }
+        return compensation;
+    }
+}
+
+==============================
+
+==============================

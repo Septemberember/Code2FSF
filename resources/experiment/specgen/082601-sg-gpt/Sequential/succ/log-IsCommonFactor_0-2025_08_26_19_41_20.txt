@@ -1,0 +1,25 @@
+public class IsCommonFactor_Original {
+
+    //@ ensures \result <==> a % factor == 0 && b % factor == 0;
+    public static boolean isCommonFactor(int a, int b, int factor) {
+        return a % factor == 0 && b % factor == 0;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonFactor_Original.java:5: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method isCommonFactor
+        return a % factor == 0 && b % factor == 0;
+                 ^
+1 verification failure
+
+==============================
+public class IsCommonFactor_Original {
+
+    //@ requires factor != 0;
+    //@ ensures \result <==> a % factor == 0 && b % factor == 0;
+    public static boolean isCommonFactor(int a, int b, int factor) {
+        return a % factor == 0 && b % factor == 0;
+    }
+}
+==============================
+
+==============================

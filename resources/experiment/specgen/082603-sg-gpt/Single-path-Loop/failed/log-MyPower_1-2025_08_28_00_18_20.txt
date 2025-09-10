@@ -1,0 +1,41 @@
+public class MyPower_Mutant1 {
+    //@ ensures \result == x^n;
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 <= res && res == x^i;
+	//@ maintaining 0 <= i && i <= n;
+	//@ decreases n - i;
+        for(int i = 0; i < n; i++){
+            res = res * x;
+        }
+        return res;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/MyPower_Mutant1.java:2: error: bad operand types for binary operator '^'
+    //@ ensures \result == x^n;
+                            ^
+  first type:  boolean
+  second type: int
+/root/082602-gpt-specgen/tmp/MyPower_Mutant1.java:5: error: bad operand types for binary operator '^'
+	//@ maintaining 1 <= res && res == x^i;
+	                                    ^
+  first type:  boolean
+  second type: int
+2 errors
+
+==============================
+public class MyPower_Mutant1 {
+    //@ ensures \result == Math.pow(x, n);
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 <= res && res == Math.pow(x, i);
+	//@ maintaining 0 <= i && i <= n;
+	//@ decreases n - i;
+        for(int i = 0; i < n; i++){
+            res = res * x;
+        }
+        return res;
+    }
+}
+==============================

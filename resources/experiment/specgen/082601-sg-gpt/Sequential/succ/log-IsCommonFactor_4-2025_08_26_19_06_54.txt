@@ -1,0 +1,49 @@
+public class IsCommonFactor_Mutant4 {
+
+    //@ requires factor != 0;
+    //@ ensures \result <==> (a % factor == 0 && b % factor == 0);
+    public static boolean isCommonFactor(int a, int b, int factor) {
+        return a / factor == 0 && b % factor == 0; // changed '%' to '/' at a % factor
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonFactor_Mutant4.java:6: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonFactor_Mutant4.java:4:) in method isCommonFactor
+        return a / factor == 0 && b % factor == 0; // changed '%' to '/' at a % factor
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonFactor_Mutant4.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonFactor_Mutant4.java:6:
+    //@ ensures \result <==> (a % factor == 0 && b % factor == 0);
+        ^
+2 verification failures
+
+==============================
+public class IsCommonFactor_Mutant4 {
+
+    //@ requires factor != 0;
+    //@ ensures \result <==> (a % factor == 0 && b % factor == 0);  
+    public static boolean isCommonFactor(int a, int b, int factor) {
+        return a / factor == 0 && b % factor == 0; // changed '%' to '/' at a % factor
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonFactor_Mutant4.java:6: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonFactor_Mutant4.java:4:) in method isCommonFactor
+        return a / factor == 0 && b % factor == 0; // changed '%' to '/' at a % factor
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonFactor_Mutant4.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonFactor_Mutant4.java:6:
+    //@ ensures \result <==> (a % factor == 0 && b % factor == 0);  
+        ^
+2 verification failures
+
+==============================
+public class IsCommonFactor_Mutant4 {
+
+    //@ requires factor != 0;
+ 
+    public static boolean isCommonFactor(int a, int b, int factor) {
+        return a / factor == 0 && b % factor == 0; // changed '%' to '/' at a % factor
+    }
+}
+
+==============================
+
+==============================

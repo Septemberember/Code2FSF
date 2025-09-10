@@ -1,0 +1,21 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class NegAbs_Mutant3 {
+    public static int negAbs(int num) {
+        if (num < 0)
+            return -num;
+        else
+            return -num;
+    }
+}
+
+```
+*end* role user
+start role user
+There is no FSF in history conversation, retry the conversation, please regenerate the FSF for given program.
+*end* role user
+start role remark
+Validation FAIL--Conversation rounds number is over the maxRounds
+Current conversation round is: [1]
+*end* role remark

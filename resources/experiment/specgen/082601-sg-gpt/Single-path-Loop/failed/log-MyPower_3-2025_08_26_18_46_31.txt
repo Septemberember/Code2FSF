@@ -1,0 +1,805 @@
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 <= res && res == (\product int i; 0 <= i && i < n; x);
+	//@ maintaining 0 <= i && i <= n;
+	//@ decreases n - i;
+        for(int i = 0; i < n; i++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable i is already defined in method power(int,int)
+	//@ maintaining 1 <= res && res == (\product int i; 0 <= i && i < n; x);
+	                                                 ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 <= res && res == (\product int j; 0 <= j && j < n; x);
+	//@ maintaining 0 <= j && j <= n;
+	//@ decreases n - j;
+        for(int j = 0; j < n; j++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable j is already defined in method power(int,int)
+	//@ maintaining 1 <= res && res == (\product int j; 0 <= j && j < n; x);
+	                                                 ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 <= res && res == (\product int k; 0 <= k && k < n; x);
+	//@ maintaining 0 <= k && k <= n;
+	//@ decreases n - k;
+        for(int k = 0; k < n; k++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable k is already defined in method power(int,int)
+	//@ maintaining 1 <= res && res == (\product int k; 0 <= k && k < n; x);
+	                                                 ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 <= res && res == (\product int m; 0 <= m && m < n; x);
+	//@ maintaining 0 <= m && m <= n;
+	//@ decreases n - m;
+        for(int m = 0; m < n; m++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable m is already defined in method power(int,int)
+	//@ maintaining 1 <= res && res == (\product int m; 0 <= m && m < n; x);
+	                                                 ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 <= res && res == (\product int p; 0 <= p && p < n; x);
+	//@ maintaining 0 <= p && p <= n;
+	//@ decreases n - p;
+        for(int p = 0; p < n; p++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable p is already defined in method power(int,int)
+	//@ maintaining 1 <= res && res == (\product int p; 0 <= p && p < n; x);
+	                                                 ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 <= res && res == (\product int q; 0 <= q && q < n; x);
+	//@ maintaining 0 <= q && q <= n;
+	//@ decreases n - q;
+        for(int q = 0; q < n; q++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable q is already defined in method power(int,int)
+	//@ maintaining 1 <= res && res == (\product int q; 0 <= q && q < n; x);
+	                                                 ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 <= res && res == (\product int r; 0 <= r && r < n; x);
+	//@ maintaining 0 <= r && r <= n;
+	//@ decreases n - r;
+        for(int r = 0; r < n; r++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable r is already defined in method power(int,int)
+	//@ maintaining 1 <= res && res == (\product int r; 0 <= r && r < n; x);
+	                                                 ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 <= res && res == (\product int s; 0 <= s && s < n; x);
+	//@ maintaining 0 <= s && s <= n;
+	//@ decreases n - s;
+        for(int s = 0; s < n; s++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable s is already defined in method power(int,int)
+	//@ maintaining 1 <= res && res == (\product int s; 0 <= s && s < n; x);
+	                                                 ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 <= res && res == (\product int t; 0 <= t && t < n; x);
+	//@ maintaining 0 <= t && t <= n;
+	//@ decreases n - t;
+        for(int t = 0; t < n; t++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable t is already defined in method power(int,int)
+	//@ maintaining 1 <= res && res == (\product int t; 0 <= t && t < n; x);
+	                                                 ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 <= res && res == (\product int u; 0 <= u && u < n; x);
+	//@ maintaining 0 <= u && u <= n;
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable u is already defined in method power(int,int)
+	//@ maintaining 1 <= res && res == (\product int u; 0 <= u && u < n; x);
+	                                                 ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 < res && res == (\product int u; 0 < u && u < n; x);  
+	//@ maintaining 0 <= u && u <= n;
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable u is already defined in method power(int,int)
+	//@ maintaining 1 < res && res == (\product int u; 0 < u && u < n; x);  
+	                                                ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 < res && res == (\product int u; 0 < u && u <= n; x);  
+	//@ maintaining 0 <= u && u <= n;
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable u is already defined in method power(int,int)
+	//@ maintaining 1 < res && res == (\product int u; 0 < u && u <= n; x);  
+	                                                ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 < res && res == (\product int u; 0 <= u && u < n; x);  
+	//@ maintaining 0 <= u && u <= n;
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable u is already defined in method power(int,int)
+	//@ maintaining 1 < res && res == (\product int u; 0 <= u && u < n; x);  
+	                                                ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 < res && res == (\product int u; 0 <= u && u <= n; x);  
+	//@ maintaining 0 <= u && u <= n;
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable u is already defined in method power(int,int)
+	//@ maintaining 1 < res && res == (\product int u; 0 <= u && u <= n; x);  
+	                                                ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 < res && res == (\product int u; 0 - 1 <= u && u < n; x);  
+	//@ maintaining 0 <= u && u <= n;
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable u is already defined in method power(int,int)
+	//@ maintaining 1 < res && res == (\product int u; 0 - 1 <= u && u < n; x);  
+	                                                ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 < res && res == (\product int u; 0 - 1 <= u && u <= n; x);  
+	//@ maintaining 0 <= u && u <= n;
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable u is already defined in method power(int,int)
+	//@ maintaining 1 < res && res == (\product int u; 0 - 1 <= u && u <= n; x);  
+	                                                ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 <= res && res == (\product int u; 0 < u && u < n; x);  
+	//@ maintaining 0 <= u && u <= n;
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable u is already defined in method power(int,int)
+	//@ maintaining 1 <= res && res == (\product int u; 0 < u && u < n; x);  
+	                                                 ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 <= res && res == (\product int u; 0 < u && u <= n; x);  
+	//@ maintaining 0 <= u && u <= n;
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable u is already defined in method power(int,int)
+	//@ maintaining 1 <= res && res == (\product int u; 0 < u && u <= n; x);  
+	                                                 ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 <= res && res == (\product int u; 0 <= u && u < n; x);  
+	//@ maintaining 0 <= u && u <= n;
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable u is already defined in method power(int,int)
+	//@ maintaining 1 <= res && res == (\product int u; 0 <= u && u < n; x);  
+	                                                 ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 <= res && res == (\product int u; 0 <= u && u <= n; x);  
+	//@ maintaining 0 <= u && u <= n;
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable u is already defined in method power(int,int)
+	//@ maintaining 1 <= res && res == (\product int u; 0 <= u && u <= n; x);  
+	                                                 ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 <= res && res == (\product int u; 0 - 1 <= u && u < n; x);  
+	//@ maintaining 0 <= u && u <= n;
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable u is already defined in method power(int,int)
+	//@ maintaining 1 <= res && res == (\product int u; 0 - 1 <= u && u < n; x);  
+	                                                 ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 <= res && res == (\product int u; 0 - 1 <= u && u <= n; x);  
+	//@ maintaining 0 <= u && u <= n;
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable u is already defined in method power(int,int)
+	//@ maintaining 1 <= res && res == (\product int u; 0 - 1 <= u && u <= n; x);  
+	                                                 ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 - 1 <= res && res == (\product int u; 0 < u && u < n; x);  
+	//@ maintaining 0 <= u && u <= n;
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable u is already defined in method power(int,int)
+	//@ maintaining 1 - 1 <= res && res == (\product int u; 0 < u && u < n; x);  
+	                                                     ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 - 1 <= res && res == (\product int u; 0 < u && u <= n; x);  
+	//@ maintaining 0 <= u && u <= n;
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable u is already defined in method power(int,int)
+	//@ maintaining 1 - 1 <= res && res == (\product int u; 0 < u && u <= n; x);  
+	                                                     ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 - 1 <= res && res == (\product int u; 0 <= u && u < n; x);  
+	//@ maintaining 0 <= u && u <= n;
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable u is already defined in method power(int,int)
+	//@ maintaining 1 - 1 <= res && res == (\product int u; 0 <= u && u < n; x);  
+	                                                     ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 - 1 <= res && res == (\product int u; 0 <= u && u <= n; x);  
+	//@ maintaining 0 <= u && u <= n;
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable u is already defined in method power(int,int)
+	//@ maintaining 1 - 1 <= res && res == (\product int u; 0 <= u && u <= n; x);  
+	                                                     ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 - 1 <= res && res == (\product int u; 0 - 1 <= u && u < n; x);  
+	//@ maintaining 0 <= u && u <= n;
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable u is already defined in method power(int,int)
+	//@ maintaining 1 - 1 <= res && res == (\product int u; 0 - 1 <= u && u < n; x);  
+	                                                     ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+	//@ maintaining 1 - 1 <= res && res == (\product int u; 0 - 1 <= u && u <= n; x);  
+	//@ maintaining 0 <= u && u <= n;
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:5: error: variable u is already defined in method power(int,int)
+	//@ maintaining 1 - 1 <= res && res == (\product int u; 0 - 1 <= u && u <= n; x);  
+	                                                     ^
+1 error
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+ 
+	//@ maintaining 0 <= u && u <= n;
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method power
+	//@ maintaining 0 <= u && u <= n;
+	    ^
+1 verification failure
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+ 
+	//@ maintaining 0 < u && u < n;  
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method power
+	//@ maintaining 0 < u && u < n;  
+	    ^
+1 verification failure
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+ 
+	//@ maintaining 0 < u && u <= n;  
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method power
+	//@ maintaining 0 < u && u <= n;  
+	    ^
+1 verification failure
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+ 
+	//@ maintaining 0 < u && u - 1 <= n;  
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method power
+	//@ maintaining 0 < u && u - 1 <= n;  
+	    ^
+1 verification failure
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+ 
+	//@ maintaining 0 <= u && u < n;  
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method power
+	//@ maintaining 0 <= u && u < n;  
+	    ^
+1 verification failure
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+ 
+	//@ maintaining 0 <= u && u <= n;  
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method power
+	//@ maintaining 0 <= u && u <= n;  
+	    ^
+1 verification failure
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+ 
+	//@ maintaining 0 <= u && u - 1 <= n;  
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method power
+	//@ maintaining 0 <= u && u - 1 <= n;  
+	    ^
+1 verification failure
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+ 
+	//@ maintaining 0 - 1 <= u && u < n;  
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method power
+	//@ maintaining 0 - 1 <= u && u < n;  
+	    ^
+1 verification failure
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+ 
+	//@ maintaining 0 - 1 <= u && u <= n;  
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method power
+	//@ maintaining 0 - 1 <= u && u <= n;  
+	    ^
+1 verification failure
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+ 
+	//@ maintaining 0 - 1 <= u && u - 1 <= n;  
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/MyPower_Mutant3.java:6: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method power
+	//@ maintaining 0 - 1 <= u && u - 1 <= n;  
+	    ^
+1 verification failure
+
+==============================
+public class MyPower_Mutant3 {
+    /*@ spec_public @*/ 
+    public static int power(int x, int n) {
+        int res = 1;
+ 
+ 
+	//@ decreases n - u;
+        for(int u = 0; u < n; u++){
+	        res = res * x;
+        }
+        return res;
+    }
+}
+
+==============================
+
+==============================

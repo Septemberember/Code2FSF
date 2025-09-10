@@ -1,0 +1,22 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class Disjunction_Mutant4 {
+    public static boolean disjunctOf(boolean b1, boolean b2) {
+        if(b1 == true)
+            return false;
+        if(b2 == true)
+            return true;
+        return false;
+    }
+}
+
+```
+*end* role user
+start role user
+There is no FSF in history conversation, retry the conversation, please regenerate the FSF for given program.
+*end* role user
+start role remark
+Validation FAIL--Conversation rounds number is over the maxRounds
+Current conversation round is: [1]
+*end* role remark

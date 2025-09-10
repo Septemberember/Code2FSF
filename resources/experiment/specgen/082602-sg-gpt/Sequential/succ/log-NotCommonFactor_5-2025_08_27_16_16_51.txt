@@ -1,0 +1,29 @@
+public class NotCommonFactor_Mutant5 {
+
+    //@ requires factor != 0;
+    //@ ensures \result == a % factor != 1 || b % factor != 0;
+    public static boolean notCommonFactor(int a, int b, int factor) {
+        return a % factor != 1 || b % factor != 0; // Changed 0 to 1 in first condition
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/NotCommonFactor_Mutant5.java:4: error: incomparable types: boolean and int
+    //@ ensures \result == a % factor != 1 || b % factor != 0;
+                        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/NotCommonFactor_Mutant5.java:4: error: incomparable types: boolean and int
+    //@ ensures \result == a % factor != 1 || b % factor != 0;
+                                      ^
+2 errors
+
+==============================
+public class NotCommonFactor_Mutant5 {
+
+    //@ requires factor != 0;
+    //@ ensures \result == (a % factor != 1 || b % factor != 0);
+    public static boolean notCommonFactor(int a, int b, int factor) {
+        return a % factor != 1 || b % factor != 0; // Changed 0 to 1 in first condition
+    }
+}
+==============================
+
+==============================

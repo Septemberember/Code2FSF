@@ -1,0 +1,27 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class LeapYear_Mutant4 {
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0)
+                    leap = true;
+            } else
+                leap = true;
+        } else
+            leap = false;
+        return leap;
+    }
+}
+
+```
+*end* role user
+start role user
+There is no FSF in history conversation, retry the conversation, please regenerate the FSF for given program.
+*end* role user
+start role remark
+Validation FAIL--Conversation rounds number is over the maxRounds
+Current conversation round is: [1]
+*end* role remark

@@ -1,0 +1,58 @@
+public class SmallestEvenMulBranch_Mutant4 {
+    //@ requires n >= 0;
+    //@ ensures \result % 2 == 0;
+    //@ ensures \result >= n;
+    public static int smallestEvenMultiple(int n) {
+        if (n % 2 == 0) {
+            return n;
+        }
+        return 3 * n;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant4.java:9: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant4.java:3:) in method smallestEvenMultiple
+        return 3 * n;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant4.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant4.java:9:
+    //@ ensures \result % 2 == 0;
+        ^
+2 verification failures
+
+==============================
+public class SmallestEvenMulBranch_Mutant4 {
+    //@ requires n >= 0;
+    //@ ensures \result % 2 == 0;  
+    //@ ensures \result >= n;
+    public static int smallestEvenMultiple(int n) {
+        if (n % 2 == 0) {
+            return n;
+        }
+        return 3 * n;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant4.java:9: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant4.java:3:) in method smallestEvenMultiple
+        return 3 * n;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant4.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/SmallestEvenMulBranch_Mutant4.java:9:
+    //@ ensures \result % 2 == 0;  
+        ^
+2 verification failures
+
+==============================
+public class SmallestEvenMulBranch_Mutant4 {
+    //@ requires n >= 0;
+ 
+    //@ ensures \result >= n;
+    public static int smallestEvenMultiple(int n) {
+        if (n % 2 == 0) {
+            return n;
+        }
+        return 3 * n;
+    }
+}
+
+==============================
+
+==============================

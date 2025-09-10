@@ -1,0 +1,22 @@
+public class WaterFee_Mutant2 {
+    //@ ensures \result >= 0;
+    //@ ensures \result == 5*(\old(tons) - 10) + 4*(Math.min(10, \old(tons)) - 3) + 3*Math.min(3, \old(tons));
+    public static int calcWaterFee(int tons) {
+        int n = tons;
+        int fee = 0;
+        //@ maintaining 0 <= n && fee == 5*(\old(tons) - n) + 4*(Math.min(10, \old(tons)) - 3) + 3*Math.min(3, \old(tons));
+        //@ decreases n;
+        while (n > 0) {
+            if (n > 10) {
+                fee += 5;
+            } else if (n > 3) {
+                fee += 4;
+            } else {
+                fee += 3;
+            }
+            n--;
+        }
+        return fee;
+    }
+}
+==============================

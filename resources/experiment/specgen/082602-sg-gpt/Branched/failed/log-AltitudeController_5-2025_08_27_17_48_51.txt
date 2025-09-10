@@ -1,0 +1,198 @@
+public class AltitudeController_Mutant5 {
+    //@ ensures \result == 5 ==> absError > 30 && error > 0;
+    //@ ensures \result == -4 ==> absError > 30 && error <= 0;
+    //@ ensures \result == 3 ==> absError > 20 && error > 0;
+    //@ ensures \result == -3 ==> absError > 20 && error <= 0;
+    //@ ensures \result == 2 ==> absError > 10 && error > 0;
+    //@ ensures \result == -2 ==> absError > 10 && error <= 0;
+    //@ ensures \result == error ==> absError <= 10;
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = 0;
+        absError = error < 0 ? -error : error;
+        int controlSignal = 0;
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -4; //Changed -5 to -4
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        return controlSignal;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:2: error: cannot find symbol
+    //@ ensures \result == 5 ==> absError > 30 && error > 0;
+                                 ^
+  symbol:   variable absError
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:2: error: cannot find symbol
+    //@ ensures \result == 5 ==> absError > 30 && error > 0;
+                                                  ^
+  symbol:   variable error
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:3: error: cannot find symbol
+    //@ ensures \result == -4 ==> absError > 30 && error <= 0;
+                                  ^
+  symbol:   variable absError
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:3: error: cannot find symbol
+    //@ ensures \result == -4 ==> absError > 30 && error <= 0;
+                                                   ^
+  symbol:   variable error
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:4: error: cannot find symbol
+    //@ ensures \result == 3 ==> absError > 20 && error > 0;
+                                 ^
+  symbol:   variable absError
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:4: error: cannot find symbol
+    //@ ensures \result == 3 ==> absError > 20 && error > 0;
+                                                  ^
+  symbol:   variable error
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:5: error: cannot find symbol
+    //@ ensures \result == -3 ==> absError > 20 && error <= 0;
+                                  ^
+  symbol:   variable absError
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:5: error: cannot find symbol
+    //@ ensures \result == -3 ==> absError > 20 && error <= 0;
+                                                   ^
+  symbol:   variable error
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:6: error: cannot find symbol
+    //@ ensures \result == 2 ==> absError > 10 && error > 0;
+                                 ^
+  symbol:   variable absError
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:6: error: cannot find symbol
+    //@ ensures \result == 2 ==> absError > 10 && error > 0;
+                                                  ^
+  symbol:   variable error
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:7: error: cannot find symbol
+    //@ ensures \result == -2 ==> absError > 10 && error <= 0;
+                                  ^
+  symbol:   variable absError
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:7: error: cannot find symbol
+    //@ ensures \result == -2 ==> absError > 10 && error <= 0;
+                                                   ^
+  symbol:   variable error
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:8: error: cannot find symbol
+    //@ ensures \result == error ==> absError <= 10;
+                           ^
+  symbol:   variable error
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:8: error: cannot find symbol
+    //@ ensures \result == error ==> absError <= 10;
+                                     ^
+  symbol:   variable absError
+  location: class AltitudeController_Mutant5
+14 errors
+
+==============================
+public class AltitudeController_Mutant5 {
+    //@ ensures \result == 5 ==> absError > 30 && error > 0;
+    //@ ensures \result == -4 ==> absError > 30 && error <= 0;
+    //@ ensures \result == 3 ==> absError > 20 && error > 0;
+    //@ ensures \result == -3 ==> absError > 20 && error <= 0;
+    //@ ensures \result == 2 ==> absError > 10 && error > 0;
+    //@ ensures \result == -2 ==> absError > 10 && error <= 0;
+    //@ ensures \result == error ==> absError <= 10;
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = 0;
+        absError = error < 0 ? -error : error;
+        int controlSignal = 0;
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -4; //Changed -5 to -4
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        return controlSignal;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:2: error: cannot find symbol
+    //@ ensures \result == 5 ==> absError > 30 && error > 0;
+                                 ^
+  symbol:   variable absError
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:2: error: cannot find symbol
+    //@ ensures \result == 5 ==> absError > 30 && error > 0;
+                                                  ^
+  symbol:   variable error
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:3: error: cannot find symbol
+    //@ ensures \result == -4 ==> absError > 30 && error <= 0;
+                                  ^
+  symbol:   variable absError
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:3: error: cannot find symbol
+    //@ ensures \result == -4 ==> absError > 30 && error <= 0;
+                                                   ^
+  symbol:   variable error
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:4: error: cannot find symbol
+    //@ ensures \result == 3 ==> absError > 20 && error > 0;
+                                 ^
+  symbol:   variable absError
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:4: error: cannot find symbol
+    //@ ensures \result == 3 ==> absError > 20 && error > 0;
+                                                  ^
+  symbol:   variable error
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:5: error: cannot find symbol
+    //@ ensures \result == -3 ==> absError > 20 && error <= 0;
+                                  ^
+  symbol:   variable absError
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:5: error: cannot find symbol
+    //@ ensures \result == -3 ==> absError > 20 && error <= 0;
+                                                   ^
+  symbol:   variable error
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:6: error: cannot find symbol
+    //@ ensures \result == 2 ==> absError > 10 && error > 0;
+                                 ^
+  symbol:   variable absError
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:6: error: cannot find symbol
+    //@ ensures \result == 2 ==> absError > 10 && error > 0;
+                                                  ^
+  symbol:   variable error
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:7: error: cannot find symbol
+    //@ ensures \result == -2 ==> absError > 10 && error <= 0;
+                                  ^
+  symbol:   variable absError
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:7: error: cannot find symbol
+    //@ ensures \result == -2 ==> absError > 10 && error <= 0;
+                                                   ^
+  symbol:   variable error
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:8: error: cannot find symbol
+    //@ ensures \result == error ==> absError <= 10;
+                           ^
+  symbol:   variable error
+  location: class AltitudeController_Mutant5
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant5.java:8: error: cannot find symbol
+    //@ ensures \result == error ==> absError <= 10;
+                                     ^
+  symbol:   variable absError
+  location: class AltitudeController_Mutant5
+14 errors
+
+==============================

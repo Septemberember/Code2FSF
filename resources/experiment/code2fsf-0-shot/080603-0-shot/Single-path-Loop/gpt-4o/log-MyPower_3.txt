@@ -1,0 +1,32 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class MyPower_Mutant3 {
+    public static int power(int x, int n) {
+        int res = 1;
+        for(int i = 0; i < n; i++){
+	        res = res + x;
+        }
+        return res;
+    }
+}
+
+```
+*end* role user
+start role assistant
+```
+T1: n == 0
+D1: return_value == 1
+T2: n > 0
+D2: return_value == 1 + x * n
+T3: n < 0
+D3: return_value == 1 + x * n
+```
+*end* role assistant
+start role user
+When the variables are assigned as x: -12483	n: -32733	，the output of the program violates T: n < 0	D: return_value == 1 + x * n，please regenerate the FSF according this counterexample！
+*end* role user
+start role remark
+Validation FAIL--Conversation rounds number is over the maxRounds
+Current conversation round is: [1]
+*end* role remark

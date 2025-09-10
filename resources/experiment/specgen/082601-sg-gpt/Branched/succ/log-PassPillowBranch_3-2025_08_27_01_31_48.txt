@@ -1,0 +1,35 @@
+public class PassPillowBranch_Mutant3 {
+    //@ requires n > 0;
+    //@ requires time >= 0;
+    //@ ensures \result >= 1 && \result <= n;
+    public static int passPillow(int n, int time) {
+        time = time % ((n - 1) * 2);
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 2;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/PassPillowBranch_Mutant3.java:6: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method passPillow
+        time = time % ((n - 1) * 2);
+                    ^
+1 verification failure
+
+==============================
+public class PassPillowBranch_Mutant3 {
+    //@ requires n > 0;
+    //@ requires time >= 0;
+    //@ requires (n - 1) != 0;
+    //@ ensures \result >= 1 && \result <= n;
+    public static int passPillow(int n, int time) {
+        time = time % ((n - 1) * 2);
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 2;
+    }
+}
+==============================
+
+==============================

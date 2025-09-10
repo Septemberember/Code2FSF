@@ -1,0 +1,608 @@
+public class AltitudeController_Mutant2 {
+    //@ requires Integer.MIN_VALUE <= currentHeight + targetHeight && currentHeight + targetHeight <= Integer.MAX_VALUE && targetHeight != Integer.MIN_VALUE;
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? (\old(targetHeight) - \old(currentHeight) > 0 ? 5 : -5) : (\old(targetHeight) - \old(currentHeight) > 20) ? (\old(targetHeight) - \old(currentHeight) > 0 ? 3 : -3) : (\old(targetHeight) - \old(currentHeight) > 10) ? (\old(targetHeight) - \old(currentHeight) > 0 ? 2 : -2) : \old(targetHeight) - \old(currentHeight));
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = 0;
+        absError = error < 0 ? -error : error;
+        int controlSignal = 1; //Changed 0 to 1
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        return controlSignal;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: error: Incorrectly formed or terminated ensures statement near here
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? (\old(targetHeight) - \old(currentHeight) > 0 ? 5 : -5) : (\old(targetHeight) - \old(currentHeight) > 20) ? (\old(targetHeight) - \old(currentHeight) > 0 ? 3 : -3) : (\old(targetHeight) - \old(currentHeight) > 10) ? (\old(targetHeight) - \old(currentHeight) > 0 ? 2 : -2) : \old(targetHeight) - \old(currentHeight));
+                                                                                                                                                                                                                                                                                                                                                                                                       ^
+1 error
+
+==============================
+public class AltitudeController_Mutant2 {
+    //@ requires Integer.MIN_VALUE <= currentHeight + targetHeight && currentHeight + targetHeight <= Integer.MAX_VALUE && targetHeight != Integer.MIN_VALUE;
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 5 : -5) : ((\old(targetHeight) - \old(currentHeight) > 20) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 3 : -3) : ((\old(targetHeight) - \old(currentHeight) > 10) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 2 : -2) : \old(targetHeight) - \old(currentHeight)));
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = 0;
+        absError = error < 0 ? -error : error;
+        int controlSignal = 1; //Changed 0 to 1
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        return controlSignal;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 5 : -5) : ((\old(targetHeight) - \old(currentHeight) > 20) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 3 : -3) : ((\old(targetHeight) - \old(currentHeight) > 10) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 2 : -2) : \old(targetHeight) - \old(currentHeight)));
+                        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 5 : -5) : ((\old(targetHeight) - \old(currentHeight) > 20) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 3 : -3) : ((\old(targetHeight) - \old(currentHeight) > 10) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 2 : -2) : \old(targetHeight) - \old(currentHeight)));
+                                                                           ^
+2 errors
+
+==============================
+public class AltitudeController_Mutant2 {
+    //@ requires Integer.MIN_VALUE <= currentHeight + targetHeight && currentHeight + targetHeight <= Integer.MAX_VALUE && targetHeight != Integer.MIN_VALUE;
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 5 : -5) : ((\old(targetHeight) - \old(currentHeight) > 20) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 3 : -3) : ((\old(targetHeight) - \old(currentHeight) > 10) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 2 : -2) : \old(targetHeight) - \old(currentHeight)));
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = 0;
+        absError = error < 0 ? -error : error;
+        int controlSignal = 1; //Changed 0 to 1
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        return controlSignal;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 5 : -5) : ((\old(targetHeight) - \old(currentHeight) > 20) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 3 : -3) : ((\old(targetHeight) - \old(currentHeight) > 10) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 2 : -2) : \old(targetHeight) - \old(currentHeight)));
+                        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 5 : -5) : ((\old(targetHeight) - \old(currentHeight) > 20) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 3 : -3) : ((\old(targetHeight) - \old(currentHeight) > 10) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 2 : -2) : \old(targetHeight) - \old(currentHeight)));
+                                                                           ^
+2 errors
+
+==============================
+public class AltitudeController_Mutant2 {
+    //@ requires Integer.MIN_VALUE <= currentHeight + targetHeight && currentHeight + targetHeight <= Integer.MAX_VALUE && targetHeight != Integer.MIN_VALUE;
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 5 : -5) : (\old(targetHeight) - \old(currentHeight) > 20) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 3 : -3) : (\old(targetHeight) - \old(currentHeight) > 10) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 2 : -2) : \old(targetHeight) - \old(currentHeight);
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = 0;
+        absError = error < 0 ? -error : error;
+        int controlSignal = 1; //Changed 0 to 1
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        return controlSignal;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 5 : -5) : (\old(targetHeight) - \old(currentHeight) > 20) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 3 : -3) : (\old(targetHeight) - \old(currentHeight) > 10) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 2 : -2) : \old(targetHeight) - \old(currentHeight);
+                        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 5 : -5) : (\old(targetHeight) - \old(currentHeight) > 20) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 3 : -3) : (\old(targetHeight) - \old(currentHeight) > 10) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 2 : -2) : \old(targetHeight) - \old(currentHeight);
+                                                                           ^
+2 errors
+
+==============================
+public class AltitudeController_Mutant2 {
+    //@ requires Integer.MIN_VALUE <= currentHeight + targetHeight && currentHeight + targetHeight <= Integer.MAX_VALUE && targetHeight != Integer.MIN_VALUE;
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 5 : -5) : (\old(targetHeight) - \old(currentHeight) > 20) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 3 : -3) : (\old(targetHeight) - \old(currentHeight) > 10) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 2 : -2) : \old(targetHeight) - \old(currentHeight);
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = 0;
+        absError = error < 0 ? -error : error;
+        int controlSignal = 1; //Changed 0 to 1
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        return controlSignal;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 5 : -5) : (\old(targetHeight) - \old(currentHeight) > 20) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 3 : -3) : (\old(targetHeight) - \old(currentHeight) > 10) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 2 : -2) : \old(targetHeight) - \old(currentHeight);
+                        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 5 : -5) : (\old(targetHeight) - \old(currentHeight) > 20) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 3 : -3) : (\old(targetHeight) - \old(currentHeight) > 10) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 2 : -2) : \old(targetHeight) - \old(currentHeight);
+                                                                           ^
+2 errors
+
+==============================
+public class AltitudeController_Mutant2 {
+    //@ requires Integer.MIN_VALUE <= currentHeight + targetHeight && currentHeight + targetHeight <= Integer.MAX_VALUE && targetHeight != Integer.MIN_VALUE;
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 5 : -5) : (\old(targetHeight) - \old(currentHeight) > 20) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 3 : -3) : (\old(targetHeight) - \old(currentHeight) > 10) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 2 : -2) : \old(targetHeight) - \old(currentHeight);
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = 0;
+        absError = error < 0 ? -error : error;
+        int controlSignal = 0;
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        return controlSignal;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 5 : -5) : (\old(targetHeight) - \old(currentHeight) > 20) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 3 : -3) : (\old(targetHeight) - \old(currentHeight) > 10) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 2 : -2) : \old(targetHeight) - \old(currentHeight);
+                        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 5 : -5) : (\old(targetHeight) - \old(currentHeight) > 20) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 3 : -3) : (\old(targetHeight) - \old(currentHeight) > 10) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 2 : -2) : \old(targetHeight) - \old(currentHeight);
+                                                                           ^
+2 errors
+
+==============================
+public class AltitudeController_Mutant2 {
+    //@ requires Integer.MIN_VALUE <= currentHeight + targetHeight && currentHeight + targetHeight <= Integer.MAX_VALUE && targetHeight != Integer.MIN_VALUE;
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 5 : -5) : (\old(targetHeight) - \old(currentHeight) > 20) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 3 : -3) : (\old(targetHeight) - \old(currentHeight) > 10) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 2 : -2) : \old(targetHeight) - \old(currentHeight);
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = error < 0 ? -error : error;
+        int controlSignal = 0;
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        return controlSignal;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 5 : -5) : (\old(targetHeight) - \old(currentHeight) > 20) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 3 : -3) : (\old(targetHeight) - \old(currentHeight) > 10) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 2 : -2) : \old(targetHeight) - \old(currentHeight);
+                        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 5 : -5) : (\old(targetHeight) - \old(currentHeight) > 20) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 3 : -3) : (\old(targetHeight) - \old(currentHeight) > 10) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 2 : -2) : \old(targetHeight) - \old(currentHeight);
+                                                                           ^
+2 errors
+
+==============================
+public class AltitudeController_Mutant2 {
+    //@ requires Integer.MIN_VALUE <= currentHeight + targetHeight && currentHeight + targetHeight <= Integer.MAX_VALUE && targetHeight != Integer.MIN_VALUE;
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 5 : -5) : (\old(targetHeight) - \old(currentHeight) > 20) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 3 : -3) : (\old(targetHeight) - \old(currentHeight) > 10) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 2 : -2) : \old(targetHeight) - \old(currentHeight);
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = error < 0 ? -error : error;
+        int controlSignal = 0;
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = 0; // Changed to 0
+        }
+        return controlSignal;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 5 : -5) : (\old(targetHeight) - \old(currentHeight) > 20) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 3 : -3) : (\old(targetHeight) - \old(currentHeight) > 10) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 2 : -2) : \old(targetHeight) - \old(currentHeight);
+                        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 5 : -5) : (\old(targetHeight) - \old(currentHeight) > 20) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 3 : -3) : (\old(targetHeight) - \old(currentHeight) > 10) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 2 : -2) : \old(targetHeight) - \old(currentHeight);
+                                                                           ^
+2 errors
+
+==============================
+public class AltitudeController_Mutant2 {
+    //@ requires Integer.MIN_VALUE <= currentHeight + targetHeight && currentHeight + targetHeight <= Integer.MAX_VALUE && targetHeight != Integer.MIN_VALUE;
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 5 : -5) : (\old(targetHeight) - \old(currentHeight) > 20) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 3 : -3) : (\old(targetHeight) - \old(currentHeight) > 10) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 2 : -2) : \old(targetHeight) - \old(currentHeight);
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = Math.abs(error);
+        int controlSignal = 0;
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        return controlSignal;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: error: incomparable types: int and boolean
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 5 : -5) : (\old(targetHeight) - \old(currentHeight) > 20) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 3 : -3) : (\old(targetHeight) - \old(currentHeight) > 10) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 2 : -2) : \old(targetHeight) - \old(currentHeight);
+                        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: error: incompatible types: int cannot be converted to boolean
+    //@ ensures \result == (\old(targetHeight) - \old(currentHeight) > 30) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 5 : -5) : (\old(targetHeight) - \old(currentHeight) > 20) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 3 : -3) : (\old(targetHeight) - \old(currentHeight) > 10) ? ((\old(targetHeight) - \old(currentHeight) > 0) ? 2 : -2) : \old(targetHeight) - \old(currentHeight);
+                                                                           ^
+2 errors
+
+==============================
+public class AltitudeController_Mutant2 {
+    //@ requires Integer.MIN_VALUE <= currentHeight + targetHeight && currentHeight + targetHeight <= Integer.MAX_VALUE && targetHeight != Integer.MIN_VALUE;
+    //@ ensures \result >= -5 && \result <= 5;
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = Math.abs(error);
+        int controlSignal = 0;
+        
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        
+        return controlSignal;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:19: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3:) in method altitudeController
+        return controlSignal;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:19:
+    //@ ensures \result >= -5 && \result <= 5;
+        ^
+2 verification failures
+
+==============================
+public class AltitudeController_Mutant2 {
+    //@ requires Integer.MIN_VALUE <= currentHeight + targetHeight && currentHeight + targetHeight <= Integer.MAX_VALUE && targetHeight != Integer.MIN_VALUE;
+    //@ ensures \result > -5 && \result < 5;  
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = Math.abs(error);
+        int controlSignal = 0;
+        
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        
+        return controlSignal;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:19: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3:) in method altitudeController
+        return controlSignal;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:19:
+    //@ ensures \result > -5 && \result < 5;  
+        ^
+2 verification failures
+
+==============================
+public class AltitudeController_Mutant2 {
+    //@ requires Integer.MIN_VALUE <= currentHeight + targetHeight && currentHeight + targetHeight <= Integer.MAX_VALUE && targetHeight != Integer.MIN_VALUE;
+    //@ ensures \result > -5 && \result <= 5;  
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = Math.abs(error);
+        int controlSignal = 0;
+        
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        
+        return controlSignal;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:19: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3:) in method altitudeController
+        return controlSignal;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:19:
+    //@ ensures \result > -5 && \result <= 5;  
+        ^
+2 verification failures
+
+==============================
+public class AltitudeController_Mutant2 {
+    //@ requires Integer.MIN_VALUE <= currentHeight + targetHeight && currentHeight + targetHeight <= Integer.MAX_VALUE && targetHeight != Integer.MIN_VALUE;
+    //@ ensures \result > -5 && \result - 1 <= 5;  
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = Math.abs(error);
+        int controlSignal = 0;
+        
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        
+        return controlSignal;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:19: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3:) in method altitudeController
+        return controlSignal;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:19:
+    //@ ensures \result > -5 && \result - 1 <= 5;  
+        ^
+2 verification failures
+
+==============================
+public class AltitudeController_Mutant2 {
+    //@ requires Integer.MIN_VALUE <= currentHeight + targetHeight && currentHeight + targetHeight <= Integer.MAX_VALUE && targetHeight != Integer.MIN_VALUE;
+    //@ ensures \result >= -5 && \result < 5;  
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = Math.abs(error);
+        int controlSignal = 0;
+        
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        
+        return controlSignal;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:19: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3:) in method altitudeController
+        return controlSignal;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:19:
+    //@ ensures \result >= -5 && \result < 5;  
+        ^
+2 verification failures
+
+==============================
+public class AltitudeController_Mutant2 {
+    //@ requires Integer.MIN_VALUE <= currentHeight + targetHeight && currentHeight + targetHeight <= Integer.MAX_VALUE && targetHeight != Integer.MIN_VALUE;
+    //@ ensures \result >= -5 && \result <= 5;  
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = Math.abs(error);
+        int controlSignal = 0;
+        
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        
+        return controlSignal;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:19: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3:) in method altitudeController
+        return controlSignal;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:19:
+    //@ ensures \result >= -5 && \result <= 5;  
+        ^
+2 verification failures
+
+==============================
+public class AltitudeController_Mutant2 {
+    //@ requires Integer.MIN_VALUE <= currentHeight + targetHeight && currentHeight + targetHeight <= Integer.MAX_VALUE && targetHeight != Integer.MIN_VALUE;
+    //@ ensures \result >= -5 && \result - 1 <= 5;  
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = Math.abs(error);
+        int controlSignal = 0;
+        
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        
+        return controlSignal;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:19: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3:) in method altitudeController
+        return controlSignal;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:19:
+    //@ ensures \result >= -5 && \result - 1 <= 5;  
+        ^
+2 verification failures
+
+==============================
+public class AltitudeController_Mutant2 {
+    //@ requires Integer.MIN_VALUE <= currentHeight + targetHeight && currentHeight + targetHeight <= Integer.MAX_VALUE && targetHeight != Integer.MIN_VALUE;
+    //@ ensures \result + 1 >= -5 && \result < 5;  
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = Math.abs(error);
+        int controlSignal = 0;
+        
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        
+        return controlSignal;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:19: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3:) in method altitudeController
+        return controlSignal;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:19:
+    //@ ensures \result + 1 >= -5 && \result < 5;  
+        ^
+2 verification failures
+
+==============================
+public class AltitudeController_Mutant2 {
+    //@ requires Integer.MIN_VALUE <= currentHeight + targetHeight && currentHeight + targetHeight <= Integer.MAX_VALUE && targetHeight != Integer.MIN_VALUE;
+    //@ ensures \result + 1 >= -5 && \result <= 5;  
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = Math.abs(error);
+        int controlSignal = 0;
+        
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        
+        return controlSignal;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:19: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3:) in method altitudeController
+        return controlSignal;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:19:
+    //@ ensures \result + 1 >= -5 && \result <= 5;  
+        ^
+2 verification failures
+
+==============================
+public class AltitudeController_Mutant2 {
+    //@ requires Integer.MIN_VALUE <= currentHeight + targetHeight && currentHeight + targetHeight <= Integer.MAX_VALUE && targetHeight != Integer.MIN_VALUE;
+    //@ ensures \result + 1 >= -5 && \result - 1 <= 5;  
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = Math.abs(error);
+        int controlSignal = 0;
+        
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        
+        return controlSignal;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:19: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3:) in method altitudeController
+        return controlSignal;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/AltitudeController_Mutant2.java:19:
+    //@ ensures \result + 1 >= -5 && \result - 1 <= 5;  
+        ^
+2 verification failures
+
+==============================
+public class AltitudeController_Mutant2 {
+    //@ requires Integer.MIN_VALUE <= currentHeight + targetHeight && currentHeight + targetHeight <= Integer.MAX_VALUE && targetHeight != Integer.MIN_VALUE;
+ 
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight - currentHeight;
+        int absError = Math.abs(error);
+        int controlSignal = 0;
+        
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        
+        return controlSignal;
+    }
+}
+
+==============================
+
+==============================

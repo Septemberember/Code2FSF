@@ -1,0 +1,31 @@
+start role user
+Please generate an FSF for the program below:
+```
+public class GetUpCaseLoop {
+    public static char getUpCase(char c) {
+        if(c < 'f' || c > 'z') {
+            return 0;
+        }
+        char t = 'F';
+        while(t <= 'Z' && t != c - 'a' + 'A') {
+            t++;
+        }
+        return t;
+    }
+}
+
+```
+*end* role user
+start role assistant
+```
+T1: c < 'f' || c > 'z'
+D1: return_value == 0
+
+T2: c >= 'f' && c <= 'z'
+D2: return_value == c - 'a' + 'A'
+```
+*end* role assistant
+start role remark
+Validation SUCCESS--partially verified!
+Current conversation round is: [1]
+*end* role remark

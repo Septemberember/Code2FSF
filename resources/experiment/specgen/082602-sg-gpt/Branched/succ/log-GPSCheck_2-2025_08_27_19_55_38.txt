@@ -1,0 +1,92 @@
+public class GPSCheck_Mutant2 {
+    //@ ensures \result == 1 <==> satellites < 4;
+    //@ ensures \result == 2 <==> signalStrength <= 20;
+    static public int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+        if (satellites < 4) {
+            alarm = 1;
+        }
+        if (signalStrength <= 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GPSCheck_Mutant2.java:12: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GPSCheck_Mutant2.java:2:) in method GPSCheck
+        return alarm;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GPSCheck_Mutant2.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GPSCheck_Mutant2.java:12:
+    //@ ensures \result == 1 <==> satellites < 4;
+        ^
+2 verification failures
+
+==============================
+public class GPSCheck_Mutant2 {
+    //@ ensures \result == 1 <==> satellites < 4;  
+    //@ ensures \result == 2 <==> signalStrength <= 20;
+    static public int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+        if (satellites < 4) {
+            alarm = 1;
+        }
+        if (signalStrength <= 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GPSCheck_Mutant2.java:12: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GPSCheck_Mutant2.java:2:) in method GPSCheck
+        return alarm;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GPSCheck_Mutant2.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GPSCheck_Mutant2.java:12:
+    //@ ensures \result == 1 <==> satellites < 4;  
+        ^
+2 verification failures
+
+==============================
+public class GPSCheck_Mutant2 {
+    //@ ensures \result == 1 <==> satellites <= 4;  
+    //@ ensures \result == 2 <==> signalStrength <= 20;
+    static public int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+        if (satellites < 4) {
+            alarm = 1;
+        }
+        if (signalStrength <= 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GPSCheck_Mutant2.java:12: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GPSCheck_Mutant2.java:2:) in method GPSCheck
+        return alarm;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GPSCheck_Mutant2.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/GPSCheck_Mutant2.java:12:
+    //@ ensures \result == 1 <==> satellites <= 4;  
+        ^
+2 verification failures
+
+==============================
+public class GPSCheck_Mutant2 {
+ 
+    //@ ensures \result == 2 <==> signalStrength <= 20;
+    static public int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+        if (satellites < 4) {
+            alarm = 1;
+        }
+        if (signalStrength <= 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+
+==============================
+
+==============================

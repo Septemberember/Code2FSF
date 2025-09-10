@@ -1,0 +1,107 @@
+public class Conjunction_Mutant3 {
+    //@ ensures \result == (b1 == false && b2 == false) <==> false;
+    //@ ensures \result == true ==> b1 == true && b2 == true;
+    //@ ensures \result == false ==> b1 == false || b2 == true;
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return false;
+        if(b2 == false)
+            return true;
+        return true;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Conjunction_Mutant3.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Conjunction_Mutant3.java:2:) in method conjunctOf
+            return false;
+            ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Conjunction_Mutant3.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Conjunction_Mutant3.java:7:
+    //@ ensures \result == (b1 == false && b2 == false) <==> false;
+        ^
+2 verification failures
+
+==============================
+public class Conjunction_Mutant3 {
+    //@ ensures \result == (b1 == false && b2 == false) <==> false;  
+    //@ ensures \result == true ==> b1 == true && b2 == true;
+    //@ ensures \result == false ==> b1 == false || b2 == true;
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return false;
+        if(b2 == false)
+            return true;
+        return true;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Conjunction_Mutant3.java:7: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Conjunction_Mutant3.java:2:) in method conjunctOf
+            return false;
+            ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Conjunction_Mutant3.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Conjunction_Mutant3.java:7:
+    //@ ensures \result == (b1 == false && b2 == false) <==> false;  
+        ^
+2 verification failures
+
+==============================
+public class Conjunction_Mutant3 {
+ 
+    //@ ensures \result == true ==> b1 == true && b2 == true;
+    //@ ensures \result == false ==> b1 == false || b2 == true;
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return false;
+        if(b2 == false)
+            return true;
+        return true;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Conjunction_Mutant3.java:9: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Conjunction_Mutant3.java:3:) in method conjunctOf
+            return true;
+            ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Conjunction_Mutant3.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Conjunction_Mutant3.java:9:
+    //@ ensures \result == true ==> b1 == true && b2 == true;
+        ^
+2 verification failures
+
+==============================
+public class Conjunction_Mutant3 {
+ 
+    //@ ensures \result == true ==> b1 == true && b2 == true;  
+    //@ ensures \result == false ==> b1 == false || b2 == true;
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return false;
+        if(b2 == false)
+            return true;
+        return true;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Conjunction_Mutant3.java:9: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Conjunction_Mutant3.java:3:) in method conjunctOf
+            return true;
+            ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Conjunction_Mutant3.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Conjunction_Mutant3.java:9:
+    //@ ensures \result == true ==> b1 == true && b2 == true;  
+        ^
+2 verification failures
+
+==============================
+public class Conjunction_Mutant3 {
+ 
+ 
+    //@ ensures \result == false ==> b1 == false || b2 == true;
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return false;
+        if(b2 == false)
+            return true;
+        return true;
+    }
+}
+
+==============================
+
+==============================

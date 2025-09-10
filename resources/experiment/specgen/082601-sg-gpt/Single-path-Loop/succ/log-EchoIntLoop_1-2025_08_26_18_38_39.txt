@@ -1,0 +1,487 @@
+public class EchoIntLoop_Mutant1 {
+    //@ ensures \result == x + 1;
+    public static int echo(int x) {
+        int res = 0;
+        //@ maintaining 0 <= i && i <= x + 1;
+        //@ maintaining res == i;
+        //@ decreases x - i;
+        for(int i = 0; i <= x; i++) {
+            res = res + 1;
+        }
+        return res;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method echo
+        //@ maintaining 0 <= i && i <= x + 1;
+            ^
+1 verification failure
+
+==============================
+public class EchoIntLoop_Mutant1 {
+    //@ ensures \result == x + 1;
+    public static int echo(int x) {
+        int res = 0;
+        //@ maintaining 0 < i && i < x + 1;  
+        //@ maintaining res == i;
+        //@ decreases x - i;
+        for(int i = 0; i <= x; i++) {
+            res = res + 1;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method echo
+        //@ maintaining 0 < i && i < x + 1;  
+            ^
+1 verification failure
+
+==============================
+public class EchoIntLoop_Mutant1 {
+    //@ ensures \result == x + 1;
+    public static int echo(int x) {
+        int res = 0;
+        //@ maintaining 0 < i && i <= x + 1;  
+        //@ maintaining res == i;
+        //@ decreases x - i;
+        for(int i = 0; i <= x; i++) {
+            res = res + 1;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method echo
+        //@ maintaining 0 < i && i <= x + 1;  
+            ^
+1 verification failure
+
+==============================
+public class EchoIntLoop_Mutant1 {
+    //@ ensures \result == x + 1;
+    public static int echo(int x) {
+        int res = 0;
+        //@ maintaining 0 < i && i - 1 <= x + 1;  
+        //@ maintaining res == i;
+        //@ decreases x - i;
+        for(int i = 0; i <= x; i++) {
+            res = res + 1;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method echo
+        //@ maintaining 0 < i && i - 1 <= x + 1;  
+            ^
+1 verification failure
+
+==============================
+public class EchoIntLoop_Mutant1 {
+    //@ ensures \result == x + 1;
+    public static int echo(int x) {
+        int res = 0;
+        //@ maintaining 0 <= i && i < x + 1;  
+        //@ maintaining res == i;
+        //@ decreases x - i;
+        for(int i = 0; i <= x; i++) {
+            res = res + 1;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method echo
+        //@ maintaining 0 <= i && i < x + 1;  
+            ^
+1 verification failure
+
+==============================
+public class EchoIntLoop_Mutant1 {
+    //@ ensures \result == x + 1;
+    public static int echo(int x) {
+        int res = 0;
+        //@ maintaining 0 <= i && i <= x + 1;  
+        //@ maintaining res == i;
+        //@ decreases x - i;
+        for(int i = 0; i <= x; i++) {
+            res = res + 1;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method echo
+        //@ maintaining 0 <= i && i <= x + 1;  
+            ^
+1 verification failure
+
+==============================
+public class EchoIntLoop_Mutant1 {
+    //@ ensures \result == x + 1;
+    public static int echo(int x) {
+        int res = 0;
+        //@ maintaining 0 <= i && i - 1 <= x + 1;  
+        //@ maintaining res == i;
+        //@ decreases x - i;
+        for(int i = 0; i <= x; i++) {
+            res = res + 1;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method echo
+        //@ maintaining 0 <= i && i - 1 <= x + 1;  
+            ^
+1 verification failure
+
+==============================
+public class EchoIntLoop_Mutant1 {
+    //@ ensures \result == x + 1;
+    public static int echo(int x) {
+        int res = 0;
+        //@ maintaining 0 - 1 <= i && i < x + 1;  
+        //@ maintaining res == i;
+        //@ decreases x - i;
+        for(int i = 0; i <= x; i++) {
+            res = res + 1;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method echo
+        //@ maintaining 0 - 1 <= i && i < x + 1;  
+            ^
+1 verification failure
+
+==============================
+public class EchoIntLoop_Mutant1 {
+    //@ ensures \result == x + 1;
+    public static int echo(int x) {
+        int res = 0;
+        //@ maintaining 0 - 1 <= i && i <= x + 1;  
+        //@ maintaining res == i;
+        //@ decreases x - i;
+        for(int i = 0; i <= x; i++) {
+            res = res + 1;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method echo
+        //@ maintaining 0 - 1 <= i && i <= x + 1;  
+            ^
+1 verification failure
+
+==============================
+public class EchoIntLoop_Mutant1 {
+    //@ ensures \result == x + 1;
+    public static int echo(int x) {
+        int res = 0;
+        //@ maintaining 0 - 1 <= i && i - 1 <= x + 1;  
+        //@ maintaining res == i;
+        //@ decreases x - i;
+        for(int i = 0; i <= x; i++) {
+            res = res + 1;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method echo
+        //@ maintaining 0 - 1 <= i && i - 1 <= x + 1;  
+            ^
+1 verification failure
+
+==============================
+public class EchoIntLoop_Mutant1 {
+    //@ ensures \result == x + 1;
+    public static int echo(int x) {
+        int res = 0;
+        //@ maintaining 0 < i && i < x - 1;  
+        //@ maintaining res == i;
+        //@ decreases x - i;
+        for(int i = 0; i <= x; i++) {
+            res = res + 1;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method echo
+        //@ maintaining 0 < i && i < x - 1;  
+            ^
+1 verification failure
+
+==============================
+public class EchoIntLoop_Mutant1 {
+    //@ ensures \result == x + 1;
+    public static int echo(int x) {
+        int res = 0;
+        //@ maintaining 0 < i && i <= x - 1;  
+        //@ maintaining res == i;
+        //@ decreases x - i;
+        for(int i = 0; i <= x; i++) {
+            res = res + 1;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method echo
+        //@ maintaining 0 < i && i <= x - 1;  
+            ^
+1 verification failure
+
+==============================
+public class EchoIntLoop_Mutant1 {
+    //@ ensures \result == x + 1;
+    public static int echo(int x) {
+        int res = 0;
+        //@ maintaining 0 < i && i - 1 <= x - 1;  
+        //@ maintaining res == i;
+        //@ decreases x - i;
+        for(int i = 0; i <= x; i++) {
+            res = res + 1;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method echo
+        //@ maintaining 0 < i && i - 1 <= x - 1;  
+            ^
+1 verification failure
+
+==============================
+public class EchoIntLoop_Mutant1 {
+    //@ ensures \result == x + 1;
+    public static int echo(int x) {
+        int res = 0;
+        //@ maintaining 0 <= i && i < x - 1;  
+        //@ maintaining res == i;
+        //@ decreases x - i;
+        for(int i = 0; i <= x; i++) {
+            res = res + 1;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method echo
+        //@ maintaining 0 <= i && i < x - 1;  
+            ^
+1 verification failure
+
+==============================
+public class EchoIntLoop_Mutant1 {
+    //@ ensures \result == x + 1;
+    public static int echo(int x) {
+        int res = 0;
+        //@ maintaining 0 <= i && i <= x - 1;  
+        //@ maintaining res == i;
+        //@ decreases x - i;
+        for(int i = 0; i <= x; i++) {
+            res = res + 1;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method echo
+        //@ maintaining 0 <= i && i <= x - 1;  
+            ^
+1 verification failure
+
+==============================
+public class EchoIntLoop_Mutant1 {
+    //@ ensures \result == x + 1;
+    public static int echo(int x) {
+        int res = 0;
+        //@ maintaining 0 <= i && i - 1 <= x - 1;  
+        //@ maintaining res == i;
+        //@ decreases x - i;
+        for(int i = 0; i <= x; i++) {
+            res = res + 1;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method echo
+        //@ maintaining 0 <= i && i - 1 <= x - 1;  
+            ^
+1 verification failure
+
+==============================
+public class EchoIntLoop_Mutant1 {
+    //@ ensures \result == x + 1;
+    public static int echo(int x) {
+        int res = 0;
+        //@ maintaining 0 - 1 <= i && i < x - 1;  
+        //@ maintaining res == i;
+        //@ decreases x - i;
+        for(int i = 0; i <= x; i++) {
+            res = res + 1;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method echo
+        //@ maintaining 0 - 1 <= i && i < x - 1;  
+            ^
+1 verification failure
+
+==============================
+public class EchoIntLoop_Mutant1 {
+    //@ ensures \result == x + 1;
+    public static int echo(int x) {
+        int res = 0;
+        //@ maintaining 0 - 1 <= i && i <= x - 1;  
+        //@ maintaining res == i;
+        //@ decreases x - i;
+        for(int i = 0; i <= x; i++) {
+            res = res + 1;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method echo
+        //@ maintaining 0 - 1 <= i && i <= x - 1;  
+            ^
+1 verification failure
+
+==============================
+public class EchoIntLoop_Mutant1 {
+    //@ ensures \result == x + 1;
+    public static int echo(int x) {
+        int res = 0;
+        //@ maintaining 0 - 1 <= i && i - 1 <= x - 1;  
+        //@ maintaining res == i;
+        //@ decreases x - i;
+        for(int i = 0; i <= x; i++) {
+            res = res + 1;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method echo
+        //@ maintaining 0 - 1 <= i && i - 1 <= x - 1;  
+            ^
+1 verification failure
+
+==============================
+public class EchoIntLoop_Mutant1 {
+    //@ ensures \result == x + 1;
+    public static int echo(int x) {
+        int res = 0;
+ 
+        //@ maintaining res == i;
+        //@ decreases x - i;
+        for(int i = 0; i <= x; i++) {
+            res = res + 1;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:11: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:2:) in method echo
+        return res;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:11:
+    //@ ensures \result == x + 1;
+        ^
+2 verification failures
+
+==============================
+public class EchoIntLoop_Mutant1 {
+    //@ ensures \result == x + 1;  
+    public static int echo(int x) {
+        int res = 0;
+ 
+        //@ maintaining res == i;
+        //@ decreases x - i;
+        for(int i = 0; i <= x; i++) {
+            res = res + 1;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:11: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:2:) in method echo
+        return res;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:11:
+    //@ ensures \result == x + 1;  
+        ^
+2 verification failures
+
+==============================
+public class EchoIntLoop_Mutant1 {
+    //@ ensures \result == x - 1;  
+    public static int echo(int x) {
+        int res = 0;
+ 
+        //@ maintaining res == i;
+        //@ decreases x - i;
+        for(int i = 0; i <= x; i++) {
+            res = res + 1;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:11: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:2:) in method echo
+        return res;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/EchoIntLoop_Mutant1.java:11:
+    //@ ensures \result == x - 1;  
+        ^
+2 verification failures
+
+==============================
+public class EchoIntLoop_Mutant1 {
+ 
+    public static int echo(int x) {
+        int res = 0;
+ 
+        //@ maintaining res == i;
+        //@ decreases x - i;
+        for(int i = 0; i <= x; i++) {
+            res = res + 1;
+        }
+        return res;
+    }
+}
+
+==============================
+
+==============================

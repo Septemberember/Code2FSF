@@ -1,0 +1,112 @@
+public class IsCommonMultipleBranch_Mutant1 {
+    //@ ensures \result == (m % a != 0 || m % b == 0);
+    public static boolean isCommonMultiple(int a, int b, int m) {
+        if (m % a == 0) {
+            return false;
+        }
+        if (m % b != 0) {
+            return false;
+        }
+        return true;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonMultipleBranch_Mutant1.java:4: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method isCommonMultiple
+        if (m % a == 0) {
+              ^
+1 verification failure
+
+==============================
+public class IsCommonMultipleBranch_Mutant1 {
+    //@ ensures \result == (m % a != 0 || m % b == 0);
+    public static boolean isCommonMultiple(int a, int b, int m) {
+        //@ assume a != 0;
+        if (m % a == 0) {
+            return false;
+        }
+        if (m % b != 0) {
+            return false;
+        }
+        return true;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonMultipleBranch_Mutant1.java:2: verify: The prover cannot establish an assertion (UndefinedDivideByZero) in method isCommonMultiple
+    //@ ensures \result == (m % a != 0 || m % b == 0);
+                                            ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonMultipleBranch_Mutant1.java:6: verify: Associated method exit
+            return false;
+            ^
+2 verification failures
+
+==============================
+public class IsCommonMultipleBranch_Mutant1 {
+    //@ ensures \result == (m % a != 0 || m % b == 0);
+    public static boolean isCommonMultiple(int a, int b, int m) {
+        //@ assume a != 0;
+        //@ assume b != 0;
+        //@ assume m != 0;
+        if (m % a == 0) {
+            return false;
+        }
+        if (m % b != 0) {
+            return false;
+        }
+        return true;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonMultipleBranch_Mutant1.java:8: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonMultipleBranch_Mutant1.java:2:) in method isCommonMultiple
+            return false;
+            ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonMultipleBranch_Mutant1.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonMultipleBranch_Mutant1.java:8:
+    //@ ensures \result == (m % a != 0 || m % b == 0);
+        ^
+2 verification failures
+
+==============================
+public class IsCommonMultipleBranch_Mutant1 {
+    //@ ensures \result == (m % a != 0 || m % b == 0);  
+    public static boolean isCommonMultiple(int a, int b, int m) {
+        //@ assume a != 0;
+        //@ assume b != 0;
+        //@ assume m != 0;
+        if (m % a == 0) {
+            return false;
+        }
+        if (m % b != 0) {
+            return false;
+        }
+        return true;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonMultipleBranch_Mutant1.java:8: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonMultipleBranch_Mutant1.java:2:) in method isCommonMultiple
+            return false;
+            ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonMultipleBranch_Mutant1.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082601-gpt-specgen/tmp/IsCommonMultipleBranch_Mutant1.java:8:
+    //@ ensures \result == (m % a != 0 || m % b == 0);  
+        ^
+2 verification failures
+
+==============================
+public class IsCommonMultipleBranch_Mutant1 {
+ 
+    public static boolean isCommonMultiple(int a, int b, int m) {
+        //@ assume a != 0;
+        //@ assume b != 0;
+        //@ assume m != 0;
+        if (m % a == 0) {
+            return false;
+        }
+        if (m % b != 0) {
+            return false;
+        }
+        return true;
+    }
+}
+
+==============================
+
+==============================

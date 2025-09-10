@@ -1,0 +1,55 @@
+public class Disjunction_Mutant5 {
+    //@ ensures \result <==> (b1 || b2);
+    public /*@ pure @*/ static boolean disjunctOf(boolean b1, boolean b2) {
+        if(b1 == true)
+            return true;
+        if(b2 == true)
+            return true;
+        return true;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/Disjunction_Mutant5.java:8: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/Disjunction_Mutant5.java:2:) in method disjunctOf
+        return true;
+        ^
+/root/082602-gpt-specgen/tmp/Disjunction_Mutant5.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/Disjunction_Mutant5.java:8:
+    //@ ensures \result <==> (b1 || b2);
+        ^
+2 verification failures
+
+==============================
+public class Disjunction_Mutant5 {
+    //@ ensures \result <==> (b1 || b2);  
+    public /*@ pure @*/ static boolean disjunctOf(boolean b1, boolean b2) {
+        if(b1 == true)
+            return true;
+        if(b2 == true)
+            return true;
+        return true;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/Disjunction_Mutant5.java:8: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/Disjunction_Mutant5.java:2:) in method disjunctOf
+        return true;
+        ^
+/root/082602-gpt-specgen/tmp/Disjunction_Mutant5.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/Disjunction_Mutant5.java:8:
+    //@ ensures \result <==> (b1 || b2);  
+        ^
+2 verification failures
+
+==============================
+public class Disjunction_Mutant5 {
+ 
+    public /*@ pure @*/ static boolean disjunctOf(boolean b1, boolean b2) {
+        if(b1 == true)
+            return true;
+        if(b2 == true)
+            return true;
+        return true;
+    }
+}
+
+==============================
+
+==============================

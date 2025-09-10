@@ -1,0 +1,117 @@
+public class NumberOfCuts_Mutant4 {
+    //@ ensures \result == 0 ==> n == 2;
+    //@ ensures \result == n/2 ==> n % 2 == 0 && n != 2;
+    //@ ensures \result == n ==> n % 2 != 0;
+    public static int numberOfCuts(int n) {
+        if (n == 2) { // mutated line
+            return 0; 
+        }
+        if (n % 2 == 0) {
+            return n / 2;
+        }
+        return n;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant4.java:10: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant4.java:2:) in method numberOfCuts
+            return n / 2;
+            ^
+/root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant4.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant4.java:10:
+    //@ ensures \result == 0 ==> n == 2;
+        ^
+2 verification failures
+
+==============================
+public class NumberOfCuts_Mutant4 {
+    //@ ensures \result == 0 ==> n == 2;  
+    //@ ensures \result == n/2 ==> n % 2 == 0 && n != 2;
+    //@ ensures \result == n ==> n % 2 != 0;
+    public static int numberOfCuts(int n) {
+        if (n == 2) { // mutated line
+            return 0; 
+        }
+        if (n % 2 == 0) {
+            return n / 2;
+        }
+        return n;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant4.java:10: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant4.java:2:) in method numberOfCuts
+            return n / 2;
+            ^
+/root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant4.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant4.java:10:
+    //@ ensures \result == 0 ==> n == 2;  
+        ^
+2 verification failures
+
+==============================
+public class NumberOfCuts_Mutant4 {
+ 
+    //@ ensures \result == n/2 ==> n % 2 == 0 && n != 2;
+    //@ ensures \result == n ==> n % 2 != 0;
+    public static int numberOfCuts(int n) {
+        if (n == 2) { // mutated line
+            return 0; 
+        }
+        if (n % 2 == 0) {
+            return n / 2;
+        }
+        return n;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant4.java:10: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant4.java:4:) in method numberOfCuts
+            return n / 2;
+            ^
+/root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant4.java:4: verify: Associated declaration: /root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant4.java:10:
+    //@ ensures \result == n ==> n % 2 != 0;
+        ^
+2 verification failures
+
+==============================
+public class NumberOfCuts_Mutant4 {
+ 
+    //@ ensures \result == n/2 ==> n % 2 == 0 && n != 2;
+    //@ ensures \result == n ==> n % 2 != 0;  
+    public static int numberOfCuts(int n) {
+        if (n == 2) { // mutated line
+            return 0; 
+        }
+        if (n % 2 == 0) {
+            return n / 2;
+        }
+        return n;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant4.java:10: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant4.java:4:) in method numberOfCuts
+            return n / 2;
+            ^
+/root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant4.java:4: verify: Associated declaration: /root/082602-gpt-specgen/tmp/NumberOfCuts_Mutant4.java:10:
+    //@ ensures \result == n ==> n % 2 != 0;  
+        ^
+2 verification failures
+
+==============================
+public class NumberOfCuts_Mutant4 {
+ 
+    //@ ensures \result == n/2 ==> n % 2 == 0 && n != 2;
+ 
+    public static int numberOfCuts(int n) {
+        if (n == 2) { // mutated line
+            return 0; 
+        }
+        if (n % 2 == 0) {
+            return n / 2;
+        }
+        return n;
+    }
+}
+
+==============================
+
+==============================

@@ -1,0 +1,188 @@
+public class DivisionOverflow_Mutant5 {
+    //@ requires denom != 0 && nom != Integer.MIN_VALUE;
+    //@ ensures \result == denom / nom;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //~should_fail
+        int tmp = denom / nom; // swapping numerator and denominator
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:6: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method division_test_fail_overflow
+        int tmp = denom / nom; // swapping numerator and denominator
+                        ^
+1 verification failure
+
+==============================
+public class DivisionOverflow_Mutant5 {
+    //@ requires denom != 0 && nom != Integer.MIN_VALUE;
+    //@ ensures \result == denom / nom;
+    //@ assume denom / nom >= Integer.MIN_VALUE && denom / nom <= Integer.MAX_VALUE;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //~should_fail
+        int tmp = denom / nom; // swapping numerator and denominator
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:4: error: The token assume is illegal or not implemented for a type or method clause (JmlParser.classOrInterfaceBodyDeclaration)
+    //@ assume denom / nom >= Integer.MIN_VALUE && denom / nom <= Integer.MAX_VALUE;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:2: error: Method specifications without a following method declaration
+    //@ requires denom != 0 && nom != Integer.MIN_VALUE;
+        ^
+2 errors
+
+==============================
+public class DivisionOverflow_Mutant5 {
+    //@ requires denom != 0 && nom != Integer.MIN_VALUE;
+    //@ ensures \result == denom / nom;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //~should_fail
+        int tmp = denom / nom; // swapping numerator and denominator
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:6: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method division_test_fail_overflow
+        int tmp = denom / nom; // swapping numerator and denominator
+                        ^
+1 verification failure
+
+==============================
+public class DivisionOverflow_Mutant5 {
+    //@ requires denom != 0 && nom != Integer.MIN_VALUE;
+    //@ ensures \result == denom / nom;
+    //@ assume denom >= nom || denom <= nom;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //~should_fail
+        int tmp = denom / nom; // swapping numerator and denominator
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:4: error: The token assume is illegal or not implemented for a type or method clause (JmlParser.classOrInterfaceBodyDeclaration)
+    //@ assume denom >= nom || denom <= nom;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:2: error: Method specifications without a following method declaration
+    //@ requires denom != 0 && nom != Integer.MIN_VALUE;
+        ^
+2 errors
+
+==============================
+public class DivisionOverflow_Mutant5 {
+    //@ requires denom != 0 && nom != Integer.MIN_VALUE;
+    //@ ensures \result == denom / nom;
+    //@ assume denom >= nom || denom <= nom;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //~should_fail
+        int tmp = denom / nom; // swapping numerator and denominator
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:4: error: The token assume is illegal or not implemented for a type or method clause (JmlParser.classOrInterfaceBodyDeclaration)
+    //@ assume denom >= nom || denom <= nom;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:2: error: Method specifications without a following method declaration
+    //@ requires denom != 0 && nom != Integer.MIN_VALUE;
+        ^
+2 errors
+
+==============================
+public class DivisionOverflow_Mutant5 {
+    //@ requires denom != 0 && nom != Integer.MIN_VALUE;
+    //@ ensures \result == denom / nom;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //~should_fail
+        int tmp = denom / nom; // swapping numerator and denominator
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:6: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method division_test_fail_overflow
+        int tmp = denom / nom; // swapping numerator and denominator
+                        ^
+1 verification failure
+
+==============================
+public class DivisionOverflow_Mutant5 {
+    //@ requires denom != 0 && nom != Integer.MIN_VALUE;
+    //@ ensures \result == denom / nom;
+    //@ assume denom >= nom || denom < 0;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //~should_fail
+        int tmp = denom / nom; // swapping numerator and denominator
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:4: error: The token assume is illegal or not implemented for a type or method clause (JmlParser.classOrInterfaceBodyDeclaration)
+    //@ assume denom >= nom || denom < 0;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:2: error: Method specifications without a following method declaration
+    //@ requires denom != 0 && nom != Integer.MIN_VALUE;
+        ^
+2 errors
+
+==============================
+public class DivisionOverflow_Mutant5 {
+    //@ requires denom != 0 && nom != Integer.MIN_VALUE;
+    //@ ensures \result == denom / nom;
+    //@ assume denom >= nom || denom <= nom;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //~should_fail
+        int tmp = denom / nom; // swapping numerator and denominator
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:4: error: The token assume is illegal or not implemented for a type or method clause (JmlParser.classOrInterfaceBodyDeclaration)
+    //@ assume denom >= nom || denom <= nom;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:2: error: Method specifications without a following method declaration
+    //@ requires denom != 0 && nom != Integer.MIN_VALUE;
+        ^
+2 errors
+
+==============================
+public class DivisionOverflow_Mutant5 {
+    //@ requires denom != 0 && nom != Integer.MIN_VALUE;
+    //@ ensures \result == denom / nom;
+    //@ assume denom >= nom || denom <= nom;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //~should_fail
+        int tmp = denom / nom; // swapping numerator and denominator
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:4: error: The token assume is illegal or not implemented for a type or method clause (JmlParser.classOrInterfaceBodyDeclaration)
+    //@ assume denom >= nom || denom <= nom;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:2: error: Method specifications without a following method declaration
+    //@ requires denom != 0 && nom != Integer.MIN_VALUE;
+        ^
+2 errors
+
+==============================
+public class DivisionOverflow_Mutant5 {
+    //@ requires denom != 0 && nom != Integer.MIN_VALUE;
+    //@ ensures \result == denom / nom;
+    //@ assume denom >= nom || denom <= nom;
+    public static int division_test_fail_overflow(int nom, int denom) {
+        //~should_fail
+        int tmp = denom / nom; // swapping numerator and denominator
+        return tmp;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:4: error: The token assume is illegal or not implemented for a type or method clause (JmlParser.classOrInterfaceBodyDeclaration)
+    //@ assume denom >= nom || denom <= nom;
+        ^
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/DivisionOverflow_Mutant5.java:2: error: Method specifications without a following method declaration
+    //@ requires denom != 0 && nom != Integer.MIN_VALUE;
+        ^
+2 errors
+
+==============================

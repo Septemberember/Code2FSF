@@ -1,0 +1,643 @@
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+        //@ maintaining 0 <= alarm && alarm <= 2;
+        //@ maintaining satellites < 4 ==> alarm == 2;
+        //@ maintaining signalStrength < 20 ==> alarm == 2;
+        //@ ensures \result == alarm;
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:7: error: Expected loop specifications while in JML: ensures is not a loop specification keyword
+        //@ ensures \result == alarm;
+            ^
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:4: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 <= alarm && alarm <= 2;
+            ^
+2 errors
+
+==============================
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+        //@ maintaining 0 <= alarm && alarm <= 2;
+        //@ maintaining satellites < 4 ==> alarm == 2;
+        //@ maintaining signalStrength < 20 ==> alarm == 2;
+        //@ ensures \result == alarm;
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:7: error: Expected loop specifications while in JML: ensures is not a loop specification keyword
+        //@ ensures \result == alarm;
+            ^
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:4: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 <= alarm && alarm <= 2;
+            ^
+2 errors
+
+==============================
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+        //@ maintaining 0 <= alarm && alarm <= 2;
+        //@ maintaining satellites < 4 ==> alarm == 2;
+        //@ maintaining signalStrength < 20 ==> alarm == 2;
+        //@ ensures \result == alarm;
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:7: error: Expected loop specifications while in JML: ensures is not a loop specification keyword
+        //@ ensures \result == alarm;
+            ^
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:4: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 <= alarm && alarm <= 2;
+            ^
+2 errors
+
+==============================
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+        //@ maintaining 0 <= alarm && alarm <= 2;
+        //@ maintaining satellites < 4 ==> alarm == 2;
+        //@ maintaining signalStrength < 20 ==> alarm == 2;
+        //@ ensures \result == alarm;
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:7: error: Expected loop specifications while in JML: ensures is not a loop specification keyword
+        //@ ensures \result == alarm;
+            ^
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:4: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 <= alarm && alarm <= 2;
+            ^
+2 errors
+
+==============================
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+        //@ maintaining 0 <= alarm && alarm <= 2;
+        //@ maintaining satellites < 4 ==> alarm == 2;
+        //@ maintaining signalStrength < 20 ==> alarm == 2;
+        //@ ensures \result == alarm;
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:7: error: Expected loop specifications while in JML: ensures is not a loop specification keyword
+        //@ ensures \result == alarm;
+            ^
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:4: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 <= alarm && alarm <= 2;
+            ^
+2 errors
+
+==============================
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+        //@ maintaining 0 <= alarm && alarm <= 2;
+        //@ maintaining satellites < 4 ==> alarm == 2;
+        //@ maintaining signalStrength < 20 ==> alarm == 2;
+        //@ ensures \result == alarm;
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:7: error: Expected loop specifications while in JML: ensures is not a loop specification keyword
+        //@ ensures \result == alarm;
+            ^
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:4: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 <= alarm && alarm <= 2;
+            ^
+2 errors
+
+==============================
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+        //@ maintaining 0 <= alarm && alarm <= 2;
+        //@ maintaining satellites < 4 ==> alarm == 2;
+        //@ maintaining signalStrength < 20 ==> alarm == 2;
+        //@ ensures \result == alarm;
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:7: error: Expected loop specifications while in JML: ensures is not a loop specification keyword
+        //@ ensures \result == alarm;
+            ^
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:4: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 <= alarm && alarm <= 2;
+            ^
+2 errors
+
+==============================
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+        //@ maintaining 0 <= alarm && alarm <= 2;
+        //@ maintaining satellites < 4 ==> alarm == 2;
+        //@ maintaining signalStrength < 20 ==> alarm == 2;
+        //@ ensures \result == alarm;
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:7: error: Expected loop specifications while in JML: ensures is not a loop specification keyword
+        //@ ensures \result == alarm;
+            ^
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:4: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 <= alarm && alarm <= 2;
+            ^
+2 errors
+
+==============================
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+        //@ maintaining 0 <= alarm && alarm <= 2;
+        //@ maintaining satellites < 4 ==> alarm == 2;
+        //@ maintaining signalStrength < 20 ==> alarm == 2;
+        //@ ensures \result == alarm;
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:7: error: Expected loop specifications while in JML: ensures is not a loop specification keyword
+        //@ ensures \result == alarm;
+            ^
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:4: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 <= alarm && alarm <= 2;
+            ^
+2 errors
+
+==============================
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+        //@ maintaining 0 <= alarm && alarm <= 2;
+        //@ maintaining satellites < 4 ==> alarm == 2;
+        //@ maintaining signalStrength < 20 ==> alarm == 2;
+        //@ ensures \result == alarm;
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:7: error: Expected loop specifications while in JML: ensures is not a loop specification keyword
+        //@ ensures \result == alarm;
+            ^
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:4: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 <= alarm && alarm <= 2;
+            ^
+2 errors
+
+==============================
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+        //@ maintaining 0 < alarm && alarm < 2;  
+        //@ maintaining satellites < 4 ==> alarm == 2;
+        //@ maintaining signalStrength < 20 ==> alarm == 2;
+        //@ ensures \result == alarm;  
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:7: error: Expected loop specifications while in JML: ensures is not a loop specification keyword
+        //@ ensures \result == alarm;  
+            ^
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:4: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 < alarm && alarm < 2;  
+            ^
+2 errors
+
+==============================
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+        //@ maintaining 0 < alarm && alarm <= 2;  
+        //@ maintaining satellites < 4 ==> alarm == 2;
+        //@ maintaining signalStrength < 20 ==> alarm == 2;
+ 
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:4: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 < alarm && alarm <= 2;  
+            ^
+1 error
+
+==============================
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+        //@ maintaining 0 < alarm && alarm - 1 <= 2;  
+        //@ maintaining satellites < 4 ==> alarm == 2;
+        //@ maintaining signalStrength < 20 ==> alarm == 2;
+ 
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:4: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 < alarm && alarm - 1 <= 2;  
+            ^
+1 error
+
+==============================
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+        //@ maintaining 0 <= alarm && alarm < 2;  
+        //@ maintaining satellites < 4 ==> alarm == 2;
+        //@ maintaining signalStrength < 20 ==> alarm == 2;
+ 
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:4: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 <= alarm && alarm < 2;  
+            ^
+1 error
+
+==============================
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+        //@ maintaining 0 <= alarm && alarm <= 2;  
+        //@ maintaining satellites < 4 ==> alarm == 2;
+        //@ maintaining signalStrength < 20 ==> alarm == 2;
+ 
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:4: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 <= alarm && alarm <= 2;  
+            ^
+1 error
+
+==============================
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+        //@ maintaining 0 <= alarm && alarm - 1 <= 2;  
+        //@ maintaining satellites < 4 ==> alarm == 2;
+        //@ maintaining signalStrength < 20 ==> alarm == 2;
+ 
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:4: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 <= alarm && alarm - 1 <= 2;  
+            ^
+1 error
+
+==============================
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+        //@ maintaining 0 - 1 <= alarm && alarm < 2;  
+        //@ maintaining satellites < 4 ==> alarm == 2;
+        //@ maintaining signalStrength < 20 ==> alarm == 2;
+ 
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:4: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 - 1 <= alarm && alarm < 2;  
+            ^
+1 error
+
+==============================
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+        //@ maintaining 0 - 1 <= alarm && alarm <= 2;  
+        //@ maintaining satellites < 4 ==> alarm == 2;
+        //@ maintaining signalStrength < 20 ==> alarm == 2;
+ 
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:4: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 - 1 <= alarm && alarm <= 2;  
+            ^
+1 error
+
+==============================
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+        //@ maintaining 0 - 1 <= alarm && alarm - 1 <= 2;  
+        //@ maintaining satellites < 4 ==> alarm == 2;
+        //@ maintaining signalStrength < 20 ==> alarm == 2;
+ 
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:4: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 - 1 <= alarm && alarm - 1 <= 2;  
+            ^
+1 error
+
+==============================
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+ 
+        //@ maintaining satellites < 4 ==> alarm == 2;
+        //@ maintaining signalStrength < 20 ==> alarm == 2;
+ 
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:5: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining satellites < 4 ==> alarm == 2;
+            ^
+1 error
+
+==============================
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+ 
+        //@ maintaining satellites < 4 ==> alarm == 2;  
+        //@ maintaining signalStrength < 20 ==> alarm == 2;
+ 
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:5: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining satellites < 4 ==> alarm == 2;  
+            ^
+1 error
+
+==============================
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+ 
+        //@ maintaining satellites <= 4 ==> alarm == 2;  
+        //@ maintaining signalStrength < 20 ==> alarm == 2;
+ 
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:5: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining satellites <= 4 ==> alarm == 2;  
+            ^
+1 error
+
+==============================
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+ 
+ 
+        //@ maintaining signalStrength < 20 ==> alarm == 2;
+ 
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:6: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining signalStrength < 20 ==> alarm == 2;
+            ^
+1 error
+
+==============================
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+ 
+ 
+        //@ maintaining signalStrength < 20 ==> alarm == 2;  
+ 
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:6: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining signalStrength < 20 ==> alarm == 2;  
+            ^
+1 error
+
+==============================
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+ 
+ 
+        //@ maintaining signalStrength <= 20 ==> alarm == 2;  
+ 
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/GPSCheck_Mutant3.java:6: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining signalStrength <= 20 ==> alarm == 2;  
+            ^
+1 error
+
+==============================
+public class GPSCheck_Mutant3 {
+    /*@ spec_public @*/ public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+ 
+ 
+ 
+ 
+        if (satellites < 4) {
+            alarm = 2;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+
+==============================
+
+==============================

@@ -1,0 +1,17 @@
+public class GPSCheck_Original {
+    //@ requires satellites >= Integer.MIN_VALUE && satellites <= Integer.MAX_VALUE && signalStrength >= Integer.MIN_VALUE && signalStrength <= Integer.MAX_VALUE;
+    //@ ensures \result == 1 || \result == 2 || \result == 0;
+    public static int GPSCheck(int satellites, int signalStrength) {
+        int alarm = 0;
+        if (satellites < 4) {
+            alarm = 1;
+        }
+        if (signalStrength < 20) {
+            alarm = 2;
+        }
+        return alarm;
+    }
+}
+==============================
+
+==============================

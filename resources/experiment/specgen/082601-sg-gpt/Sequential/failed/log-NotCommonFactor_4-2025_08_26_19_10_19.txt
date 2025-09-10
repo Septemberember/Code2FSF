@@ -1,0 +1,130 @@
+public class NotCommonFactor_Mutant4 {
+    //@ ensures \result == (a % factor != 0 || b % factor != 1);
+    public static boolean notCommonFactor(int a, int b, int factor) {
+        return a % factor != 0 || b % factor != 1; // Changed 0 to 1 in second condition
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NotCommonFactor_Mutant4.java:4: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method notCommonFactor
+        return a % factor != 0 || b % factor != 1; // Changed 0 to 1 in second condition
+                 ^
+1 verification failure
+
+==============================
+public class NotCommonFactor_Mutant4 {
+    //@ ensures \result == (a % factor != 0 || factor != 0 && b % factor != 1);
+    public static boolean notCommonFactor(int a, int b, int factor) {
+        return a % factor != 0 || factor != 0 && b % factor != 1; // Changed 0 to 1 in second condition
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NotCommonFactor_Mutant4.java:4: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method notCommonFactor
+        return a % factor != 0 || factor != 0 && b % factor != 1; // Changed 0 to 1 in second condition
+                 ^
+1 verification failure
+
+==============================
+public class NotCommonFactor_Mutant4 {
+    //@ ensures \result == (a % factor != 0 || factor != 0 && b % factor != 0 && factor != 1);
+    public static boolean notCommonFactor(int a, int b, int factor) {
+        return a % factor != 0 || factor != 0 && b % factor != 0 && factor != 1; // Changed 0 to 1 in second condition
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NotCommonFactor_Mutant4.java:4: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method notCommonFactor
+        return a % factor != 0 || factor != 0 && b % factor != 0 && factor != 1; // Changed 0 to 1 in second condition
+                 ^
+1 verification failure
+
+==============================
+public class NotCommonFactor_Mutant4 {
+    //@ ensures \result == (a % factor != 0 || factor != 0 && b % factor != 0 && factor != 1) && factor != 0;
+    public static boolean notCommonFactor(int a, int b, int factor) {
+        return a % factor != 0 || factor != 0 && b % factor != 0 && factor != 1; // Changed 0 to 1 in second condition
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NotCommonFactor_Mutant4.java:4: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method notCommonFactor
+        return a % factor != 0 || factor != 0 && b % factor != 0 && factor != 1; // Changed 0 to 1 in second condition
+                 ^
+1 verification failure
+
+==============================
+public class NotCommonFactor_Mutant4 {
+    //@ ensures \result == (a % factor != 0 || factor != 0 && b % factor != 0 && factor != 1) && factor != 0 && factor != 1;
+    public static boolean notCommonFactor(int a, int b, int factor) {
+        return a % factor != 0 || factor != 0 && b % factor != 0 && factor != 1; // Changed 0 to 1 in second condition
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NotCommonFactor_Mutant4.java:4: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method notCommonFactor
+        return a % factor != 0 || factor != 0 && b % factor != 0 && factor != 1; // Changed 0 to 1 in second condition
+                 ^
+1 verification failure
+
+==============================
+public class NotCommonFactor_Mutant4 {
+    //@ ensures \result == (a % factor != 0 || factor != 0 && b % factor != 0 && factor != 1) && factor != 0 && factor != 1 && factor != -1;
+    public static boolean notCommonFactor(int a, int b, int factor) {
+        return a % factor != 0 || factor != 0 && b % factor != 0 && factor != 1; // Changed 0 to 1 in second condition
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NotCommonFactor_Mutant4.java:4: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method notCommonFactor
+        return a % factor != 0 || factor != 0 && b % factor != 0 && factor != 1; // Changed 0 to 1 in second condition
+                 ^
+1 verification failure
+
+==============================
+public class NotCommonFactor_Mutant4 {
+    //@ ensures \result == (a % factor != 0 || factor != 0 && b % factor != 0 && factor != 1) && factor != 0 && factor != 1 && factor != -1 && factor != Integer.MIN_VALUE && factor != Integer.MAX_VALUE;
+    public static boolean notCommonFactor(int a, int b, int factor) {
+        return a % factor != 0 || factor != 0 && b % factor != 0 && factor != 1; // Changed 0 to 1 in second condition
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NotCommonFactor_Mutant4.java:4: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method notCommonFactor
+        return a % factor != 0 || factor != 0 && b % factor != 0 && factor != 1; // Changed 0 to 1 in second condition
+                 ^
+1 verification failure
+
+==============================
+public class NotCommonFactor_Mutant4 {
+    //@ ensures \result == (a % factor != 0 || factor != 0 && b % factor != 0 && factor != 1) && factor != 0 && factor != 1 && factor != -1 && factor != Integer.MIN_VALUE && factor != Integer.MAX_VALUE && factor != 0;
+    public static boolean notCommonFactor(int a, int b, int factor) {
+        return a % factor != 0 || factor != 0 && b % factor != 0 && factor != 1; // Changed 0 to 1 in second condition
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NotCommonFactor_Mutant4.java:4: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method notCommonFactor
+        return a % factor != 0 || factor != 0 && b % factor != 0 && factor != 1; // Changed 0 to 1 in second condition
+                 ^
+1 verification failure
+
+==============================
+public class NotCommonFactor_Mutant4 {
+    //@ ensures \result == (a % factor != 0 || factor != 0 && b % factor != 0 && factor != 1) && factor != 0 && factor != 1 && factor != -1 && factor != Integer.MIN_VALUE && factor != Integer.MAX_VALUE && factor != 0 && factor != -1;
+    public static boolean notCommonFactor(int a, int b, int factor) {
+        return a % factor != 0 || factor != 0 && b % factor != 0 && factor != 1; // Changed 0 to 1 in second condition
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NotCommonFactor_Mutant4.java:4: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method notCommonFactor
+        return a % factor != 0 || factor != 0 && b % factor != 0 && factor != 1; // Changed 0 to 1 in second condition
+                 ^
+1 verification failure
+
+==============================
+public class NotCommonFactor_Mutant4 {
+    //@ ensures \result == (a % factor != 0 || factor != 0 && b % factor != 0 && factor != 1) && factor != 0 && factor != 1 && factor != -1 && factor != Integer.MIN_VALUE && factor != Integer.MAX_VALUE && factor != 0 && factor != -1 && factor != Integer.MIN_VALUE && factor != Integer.MAX_VALUE;
+    public static boolean notCommonFactor(int a, int b, int factor) {
+        return a % factor != 0 || factor != 0 && b % factor != 0 && factor != 1; // Changed 0 to 1 in second condition
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082601-gpt-specgen/tmp/NotCommonFactor_Mutant4.java:4: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method notCommonFactor
+        return a % factor != 0 || factor != 0 && b % factor != 0 && factor != 1; // Changed 0 to 1 in second condition
+                 ^
+1 verification failure
+
+==============================

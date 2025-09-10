@@ -1,0 +1,58 @@
+public class Disjunction_Mutant4 {
+    //@ ensures \result == (b1 || b2) && !b1 ==> \result;
+    //@ ensures \result == (b1 || b2) && b1 ==> !\result;
+    public static boolean disjunctOf(boolean b1, boolean b2) {
+        if(b1 == true)
+            return false;
+        if(b2 == true)
+            return true;
+        return false;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Disjunction_Mutant4.java:9: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Disjunction_Mutant4.java:2:) in method disjunctOf
+        return false;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Disjunction_Mutant4.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Disjunction_Mutant4.java:9:
+    //@ ensures \result == (b1 || b2) && !b1 ==> \result;
+        ^
+2 verification failures
+
+==============================
+public class Disjunction_Mutant4 {
+    //@ ensures \result == (b1 || b2) && !b1 ==> \result;  
+    //@ ensures \result == (b1 || b2) && b1 ==> !\result;
+    public static boolean disjunctOf(boolean b1, boolean b2) {
+        if(b1 == true)
+            return false;
+        if(b2 == true)
+            return true;
+        return false;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Disjunction_Mutant4.java:9: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Disjunction_Mutant4.java:2:) in method disjunctOf
+        return false;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Disjunction_Mutant4.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/Disjunction_Mutant4.java:9:
+    //@ ensures \result == (b1 || b2) && !b1 ==> \result;  
+        ^
+2 verification failures
+
+==============================
+public class Disjunction_Mutant4 {
+ 
+    //@ ensures \result == (b1 || b2) && b1 ==> !\result;
+    public static boolean disjunctOf(boolean b1, boolean b2) {
+        if(b1 == true)
+            return false;
+        if(b2 == true)
+            return true;
+        return false;
+    }
+}
+
+==============================
+
+==============================

@@ -1,0 +1,60 @@
+public class ConvertToFahrenheit_Mutant4 {
+    //@ ensures \result == celsius * 1.8 + 32.0;
+    public static double convertTemperature(double celsius) {
+        return celsius + 1.80 + 32.00;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/ConvertToFahrenheit_Mutant4.java:4: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/ConvertToFahrenheit_Mutant4.java:2:) in method convertTemperature
+        return celsius + 1.80 + 32.00;
+        ^
+/root/082602-gpt-specgen/tmp/ConvertToFahrenheit_Mutant4.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/ConvertToFahrenheit_Mutant4.java:4:
+    //@ ensures \result == celsius * 1.8 + 32.0;
+        ^
+2 verification failures
+
+==============================
+public class ConvertToFahrenheit_Mutant4 {
+    //@ ensures \result == celsius * 1.8 + 32.0;  
+    public static double convertTemperature(double celsius) {
+        return celsius + 1.80 + 32.00;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/ConvertToFahrenheit_Mutant4.java:4: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/ConvertToFahrenheit_Mutant4.java:2:) in method convertTemperature
+        return celsius + 1.80 + 32.00;
+        ^
+/root/082602-gpt-specgen/tmp/ConvertToFahrenheit_Mutant4.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/ConvertToFahrenheit_Mutant4.java:4:
+    //@ ensures \result == celsius * 1.8 + 32.0;  
+        ^
+2 verification failures
+
+==============================
+public class ConvertToFahrenheit_Mutant4 {
+    //@ ensures \result == celsius * 1.8 - 32.0;  
+    public static double convertTemperature(double celsius) {
+        return celsius + 1.80 + 32.00;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/ConvertToFahrenheit_Mutant4.java:4: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/ConvertToFahrenheit_Mutant4.java:2:) in method convertTemperature
+        return celsius + 1.80 + 32.00;
+        ^
+/root/082602-gpt-specgen/tmp/ConvertToFahrenheit_Mutant4.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/ConvertToFahrenheit_Mutant4.java:4:
+    //@ ensures \result == celsius * 1.8 - 32.0;  
+        ^
+2 verification failures
+
+==============================
+public class ConvertToFahrenheit_Mutant4 {
+ 
+    public static double convertTemperature(double celsius) {
+        return celsius + 1.80 + 32.00;
+    }
+}
+
+==============================
+
+==============================

@@ -1,0 +1,292 @@
+public class MySqrt_Original {
+    /*@ spec_public @*/ public static int mySqrt(int x) {
+        int l = 0, r = x, ans = -1;
+        //@ maintaining l <= r + 1;
+        //@ maintaining -1 <= ans && ans <= x;
+        //@ decreases r - l;
+        while (l <= r) {
+            int mid = l + (r - l) / 2;
+            if ((long) mid * mid <= x) {
+                ans = mid;
+                l = mid + 1;
+            } else {
+                r = mid - 1;
+            }
+        }
+        //@ ensures ans * ans <= x && (ans + 1) * (ans + 1) > x;
+        return ans;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MySqrt_Original.java:4: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mySqrt
+        //@ maintaining l <= r + 1;
+            ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MySqrt_Original.java:4: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mySqrt
+        //@ maintaining l <= r + 1;
+            ^
+2 verification failures
+
+==============================
+public class MySqrt_Original {
+    /*@ spec_public @*/ public static int mySqrt(int x) {
+        int l = 0, r = x, ans = -1;
+        //@ maintaining l <= r + 1;  
+        //@ maintaining -1 <= ans && ans <= x;
+        //@ decreases r - l;
+        while (l <= r) {
+            int mid = l + (r - l) / 2;
+            if ((long) mid * mid <= x) {
+                ans = mid;
+                l = mid + 1;
+            } else {
+                r = mid - 1;
+            }
+        }
+        //@ ensures ans * ans <= x && (ans + 1) * (ans + 1) > x;
+        return ans;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MySqrt_Original.java:4: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mySqrt
+        //@ maintaining l <= r + 1;  
+            ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MySqrt_Original.java:4: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mySqrt
+        //@ maintaining l <= r + 1;  
+            ^
+2 verification failures
+
+==============================
+public class MySqrt_Original {
+    /*@ spec_public @*/ public static int mySqrt(int x) {
+        int l = 0, r = x, ans = -1;
+        //@ maintaining l < r - 1;  
+        //@ maintaining -1 <= ans && ans <= x;
+        //@ decreases r - l;
+        while (l <= r) {
+            int mid = l + (r - l) / 2;
+            if ((long) mid * mid <= x) {
+                ans = mid;
+                l = mid + 1;
+            } else {
+                r = mid - 1;
+            }
+        }
+        //@ ensures ans * ans <= x && (ans + 1) * (ans + 1) > x;
+        return ans;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MySqrt_Original.java:4: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mySqrt
+        //@ maintaining l < r - 1;  
+            ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MySqrt_Original.java:4: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mySqrt
+        //@ maintaining l < r - 1;  
+            ^
+2 verification failures
+
+==============================
+public class MySqrt_Original {
+    /*@ spec_public @*/ public static int mySqrt(int x) {
+        int l = 0, r = x, ans = -1;
+        //@ maintaining l - 1 <= r - 1;  
+        //@ maintaining -1 <= ans && ans <= x;
+        //@ decreases r - l;
+        while (l <= r) {
+            int mid = l + (r - l) / 2;
+            if ((long) mid * mid <= x) {
+                ans = mid;
+                l = mid + 1;
+            } else {
+                r = mid - 1;
+            }
+        }
+        //@ ensures ans * ans <= x && (ans + 1) * (ans + 1) > x;
+        return ans;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MySqrt_Original.java:4: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mySqrt
+        //@ maintaining l - 1 <= r - 1;  
+            ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MySqrt_Original.java:4: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mySqrt
+        //@ maintaining l - 1 <= r - 1;  
+            ^
+2 verification failures
+
+==============================
+public class MySqrt_Original {
+    /*@ spec_public @*/ public static int mySqrt(int x) {
+        int l = 0, r = x, ans = -1;
+ 
+        //@ maintaining -1 <= ans && ans <= x;
+        //@ decreases r - l;
+        while (l <= r) {
+            int mid = l + (r - l) / 2;
+            if ((long) mid * mid <= x) {
+                ans = mid;
+                l = mid + 1;
+            } else {
+                r = mid - 1;
+            }
+        }
+        //@ ensures ans * ans <= x && (ans + 1) * (ans + 1) > x;
+        return ans;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MySqrt_Original.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mySqrt
+        //@ maintaining -1 <= ans && ans <= x;
+            ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MySqrt_Original.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mySqrt
+        //@ maintaining -1 <= ans && ans <= x;
+            ^
+2 verification failures
+
+==============================
+public class MySqrt_Original {
+    /*@ spec_public @*/ public static int mySqrt(int x) {
+        int l = 0, r = x, ans = -1;
+ 
+        //@ maintaining -1 < ans && ans <= x;  
+        //@ decreases r - l;
+        while (l <= r) {
+            int mid = l + (r - l) / 2;
+            if ((long) mid * mid <= x) {
+                ans = mid;
+                l = mid + 1;
+            } else {
+                r = mid - 1;
+            }
+        }
+        //@ ensures ans * ans <= x && (ans + 1) * (ans + 1) > x;
+        return ans;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MySqrt_Original.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mySqrt
+        //@ maintaining -1 < ans && ans <= x;  
+            ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MySqrt_Original.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mySqrt
+        //@ maintaining -1 < ans && ans <= x;  
+            ^
+2 verification failures
+
+==============================
+public class MySqrt_Original {
+    /*@ spec_public @*/ public static int mySqrt(int x) {
+        int l = 0, r = x, ans = -1;
+ 
+        //@ maintaining -1 <= ans && ans < x;  
+        //@ decreases r - l;
+        while (l <= r) {
+            int mid = l + (r - l) / 2;
+            if ((long) mid * mid <= x) {
+                ans = mid;
+                l = mid + 1;
+            } else {
+                r = mid - 1;
+            }
+        }
+        //@ ensures ans * ans <= x && (ans + 1) * (ans + 1) > x;
+        return ans;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MySqrt_Original.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mySqrt
+        //@ maintaining -1 <= ans && ans < x;  
+            ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MySqrt_Original.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mySqrt
+        //@ maintaining -1 <= ans && ans < x;  
+            ^
+2 verification failures
+
+==============================
+public class MySqrt_Original {
+    /*@ spec_public @*/ public static int mySqrt(int x) {
+        int l = 0, r = x, ans = -1;
+ 
+        //@ maintaining -1 <= ans && ans - 1 <= x;  
+        //@ decreases r - l;
+        while (l <= r) {
+            int mid = l + (r - l) / 2;
+            if ((long) mid * mid <= x) {
+                ans = mid;
+                l = mid + 1;
+            } else {
+                r = mid - 1;
+            }
+        }
+        //@ ensures ans * ans <= x && (ans + 1) * (ans + 1) > x;
+        return ans;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MySqrt_Original.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mySqrt
+        //@ maintaining -1 <= ans && ans - 1 <= x;  
+            ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MySqrt_Original.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mySqrt
+        //@ maintaining -1 <= ans && ans - 1 <= x;  
+            ^
+2 verification failures
+
+==============================
+public class MySqrt_Original {
+    /*@ spec_public @*/ public static int mySqrt(int x) {
+        int l = 0, r = x, ans = -1;
+ 
+        //@ maintaining -1 - 1 <= ans && ans <= x;  
+        //@ decreases r - l;
+        while (l <= r) {
+            int mid = l + (r - l) / 2;
+            if ((long) mid * mid <= x) {
+                ans = mid;
+                l = mid + 1;
+            } else {
+                r = mid - 1;
+            }
+        }
+        //@ ensures ans * ans <= x && (ans + 1) * (ans + 1) > x;
+        return ans;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MySqrt_Original.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mySqrt
+        //@ maintaining -1 - 1 <= ans && ans <= x;  
+            ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/MySqrt_Original.java:5: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method mySqrt
+        //@ maintaining -1 - 1 <= ans && ans <= x;  
+            ^
+2 verification failures
+
+==============================
+public class MySqrt_Original {
+    /*@ spec_public @*/ public static int mySqrt(int x) {
+        int l = 0, r = x, ans = -1;
+ 
+ 
+        //@ decreases r - l;
+        while (l <= r) {
+            int mid = l + (r - l) / 2;
+            if ((long) mid * mid <= x) {
+                ans = mid;
+                l = mid + 1;
+            } else {
+                r = mid - 1;
+            }
+        }
+        //@ ensures ans * ans <= x && (ans + 1) * (ans + 1) > x;
+        return ans;
+    }
+}
+
+==============================
+
+==============================

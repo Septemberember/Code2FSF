@@ -1,0 +1,7 @@
+public class SmallestEvenMul_Mutant5 {
+    //@ ensures \result == (n % 2 == 0 ? n : 2 * n);
+    public static int smallestEvenMultiple(int n) {
+        return 0 == n % 2 ? n : 2 * n;
+    }
+}
+==============================

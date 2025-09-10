@@ -1,0 +1,235 @@
+public class FizzBuzz_Mutant1 {
+    //@ ensures \result == 5 <==> n % 5 == 0;
+    //@ ensures \result == 0 <==> n % 5 != 0;
+    //@ ensures \result == 5 <==> n % 3 == 0;
+    //@ ensures \result == 0 <==> n % 3 != 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        if (n % 3 == 0) {
+            res += 5; // change from 3 to 5
+        }
+        if (n % 5 == 0) {
+            res += 5;
+        }
+        return res;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:14: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:2:) in method fizzBuzz
+        return res;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:14:
+    //@ ensures \result == 5 <==> n % 5 == 0;
+        ^
+2 verification failures
+
+==============================
+public class FizzBuzz_Mutant1 {
+    //@ ensures \result == 5 <==> n % 5 == 0;  
+    //@ ensures \result == 0 <==> n % 5 != 0;
+    //@ ensures \result == 5 <==> n % 3 == 0;
+    //@ ensures \result == 0 <==> n % 3 != 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        if (n % 3 == 0) {
+            res += 5; // change from 3 to 5
+        }
+        if (n % 5 == 0) {
+            res += 5;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:14: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:2:) in method fizzBuzz
+        return res;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:14:
+    //@ ensures \result == 5 <==> n % 5 == 0;  
+        ^
+2 verification failures
+
+==============================
+public class FizzBuzz_Mutant1 {
+ 
+    //@ ensures \result == 0 <==> n % 5 != 0;
+    //@ ensures \result == 5 <==> n % 3 == 0;
+    //@ ensures \result == 0 <==> n % 3 != 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        if (n % 3 == 0) {
+            res += 5; // change from 3 to 5
+        }
+        if (n % 5 == 0) {
+            res += 5;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:14: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:4:) in method fizzBuzz
+        return res;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:14:
+    //@ ensures \result == 5 <==> n % 3 == 0;
+        ^
+2 verification failures
+
+==============================
+public class FizzBuzz_Mutant1 {
+ 
+    //@ ensures \result == 0 <==> n % 5 != 0;
+    //@ ensures \result == 5 <==> n % 3 == 0;  
+    //@ ensures \result == 0 <==> n % 3 != 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        if (n % 3 == 0) {
+            res += 5; // change from 3 to 5
+        }
+        if (n % 5 == 0) {
+            res += 5;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:14: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:4:) in method fizzBuzz
+        return res;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:4: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:14:
+    //@ ensures \result == 5 <==> n % 3 == 0;  
+        ^
+2 verification failures
+
+==============================
+public class FizzBuzz_Mutant1 {
+ 
+    //@ ensures \result == 0 <==> n % 5 != 0;
+ 
+    //@ ensures \result == 0 <==> n % 3 != 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        if (n % 3 == 0) {
+            res += 5; // change from 3 to 5
+        }
+        if (n % 5 == 0) {
+            res += 5;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:14: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:3:) in method fizzBuzz
+        return res;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:14:
+    //@ ensures \result == 0 <==> n % 5 != 0;
+        ^
+2 verification failures
+
+==============================
+public class FizzBuzz_Mutant1 {
+ 
+    //@ ensures \result == 0 <==> n % 5 != 0;  
+ 
+    //@ ensures \result == 0 <==> n % 3 != 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        if (n % 3 == 0) {
+            res += 5; // change from 3 to 5
+        }
+        if (n % 5 == 0) {
+            res += 5;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:14: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:3:) in method fizzBuzz
+        return res;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:3: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:14:
+    //@ ensures \result == 0 <==> n % 5 != 0;  
+        ^
+2 verification failures
+
+==============================
+public class FizzBuzz_Mutant1 {
+ 
+ 
+ 
+    //@ ensures \result == 0 <==> n % 3 != 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        if (n % 3 == 0) {
+            res += 5; // change from 3 to 5
+        }
+        if (n % 5 == 0) {
+            res += 5;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:14: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:5:) in method fizzBuzz
+        return res;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:5: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:14:
+    //@ ensures \result == 0 <==> n % 3 != 0;
+        ^
+2 verification failures
+
+==============================
+public class FizzBuzz_Mutant1 {
+ 
+ 
+ 
+    //@ ensures \result == 0 <==> n % 3 != 0;  
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        if (n % 3 == 0) {
+            res += 5; // change from 3 to 5
+        }
+        if (n % 5 == 0) {
+            res += 5;
+        }
+        return res;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:14: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:5:) in method fizzBuzz
+        return res;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:5: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/FizzBuzz_Mutant1.java:14:
+    //@ ensures \result == 0 <==> n % 3 != 0;  
+        ^
+2 verification failures
+
+==============================
+public class FizzBuzz_Mutant1 {
+ 
+ 
+ 
+ 
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        if (n % 3 == 0) {
+            res += 5; // change from 3 to 5
+        }
+        if (n % 5 == 0) {
+            res += 5;
+        }
+        return res;
+    }
+}
+
+==============================
+
+==============================

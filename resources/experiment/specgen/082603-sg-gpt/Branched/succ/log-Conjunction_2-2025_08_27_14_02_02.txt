@@ -1,0 +1,102 @@
+public class Conjunction_Mutant2 {
+    //@ ensures \result == true <==> (b1 == false && b2 == true) || (b1 == true && b2 == true);
+    //@ ensures \result == false <==> b2 == false;
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return true;
+        if(b2 == false)
+            return false;
+        return true;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/Conjunction_Mutant2.java:6: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/Conjunction_Mutant2.java:2:) in method conjunctOf
+            return true;
+            ^
+/root/082602-gpt-specgen/tmp/Conjunction_Mutant2.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/Conjunction_Mutant2.java:6:
+    //@ ensures \result == true <==> (b1 == false && b2 == true) || (b1 == true && b2 == true);
+        ^
+2 verification failures
+
+==============================
+public class Conjunction_Mutant2 {
+    //@ ensures \result == true <==> (b1 == false && b2 == true) || (b1 == true && b2 == true);  
+    //@ ensures \result == false <==> b2 == false;
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return true;
+        if(b2 == false)
+            return false;
+        return true;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/Conjunction_Mutant2.java:6: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/Conjunction_Mutant2.java:2:) in method conjunctOf
+            return true;
+            ^
+/root/082602-gpt-specgen/tmp/Conjunction_Mutant2.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/Conjunction_Mutant2.java:6:
+    //@ ensures \result == true <==> (b1 == false && b2 == true) || (b1 == true && b2 == true);  
+        ^
+2 verification failures
+
+==============================
+public class Conjunction_Mutant2 {
+ 
+    //@ ensures \result == false <==> b2 == false;
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return true;
+        if(b2 == false)
+            return false;
+        return true;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/Conjunction_Mutant2.java:6: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/Conjunction_Mutant2.java:3:) in method conjunctOf
+            return true;
+            ^
+/root/082602-gpt-specgen/tmp/Conjunction_Mutant2.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/Conjunction_Mutant2.java:6:
+    //@ ensures \result == false <==> b2 == false;
+        ^
+2 verification failures
+
+==============================
+public class Conjunction_Mutant2 {
+ 
+    //@ ensures \result == false <==> b2 == false;  
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return true;
+        if(b2 == false)
+            return false;
+        return true;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/Conjunction_Mutant2.java:6: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/Conjunction_Mutant2.java:3:) in method conjunctOf
+            return true;
+            ^
+/root/082602-gpt-specgen/tmp/Conjunction_Mutant2.java:3: verify: Associated declaration: /root/082602-gpt-specgen/tmp/Conjunction_Mutant2.java:6:
+    //@ ensures \result == false <==> b2 == false;  
+        ^
+2 verification failures
+
+==============================
+public class Conjunction_Mutant2 {
+ 
+ 
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return true;
+        if(b2 == false)
+            return false;
+        return true;
+    }
+}
+
+==============================
+
+==============================

@@ -1,0 +1,136 @@
+public class AltitudeController_Mutant1 {
+    //@ ensures \result == 0 || (\result == 5 || \result == -5) || (\result == 3 || \result == -3) || (\result == 2 || \result == -2);
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight + currentHeight; //Changed subtraction to addition
+        int absError = 0;
+        absError = error < 0 ? -error : error;
+        int controlSignal = 0;
+        //@ maintaining controlSignal == 0 || (controlSignal == 5 || controlSignal == -5) || (controlSignal == 3 || controlSignal == -3) || (controlSignal == 2 || controlSignal == -2);
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        return controlSignal;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/AltitudeController_Mutant1.java:8: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining controlSignal == 0 || (controlSignal == 5 || controlSignal == -5) || (controlSignal == 3 || controlSignal == -3) || (controlSignal == 2 || controlSignal == -2);
+            ^
+1 error
+
+==============================
+public class AltitudeController_Mutant1 {
+    //@ ensures \result == 0 || (\result == 5 || \result == -5) || (\result == 3 || \result == -3) || (\result == 2 || \result == -2);
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight + currentHeight; //Changed subtraction to addition
+        int absError = 0;
+        absError = error < 0 ? -error : error;
+        int controlSignal = 0;
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        //@ assert controlSignal == 0 || (controlSignal == 5 || controlSignal == -5) || (controlSignal == 3 || controlSignal == -3) || (controlSignal == 2 || controlSignal == -2);
+        return controlSignal;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/AltitudeController_Mutant1.java:17: verify: The prover cannot establish an assertion (Assert) in method altitudeController
+        //@ assert controlSignal == 0 || (controlSignal == 5 || controlSignal == -5) || (controlSignal == 3 || controlSignal == -3) || (controlSignal == 2 || controlSignal == -2);
+            ^
+1 verification failure
+
+==============================
+public class AltitudeController_Mutant1 {
+    //@ ensures \result == 0 || \result == 5 || \result == -5 || \result == 3 || \result == -3 || \result == 2 || \result == -2;
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight + currentHeight; //Changed subtraction to addition
+        int absError = 0;
+        absError = error < 0 ? -error : error;
+        int controlSignal = 0;
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        return controlSignal;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/AltitudeController_Mutant1.java:17: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/AltitudeController_Mutant1.java:2:) in method altitudeController
+        return controlSignal;
+        ^
+/root/082602-gpt-specgen/tmp/AltitudeController_Mutant1.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/AltitudeController_Mutant1.java:17:
+    //@ ensures \result == 0 || \result == 5 || \result == -5 || \result == 3 || \result == -3 || \result == 2 || \result == -2;
+        ^
+2 verification failures
+
+==============================
+public class AltitudeController_Mutant1 {
+    //@ ensures \result == 0 || \result == 5 || \result == -5 || \result == 3 || \result == -3 || \result == 2 || \result == -2;  
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight + currentHeight; //Changed subtraction to addition
+        int absError = 0;
+        absError = error < 0 ? -error : error;
+        int controlSignal = 0;
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        return controlSignal;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/AltitudeController_Mutant1.java:17: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/AltitudeController_Mutant1.java:2:) in method altitudeController
+        return controlSignal;
+        ^
+/root/082602-gpt-specgen/tmp/AltitudeController_Mutant1.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/AltitudeController_Mutant1.java:17:
+    //@ ensures \result == 0 || \result == 5 || \result == -5 || \result == 3 || \result == -3 || \result == 2 || \result == -2;  
+        ^
+2 verification failures
+
+==============================
+public class AltitudeController_Mutant1 {
+ 
+    public static int altitudeController(int currentHeight, int targetHeight) {
+        int error = targetHeight + currentHeight; //Changed subtraction to addition
+        int absError = 0;
+        absError = error < 0 ? -error : error;
+        int controlSignal = 0;
+        if (absError > 30) {
+            controlSignal = error > 0 ? 5 : -5;
+        } else if (absError > 20) {
+            controlSignal = error > 0 ? 3 : -3;
+        } else if (absError > 10) {
+            controlSignal = error > 0 ? 2 : -2;
+        } else {
+            controlSignal = error;
+        }
+        return controlSignal;
+    }
+}
+
+==============================
+
+==============================

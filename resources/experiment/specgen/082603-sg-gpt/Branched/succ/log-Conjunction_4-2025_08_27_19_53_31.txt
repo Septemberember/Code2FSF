@@ -1,0 +1,55 @@
+public class Conjunction_Mutant4 {
+    //@ ensures \result <==> (b1 == false && b2 == false);
+    public /*@ pure @*/ static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return false;
+        if(b2 == true)
+            return false;
+        return true;
+    }
+}
+==============================
+/root/082602-gpt-specgen/tmp/Conjunction_Mutant4.java:5: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/Conjunction_Mutant4.java:2:) in method conjunctOf
+            return false;
+            ^
+/root/082602-gpt-specgen/tmp/Conjunction_Mutant4.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/Conjunction_Mutant4.java:5:
+    //@ ensures \result <==> (b1 == false && b2 == false);
+        ^
+2 verification failures
+
+==============================
+public class Conjunction_Mutant4 {
+    //@ ensures \result <==> (b1 == false && b2 == false);  
+    public /*@ pure @*/ static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return false;
+        if(b2 == true)
+            return false;
+        return true;
+    }
+}
+
+==============================
+/root/082602-gpt-specgen/tmp/Conjunction_Mutant4.java:5: verify: The prover cannot establish an assertion (Postcondition: /root/082602-gpt-specgen/tmp/Conjunction_Mutant4.java:2:) in method conjunctOf
+            return false;
+            ^
+/root/082602-gpt-specgen/tmp/Conjunction_Mutant4.java:2: verify: Associated declaration: /root/082602-gpt-specgen/tmp/Conjunction_Mutant4.java:5:
+    //@ ensures \result <==> (b1 == false && b2 == false);  
+        ^
+2 verification failures
+
+==============================
+public class Conjunction_Mutant4 {
+ 
+    public /*@ pure @*/ static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return false;
+        if(b2 == true)
+            return false;
+        return true;
+    }
+}
+
+==============================
+
+==============================

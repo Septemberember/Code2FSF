@@ -1,0 +1,9 @@
+public class DivisorGame_Mutant2 {
+    //@ ensures \result <==> n % 2 != 0;
+    public /*@ pure @*/ static boolean divisorGame(int n) {
+        return n % 2 != 0;
+    }
+}
+==============================
+
+==============================

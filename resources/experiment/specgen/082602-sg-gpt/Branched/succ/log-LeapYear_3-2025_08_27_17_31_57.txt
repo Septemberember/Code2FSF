@@ -1,0 +1,76 @@
+public class LeapYear_Mutant3 {
+    //@ ensures \result <==> (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0)
+                    leap = false;
+                else
+                    leap = true;
+            } else
+                leap = true;
+        } else
+            leap = false;
+        return leap;
+    }
+}
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/LeapYear_Mutant3.java:15: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/LeapYear_Mutant3.java:2:) in method isLeapYear
+        return leap;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/LeapYear_Mutant3.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/LeapYear_Mutant3.java:15:
+    //@ ensures \result <==> (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+        ^
+2 verification failures
+
+==============================
+public class LeapYear_Mutant3 {
+    //@ ensures \result <==> (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));  
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0)
+                    leap = false;
+                else
+                    leap = true;
+            } else
+                leap = true;
+        } else
+            leap = false;
+        return leap;
+    }
+}
+
+==============================
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/LeapYear_Mutant3.java:15: verify: The prover cannot establish an assertion (Postcondition: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/LeapYear_Mutant3.java:2:) in method isLeapYear
+        return leap;
+        ^
+/root/specgen/SpecGen/project/082602-gpt-specgen/tmp/LeapYear_Mutant3.java:2: verify: Associated declaration: /root/specgen/SpecGen/project/082602-gpt-specgen/tmp/LeapYear_Mutant3.java:15:
+    //@ ensures \result <==> (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));  
+        ^
+2 verification failures
+
+==============================
+public class LeapYear_Mutant3 {
+ 
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0)
+                    leap = false;
+                else
+                    leap = true;
+            } else
+                leap = true;
+        } else
+            leap = false;
+        return leap;
+    }
+}
+
+==============================
+
+==============================
