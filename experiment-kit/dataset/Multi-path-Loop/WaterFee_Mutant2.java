@@ -12,6 +12,7 @@ public class WaterFee_Mutant2 {
             }
             n--;
         }
+        
         return fee;
     }
 }
